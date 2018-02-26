@@ -1,0 +1,14 @@
+<!--문서 유형, 문서 타입 : 브라우저에게 현재 문서가 어떤 언어와 환경으로 작성되었음을 알리는 역할-->
+<!DOCTYPE html>
+
+
+<html>
+	<head> <!--쌍 태그 -->
+		<meta charset="UTF-8"> <!--단독 태그-->
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<!-- ex02.html -->
+		
+	</body>
+</html>

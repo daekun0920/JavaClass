@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--
+	공백 문자, Whitespace
+	- 스페이스, 탭, 개행문자
+	- 소스 상에 존재하는 공백 문자들을 실행기(브라우저)가 어떻게 처리하는지?
+	- 모든 브라우저는 소스 상의 종류에 상관없이 연속된 공백은 1개의 공백으로 치환해서 출력한다.
+		
+	공백 문자열 처리 방법
+	1. HTML 사용
+		a. 스페이스 > 엔티티 사용(&nbsp; - non break space)
+					  엔티티(Entity) : &키워드;
+					   				 : 소스상의 표현을 브라우저와 약속된 표현으로 치환해서 출력 
+					   				 : Built-in Entity
+					   				 
+		b. 개행 문자 > 태그 사용 : <br> 태그, line break 
+						 
+	2. CSS 사용(여백 출력)
+	
+	
+	-->
+	 
+	 하나&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;둘
+	 <br>
+	 <br>
+	 <br>
+	 <br>
+	 셋 넷
+	 
+	 <!--
+	 	
+	 	URL(URI)
+		- URL의 대소문자
+		- 이클립스 + 아파치 톰캣 -> 사이트 
+		- http://localhost:8090/ClientTest/ : Context Path
+		- http://localhost:8090/hello/Ex03_whitespace.html
+		- http://localhost:8090/ClientTest/Ex03_whitespace.html
+	 	
+	 
+	 -->
+	 
+	  
+</body>
+</html>

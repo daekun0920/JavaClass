@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--
+	공백 문자, Whitespace
+	- 스페이스, 탭, 개행문자
+	- 소스 상에 존재하는 공백 문자들을 실행기(브라우저)가 어떻게 처리하는지?
+	
+		
+	 -->
+	 
+	 하나         둘				 셋
+	 
+	 넷 
+</body>
+</html>

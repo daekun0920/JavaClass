@@ -1,0 +1,5 @@
+
+2월 26, 2018 14:45:33.56 NEW SESSION
+2월 26, 2018 14:45:33.56 [10036:5560:0226/144533.555:ERROR:backend_impl.cc(1055)] Critical error found -8
+2월 26, 2018 14:45:33.56 [10036:5560:0226/144533.556:ERROR:entry_impl.cc(1037)] No file for a001a2ff
+2월 26, 2018 14:45:45.16 [4920:9724:0226/144545.160:ERROR:backend_impl.cc(1055)] Critical error found -8
