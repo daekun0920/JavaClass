@@ -1,0 +1,1 @@
+auth.login|SELECT count(*) FROM tbl_member WHERE email = ? AND pw = ? AND ing = 1

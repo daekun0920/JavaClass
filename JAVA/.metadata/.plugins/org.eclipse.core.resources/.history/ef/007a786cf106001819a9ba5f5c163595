@@ -1,0 +1,36 @@
+package com.test.lambda;
+
+public class Ex04 {
+	
+	public static void main(String[] args) {
+		
+		// 함수형 인터페이스 선언 -> 람다식 선언
+		
+		// JDK 1.8부터 람다식을 사용하기 위한 전용 인터페이스들 제공 -> java.util.function 패키지
+		// 람다식을 자주 사용하다보면 나오는 패턴(인자, 반환)을 가지고 미리 인터페이스 구현
+		
+		/*
+		  
+		 표준 API 함수형 인터페이스
+		 
+		 
+		 1. Consumer
+		 	- 소비자
+		 	- 매개변수 O, 반환값 X
+		 2. Supplier
+		 	- 공급자
+		 	- 매개변수X, 반환값O
+		 3. Function
+		 	- 함수
+		 	- 매개변수O, 반환값O
+		 4. Operator
+		 	- 연산자, 조작자
+		 	- 매개변수O, 반환값O
+		 5. Predicate
+		 	- 서술자
+		 	- 매개변수O, 반환값O(boolean)
+		 	
+		 */
+	}
+	
+}

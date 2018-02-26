@@ -1,0 +1,149 @@
+추가 문제.
+
+<<요구사항>>
+각 전자 제품의 남은 배터리가 얼마동안 사용이 가능한지 출력하시오.
+
+<<입출력>>
+노트북 : 배터리 없음
+스마트폰 : 배터리 없음
+도어락 : 145 시간 사용 가능함
+드론 : 4 시간 사용 가능함
+TV 리모콘 : 287 시간 사용 가능함
+휴대용 가습기 : 배터리 없음
+태블릿 : 배터리 없음
+전동 킥보드 : 배터리 없음
+전동 드릴 : 배터리 없음
+휴대용 선풍기 : 8 시간 사용 가능함
+
+<<테이블>>
+CREATE TABLE tbl_battery (
+	seq NUMBER PRIMARY KEY,
+	name VARCHAR2(100) NOT NULL, --배터리 종류
+	capacity NUMBER NOT NULL --배터리 용량
+);
+
+CREATE TABLE tbl_electronics (
+	seq NUMBER PRIMARY KEY,
+	name VARCHAR2(100) NOT NULL, --전자제품명
+	bseq NUMBER NOT NULL REFERENCES tbl_battery(seq), --전자제품 사용 배터리 종류
+	bqty NUMBER NOT NULL, --배터리 갯수
+	consumption NUMBER NOT NULL --시간당 소비 배터리 용량
+);
+
+CREATE TABLE tbl_power_log (
+	seq NUMBER PRIMARY KEY,
+	eseq NUMBER NOT NULL REFERENCES tbl_electronics(seq), --전자제품
+	ctime DATE NOT NULL, --온/오프 시각
+	cstate NUMBER(1) NOT NULL --0:꺼짐, 1:켜짐
+);
+
+CREATE SEQUENCE battery_seq;
+CREATE SEQUENCE electronics_seq;
+CREATE SEQUENCE power_seq;
+
+INSERT INTO tbl_battery VALUES (battery_seq.nextval, '알카라인 건전지', 1500);
+INSERT INTO tbl_battery VALUES (battery_seq.nextval, '망간 건전지', 1200);
+INSERT INTO tbl_battery VALUES (battery_seq.nextval, '니켈-수소 충전지', 1800);
+INSERT INTO tbl_battery VALUES (battery_seq.nextval, '니켈-카드뮴 충전지', 2100);
+INSERT INTO tbl_battery VALUES (battery_seq.nextval, '폴리머 배터리', 3500);
+
+INSERT INTO tbl_electronics VALUES (electronics_seq.nextval, '노트북', 5, 1, 1500);
+INSERT INTO tbl_electronics VALUES (electronics_seq.nextval, '스마트폰', 3, 1, 200);
+INSERT INTO tbl_electronics VALUES (electronics_seq.nextval, '도어락', 1, 2, 20);
+INSERT INTO tbl_electronics VALUES (electronics_seq.nextval, '드론', 4, 4, 2000);
+INSERT INTO tbl_electronics VALUES (electronics_seq.nextval, 'TV 리모콘', 1, 2, 10);
+INSERT INTO tbl_electronics VALUES (electronics_seq.nextval, '휴대용 가습기', 3, 2, 350);
+INSERT INTO tbl_electronics VALUES (electronics_seq.nextval, '태블릿', 4, 3, 550);
+INSERT INTO tbl_electronics VALUES (electronics_seq.nextval, '전동 킥보드', 5, 5, 2500);
+INSERT INTO tbl_electronics VALUES (electronics_seq.nextval, '전동 드릴', 4, 4, 1350);
+INSERT INTO tbl_electronics VALUES (electronics_seq.nextval, '휴대용 선풍기', 1, 2, 350);
+
+
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 8, to_date('2018-02-01 6:5:2', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 8, to_date('2018-02-01 15:29:20', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 3:26:14', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 5:36:16', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 1, to_date('2018-02-01 11:6:25', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 1, to_date('2018-02-01 12:27:35', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 3, to_date('2018-02-01 9:20:2', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 3, to_date('2018-02-01 11:46:31', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 5, to_date('2018-02-01 0:19:1', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 5, to_date('2018-02-01 1:34:28', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 9, to_date('2018-02-01 2:18:2', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 9, to_date('2018-02-01 13:44:7', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 2, to_date('2018-02-01 4:9:1', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 2, to_date('2018-02-01 15:25:14', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 2, to_date('2018-02-01 9:1:17', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 2, to_date('2018-02-01 10:5:20', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 1, to_date('2018-02-01 4:11:24', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 1, to_date('2018-02-01 6:20:25', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 2, to_date('2018-02-01 7:14:22', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 2, to_date('2018-02-01 15:40:37', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 9, to_date('2018-02-01 9:22:18', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 9, to_date('2018-02-01 15:42:34', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 1:19:28', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 6:35:47', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 1:22:0', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 4:50:28', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 5, to_date('2018-02-01 3:19:28', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 5, to_date('2018-02-01 11:28:34', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 3:23:6', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 9:44:35', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 4:19:21', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 14:20:31', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 6, to_date('2018-02-01 0:6:17', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 6, to_date('2018-02-01 7:30:33', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 8, to_date('2018-02-01 5:5:19', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 8, to_date('2018-02-01 10:5:36', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 3, to_date('2018-02-01 0:26:21', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 3, to_date('2018-02-01 2:32:48', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 2, to_date('2018-02-01 11:14:7', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 2, to_date('2018-02-01 19:29:35', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 6, to_date('2018-02-01 2:19:3', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 6, to_date('2018-02-01 12:24:5', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 1, to_date('2018-02-01 8:25:6', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 1, to_date('2018-02-01 8:35:14', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 6:15:14', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 14:17:36', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 5, to_date('2018-02-01 10:27:20', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 5, to_date('2018-02-01 13:41:42', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 8, to_date('2018-02-01 0:17:29', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 8, to_date('2018-02-01 0:28:45', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 9, to_date('2018-02-01 8:17:16', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 9, to_date('2018-02-01 19:38:27', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 2, to_date('2018-02-01 3:24:26', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 2, to_date('2018-02-01 14:44:47', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 1, to_date('2018-02-01 9:28:11', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 1, to_date('2018-02-01 20:28:24', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 9:29:16', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 7, to_date('2018-02-01 10:48:22', 'yyyy-mm-dd hh24:mi:ss'), 0);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 9, to_date('2018-02-01 10:8:7', 'yyyy-mm-dd hh24:mi:ss'), 1);
+INSERT INTO tbl_power_log VALUES (power_seq.nextval, 9, to_date('2018-02-01 11:25:29', 'yyyy-mm-dd hh24:mi:ss'), 0);
+
+<<프로시저>>
+-- 전자 제품 목록 가져오기
+CREATE OR REPLACE PROCEDURE proc_list_electronics(
+	구현
+)
+IS
+BEGIN
+	구현
+END;
+
+-- 전자 제품 번호를 넘겨주면 로그 기록에 있는 사용한 총 소비시간 반환하기
+CREATE OR REPLACE PROCEDURE proc_check(
+	구현
+)
+IS
+BEGIN
+	구현
+END ;
+
+-- 전자 제품 번호를 넘겨주면 사용하는 배터리 개수 * 배터리 용량 반환하기
+CREATE OR REPLACE PROCEDURE proc_get_total_capacity(
+	구현
+)
+IS
+BEGIN
+	구현
+END;

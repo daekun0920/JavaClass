@@ -1,0 +1,33 @@
+
+public class Ex34_static {
+
+	public static void main(String[] args) {
+		
+		// Ex34_static.java
+		
+		// static 키워드
+		//   - 정적 키워드
+		//   - 클래스 멤버에 붙이는 키워드
+		// 1. 멤버 변수
+		// 2. 멤버 메소드
+		
+	}
+
+}
+
+
+class Student {
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

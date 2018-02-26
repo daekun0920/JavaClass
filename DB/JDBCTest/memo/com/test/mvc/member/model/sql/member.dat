@@ -1,0 +1,3 @@
+member.add|INSERT INTO tbl_member (seq, name, age, tel, email, point, pw, ing) VALUES (member_seq.nextval, ?, ?, ?, ?, default, ?, default)
+member.getMseq|SELECT seq FROM tbl_member WHERE email = ?
+member.del|UPDATE tbl_member SET ing = 0 WHERE seq = ?

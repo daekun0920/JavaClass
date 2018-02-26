@@ -1,0 +1,6 @@
+#
+#Tue Jan 02 14:44:44 KST 2018
+font-family=\uB098\uB214 \uACE0\uB515\uCCB4
+autosave=30
+path=C\:\\Util\\Run
+language=ko

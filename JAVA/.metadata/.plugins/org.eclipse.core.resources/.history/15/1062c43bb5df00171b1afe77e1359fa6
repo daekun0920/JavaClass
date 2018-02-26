@@ -1,0 +1,61 @@
+
+public class Ex32_Class {
+	
+	public static void main(String[] args) {
+		
+		// Ex32_Class.java
+		
+		// 접근 지정자(제어자), Access Modifier
+		//   - public, private / protected, default
+		
+		AccessTest t1 = new AccessTest();
+		
+		t1.a = 10; // public
+		
+		t1.b = 20; // private 
+		
+		t1.aaa();
+		
+		t1.bbb();
+		
+		t1.test();
+		
+	}
+}
+
+
+
+class AccessTest {
+	
+	// 접근 지정자
+	//   - 클래스 멤버에게
+	public int a = 10;   // 외부 접근 가능
+	private int b = 20;  // 외부 접근 불가
+	
+	public void aaa() {
+		System.out.println("Aaa");
+	}
+	private void bbb() {
+		System.out.println("bbb");
+	}
+	
+	public void test() {
+		System.out.println(a);
+		System.out.println(b);
+		aaa();
+		bbb();
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,996 @@
+* ÇÁ¸°Æ®ÈÄ ÄÚ¸àÆ®(ÁÖ¼®) ºÎºĞ Çü±¤ÆæÀ¸·Î ÇÏÀÌ¶óÀÌÆ® Ç¥½ÃÇØÁÖ±â
+Ä¿¸®Å§·³
+
+1. ¾ÖÇÃ¸®ÄÉÀÌ¼Ç ±¸Çö
+2. ³×Æ®¿öÅ© ¼ÒÇÁÆ®¿ş¾î
+3. ¿ä±¸»çÇ× 
+4. µ¥ÀÌÅÍº£ÀÌ½º
+5. sql
+6. °³¹ßÀÚ Å×½ºÆ®
+7. Á¤º¸ ½Ã½ºÅÛ ÀÌÇà
+8. Á¦Ç° ¼ÒÇÁÆ®¿ş¾î ÆĞÅ°Â¡
+
+
+1. ÀÚ¹Ù, Java
+2. µ¥ÀÌÅÍº£ÀÌ½º, Oracle
+3. 1 + 2 = JDBC
+========================== ÄÜ¼Ö ±â¹İ
+4. HTML, CSS, Javascript // Client-Side
+5. Servlet, JSP // Server-side
+========================== À¥ »çÀÌÆ®
+6. Spring, MyBatis // 5¹ø ¹öÀü¾÷
+    -> Á¤ºÎ, ÀüÀÚ Á¤ºÎ Ç¥ÁØ ÇÁ·¹ÀÓ¿öÅ©
+7. XML, jQuery, Ajax, Open API...
+
+
+
+
+
+°³¹ß È¯°æ
+1. ÆíÁı Åø, °³¹ß µµ±¸
+    A. Editplus, ¸Ş¸ğÀå
+        - ÅØ½ºÆ® ÆíÁı±â
+    B. »ı»ê¼ºÀÌ ³ôÀº °³¹ß µµ±¸
+    	- IDE, ÅëÇÕ °³¹ß È¯°æ
+	- Eclipse, NetBeans, InteliJ
+    C. SublimeText, Atom, Visual Studio Code...
+
+
+2. °³¹ß(½ÇÇà) È¯°æ
+    a. Java + Windows
+    b. °³¹ß È¯°æ -> JDK ¼³Ä¡
+        Java SE Development Kit 8u151
+
+	JDK 8       <- ¶È°°À½
+	JDK 1.8     <-   
+
+    c. ½ÇÇà È¯°æ -> JRE ¼³Ä¡
+    d. ÀÚ¹Ù : http://oracle.com (http://sun.com)
+
+
+¿î¿µÃ¼Á¦(OS)
+-Win + Pause              JDK(JRE)            ³ªÁß¿¡ Ãß°¡(Eclipse)
+1. 32bit                  32bit                 32bit
+                      
+2. 64bit                  32bit                 32bit
+                          64bit                 64bit
+
+
+ÄÜ¼Ö ¸í·É¾î
+
+1. dir, dir/w
+    -ÇöÀç µğ·ºÅä¸® ¸ñ·Ï º¸±â
+
+2. ÀÚ½ÄÆú´õ ÀÌµ¿ / ºÎ¸ğ Æú´õ ÀÌµ¿
+    a. ºÎ¸ğ Æú´õ ÀÌµ¿
+	- cd ..
+    b. ÀÚ½Ä Æú´õ ÀÌµ¿
+    	- cd ÀÚ½ÄÆú´õ¸í
+    °ø¹é¿¡¼­ Shift + ¿ìÅ¬¸¯ = ÇöÀç À§Ä¡¿¡¼­ ÇÁ·ÒÇÁÆ® ½ÇÇà
+
+3. Path ¼³Á¤
+    - À©µµ¿ì ¼³Á¤ > Path È¯°æ º¯¼ö > Æ¯Á¤ Æú´õÀÇ °æ·Î¸¦ µî·Ï > ¾î´À À§Ä¡¿¡ ÀÖ´ø Path °æ·Î¿¡ ¼ÓÇÏ´Â Æú´õ¸¦ ¹Ù·Î ÀÎ½Ä
+    - Win + Pause > °í±Ş ½Ã½ºÅÛ ¼³Á¤> È¯°æ º¯¼ö > Path ÆíÁı > ÇØ´ç ÆÄÀÏ °æ·Î Ãß°¡ 
+
+/*
+
+Multi Line Comment
+´ÙÁß Çà ÁÖ¼®
+ÇÊ±â´Â ÁÖ¼®À¸·Î
+
+*/
+
+
+
+// ¿¹¾à¾î, Reserved Word
+//class, public, static, void = ¿¹¾à¾î (°¢°¢ ¾î¶°ÇÑ ÀÏÀ» ÇÒ °ÍÀÌ´Ù.)
+
+// Ex01ÀÌ¶õ ÀÌ¸§ÀÇ Å¬·¡½º¸¦ ¼±¾ğÇÑ´Ù. (ÄÚµå ÀĞ´Â ¿¬½ÀÀ» ¸¹ÀÌÇØ¾ßÇÔ.)
+// Å¬·¡½º: ÄÚµåÀÇ ÁıÇÕ
+// ¸Ş¼Òµå: ÄÚµåÀÇ ÁıÇÕ
+
+/*
+
+ÀÚ¹Ù ÄÜ¼Ö ÇÁ·Î±×·¥ ÀÛ¼º
+
+1. ÇÁ·Î±×·¥ ¼Ò¼ö ÀÛ¼º
+    - Java ¾ğ¾î »ç¿ë
+	- *.java ÀúÀå
+	- Å¬·¡½º¸í°ú ÆÄÀÏ¸íÀÌ ¹İµå½Ã µ¿ÀÏ
+	- »ç¿ëµÈ ¾ğ¾î°¡ »ç¶÷ÀÌ »ç¿ëÇÏ´Â ¾ğ¾î (»ç¶÷ÀÌ »ç¿ëÇÏ´Â ¾ğ¾î¸¦ ±â°è¾î(¹ÙÀÌ³Ê¸® ÄÚµå)·Î º¯È¯ÇØÁÖ´Â°ÍÀÌ ÄÄÆÄÀÏ)
+
+2. ÄÄÆÄÀÏ, Compile
+    - ¼Ò½º ÆÄÀÏ -> ¹ø¿ª -> ±â°è¾î
+	- ÄÄÆÄÀÏ·¯, Compiler // ÇÁ·Î±×·¥
+	- javac.exe // ÀÚ¹Ù ÄÄÆÄÀÏ·¯
+	- javac.exe ¼Ò½ºÆÄÀÏ
+	- °á°ú¹° : ¹ø¿ªµÈ °á°ú -> *.class ÆÄÀÏ(Å¬·¡½º ÆÄÀÏ, ½ÇÇà ÆÄÀÏ, ¹ÙÀÌ³Ê¸® ÆÄÀÏ)
+
+3. ½ÇÇà, Run
+	- *.java > javac.exe > *.class = Áß°£¾ğ¾î > java.exe ¿Í JRE¸¦ °ÅÃÄ ÇØ´ç OS¿¡ ¸Â´Â ±â°è¾î·Î 2Â÷ ¹ø¿ªµÈ´Ù. 
+	- *.java = Àç·á, *.class = ¼ÕÁúµÈ Àç·á, ÈÄ java.exe ¿Í JRE(¼ÎÇÁ)¸¦ °ÅÃÄ °¢ ¼Õ´Ô(OS) ÃëÇâ¿¡ ¸Â°Ô Á¶¸®
+	
+	- 2Â÷ ÄÄÆÄÀÏ, ÀÎÅÍÇÁ¸®ÅÍ
+	- java.exe
+	- °á°ú¹° X - > ±â°è¾î
+	- ÄÄÆÄÀÏ = °á°ú¹° ÀÖÀ½, ÀÎÅÍÇÁ¸®ÅÍ = °á°ú¹° X 
+	- ÄÄÆÄÀÏ = ÃÊ±â ºñ¿ë ¸¹ÀÌµë > ½Ã°£ÀÌ ¿À·¡°É¸², ÀÎÅÍÇÁ¸®ÅÍ = ±×¶§±×¶§ Á¶±İ¾¿ µ¿½ÃÅë¿ª, ½ÉÇÃÇÏ¸ç ÃÊ±â¿¡ ½Ã°£ÀÌ Àû°Ô °É¸²
+	- JIT ÄÄÆÄÀÏ·¯(Just In Time) = ÄÄÆÄÀÏµµ ¾Æ´Ï°í ÀÎÅÍÇÁ¸®ÅÍµµ ¾Æ´Ñ ±× Áß°£ÀÇ °Í(ÇÏÀÌºê¸®µå)
+
+*/
+
+/*
+
+½Äº°ÀÚ ±ÔÄ¢
+- Æú´õ, ÆÄÀÏ, Å¬·¡½º¸í, ¸Ş¼Òµå¸í, º¯¼ö¸í µîµî...
+1. ¿µ¹®ÀÚ + ¼ıÀÚ + Æ¯¼ö¹®ÀÚÁß "_" ¸¸ (ÇÑ±Û x)
+2. ¼ıÀÚ·Î ½ÃÀÛ x -> _2017
+3. ÀÇ¹ÌÀÖ°Ô(******) -> ¾à¾î »ç¿ë x
+
+¼Ò½º ÆíÁı -> °ø¹é »ç¿ë -> ÀÚ¹Ù ÄÄÆÄÀÏ·¯´Â (Á¾·ù¿¡ »ó°ü¾øÀÌ) ¿¬¼ÓµÈ °ø¹éÀ» ¹«½ÃÇÑ´Ù.
+1. space
+2. ¿£ÅÍ
+3. ÅÇ
+
+
+ÄÚµù ÄÁº¥¼Ç = ÄÚµù ½ºÅ¸ÀÏ ±ÔÄ¢µé
+
+´ë¼Ò¹®ÀÚ Ã¶ÀúÇÏ°Ô ±¸ºĞÇÑ´Ù.
+¹®¹ı ¾ö°İ -> ÄÄÆÄÀÏ ¹æ½Ä
+
+*/
+
+	/*
+		http://terms.co.kr
+
+		~(tild)
+		!, @, #, $, %, ^, &, *, -, +, |
+		', "
+
+		() 
+		{}
+		[]
+		<> È­»ìÇ¥ °ıÈ£
+		*/
+
+
+
+//Ex04_Variable.java
+
+		//º¯¼ö, Variable
+		// - ÀÚ·áÇüÀ» »ç¿ëÇØ¼­ ¸Ş¸ğ¸®¿¡ ¾òÀº °ø°£
+		// - °ª(µ¥ÀÌÅÍ)À» ÀúÀåÇÏ´Â °ø°£(¿ëµµ)
+		
+		//1. º¯¼ö ¼±¾ğ(»ı¼º)
+		//	 -ÀÚ·áÇü º¯¼ö¸í;
+		byte kor;
+
+		//2. º¯¼ö ÃÊ±âÈ­
+		//	 - º¯¼ö = °ª; // ´ëÀÔ ¿¬»êÀÚ
+		kor = 100;
+
+		//3. º¯¼ö »ç¿ë(È£Ãâ, Á¢±Ù ..)
+		System.out.println(kor);
+
+		//4. º¯¼ö Ä¡È¯
+		kor = 95;
+		// º¯¼ö ÇÏ³ª¿¡´Â µ¥ÀÌÅÍ ÇÏ³ª¸¸
+		
+		//byte(-128~127)Áß ¾çÀ» ³ªÅ¸³»´Â°ÍÀÌ ¾Æ´Ï¶ó °æ¿ìÀÇ¼öÁß ÇÏ³ªÀÓ
+		// º¯¼ö vs »ó¼ö
+		// - º¯¼ö »ç¿ë? »ó¼ö »ç¿ë?
+
+		// ³» ¸ö¹«°Ô Ãâ·Â
+		//1. »ó¼ö
+		System.out.println(70);
+		//2. º¯¼ö (¹«¾ùÀÎÁö À¯ÃßÇÏ±âÀ§ÇØ »ó¼öº¸´Ü º¯¼ö »ç¿ë = µ¥ÀÌÅÍ¿¡ ÀÇ¹Ì ºÎ¿©°¡´É)
+		byte weight;
+		weight = 70;
+		System.out.println(weight);
+
+		System.out.println(kor);
+
+
+
+		//º¯¼ö¸í ¸í¸í¹ı
+		//1. ¿µ¹®ÀÚ, ¼ıÀÚ, _(¾ğ´õ¹Ù) »ç¿ë
+		//2. ¼ıÀÚ ½ÃÀÛ x
+		//3. ¿¹¾à¾î »ç¿ë ºÒ°¡
+		//4. ÀÇ¹ÌÀÖ°Ô(*******)
+		byte eng;
+		byte MATH;
+		byte name1;
+		byte student_kor;
+		// byte test+-; (Æ¯¹® »ç¿ëºÒ°¡)
+		byte ±¹¾î; // À¯´ÏÄÚµå¶ó ÀÎ½Ä °¡´É
+		±¹¾î = 80;
+		System.out.println(±¹¾î);
+		
+		// byte 100kor;
+		byte _100kor;
+	 
+	 //ÀÚ·áÇü, ½Äº°ÀÚ
+		//byte class;
+		//byte byte;
+
+		byte a;
+		byte b;
+		byte c;
+		
+		// variable kor, eng are already defined in method main
+		byte kor1;
+		byte math;
+		byte eng1;
+
+		byte korScore;
+		byte mathScore;
+
+		//¾à¾î x
+		byte sn;
+		
+		//º¯¼ö ¼±¾ğ
+		
+		int n1; //º¯¼ö ¼±¾ğ
+		n1 = 100; //º¯¼ö ÃÊ±âÈ­
+
+		int n2 = 200; //º¯¼ö ¼±¾ğ + ÃÊ±âÈ­
+
+		int n3;
+		int n4;
+
+		int n5,n6,n7;
+
+		int n9 = 10, n10 = 20, n11 = 30, n12, n13 = 30;
+
+		int n14,n15 = 30;
+
+
+// class Ex05_Variable { = K&R ½ºÅ¸ÀÏ(ºê¶óÀÌ¾ğ Ä¿´ÏÇÚ & µ¥´Ï½º ¸®Ä¡)
+
+class Ex05_Variable
+{ // Allman ½ºÅ¸ÀÏ
+
+	public static void main(String[] args) {
+		//Ex05_Variable.java
+
+		byte a;
+		// Å¸ÀÔ¿¡ »ó°ü¾øÀÌ ¸ğµç º¯¼ö´Â Áßº¹µÉ¼ö ¾ø´Ù.
+		//byte a;
+		//int a;
+		//a = 10;
+
+		//±¹¾î, ¿µ¾î, ¼öÇĞ
+		int kor, eng, math; // ±¹¾î, ¿µ¾î, ¼öÇĞ
+
+		// 1´ë1 ´ëÀÀ ÁÖ¼® ´Ş±â°¡ ´õ º¸±â ÁÁÀ½
+		int weight, // ¸ö¹«°Ô
+		height; // Å°
+		
+		// °¢ÀÚ·áÇü º¯¼ö »ı¼º + µ¥ÀÌÅÍ
+
+		// Á¤¼öÇü
+		// 1. byte
+
+		//Á¤¼öÇü »ó¼ö, Á¤¼öÇü ¸®ÅÍ·²
+		byte b1 = 10; //b1(º¯¼ö), 10(µ¥ÀÌÅÍ, »ó¼ö, Literal)
+		// b1 = 128; < ¿À¹öÇÃ·Î¿ì(overflow), Error
+		// b1 = -129; < ¾ğ´õÇÃ·Î¿ì(underflow), Error
+
+		//2. short
+		short s1;
+		s1 = 10;
+		// s1 = 32768; // incompatible types: possible lossy conversation from int to short
+
+		//3. int
+		int n1 = 10;
+		// n1 = 2200000000; // integer number too large: 2200000000
+		//4. long
+		long l1 = 10;
+		l1 = 10000000000000000L; // interger number too large: 10000000000000000
+		// Long Çü »ó¼ö¸¦ À§ÇØ¼­´Â »ó¼ö(¸®ÅÍ·²) ¸¶Áö¸·¿¡ L,lÀ» ºÙ¿©ÁÖ¾î¾ßÇÑ´Ù.
+
+		// ¸ğµç »ó¼ö´Â integer Å¸ÀÔ ÀÌ´Ù.
+
+		// ´ëÀÔ ¿¬»êÀÚ
+		// - º¯¼ö = °ª;
+		// - LValue(º¯¼ö) = RValue(º¯¼ö, »ó¼ö);
+		// - ¹İµå½Ã LValue¿Í RValueÀÇ ÀÚ·áÇüÀÌ ÀÏÄ¡
+		// ÄÄÆÄÀÏ·¯¿¡¼­ ÀÚµ¿ÀûÀ¸·Î ÀÇ¿ªÀ» ÇØÁØ´Ù byte ~ short = »ó¼ö(int)
+
+		int a1 = 10;
+		int b;
+		b = a1;
+
+		// ½Ç¼öÇü 
+		float f1 = 3.14F;
+		f1 = 1234567890123456789.12345678901234567890F;
+		System.out.println(f1);
+
+		// double = Á» ´õ Á¤±³ÇÔ, ±âº» ÀÚ·áÇü
+		double d1 = 2.58;
+		d1 = 1234567890123456789.12345678901234567890;
+		System.out.println(d1);
+
+		// ³í¸®Çü
+		boolean flag = true;
+		flag = false;
+		System.out.println(flag);
+
+		// ¹®ÀÚÇü
+		char c1 = 'A';
+		System.out.println(c1);
+
+		c1 = '°¡';
+		System.out.println(c1);
+
+		//c1 = 'ABC'; > ±ÛÀÚ ÇÑ°³¸¸ ³ÖÀ»¼ö ÀÖÀ½(¿À·ù)
+		//System.out.println(c1);
+
+		c1 = '1'; // ¼ıÀÚ 1 ÀÌ ¾Æ´Ñ ¹®ÀÚ·Î¼­ÀÇ '1' ÀÓ
+		System.out.println(c1);
+
+		// ±âº»Çü x
+		// ÂüÁ¶Çü o
+
+		// char : ¹®ÀÚ 1 °³
+		// String : ¹®ÀÚ ¿©·¯°³
+
+		// È«±æµ¿
+		
+		String name = "È«±æµ¿"; // ¹®ÀÚ 1 °³ : ' ' , ¹®ÀÚ ¿©·¯°³ : " " 
+
+		int num = 10;
+		int Num = 20;
+		int nuM = 30;
+		int nUm = 40;
+
+		// ÀÚ¹Ù¿¡¼­..
+		// º¯¼ö¸í °ü·Ê
+		// 1. ´Ü¾î¸¦ ¼Ò¹®ÀÚ·Î ±âÀç
+		int NUM = 10; // ¸ğµÎ ´ë¹®ÀÚ·Î ±âÀçÇÒ°æ¿ì »ó¼öÀÓ
+		int num1 = 10;
+
+		// ÇĞ»ı ¹øÈ£
+		// Student Number
+		int studentnumber; // °¡µ¶¼º ¶³¾îÁü, Ã¹ ¹®ÀÚ´Â ¹«Á¶°Ç ¼Ò¹®ÀÚ·Î ½ÃÀÛÇØ¾ßÇÔ
+		int studentNumber; // Ä³¸Ö Ç¥±â¹ı
+		int student_number; // ½º³×ÀÌÅ© Ç¥±â¹ı
+
+		
+		// ±â¼ö¹ı(ÑÀâ¦Ûö)
+		// 10Áø¹ı, 2Áø¹ı, 8Áø¹ı, 16Áø¹ı..
+
+		int n2 = 10;   // 10 Áø¼ö
+		System.out.println(n2);
+
+		int n3 = 010;  // 8 Áø¼ö
+		System.out.println(n3);
+
+		int n4 = 0x10; // 16 Áø¼ö
+		System.out.println(n4);
+
+
+
+// Ex06_EscapeSequence.java
+
+		// Escape Sequence, ÀÌ½ºÄÉÀÌÇÁ ½ÃÄö½º
+		// - Æ¯¼ö ¹®ÀÚ (ºñÃßÃµ)
+		// - Escape Character
+		// - ÀÚ·áÇüÀÌ char
+		// - Ãâ·ÂÀ» À§ÇÑ µ¥ÀÌÅÍ°¡ ¾Æ´Ï¶ó ÀÌ¹Ì ¾à¼ÓµÈ Çàµ¿À» ÇÏ±âÀ§ÇÑ Æ¯¼öÇÑ ¹®ÀÚ
+
+		// 1. \n
+		//   - new line
+		//	 - °³Çà ¹®ÀÚ
+		char c1 = '\n';
+		
+		String s1 = "¾È³çÇÏ¼¼¿ä. \nÈ«±æµ¿´Ô"; 
+		System.out.println(s1);
+		
+		// 2. \r
+		//   - carriage return
+		//   - Ä³·µ(caret)ÀÇ À§Ä¡¸¦ ÇöÀç ¶óÀÎÀÇ Ã³À½(Ã¹¹øÂ° ÄÃ·³)À¸·Î ÀÌµ¿ÇØ¶ó
+		System.out.println("ÇÏ³ªµÑ\r¼Â³İ");  // ¼Â³İµÑ
+		
+		// ¿£ÅÍ = \r + \n
+		System.out.println("ÇÏ³ª\nµÑ");   
+		System.out.println("ÇÏ³ª\r\nµÑ");
+
+		// 3. \b
+		//   -backspace
+		System.out.println("È«±æ\bµ¿");     // È«µ¿ ( ¹é½ºÆäÀÌ½º ÇÏ³ª´ç ÇÑÄ­¾¿ ÀÌµ¿ > µ¤¾î¾²±â)
+		System.out.println("È«±æµ¿¾Æ\b\b\b\b¹«°³"); // ¹«°³µ¿¾Æ 
+
+		// 4. \t
+		//   - tab
+		//   - ÁÖ·Î ¿­À» ¸ÂÃß´Âµ¥¿¡ »ç¿ëµÊ
+		//	 - ÀÏÁ¤ °£°İÀ¸·Î ÅÇÀÇ À§Ä¡°¡ Á¤ÇØÁ®ÀÖÀ½
+		//   - °¡Àå °¡±î¿î ÅÇÀÇ À§Ä¡·Î ÀÌµ¿ÇÏ¶ó 
+
+		System.out.println("È«\t±æµ¿");	
+		
+		String name = "È«±æµ¿";
+		String height = "180";
+		String address = "¼­¿ï½Ã °­³²±¸ ¿ª»ïµ¿";
+		
+		System.out.println("ÀÌ¸§ : \t" + name);       // concat (ºÙ¿© Ãâ·Â)
+		System.out.println("Å° : \t" + height + "cm");
+		System.out.println("ÁıÁÖ¼Ò : \t" + address);  // ¼­·Î °¡±î¿î ÅÇÀÌ ´Ù¸§
+
+		System.out.println("¹®ÀÚ¿­" + 100); // 100À» ¹®ÀÚ¿­·Î °£ÁÖÇØ¼­ ºÙ¿© Ãâ·ÂÇÔ
+											// ¹®ÀÚ¿­ * ¼ıÀÚ ´Â ¾ÈµÊ (µÇ´Â ¾ğ¾î ÀÖÀ½ ex. ÆÄÀÌ½ã)
+		
+		// 5. \" , \' , \\
+
+		// ¿ä±¸»çÇ× = È­¸é¿¡ <¾È³çÇÏ¼¼¿ä, "È«±æµ¿" ÀÔ´Ï´Ù.> Ãâ·ÂÇÏ½Ã¿À.
+		System.out.println("¾È³çÇÏ¼¼¿ä. \"È«±æµ¿\"ÀÔ´Ï´Ù.");  // ¾È³çÇÏ¼¼¿ä, "È«±æµ¿" ÀÔ´Ï´Ù.
+
+		// ¿ä±¸»çÇ× = ÇöÀç ¼ö¾÷ Æú´õÀÇ °æ·Î¸¦ Ãâ·Â
+		// String path = "D:\Class\Java";   ->  illegal escape character (Error)
+		String path = "D:\\Class\\Java"; // -> Correct 
+		System.out.println(path);
+
+		// \f, \a
+		// Java ¿¡¼± ¾²ÀÌÁø ¾Ê°í C# ¿¡¼± ¾ÆÁ÷ °¡´ÉÇÑ ¿À·¡µÈ escape sequence
+
+		// ¼ıÀÚ µ¥ÀÌÅÍ¸¦ »ç¿ëÇÒ ¶§ »ı°¢ÇÒ Á¡
+		
+		// ÁÖ¹Î¹øÈ£ÀÇ ¾ÕÀÚ¸®¸¦ ÀúÀåÇØ¾ß ÇÑ´Ù.
+		// - 901220
+		int jumin1 = 901220;
+		System.out.println("ÁÖ¹Î¹øÈ£: " + jumin1); // ÁÖ¹Î¹øÈ£: 901220
+		
+		jumin1 = 011125;  // 0À¸·Î ½ÃÀÛÇØ¼­ 8Áø¼ö·Î ÀÎ½ÄÇÑ´Ù.
+		System.out.println("ÁÖ¹Î¹øÈ£: " + jumin1);
+
+		String jumin2 = "011125";
+		System.out.println("ÁÖ¹Î¹øÈ£: " + jumin2);
+
+		// ÁÖ¹Î¹øÈ£, ÀüÈ­¹øÈ£, »óÇ°¹øÈ£, ÇĞ»ı¹øÈ£, ±Û¹øÈ£ µî...
+		// - ÇüÅÂ´Â ¼ıÀÚÀÌÁö¸¸ ½ÇÁ¦ ¼ºÁúÀº ¹®ÀÚ¿­
+		// - ³»°¡ °¡Áø µ¥ÀÌÅÍ°¡ »ê¼ú ¿¬»êÀ» ÇÒ²¨³Ä? ex) ÀüÈ­¹øÈ£ * 20 , ÁÖ¹Î¹øÈ£ + 100 ... 
+
+		// ½Äº°ÀÚ Ç¥±â¹ı - > ÆĞÅÏ
+
+		// 1. Çë°¡¸®¾ğ Ç¥±â¹ı
+		//   - ÀÚ·áÇüÀ» ½Äº°ÀÚ¿¡ ³Ö´Â ¹æ¹ı
+		//   - ÀÚ¹Ù) ÀÎÅÍÆäÀÌ½º¸í(ITest) ´ë¹®ÀÚ I = ÀÎÅÍÆäÀÌ½º
+		String _name;    // ¾î¶°ÇÑ ÀÚ·áÇüÀÎÁö ÈÄ¿¡ ±¸º° Èûµë
+		String strName;
+
+		int num;
+		int inum;
+
+		// 2. ÆÄ½ºÄ® Ç¥±â¹ı
+		//   - ½Äº°ÀÚ°¡ ÇÑ ´Ü¾î È¤Àº ÇÑ ´Ü¾î ÀÌ»óÀ¸·Î ±¸¼º -> ¸ğµç ´Ü¾î¸¦ °ø¹é¾øÀÌ ¿¬°á + ¸ğµç ¹®ÀÚ ¼Ò¹®ÀÚ + °¢ ´Ü¾îÀÇ Ã¹ ¹®ÀÚ¸¦ ´ë¹®ÀÚ·Î ¹Ù²Ş
+		//   - ÀÚ¹Ù) Å¬·¡½º¸í
+		String StudentName;
+
+		// NumberParser = Å¬·¡½º¸í
+		
+		// 3. Ä³¸Ö Ç¥±â¹ı
+		//   - ½Äº°ÀÚ°¡ ÇÑ ´Ü¾î È¤Àº ÇÑ ´Ü¾î ÀÌ»óÀ¸·Î ±¸¼º -> ¸ğµç ´Ü¾î¸¦ °ø¹é¾øÀÌ ¿¬°á + ¸ğµç ¹®ÀÚ ¼Ò¹®ÀÚ + °¢ ´Ü¾îÀÇ Ã¹ ¹®ÀÚ¸¦ ´ë¹®ÀÚ·Î ¹Ù²Ş
+		//   - But, ½ÃÀÛ ¹®ÀÚ¸¸Àº ¼Ò¹®ÀÚ·Î
+		//   - ÀÚ¹Ù) º¯¼ö¸í, ¸Ş¼Òµå¸í
+		String studentName;
+		
+
+
+// Ex07_Casting.java
+
+		// Type Casting, Casting, ÀÚ·áÇü º¯È¯, Çüº¯È¯
+		//   - A¶ó´Â ÀÚ·áÇüÀ» B¶ó´Â ÀÚ·áÇüÀ¸·Î ¹Ù²Ù´Â Çàµ¿
+		
+		// 1. ¾Ï½ÃÀûÀÎ Çüº¯È¯
+		//   -Å« Çü = ÀÛÀº Çü;
+		//	 -2Ä­ = 1Ä­;
+		//   -100% ¾ÈÀü
+
+		byte b1 = 10;   // ¿øº»
+		short s1;       // º¹»çº»
+
+		//short(2) = byte(1)
+		s1 = b1;   // ¾Æ¹«·± ¹®Á¦°¡ ÀÏ¾î³¯ °¡´É¼ºÀÌ¾ø¾î ³»ºÎÀûÀ¸·Î(¾Ï½ÃÀûÀ¸·Î) Çüº¯È¯ÀÌ ÀÌ·ç¾îÁü
+
+		System.out.println(s1);
+
+		// 2. ¸í½ÃÀûÀÎ Çüº¯È¯
+		//   -ÀÛÀº Çü = Å« Çü;
+		//   -1Ä­ = 2Ä­;
+		//   - ¼º°ø È¤Àº ½ÇÆĞ
+
+		short s2 = 300;  // 44 = ¾²·¹±â°ª (byte ÃÖ´ëÇã¿ë°ªÀ» ÃÊ°úÇÔ)
+		byte b2;
+		
+		//byte(1) = short(2)
+		// () : Çüº¯È¯ ¿¬»êÀÚ
+		b2 = (byte)s2; // ¹®Á¦°¡ ÀÏ¾î³¯ °¡´É¼ºÀÌÀÖ¾î ¿ÜºÎÀûÀ¸·Î(¸í½ÃÀûÀ¸·Î) Çüº¯È¯ÀÌ ÀÌ·ç¾îÁü
+
+
+		System.out.println(b2); // º¹»çº» // 44 = ¾²·¹±â°ª (byte ÃÖ´ëÇã¿ë°ªÀ» ÃÊ°úÇÔ)
+
+		// ÀºÇà °èÁÂ
+		long m1 = 2200000000L; 
+
+		int m2;
+
+		m2 = (int)m1;
+ 
+		System.out.println("ÀÜ¾×: " + m2);  // -2094967296 = ¾²·¹±â°ª (int ÃÖ´ëÇã¿ë°ªÀ» ÃÊ°úÇÔ)
+
+		// ¿¡·¯, Error
+		//   - ÇÁ·Î±×·¥ ±¸¹®ÀÌ³ª ¼ø¼­, °ü°è µî¿¡ ¿À·ù°¡ ¹ß»ıÇØ¼­ Àß¸øµÈ °á°ú¸¦ ¹ß»ı
+		//   - ¹ö±×(Bug), ¿¹¿Ü(Exception)
+
+		// 1. ÄÄÆÄÀÏ ¿¡·¯
+		//   - ÄÄÆÄÀÏ ÀÛ¾÷ Áß¿¡ ¹ß»ıÇÏ´Â ¿¡·¯
+		//   - ÃÊ±â ´Ü°è¿¡¼­ ¹ß»ı
+		//   - ¹®¹ı Æ²¸²!! (¿ÀÅ¸ ¹ß»ı)
+		//   - ¹ß»ı ºóµµ ³ôÀ½
+		//   - ¼öÁ¤ ³­ÀÌµµ ³·À½ - ¿¡·¯ ¸Ş½ÃÁö
+		//   - ÀÌ ¿¡·¯¸¦ Àß Á¤¸®ÇØµÎ±â!! (¸Ş¸ğ : »çÀ¯¿Í °íÄ¡´Â¹ı)
+		
+		// 2. ·±Å¸ÀÓ ¿¡·¯
+		//   - Runtime : ÇÁ·Î±×·¥ ½ÇÇà Áß...
+		//   - ¿¹¿Ü(Exception)ÀÌ¶ó ºÒ¸²
+		//   - ÄÄÆÄÀÏÀº ¼º°ø -> ½ÇÇà Áß ¹ß»ı*
+		//   - ex) ¿ÜºÎ¿ÍÀÇ ÀÔÃâ·Â ÀÛ¾÷ ½Ã...
+		//   - ex) Ä«Ä«¿ÀÅå ¼­¹öÁ¢¼Ó¿À·ù, °ÔÀÓ Å¬·ÎÁîº£Å¸·Î ·±Å¸ÀÓ ¿À·ù¸¦ Ã£¾Æ´Ù´Ï´Â...
+		//   - ¹ß»ı ºóµµ ³ôÀ½
+		//   - ¼öÁ¤ ³­ÀÌµµ ³ôÀ½
+
+
+		//int n = 0; // »ç¿ëÀÚ ÀÔ·Â     // ·±Å¸ÀÓ ¿¡·¯(Exception) ¹ß»ı
+		//System.out.println(100 / n);  // ÄÄÆÄÀÏ·¯´Â nÀº Á¤¼ö·Î ÀÎ½ÄÇÏ°í 0À¸·Î ÀÎ½ÄÇÏÁö¸øÇØ¼­ ¿À·ù·Î ÀâÈ÷Áö ¾ÊÀ½ (ÄÄÆÄÀÏ·¯´Â ¹®¹ı¸¸ °Ë»ç)
+
+		// 3. ³í¸® ¿À·ù
+		//   - ÄÄÆÄÀÏo, ½ÇÇào, À¯È¿x
+		//   - ¹ß»ı ºóµµ ´Ù¾ç
+		//   - ¼öÁ¤ ³­ÀÌµµ ÃÖ°í
+
+		int n = 10;
+		System.out.println(n - 1);
+
+		
+// Ex08_Casting 
+		// ¼Õ ÄÚµù ¿¬½À
+
+		// Çüº¯È¯
+		// 1. ¾Ï½ÃÀûÀÎ Çüº¯È¯
+		// 2. ¸í½ÃÀûÀÎ Çüº¯È¯
+
+		// Á¤¼ö -> Á¤¼ö
+
+		byte b1 = 10; // ¿øº»   1 byte
+		long l1;	  // º¹»çº» 8 byte
+		
+		// ¾Ï½ÃÀûÀÎ Çüº¯È¯(¿øº» ¼Õ½Ç x)
+		// l1 = b1;
+		l1 = (long)b1; //ÄÄÆÄÀÏ·¯°¡ ÀÚµ¿ÀûÀ¸·Î ÇÏÁö¸¸ º¸ÆíÀûÀ¸·Î (long) ¾²´Â°ÍÀ» ±ÇÀå
+		
+		System.out.println(l1); // 10 // º¹»çº» È®ÀÎ 
+
+		// ½Ç¼öÇü
+		float f1 = 3.14F;  // ¿øº»
+		double d1;		  // º¹»çº»
+		
+		// ¾Ï½ÃÀûÀÎ Çüº¯È¯
+		d1 = f1;
+		
+		// Å° ¸ÅÅ©·Î alt + 1
+		
+		System.out.println(d1);
+
+		double d2 = 1.23456789012345; // ¿øº»
+		float f2;					  // º¹»çº»
+		
+		System.out.println(d2);      // 1.23456789012345
+
+		f2 = (float)d2;
+
+		System.out.println(f2);      // 1.2345679 (¹İ¿Ã¸² µÊ)
+
+		// ½Ç¼ö <-> Á¤¼ö
+		
+		double d3 = 3.994;	// ¿øº»
+ 		int n3;				// º¹»çº»
+		
+		// ¸í½ÃÀûÀÎ Çüº¯È¯ (8 byte -> 4 byte)
+		n3 = (int)d3;
+
+		System.out.println(n3);   // 3  // ¼Ò¼ö°ª ¹«Á¶°Ç ¹ö¸²(floor, trunc)
+
+		float f4 = 3.14F;
+		long l4;
+		
+		// Å«Çü(8) = ÀÛÀºÇü(4) //f4°¡ ´õ Å«ÇüÀÓ ( Ç¥ÇöÀ» ÇÒ¼öÀÖ´Â ¼öÀÇ ¹üÀ§°¡ ÈÎ¾À ³ĞÀ½) // ¸í½ÃÀûÀÎ Çüº¯È¯
+		// ¼öÀÇ ¹üÀ§(O), ¹ÙÀÌÆ® Å©±â ºñ±³(X)
+		l4 = (long)f4;
+
+		System.out.println(l4); // 3.140000104904175
+
+		// ±âº»ÇüÀÇ ¹üÀ§ ºñ±³ 
+		// byte(1) < short(2) < int(4) < long(8) < float(4) < double(8)
+		//           char(2)
+		// boolean(1)
+		// ** ±âº»Çü°ú ÂüÁ¶Çü³¢¸®´Â º¯È¯ÀÌ ºÒ°¡´É(¸Ş¸ğ¸® ±¸Á¶ ¶§¹®¿¡)
+		
+		// booleanÀº Çüº¯È¯ÀÇ ´ë»óÀÌ µÉ ¼ö ¾ø´Ù.
+
+		// ¹®ÀÚÇü Çüº¯È¯
+		//  - 'A' -> 65(¹®ÀÚ ÄÚµå°ª)  // ¹®ÀÚÇüÀº Á¤¼öÇüÀ¸·Î¸¸ ¹Ù²Ü¼ö ÀÖ´Ù.
+		
+		char c5 = '°¡'; // 2 byte
+		short s5;      // 2 byte
+		// ¼ıÀÚ = ¹®ÀÚ
+		s5 = (short)c5; // -21504  // ¸í½ÃÀû 
+		// char´Â ºÎÈ£±âÈ£¸¦ »ç¿ëÇÏÁö ¾Ê¾Æ¼­ 2 byte ¸ğµÎ »ç¿ëÇÏ°Ô µÇ¼­ ÃÖ´ë ¼ö´Â 60000(¾ç¼ö) ÀÌÁö¸¸
+		// short ´Â ºÎÈ£±âÈ£¸¦ »ç¿ëÇÏ¹Ç·Î ÃÖ´ë ¾ç¼ö°¡ ´ë·« 30000ÀÌ¶ó¼­ ¾²·¹±â°ªÀÌ ³ª¿Â´Ù.
+
+		System.out.println(s5); // 65
+		
+
+		System.out.println((char)66); // B
+
+		char c6 = '°¡'; // 2 byte
+		int n6; // 4 byte
+		
+		n6 = c6;
+		System.out.println(n6);  // 44032
+
+		int n7 = 5;
+		char c7 = '5';
+
+		System.out.println(n7);
+		System.out.println((int)c7);
+
+		System.out.println((int)'A');   // 65
+		System.out.println((int)'Z');	// 90	
+		System.out.println((int)'a');	// 97
+		System.out.println((int)'z');	// 122 
+		System.out.println((int)'0');	// 48
+		System.out.println((int)'9');	// 57
+		
+		System.out.println((int)'°¡');	// 44032
+		System.out.println((int)'ÆR');	// 55203
+		
+		// 'A' 'a' '0' Á¤µµ´Â ¿Ü¿öµÎ±â
+		
+
+// Ex09_Output
+
+		// ÄÜ¼Ö ±âº» ÀÔÃâ·Â, Console Input / Output -> IO
+		//   - ±âº» ÀÔ·Â ÀåÄ¡ : Å°º¸µå
+		//   - ±âº» Ãâ·Â ÀåÄ¡ : ¸ğ´ÏÅÍ
+		//   - ±âº» ¿¡·¯ ÀåÄ¡ : ¸ğ´ÏÅÍ
+		
+	 // Å¬·¡½º.ÇÁ·ÎÆÛÆ¼.¸Ş¼Òµå();
+      //    System.out.println();
+   		
+		// ÄÜ¼Ö Ãâ·Â
+		// 1. print ¸Ş¼Òµå
+		//   - ³»¿ëÀ» Ãâ·ÂÇÏ°í ±×³É Á¾·á
+		// 2. pritnln ¸Ş¼Òµå
+		//   - ³»¿ëÀ» Ãâ·ÂÇÏ°í °³ÇàÇÏ°í Á¾·á
+		// 3. printf ¸Ş¼Òµå, print format (¹®ÀÚ¿­ Æ÷¸ËÆÃ) 
+		//   - Çü½Ä ¹®ÀÚ¸¦ Áö¿øÇÏ´Â Ãâ·Â
+		//   - Ãâ·ÂÇÏ´Â ¹®ÀÚ¿­¿¡ ´ëÇÑ Çü½ÄÀ» ¸¸µé±â ½±µµ·Ï Áö¿ø
+		//   - Çü½Ä ¹®ÀÚ »ç¿ë
+		//      a. %s : String
+		//		b. %d : Decimal(byte, short, int)
+		//		c. %f : Float(float, double)
+		//		d. %c : Char(char)
+		//		e. %b : Boolean(boolean)
+
+
+
+		System.out.print(100);        
+		System.out.print(200);
+		System.out.println();
+		System.out.print(300 + "\n"); 
+		
+		/*  100200
+			300
+			°è¼ÓÇÏ½Ã·Á¸é ¾Æ¹« Å°³ª ´©¸£½Ê½Ã¿À...
+											*/
+		
+		System.out.println();
+		System.out.println();
+		
+		// ¼ºÀûÇ¥
+		System.out.println("[ÀÌ¸§]\t[±¹¾î]\t[¿µ¾î]\t[¼öÇĞ]");
+		System.out.println("È«±æµ¿\t80\t100\t95");
+		System.out.print("¾Æ¹«°³\t");
+		System.out.print("85\t");
+		System.out.print("77\t");
+		System.out.print("60");
+		System.out.println();
+
+		/*
+		  [ÀÌ¸§]  [±¹¾î]  [¿µ¾î]  [¼öÇĞ]
+		  È«±æµ¿  80	  100     95  
+		  ¾Æ¹«°³  85      77      60 
+		  °è¼ÓÇÏ½Ã·Á¸é ¾Æ¹« Å°³ª ´©¸£½Ê½Ã¿À...
+
+		  */
+		 
+		 // printf (¹®ÀÚ¿­ Æ÷¸ËÆÃ)
+		 // ¿ä±¸»çÇ×) "È«±æµ¿´Ô. ¾È³çÇÏ¼¼¿ä." Ãâ·Â
+		String name = "È«±æµ¿";
+		System.out.println(name + "´Ô. ¾È³çÇÏ¼¼¿ä.");
+
+		System.out.printf("%s´Ô. ¾È³çÇÏ¼¼¿ä. \n", name);
+
+		 
+		int age = 20;
+		System.out.println("È«±æµ¿ÀÇ ³ªÀÌ´Â " + age + "»ìÀÔ´Ï´Ù.");
+
+		System.out.printf("È«±æµ¿ÀÇ ³ªÀÌ´Â %d»ìÀÔ´Ï´Ù. \n", age);
+
+		System.out.println("Àú´Â " + name + "ÀÔ´Ï´Ù. Á¦ ³ªÀÌ´Â " + age + "»ìÀÔ´Ï´Ù.");
+
+		System.out.printf("Àú´Â %sÀÔ´Ï´Ù. Á¦ ³ªÀÌ´Â %d»ìÀÔ´Ï´Ù.", 
+							name, age);
+
+
+
+
+		// ¿À¶óÅ¬ -> SQL
+		// insert into tblStudent (num, name, age, address) values ( 10, 'È«±æµ¿', 20, '¼­¿ï½Ã °­³²±¸')
+
+		int num = 10;
+		String address = "¼­¿ï½Ã °­³²±¸";
+		System.out.println("insert into tblStudent (num, name, age, address) values (" + num + ", '" + name + "', " + age + ", '" + address + "')");
+
+		System.out.printf("insert into tblStudent (num, name, age, address) values ( %d, '%s', %d, '%s')\n",
+																					num, name, age, address);
+
+
+		System.out.printf("¹®ÀÚ¿­ : %s\n", "È«±æµ¿");
+		System.out.printf("Á¤¼ö : %d\n", 100);
+		System.out.printf("½Ç¼ö: %f\n", 3.14);
+		System.out.printf("¹®ÀÚ : %c\n", 'A');
+		System.out.printf("³í¸®Çü : %b\n", true);
+
+		System.out.printf("Á¤¼öÇü : %s\n", 200);		 // Á¤¼öÇü : 200 %s·Îµµ °¡´ÉÀº ÇÏÁö¸¸ ¿ëµµ¿¡ ÀûÇÕÇÑ Çü½Ä ¹®ÀÚ(Æ÷¸Ë)À» »ç¿ëÇÏ´Â°ÍÀÌ ±ÇÀåµÊ
+		System.out.printf("Á¤¼öÇü : %d\n", (int)3.14);   // 3
+		System.out.printf("¹®ÀÚÇü : %d\n", (int)'A');    // 65
+		System.out.printf("¹®ÀÚÇü : %c\n", 65);          // A
+
+// Ex10_Output.java
+		
+
+		// printf()
+		// 1. %¼ıÀÚd
+		//   - Ãâ·ÂÇÒ ³»¿ëÀ» ÃÖ¼Ò ³Êºñ
+		//   - ¾ç¼ö/À½¼ö
+		//   - ¸ğµç Çü½Ä ¹®ÀÚ¿¡ Àû¿ë
+		System.out.printf("[%d]\n", 100);
+		System.out.printf("[%10d]\n", 100); // [       100] // 100ÀÌ 3Ä­À» ¼Òºñ ÇßÀ¸¹Ç·Î 7Ä­ÀÇ °ø¹éÀÌ »ı±è
+		System.out.printf("[%-10d]\n", 100);  // [100       ] // ÁÂÃø Á¤·Ä
+
+		System.out.printf("[%10d]\n", 123456789012L); // 123456789012 °ø°£ÀÌ ³²¾ÆÀÖÁö¾ÊÀ¸¸é ¾Æ¹«ÀÏµµ ÀÏ¾î³ªÁö ¾ÊÀ½
+		
+		// 2. %.¼ıÀÚf
+		//   - ½Ç¼öÇü¿¡¸¸ Àû¿ë °¡´É
+		//   - ¼Ò¼ö ÀÌÇÏ ÀÚ¸´¼ö ÁöÁ¤
+
+		System.out.printf("%f\n", 3.1234); // 3.123400 // ¼Ò¼ö 6ÀÚ¸® Ãâ·ÂÀÌ ±âº»
+		System.out.printf("%.1f\n", 3.1934); // 3.2 // ¹İ¿Ã¸² µÊ 
+
+		// 3. %d 
+		//   - ¼ıÀÚÇü¸¸ °¡´É(%d, %f)
+		//   - ÀÚ¸´¼ö Ç¥±â
+		System.out.printf("%d\n", 12345678);   // 12345678
+		System.out.printf("%,d\n", 12345678);  // 12,345,678
+
+		// ÇÑ¹ø¿¡ ¸ğµÎ »ç¿ëÇÏ±â
+		System.out.printf("%,15.2f\n", 21987.6773);  // ÄŞ¸¶ ±îÁö Æ÷ÇÔÇØ¼­ Ä­À» ¼¾´Ù
+
+
+		System.out.println();
+		System.out.println();
+
+		// ÁÖ¼Ò·Ï
+		String name1 = "È«±æµ¿";
+		String address1 = "¼­¿ï½Ã °­³²±¸ ¿ª»ïµ¿";
+		String email1 = "hong@naver.com";
+		int salary1 = 20000;
+
+
+		String name2 = "Å×½ºÆ®";
+		String address2 = "¼­¿ï½Ã Áß±¸";
+		String email2 = "test@naver.com";
+		int salary2 = 500;
+
+		System.out.println("=======================================");
+		System.out.println("		ÁÖ¼Ò·Ï");
+		System.out.println("=======================================");
+		System.out.println("[ÀÌ¸§]\t[±Ş¿©(¿ø)]\t[ÁÖ¼Ò]\t\t\t[ÀÌ¸ŞÀÏ]");  // ¼ıÀÚ µ¥ÀÌÅÍ´Â Ç×»ó ´ÜÀ§¸¦ ½á¾ßÇÑ´Ù
+
+		System.out.printf("%s\t%,6d\t%-14s\t%s\n"                   //  È«±æµ¿   20,000  ¼­¿ï½Ã °­³²±¸ ¿ª»ïµ¿    hong@naver.com
+						 , name1, salary1, address1, email1); 
+		System.out.printf("%s\t%,6d\t%-14s\t%s\n"                   
+						 , name2, salary2, address2, email2);
+
+
+		// Ãâ·Â ½Ã ÁÖÀÇ »çÇ×
+		//  1. ¼ıÀÚ´Â ´ÜÀ§±âÀç(***)
+		//  2. Á¤·Ä
+		//     - a. ¹®ÀÚ(¿­)
+		//		 	 1. ÁÂÃø
+		//				 - °¡º¯ ±æÀÌ(°Ô½ÃÆÇ)
+		//			 2. °¡¿îµ¥
+		//				 - °íÁ¤ ±æÀÌ
+		//		
+	        //     - b. ¼ıÀÚ
+		//			 1. ÁÂÃø
+		//			 2. °¡¿îµ¥
+		//				 - ÁÖ¹Îµî·Ï¹øÈ£, ÀüÈ­¹øÈ£
+		//					 - 010-123-4567
+		//					 - 010-1234-4567
+		//			 3. ¿ìÃø
+
+
+// Ex11_Input.java
+
+		// ÄÜ¼Ö ÀÔ·Â -> Å°º¸µå¸¦ ÅëÇÑ ÀÔ·Â(³»¿ë)À» ÀÚ¹Ù ÇÁ·Î±×·¥¿¡¼­ »ç¿ëÇÏ±â
+
+		// 1. System.in.read()
+		// 2. BufferedReader Å¬·¡½º
+		// 3. Scanner Å¬·¡½º
+
+		// ¿ä±¸»çÇ×) »ç¿ëÀÚ·ÎºÎÅÍ ¹®ÀÚ 1°³¸¦ ÀÔ·Â¹Ş¾Æ¼­ ±×´ë·Î Ãâ·ÂÇÏ½Ã¿À.
+		
+		// ¼Ó¾î : block °É·È´Ù.
+		// ÀÔ·Â ´ë±â »óÅÂ..
+		
+
+		/*
+
+		System.out.print("¹®ÀÚÀÔ·Â : ");	                         // Label				  
+		
+
+		int n = System.in.read();			                         // a ÀÔ·Â½Ã 97(ÄÚµå°ª) Ãâ·Â // À¯´ÏÄÚµå x, ASCI ÄÚµå¸¸ °¡´É
+		System.out.printf("ÀÔ·ÂÇÏ½Å ¹®ÀÚ´Â '%c'ÀÔ´Ï´Ù.\n", (char)n);
+
+		*/		
+
+		System.out.print("¹®ÀÚÀÔ·Â : "); // a ÀÔ·Â½Ã 97, 13, 10 ´Ù½Ã a ÀÔ·Â½Ã 97, 13 = ÃÑ 97, 13, 10, 97, 13
+		int n = System.in.read();
+		System.out.println(n);
+
+		n = System.in.read();
+		System.out.println(n);
+
+		n = System.in.read();
+		System.out.println(n);
+
+		n = System.in.read();
+		System.out.println(n);
+
+		n = System.in.read();
+		System.out.println(n);
+		
+		
+		
+		
+		// Å°º¸µå(a ¿Í ¿£ÅÍ ÀÔ·Â > a\r\n(a¿Í ¿£ÅÍ) º¸³¿) > ÀÔ·Â ¹öÆÛ(ÀÓ½Ã °ª ÀúÀå¼Ò) > ÇÁ·Î±×·¥ÀÌ ¹öÆÛ¿¡ Ã£¾Æ°¡ °ª(a(97)°ú \r(13), \n(10))À» °¡Á®¿È > ¹öÆÛ¿¡ °ªÀÌ ´õÀÌ»ó ¾ø¾î 2°³ÀÇ °ªÀ» ´õ ¹ŞÀ¸·¯¿È
+
+
+
+
+// Ex12_BufferedReader
+
+// import java.io.BufferedReader;  // Å¬·¡½º¸¦ import
+// import java.io.InputStreamReader;
+import java.io.*; // io ¾È¿¡ µé¾îÀÖ´Â ¸ğµç Å¬·¡½º¸¦ °¡Á®¿Â´Ù  // ÆĞÅ°Áö¸¦ import 
+
+	 // java Æú´õ ¾È¿¡ io Æú´õ¿¡ BufferedReader
+
+// Å¬·¡½º¸¦ ´ã´Â ´ÜÀ§ > ÆĞÅ°Áö(Æú´õ)
+
+// java.lang // ±âº» ÆĞÅ°Áö¶ó¼­ import ¾ø¾îµµ »ç¿ë°¡´É (string, system ´ã°íÀÖÀ½)
+
+class Ex12_BufferedReader {
+
+	public static void main(String[] args) throws Exception {
+	
+		
+		// Ex12_BufferedReader.java
+
+		// System.in.read(); // ¹ÙÀÌÆ® ´ÜÀ§ ÀÔ·Â
+		// BufferedReader    // ¹®ÀÚ ´ÜÀ§ ÀÔ·Â (À¯´ÏÄÚµå Áö¿ø)
+
+		// System.out.print("¹®ÀÚ ÀÔ·Â: ");
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		
+
+		// int n = reader.read(); // ÀÔ·ÂÁ¡
+		// System.out.println((char)n);
+
+	    // String str = reader.readLine();
+		// System.out.println(str);
+
+		// str = reader.readLine(); // readLineÀº °³Çà ¶óÀÎ(¿£ÅÍ°ª = \r\n)À» ¸¸³ª±â Á÷Àü ±îÁö¸¸ ÀĞ°í ¹öÆÛ¿¡ ÀÖ´Â ¿£ÅÍ°ªÀ» readLine¿¡¼­ ¹ö¸°´Ù(°É·¯ÁØ´Ù)
+		// System.out.println(str);
+
+		
+		// ÀÔ·Â¹ŞÀ» ¼ö ÀÖ´Â µ¥ÀÌÅÍÀÇ ÇüÅÂ?
+
+		// 1. ¹®ÀÚ
+		// System.in.read()
+		
+		// reader.read() // ÀÔ·ÂÁ¡ - ¹®ÀÚ ÄÚµå ¹İÈ¯
+		// reader.readLine()       - ¹®ÀÚ¿­ ¹İÈ¯
+		
+		// ¿ä±¸»çÇ×) ¼ıÀÚ 1°³ ÀÔ·Â + 100 À» ÇÏ½Ã¿À.
+		// String num = reader.readLine(); // 5 -> "5"
+		// System.out.println(num);
+		// System.out.println(num + 100);
+		
+		// int code = reader.read();
+		// System.out.println(code - 48 + 100); // ½ÇÁ¦¼ıÀÚ¿Í 48ÀÇ °£°İÀÌ ÀÖ¾î¼­ »©ÁÖ¸é ½ÇÁ¦ ¼ıÀÚ°¡ µÈ´Ù
+
+		// ¿ä±¸»çÇ×) ¼ıÀÚ 2ÀÚ¸® ÀÔ·Â + 100 À» ÇÏ½Ã¿À.
+		
+		
+
+		/*
+
+		int num;
+
+		int code = reader.read();
+		System.out.println(code - 48);
+		
+		num = (code - 48) * 10;
+
+		code = reader.read();
+		System.out.println(code - 48);
+
+		num = num + (code - 48);
+
+		System.out.println(num + 100);
+
+		*/
+		
+
+		/*
+
+		String str = reader.readLine();  // ±âº»ÀûÀ¸·Î ÂüÁ¶ÇüÀº Á¤¼öÇüÀ¸·Î ¸ø¹Ù²Ş
+		System.out.println(str + 100);   // "25" -> 25
+		System.out.println(Integer.parseInt(str) + 100); // ÀÌ·¸°Ô ÇÏ¸é °¡´É
+		
+		*/
+
+		// ¹®ÀÚ¿­ -> int
+
+		// ÀÚ·áÇü -> Wrapper Class(Util Class)
+		// byte -> Byte
+		// short -> Short
+		// int -> Integer
+		// long -> Long
+		// float -> Float
+		// double -> Double
+		// boolean -> Boolean
+
+		// System.out.println(Integer.parseInt("100")); // ±â¾ïÇÏ±â // 100 
+		// System.out.println(Byte.parseInt("100"));
+		// System.out.println(Double.parseInt("3.14"));
+		// System.out.println(Boolean.parseInt("true"));
+
+
+		// intÀÇ ÃÖ´ë°ª
+		System.out.println(Integer.MAX_VALUE);
+		System.out.println(Integer.MIN_VALUE);
+		
+
+		// reader.readLine() »ç¿ë ½Ã
+		// - ¼ıÀÚ ÀÔ·Â -> "¹®ÀÚ¿­" -> Util Class ParseXXX() »ç¿ë -> ¼ıÀÚ
+		// - ¹®ÀÚ¿­ ÀÔ·Â -> ¹®ÀÚ¿­
+		// - ¹®ÀÚ ÀÔ·Â -> "¹®ÀÚ¿­" -> '¹®ÀÚ'
+
+		String str = reader.readLine();
+		System.out.println(str); // "a" -> 'a' // (char)str ÀÌ·¸°Ô´Â ¾ÈµÊ  
+		System.out.println((int)str.charAt(0));

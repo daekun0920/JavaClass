@@ -1,0 +1,87 @@
+package com.test.question;
+
+public class PenTest { // 제어 용도
+
+	public static void main(String[] args) {
+		
+		/*
+		 
+		문제. 클래스 설계하시오.
+		
+		 요구사항) 
+		 	- 펜을 생성할 수 있는 클래스를 만드시오.
+		 	- 펜 객체를 생성하고 + 객체 사용된 결과를 출력하시오.
+		
+		 구현조건)
+		 
+		 1. com.test.question 패키지
+		 
+		 2. Pen 클래스 구현
+		 	a. 멤버 변수
+		 		- 펜 색상
+		 		- 잉크량(ml)
+		 	
+		 	b. 생성자 + 오버로딩
+		 		- 기본 생성자 : public Pen() {}		 		
+					- 검정, 100ml
+				
+				- 오버로딩 생성자
+					- 색상, 잉크량, 색상 + 잉크량
+		 			- new Pen("빨강");  // 빨강 + 100ml;
+		 			- new Pen(200); // 검정 + 200ml;
+		 			- new Pen("빨강", 200); // 빨강 + 200ml 
+		 
+		 	c. 메소드 구현 (멘트 만)
+		 		- 선을 그리기(잉크 2ml 감소) : drawLine()
+		 			- 검정색으로 선을 그렸습니다.
+		 		- 원을 그리고(잉크 3ml 감소) : drawCircle()
+		 			- 파란색으로 원을 그렸습니다.
+		 		- 사각형을 그리기(잉크 4ml 감소) : drawRectangle()
+		 			- 파란색으로 사각형을 그렸습니다.
+		 	========================================================
+		 	
+		 	d. c 메소드에 기능 추가 
+		 	 	- 굵기 지정도 가능하게.
+		 	 	- 오버로딩으로 구현
+		 	 		: drawLine()   // 두꼐 1짜리, 2ml 감소
+		 	 		: drawLine(2)  // 두께 2짜리, 4ml 감소
+		 	 		: drawLine(3)  // 두께 3짜리, 6ml 감소
+		 			: drawRectangle(4) // 두께 4짜리 사각형, 16ml 감소
+		 	
+		 	e. 결과 보기 // 메인 메소드 끝나면 호출하기 
+		 	 	- 모든 펜(객체)들의 사용을 마치면.. 프로그램 마지막에 최종 보고서 출력하기
+		 	 	- 정적 메소드로 구현
+		 	 	- Pen.report()
+		 	 		1. 모든 펜의 총 잉크 사용량
+		 	 		2. 모든 펜의 선을 그린 횟수
+		 	 		3. 모든 펜의 원을 그린 횟수
+		 	 		4. 모든 펜의 사각형을 그린 횟수
+		 	 
+		 	 f. c,d를 그릴때마다..
+		 	 	- 잉크량 체크하기(출력X)
+		 	 	-> 잉크가 모자라면 행동 취소 -> 경고 메시지 출력
+		 	
+		 	
+		*/
+		Pen p1 = new Pen();
+		Pen p2 = new Pen("빨강");
+		Pen p3 = new Pen(200);
+		Pen p4 = new Pen("노랑", 300);
+		
+		p1.drawLine();
+		p1.drawLine(2);
+		p1.drawLine(3);
+		
+		
+		p2.drawRectangle();
+		p2.drawRectangle();
+		p2.drawRectangle(4);
+		p2.drawRectangle(4);
+		p2.drawRectangle(4);
+		p2.drawRectangle(4);
+		p2.drawRectangle(4);
+		p2.drawRectangle(4);
+		
+		Pen.report();
+	}
+}

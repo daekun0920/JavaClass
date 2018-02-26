@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="isRegEx"/>
+		<item value="main" key="selection"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="[A-Za-z_][A-Za-z0-9_]{3,11}"/>
+			<item value="&quot;[A-Z]{1}[A-Za-z홍]{1, }&quot;"/>
+			<item value="a+bc"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+</section>

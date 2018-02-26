@@ -1,0 +1,313 @@
+package homework;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
+public class Homework10 {
+	
+	public static void main(String[] args) {
+		
+	
+	/*
+	문제1.
+	
+	요구사항) 음악 파일이 100개 있다. 파일명앞에 숫자를 붙이시오.
+	리소스) 음악 파일
+	결과) 
+	[001] 7 go up-Yum-Yum (얌얌).mp3
+	[002] 10cm-봄이 좋냐__.mp3
+	[003] 10cm-스토커.mp3
+	...
+	[100] 화려강산-Don't Matter.mp3
+	*/
+	
+	/*
+	String path = "D:\\Class\\Java\\디렉토리 문제\\음악 파일\\Music";
+	File dir = new File(path);
+	
+	if (dir.exists()) {
+		
+		File[] files = dir.listFiles();
+	
+		
+		
+		int count = 1;
+		String dest = "";
+		String oldName = "";
+		String newName = "";
+		
+		for(File file : files) {
+			if (count < 10) {
+				newName = "[00" + count + "]" + file.getName();
+			} else if (count > 9 && count < 100) {
+				newName = "[0" + count + "]" + file.getName();
+			} else {
+				newName = "[" + count + "]" + file.getName();
+			}
+			oldName = "D:\\Class\\Java\\디렉토리 문제\\음악 파일\\Music\\" + file.getName();
+			dest = "D:\\Class\\Java\\디렉토리 문제\\음악 파일\\Music\\" + newName;
+			
+		File destFile = new File(dest); // 목적 주소 + 새 파일명
+		File old = new File(oldName); // 오래된 주소 + 오래된 파일명 
+		
+		old.renameTo(destFile);
+		count++;
+		
+
+		}
+		System.out.println("파일명 변환이 모두 완료되었습니다.");
+	}
+	*/
+	
+	
+	/*
+	
+	문제2.
+	
+	요구사항) 이미지 파일이 확장자별로 있다. 확장자별로 몇개인지 카운트?
+	리소스) 확장자별 카운트
+	결과) *.gif : 10개
+		  *.jpg : 5개
+		  *.png : 3개
+	추가) mouse.bmp 추가
+		 -> 소스 수정없이 *.bmp : 1개 
+	힌트) HashMap 사용 
+	*/
+		
+	// for 문으로 각 파일 확인해서 확장자명 추출 -> 해쉬맵에 넣어 있는지 없는지 확인 -> 있으면 카운트 ++ 없으면 확장자명 추가 
+		
+		
+		//String path = "D:\\Class\\Java\\디렉토리 문제\\확장자별 카운트";
+		
+		//getExtensions(path);
+		
+	/*
+	
+	문제3.
+	
+	요구사항) delete 폴더를 삭제하시오.
+	리소스) 폴더 삭제 > delete
+	결과) 폴더를 삭제했습니다.
+	힌트) 파일 개수 -> 재귀 메소드
+	추가) 폴더 3개와 파일 6개를 삭제했습니다.
+	
+	*/
+	/*
+	String path = "D:\\Class\\Java\\디렉토리 문제\\폴더 삭제";
+	File dir = new File(path);
+	
+	deleteFiles(dir);
+	*/
+	
+	
+		
+		/*
+	
+	문제4.
+	
+	요구사항) 사이즈가 0 byte 인 파일만 골라서 삭제하시오.
+	리소스) 파일 제거
+	결과) 총 34개의 파일을 삭제했습니다.
+	*/
+	/*
+	String path = "D:\Class\Java\디렉토리 문제\파일 제거";
+	File dir = new File(path);
+	int count = 0;
+	
+	File[] files = dir.listFiles();
+	
+	for (File file : files) {
+		if (file.isFile()) {
+			if (file.length() == 0) {
+				file.delete();
+				count++;
+			}
+			
+		}
+		
+	}
+	System.out.printf("총 파일 %d개의 삭제가 완료되었습니다.\n", count);
+	*/
+	/* 정답 
+	  
+	
+	 */
+		
+		/*
+	
+	문제5.
+	
+	요구사항) Music_1 과 Music_2 폴더를 서로 비교해서 양쪽 폴더에 모두 존재하는 파일만을 출력하시오. (중복 파일 골라내기)
+	리소스) 동일파일
+	결과)
+	7 go up-Yum-Yum (얌얌).mp3
+	10cm-봄이 좋냐__.mp3
+	...
+		*/
+//	String path1 = "D:\\파일디렉토리\\동일 파일\\Music_1";
+//	String path2 = "D:\\파일디렉토리\\동일 파일\\Music_2";
+//	
+//	filesInCommon(path1, path2);
+	
+	/*
+	
+	
+	문제6.
+	
+	요구사항) 모든 폴더의 파일을 대상으로 크기가 큰 순으로 정렬하시오.
+	리소스) 크기 정렬
+	결과) 모든 폴더의 파일을 한번에 출력
+	
+	[파일명]   [크기]   [폴더]
+	aaa.exe	   57KB		AAA
+	bbb.exe	   50KB     BBB
+	ccc.dat    41KB     AAA
+	ddd.txt    20B      CCC
+	
+	힌트) 처음 시작(각 폴더의 모든 파일을 1개의 ArrayList<File>에 모아놓고 시작)
+	시작) + 정렬(버블 정렬)
+	*/
+	String pathA = "D:\\파일디렉토리\\크기 정렬\\AAA";
+	String pathB = "D:\\파일디렉토리\\크기 정렬\\BBB";
+	String pathC = "D:\\파일디렉토리\\크기 정렬\\AAA\\CCC";
+	
+	File dirA = new File(pathA);
+	File dirB = new File(pathB);
+	File dirC = new File(pathC);
+	
+	File[] filesA = dirA.listFiles();
+	File[] filesB = dirB.listFiles();
+	File[] filesC = dirC.listFiles();
+	
+	ArrayList<File> allFiles = new ArrayList<File>();
+	
+	for (File file : filesA) {
+		allFiles.add(file);
+	}
+	for (File file : filesB) {
+		allFiles.add(file);
+	}
+	for (File file : filesC) {
+		allFiles.add(file);
+	}	
+	
+	for (int i = 0; i < allFiles.size(); i++) {
+		for (int j = 1; j < allFiles.size(); j++) {
+			if (allFiles.get(j - 1).length() < allFiles.get(j).length()) {
+				File temp = allFiles.get(j);
+				allFiles.set(j, allFiles.get(j - 1));
+				allFiles.set(j - 1, temp);
+			}
+				
+		}
+	}
+	
+	
+	for (int i = 0; i < allFiles.size(); i++) {
+		String answer = String.format("%s    %d     %s", allFiles.get(i).getName()
+										 , allFiles.get(i).length() / 1024
+										 , allFiles.get(i).getParentFile().getName());
+		
+		System.out.println(answer);
+	}
+	/*
+	문제7.
+	
+	요구사항) 직원 폴더를 접근 -> 직원별 이름으로 폴더 생성 -> 년도별 폴더 생성 -> 각 파일들을 해당 폴더로 이동
+	리소스) 직원
+	결과) 분류가 완료되었습니다.
+	*/
+	
+	
+	
+	
+	
+	
+	} // main
+
+	private static void filesInCommon(String path1, String path2) {
+		File dir1 = new File(path1);
+		File dir2 = new File(path2);
+		
+		File[] files1 = dir1.listFiles();
+		File[] files2 = dir2.listFiles();
+		ArrayList<String> commonFiles = new ArrayList<String>();
+		
+		for (File file1 : files1) {
+			for (File file2 : files2) {
+				if (file1.getName().equals(file2.getName())) {
+					String name = file1.getName();
+					commonFiles.add(name);
+				}
+				
+			}
+			
+		}
+		
+		for (int i = 0; i < commonFiles.size(); i++) {
+			System.out.println(commonFiles.get(i));
+		}
+	}
+
+	private static void getExtensions(String path) {
+		File dir = new File(path);
+		
+		File[] files = dir.listFiles();
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		
+		for (File file : files) {
+			String name = file.getName();
+			int index = name.lastIndexOf(".");
+			String extension = name.substring(index);
+			
+			if (!map.containsKey(extension)) {
+				map.put(extension, 1);
+			} else {
+				map.put(extension, map.get(extension) + 1);
+			}
+		}
+		
+		Set<String> set = map.keySet();
+		
+		Iterator<String> iter = set.iterator();
+		
+		while (iter.hasNext()) {
+			
+			String key = iter.next();
+			System.out.println("*" + key + " : " + map.get(key) + "개\n");
+		}
+	}
+
+	private static void deleteFiles(File dir) {
+		File[] files = dir.listFiles();
+		int dirCount = 1;
+		
+		if (dir.exists()) {
+			for (int i = 0; i < dirCount; i++) {
+			
+				for (File file : files) {
+					if (file.isFile()) {
+						file.delete();
+					}
+				}
+				
+				for (File subdir : files) {
+					if (subdir.isDirectory()) {
+						dirCount++;
+						subdir.delete();
+						deleteFiles(subdir);
+					}
+				}
+				
+			}
+		
+		}
+		System.out.println("삭제가 완료되었습니다.");
+		
+	}
+
+	
+} // Homework10

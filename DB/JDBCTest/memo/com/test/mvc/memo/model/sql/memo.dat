@@ -1,0 +1,6 @@
+memo.add|INSERT INTO tbl_memo (seq, subject, content, mseq, regdate) VALUES (memo_seq.nextval, ?, ?, ?, DEFAULT)
+memo.list|SELECT seq, subject, content, (SELECT name FROM tbl_member WHERE seq = m.mseq) as mname, regdate FROM tbl_memo m WHERE (SELECT ing FROM tbl_member WHERE seq = m.mseq) = 1 ORDER BY seq DESC;
+memo.updatepoint|UPDATE tbl_member SET point = point + ? WHERE seq = ?
+memo.getMseq|SELECT mseq FROM tbl_memo WHERE seq = ?
+memo.del|DELETE FROM tbl_memo WHERE seq = ?
+memo.search|SELECT seq, subject, content, (SELECT name FROM tbl_member WHERE seq = m.mseq) as mname, regdate FROM tbl_memo m WHERE content like '%' || ? || '%' AND (SELECT ing FROM tbl_member WHERE seq = m.mseq) = 1 ORDER BY seq DESC

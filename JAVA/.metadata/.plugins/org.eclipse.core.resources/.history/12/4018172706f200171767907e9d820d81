@@ -1,0 +1,203 @@
+package temp;
+
+
+
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+
+public class Member {
+	private static ArrayList<Reservation> list;
+	private static ArrayList<Reservation> myReserve;
+	private static Scanner scan;
+	static {
+		list = new ArrayList<Reservation>();
+		myReserve = new ArrayList<Reservation>();
+		 scan = new Scanner(System.in);
+	}
+	public static void main(String[] args) {
+
+
+		load();
+			
+		//add();
+		
+				
+	
+		
+
+		
+		
+			
+			
+		
+		
+			
+			
+		
+		
+		
+	
+
+
+
+				
+				
+	
+	}
+	private static void load() {
+		// member.dat -> 메모리에 옮기기
+		// 미리 읽어놓겠다  (복사본을 만들어서 마지막에 붙여넣겠다)
+		
+		String path = "C:\\Users\\SIST\\Desktop\\맛집테이블(완).txt";
+		
+		try {
+			
+			
+			BufferedReader reader = new BufferedReader(new FileReader(path));
+			
+			String line = "";
+			
+			while ((line = reader.readLine()) != null) {
+				// 텍스트 1줄 = 1명 회원 = Member 객체 1개 
+				String[] temp = line.split("\t");
+				
+				Reservation r = new Reservation();
+				r.setReserveId(temp[0]);
+				r.setReserveStoreName(temp[1]);
+				r.setReserveStoreAddr(temp[2]);
+				r.setReserveStoreTel(temp[4]);
+				
+			
+				list.add(r);
+				
+			}
+			System.out.println(list);
+			reader.close();
+		} catch (Exception e) {
+			System.out.println("load : " + e.toString());
+		}
+		
+	}
+
+	private static void add() {
+		
+		System.out.println("예약할 음식점의 이름을 검색하시오: ");
+		String name = scan.nextLine();
+		
+		Reservation r = new Reservation();
+		
+		for(int i=0; i<list.size();i++) {
+			if(r.getReserveStoreName().equals(name)) {
+				
+			
+				myReserve.add(r);
+				
+			}else {
+				System.out.println("찾을수없습니다.");
+			}
+			
+		}
+		
+//		
+//		System.out.println("[예약 추가]");
+//		
+//		String name = "";
+//		String age = "";
+//		String address = "";
+//		String tel = "";
+//		
+//		System.out.print("이름 : ");
+//		name = scan.nextLine();
+//		
+//		System.out.print("나이 : ");
+//		age = scan.nextLine();
+//		
+//		System.out.print("주소 : ");
+//		address = scan.nextLine();
+//		
+//		System.out.print("전화 : ");
+//		tel = scan.nextLine();
+//		
+//		// 파일 쓰기 대신 > Member 객체를 ArrayList에 추가하기
+//		Member m = new Member();
+//		m.setName(name);
+//		m.setAge(age);
+//		m.setAddress(address);
+//		m.setTel(tel);
+//		
+//		list.add(m); // 회원 목록에 새 회원 추가하기 
+//		
+//	
+//			
+//			
+//		
+	}
+
+}
+
+
+class Reservation {
+	
+	private String reserveId; //아이디
+	private String reserveStoreName;//예약식당이름
+	private String reserveStoreAddr; //예약식당주소
+	private String reserveStoreTel; //예약식당 전화번호
+
+
+	
+
+	
+
+
+	public String getReserveId() {
+		return reserveId;
+	}
+
+
+	public void setReserveId(String reserveId) {
+		this.reserveId = reserveId;
+	}
+
+
+	public String getReserveStoreName() {
+		return reserveStoreName;
+	}
+
+
+	public void setReserveStoreName(String reserveStoreName) {
+		this.reserveStoreName = reserveStoreName;
+	}
+
+
+	public String getReserveStoreAddr() {
+		return reserveStoreAddr;
+	}
+
+
+	public void setReserveStoreAddr(String reserveStoreAddr) {
+		this.reserveStoreAddr = reserveStoreAddr;
+	}
+
+
+	public String getReserveStoreTel() {
+		return reserveStoreTel;
+	}
+
+
+	public void setReserveStoreTel(String reserveStoreTel) {
+		this.reserveStoreTel = reserveStoreTel;
+	}
+
+
+	@Override
+		public String toString() {
+			
+			return String.format("%s\t%s\t%s\t%s\n",this.getReserveId(),this.getReserveStoreName(),this.getReserveStoreAddr(),this.getReserveStoreTel());
+		}
+	
+}

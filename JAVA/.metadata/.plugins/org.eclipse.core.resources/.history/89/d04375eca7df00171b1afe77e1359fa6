@@ -1,0 +1,68 @@
+
+public class Ex30_Class {
+
+		public static void main(String[] args) {
+			
+			//Ex30_Class.java
+			
+			/*
+			 
+			 클래스, Class
+			 
+			 1. 객체 지향 프로그래밍 Object     Oriented Programming     C++
+			 	절차 지향 프로그래밍 Procedural Oriented Programming C
+			 	
+			 2. 객체(개체), Object
+			 	- 데이터 + 행동 = 객체
+			 	- 변수 + 메소드 = 객체
+			 	
+			 	- 독자성, Identity
+			 	- 상태, State
+			 	- 행동, Behavior
+			 	- 캡슐화, Encapsulation
+			 	- 정보 은닉화
+			 	- 인터페이스 (내부와 외부를 연결시키는 중간다리 역할)
+			 	
+			 3. 클래스, Class
+			 	- 객체를 생성하는 설계도
+			 	- 개발자 -> 클래스 설계(선언) -> 나중에 객체가 생성될 때
+			 	객체가 소유하게 될 데이터와 행동을 정의하는 것 -> 클래스를 사용해서 객체
+			 	생성 -> 객체를 사용해서 목적에 맞는 업무를 구현
+			 	
+			 4. 클래스 vs 객체(Object) vs 인스턴스(Instance)
+			 	- 클래스 : 틀, 추상적
+			 	- 객체 : 클래스를 통해 생성 
+			 	- 인스턴스 : (= 객체), 메모리상에 실체화된 객체
+			 
+			 
+			 자바에서 클래스 만들기
+			 
+			 class 클래스명 {
+			 	// 클래스 구성요소(= 클래스 멤버)
+			 	1. 변수 선언
+			 	2. 메소드 선언
+			 	
+			 }
+			 
+			 1. 실제 파일명과 클래스명은 동일해야 한다.
+			 	- 컴파일 에러 발생
+			 	- Ex30_Class.java -> class Ex30_Class {}
+			 	
+			 2. 클래스명은 대문자로 시작해야 한다.
+			 	- 파스칼 표기법 사용 
+			 	- 필수(x) -> 권장(o) -> 필수(o)
+			 
+			 3. 자바 파일(*.java) 1개당 클래스 1개 선언 
+			 	- 필수(x) -> 권장(o)
+			 	- 소스 파일 관리가 쉬워진다.
+			 	
+			 
+			 */
+			
+			
+		} // main
+} //class
+
+class Test {
+	
+}

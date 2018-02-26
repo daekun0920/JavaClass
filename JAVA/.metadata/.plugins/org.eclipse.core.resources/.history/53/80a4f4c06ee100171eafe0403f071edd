@@ -1,0 +1,102 @@
+package com.test.question;
+
+public class Pen {
+	private String color;
+	private int ink;
+	private static int inkSpend;
+	private static int lineCount;
+	private static int circleCount;
+	private static int rectangleCount;
+	
+	public Pen() {
+		this.color = "검정색";
+		this.ink = 100;
+	}
+	public Pen(String color) {
+		this.color = color;
+		this.ink = 100;
+	}
+	public Pen(int ink) {
+		this.color = "검정색";
+		this.ink = ink;
+	}
+	public Pen(String color, int ink) {
+		this.color = color;
+		this.ink = ink;
+	}
+
+	
+	// drawLine()
+	public void drawLine() {
+		if (this.ink >= 2) {
+			System.out.printf("%s으로 선을 그렸습니다.\n", this.color);
+			this.ink = this.ink - 2;
+			lineCount++;
+			inkSpend = inkSpend + 2;
+		} else {
+			System.out.println("잉크가 모자랍니다.");
+		}
+	}
+	
+	public void drawLine(int thickness) {
+		if (this.ink >= (2 * thickness)) {
+			System.out.printf("%s으로 선을 그렸습니다.\n", this.color);
+			this.ink = this.ink - (2 * thickness);
+			lineCount++;
+			inkSpend = inkSpend + (2 * thickness);
+		} else {
+			System.out.println("잉크가 모자랍니다.");
+		}
+	}
+	
+	// drawCircle()
+	public void drawCircle() {
+		if (this.ink >= 3) {
+			System.out.printf("%s으로 원을 그렸습니다.\n", this.color);
+			this.ink = this.ink - 3;
+			circleCount++;
+			inkSpend = inkSpend + 3;
+		} else {
+			System.out.println("잉크가 모자랍니다.");
+		}
+	}
+	
+	public void drawCircle(int thickness) {
+		if (this.ink >= (3 * thickness)) {
+			System.out.printf("%s으로 원을 그렸습니다.\n", this.color);
+			this.ink = this.ink - (3 * thickness);
+			circleCount++;
+			inkSpend = inkSpend + (3 * thickness);
+		} else {
+			System.out.println("잉크가 모자랍니다.");
+		}
+	}
+	// drawRectangle()
+	public void drawRectangle() {
+		if (this.ink >= 4) {
+			System.out.printf("%s으로 사각형을 그렸습니다.\n", this.color);
+			this.ink = this.ink - 4;
+			rectangleCount++;
+			inkSpend = inkSpend + 4;
+		} else {
+			System.out.println("잉크가 모자랍니다.");
+		}
+	}
+	
+	public void drawRectangle(int thickness) {
+		if (this.ink >= (4 * thickness)) {
+			System.out.printf("%s으로 사각형을 그렸습니다.\n", this.color);
+			this.ink = this.ink - (4 * thickness);
+			rectangleCount++;
+			inkSpend = inkSpend + (4 * thickness);
+		} else {
+			System.out.println("잉크가 모자랍니다.");
+		}
+	}
+	
+	public static void report() {
+		System.out.printf("펜 총 잉크 사용량 : %dml\n선을 그린 횟수 : %d회\n원을 그린 횟수 : %d회\n사각형을 그린 횟수 : %d회",
+							inkSpend, lineCount, circleCount, rectangleCount);
+	}
+	
+}

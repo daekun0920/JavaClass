@@ -1,0 +1,35 @@
+package com.test.question;
+
+public class Pen {
+	private String color;
+	private int ink;
+	
+	public Pen() {
+		this.color = "검정색";
+		this.ink = 100;
+	}
+	public Pen(String color) {
+		this.color = color;
+		this.ink = 100;
+	}
+	public Pen(int ink) {
+		this.color = "검정색";
+		this.ink = ink;
+	}
+	
+	public void drawLine() {
+		System.out.printf("%s으로 선을 그렸습니다.", this.color);
+		this.ink = this.ink - 2;
+	}
+	
+	public void drawCircle() {
+		System.out.printf("%s으로 원을 그렸습니다.", this.color);
+		this.ink = this.ink - 3;
+	}
+	
+	public void drawRectangle() {
+		System.out.println("%s으로 사각형을 그렸습니다.", this.color);
+		this.ink = this.ink - 4;
+	}
+	
+}

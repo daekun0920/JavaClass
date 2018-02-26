@@ -1,0 +1,111 @@
+00:00.000: ====================================================================
+00:00.016: Started: 2016/03/21 (Y/M/D) 20:29:56.233 (local)
+00:00.032: Time Format in this log: MM:ss.mmm (minutes:seconds.milliseconds)
+00:00.047: Command line: "C:\windows\SoftwareDistribution\Download\Install\IE11-Windows6.1-x64-en-us.exe" /WU-SILENT
+00:00.063: INFO:    Setup installer for Internet Explorer: 11.0.9600.16428
+00:00.188: INFO:    Previous version of Internet Explorer: 9.0.8112.16443
+00:00.219: INFO:    Checking if iexplore.exe's current version is between 11.0.9600.0...
+00:00.234: INFO:    ...and 11.1.0.0...
+00:00.250: INFO:    Maximum version on which to run IEAK branding is: 11.1.0.0...
+00:00.266: INFO:    iexplore.exe version check success. Install can proceed.
+00:00.266: INFO:    Operating System: Windows Workstation: 6.1.7601 (Service Pack 1)
+00:00.281: INFO:    Trying to extract ID: SetupDownloadList.txt (0) as "SetupDownloadList.txt"
+00:00.297: INFO:    Trying to extract ID: HardwareBlockingList.xml (0) as "HardwareBlockingList.xml"
+00:00.312: INFO:    Trying to extract ID: 7006 (0) as "IE11-neutral.Extracted.cab"
+00:00.656: ERROR:   Failed to extract a language pack for a non-english OS.
+
+00:00.702: INFO:    This is an English only package, so installation will continue on this non-English OS.
+00:00.718: INFO:    Trying to extract ID: 5501 (1033) as "Spelling_en.msu"
+00:00.734: INFO:    Extracted Spelling dictionary for en to C:\windows\TEMP\IE14AC9.tmp\Spelling_en.msu.
+00:00.749: INFO:    Trying to extract ID: 5502 (1033) as "Hyphenation_en.msu"
+00:00.765: INFO:    Extracted Hyphenation dictionary for en to C:\windows\TEMP\IE14AC9.tmp\Hyphenation_en.msu.
+00:00.780: INFO:    Trying to extract ID: 7128 (1042) as "IE11-support.cab"
+00:00.796: ERROR:   === FindResource (7128,"IE11-support.cab") failed with 0x717
+
+00:00.796: INFO:    Trying to extract ID: 7128 (1033) as "IE11-support.cab"
+00:19.610: INFO:    Updated Download list, Hardware Blocking list, and no reboot policy files successfully downloaded and extracted for use.
+00:19.875: INFO:    Launched program to check hardware: "C:\windows\TEMP\IE14AC9.tmp\IE11-SUPPORT\IEXPLORE.EXE" /CheckHardware "C:\windows\TEMP\IE14AC9.tmp\IE11-support\HardwareBlockingList.xml"
+00:20.234: INFO:    Hardware support check succeeded. Installation will continue.
+00:20.265: INFO:    Windows 7 operating system detected.
+00:20.296: INFO:    Service pack major: 1
+00:20.327: INFO:    Service pack minor: 0
+00:20.358: INFO:    Service pack name:  Service Pack 1
+00:20.686: INFO:    Version Check for (KB2834140) of C:\windows\System32\d3d11.dll: 6.1.7601.17514 >= 6.2.9200.16570 (False)
+00:20.702: WARNING: Checking version for C:\windows\System32\api-ms-win-downlevel-user32-l1-1-0.dll.  The file does not exist.
+00:20.717: INFO:    Version Check for (KB2639308) of C:\windows\System32\Ntoskrnl.exe: 6.1.7601.17803 >= 6.1.7601.17727 (True)
+00:20.748: INFO:    Version Check for (KB2533623) of C:\windows\System32\api-ms-win-security-base-l1-1-0.dll: 6.1.7601.17651 >= 6.1.7601.17617 (True)
+00:20.795: INFO:    Version Check for (KB2731771) of C:\windows\System32\conhost.exe: 6.1.7601.17641 >= 6.1.7601.17888 (False)
+00:20.811: INFO:    Checking for correct version of C:\windows\Fonts\segoeui.ttf.
+00:20.858: INFO:    Version Check for (KB2786081) of C:\windows\System32\taskhost.exe: 6.1.7601.17514 >= 6.1.7601.18010 (False)
+00:21.263: INFO:    Version Check for (KB2888049) of C:\windows\System32\drivers\tcpip.sys: 6.1.7601.17802 >= 6.1.7601.18254 (False)
+00:21.388: INFO:    Version Check for (KB2882822) of C:\windows\System32\tdh.dll: 6.1.7600.16385 >= 6.1.7601.18247 (False)
+00:35.366: INFO:    IE Setup prerequisite package for KB2834140 included: C:\windows\TEMP\IE14AC9.tmp\KB2834140_amd64.cab
+00:35.397: INFO:    IE Setup prerequisite package for KB2834140 included: C:\windows\TEMP\IE14AC9.tmp\KB2834140_amd64.cab
+00:35.428: INFO:    A local copy of the KB2834140 installation package has been copied to KB2834140_amd64.MSU.
+00:35.428: INFO:    IE Setup prerequisite package for KB2670838 included: C:\windows\TEMP\IE14AC9.tmp\KB2670838_amd64.cab
+00:35.444: INFO:    IE Setup prerequisite package for KB2670838 included: C:\windows\TEMP\IE14AC9.tmp\KB2670838_amd64.cab
+00:35.459: INFO:    A local copy of the KB2670838 installation package has been copied to KB2670838_amd64.CAB.
+00:35.475: INFO:    IE Setup prerequisite package for KB2731771 included: C:\windows\TEMP\IE14AC9.tmp\KB2731771_amd64.cab
+00:35.491: INFO:    IE Setup prerequisite package for KB2731771 included: C:\windows\TEMP\IE14AC9.tmp\KB2731771_amd64.cab
+00:35.491: INFO:    A local copy of the KB2731771 installation package has been copied to KB2731771_amd64.CAB.
+00:35.506: INFO:    IE Setup prerequisite package for KB2786081 included: C:\windows\TEMP\IE14AC9.tmp\KB2786081_amd64.cab
+00:35.522: INFO:    IE Setup prerequisite package for KB2786081 included: C:\windows\TEMP\IE14AC9.tmp\KB2786081_amd64.cab
+00:35.537: INFO:    A local copy of the KB2786081 installation package has been copied to KB2786081_amd64.CAB.
+00:35.553: INFO:    IE Setup prerequisite package for KB2888049 included: C:\windows\TEMP\IE14AC9.tmp\KB2888049_amd64.cab
+00:35.569: INFO:    IE Setup prerequisite package for KB2888049 included: C:\windows\TEMP\IE14AC9.tmp\KB2888049_amd64.cab
+00:35.569: INFO:    A local copy of the KB2888049 installation package has been copied to KB2888049_amd64.MSU.
+00:35.584: INFO:    IE Setup prerequisite package for KB2882822 included: C:\windows\TEMP\IE14AC9.tmp\KB2882822_amd64.cab
+00:35.600: INFO:    IE Setup prerequisite package for KB2882822 included: C:\windows\TEMP\IE14AC9.tmp\KB2882822_amd64.cab
+00:35.615: INFO:    A local copy of the KB2882822 installation package has been copied to KB2882822_amd64.MSU.
+00:35.631: INFO:    IE Setup Language pack included: C:\windows\TEMP\IE14AC9.tmp\Windows6.1-KB2841134-x64-ko-KR.cab
+00:35.647: INFO:    IE Setup Language pack included: C:\windows\TEMP\IE14AC9.tmp\IE-Spelling-en.cab
+00:35.662: INFO:    IE Setup Language pack included: C:\windows\TEMP\IE14AC9.tmp\IE-Hyphenation-en.cab
+00:35.678: INFO:    Waiting for 6 prerequisite downloads.
+00:35.725: INFO:    Prerequisite download processes have completed. Starting Installation of 6 prerequisites.
+00:35.818: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\KB2834140_amd64.cab /quiet /norestart
+00:44.663: INFO:    Process exit code 0x00000000 (0) [The operation completed successfully. ]
+00:44.679: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\KB2670838_amd64.cab /quiet /norestart
+02:42.741: INFO:    Process exit code 0x00000BC2 (3010) [The requested operation is successful. Changes will not be effective until the system is rebooted. ]
+02:42.756: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\KB2731771_amd64.cab /quiet /norestart
+04:05.796: INFO:    Process exit code 0x00000BC2 (3010) [The requested operation is successful. Changes will not be effective until the system is rebooted. ]
+04:05.811: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\KB2786081_amd64.cab /quiet /norestart
+04:12.972: INFO:    Process exit code 0x00000000 (0) [The operation completed successfully. ]
+04:13.003: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\KB2888049_amd64.cab /quiet /norestart
+04:20.850: INFO:    Process exit code 0x00000000 (0) [The operation completed successfully. ]
+04:20.865: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\KB2882822_amd64.cab /quiet /norestart
+05:42.719: INFO:    Process exit code 0x00000BC2 (3010) [The requested operation is successful. Changes will not be effective until the system is rebooted. ]
+05:42.828: INFO:    The neutral pack was successfully downloaded from the internet. Installation will continue using the downloaded package.
+05:42.844: INFO:    Waiting for 0 language pack downloads.
+05:42.859: INFO:    Language pack downloads completed. (exit code = 0xffffffff (4294967295)).
+05:42.953: INFO:    No reboot logic message NrApiStart(0), lParam=0x00642a28 returned 0x00000000.
+05:46.385: INFO:    No reboot logic message NrApiScan(1), lParam=0x00000001 returned 0x00000000.
+05:46.525: INFO:    No reboot logic message NrApiStartInstall(4), lParam=0x00000001 returned 0x00000014.
+05:46.572: INFO:    Installing with the downloaded package. C:\windows\TEMP\IE14AC9.tmp\IE11-neutral.Downloaded.cab
+05:46.603: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\IE11-neutral.Downloaded.cab /quiet /norestart
+07:13.824: INFO:    Process exit code 0x00000BC2 (3010) [The requested operation is successful. Changes will not be effective until the system is rebooted. ]
+07:13.855: INFO:    Setting registry to check if Internet Explorer is the default browser on first run: SUCCESS.
+07:13.870: INFO:    Preparing to install Spelling_en.msu using C:\windows\TEMP\IE14AC9.tmp\Spelling_en.msu
+07:13.933: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\Spelling_en\Windows6.3-KB2849696-x86.cab /quiet /norestart
+08:13.494: INFO:    Process exit code 0x00000BC2 (3010) [The requested operation is successful. Changes will not be effective until the system is rebooted. ]
+08:13.525: INFO:    Preparing to install Hyphenation_en.msu using C:\windows\TEMP\IE14AC9.tmp\Hyphenation_en.msu
+08:13.556: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\Hyphenation_en\Windows6.3-KB2849697-x86.cab /quiet /norestart
+09:13.040: INFO:    Process exit code 0x00000BC2 (3010) [The requested operation is successful. Changes will not be effective until the system is rebooted. ]
+09:13.040: INFO:    Preparing to install Windows6.1-KB2841134-x64-ko-KR.cab using C:\windows\TEMP\IE14AC9.tmp\Windows6.1-KB2841134-x64-ko-KR.cab
+09:13.055: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\Windows6.1-KB2841134-x64-ko-KR.cab /quiet /norestart
+10:18.420: INFO:    Process exit code 0x00000BC2 (3010) [The requested operation is successful. Changes will not be effective until the system is rebooted. ]
+10:18.435: INFO:    Preparing to install IE-Spelling-en.cab using C:\windows\TEMP\IE14AC9.tmp\IE-Spelling-en.cab
+10:18.466: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\IE-Spelling-en.cab /quiet /norestart
+10:37.608: INFO:    Process exit code 0x00000BC2 (3010) [The requested operation is successful. Changes will not be effective until the system is rebooted. ]
+10:37.623: INFO:    Preparing to install IE-Hyphenation-en.cab using C:\windows\TEMP\IE14AC9.tmp\IE-Hyphenation-en.cab
+10:37.639: INFO:    Launched package installation: C:\windows\SysNative\dism.exe /online /add-package /packagepath:C:\windows\TEMP\IE14AC9.tmp\IE-Hyphenation-en.cab /quiet /norestart
+10:56.219: INFO:    Process exit code 0x00000BC2 (3010) [The requested operation is successful. Changes will not be effective until the system is rebooted. ]
+10:56.265: INFO:    No reboot logic message NrApiInstallDone(7), lParam=0x00000bc2 returned 0x00000000.
+10:56.281: INFO:    No reboot logic message NrApiStartFinish(11), lParam=0x00000000 returned 0x00000000.
+10:56.297: INFO:    No reboot logic message NrApiFinish(12), lParam=0x00000000 returned 0x00000016.
+10:56.312: INFO:    Verifying that the Internet Explorer Optional Component is enabled.
+10:56.421: INFO:    Setup exit code: 0x00000BC2 (3010) - Installation Succeeded. Reboot required.
+10:56.640: INFO:    Scheduling upload to IE SQM server: http://sqm.microsoft.com/sqm/ie/sqmserver.dll
+11:10.633: ERROR:   SQM Upload failed while uploading "C:\windows\system32\config\systemprofile\AppData\Local\Microsoft\Windows\Temporary Internet Files\SQM\iesqmdata_setup0.sqm" with error: 2147500036
+11:10.664: INFO:    Cleaning up temporary files in: C:\windows\TEMP\IE14AC9.tmp
+11:10.758: INFO:    Unable to remove directory C:\windows\TEMP\IE14AC9.tmp, marking for deletion on reboot.
+11:10.789: INFO:    Released Internet Explorer Installer Mutex

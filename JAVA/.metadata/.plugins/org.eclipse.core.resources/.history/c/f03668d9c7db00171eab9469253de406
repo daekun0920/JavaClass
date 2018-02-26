@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+public class Homework8 {
+	public static void main(String[] args) {
+	/*
+	문자열 문제 
+
+	문제1.
+
+	요구사항) 문장을 입력받아 역순으로 출력하시오.
+	입력) 문자 : 안녕하세요. 홍길동입니다.
+	출력) 결과 : .다니입동길홍 .요세하녕안
+	힌트) 첨자(index)
+	*/
+	Scanner scan = new Scanner(System.in);
+	
+	
+	System.out.print("문자 : ");
+	String reverse = scan.nextLine();
+	String result = "";
+	
+	for (int i = reverse.length() - 1; i <= 0; i--) {
+		result = result + reverse.charAt(i);
+		System.out.println(result);
+	}
+	System.out.println(result);
+	
+	
+
+	/*
+	문제2.
+
+	요구사항) 숫자를 입력받아 항상 3자리로 출력하시오오오.
+	입력)숫자: 1
+	출력)결과: 001
+	입력)숫자: 24
+	출력)결과 : 024
+	입력)숫자 : 123
+	출력) 결과: 123
+
+	조건) 최대 3자리까지만 입력.
+
+
+
+	문제3.
+
+	요구사항) 숫자를 입력받아 3자리마다 ','를 붙이시오.
+	입력) 숫자 : 1234567
+	출력) 결과 : 1,234,567
+	조건) %, d 사용불가 
+
+
+
+	문제4.
+
+	요구사항) 숫자를 입력받아 한글로 바꿔서 출력하시오.
+	입력) 금액(원) : 1500
+	출력) 결과 : 일천오백원 
+	조건) 입력값은 최대 천단위
+
+
+
+	문제5.
+
+	요구사항) 특정 단어가 몇번 들어갔는지 세시오.
+	상황) String content = "안녕~ 길동아~ 잘가~ 길동아~";
+		  String word = "길동";
+		  
+	출력) '길동'을 총 2회 발견했습니다.
+	힌트) 1. indexOf()
+		  2. replace(word, "")
+	*/
+	}
+}

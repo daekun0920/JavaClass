@@ -1,0 +1,58 @@
+package com.test.lambda;
+
+public class Ex02 {
+	public static void main(String[] args) {
+		TempClass1 t1 = new TempClass1();
+		t1.m1();
+		
+		
+
+	}
+}
+
+@FunctionalInterface
+interface Temp1 {
+	void m1();
+}
+
+class TempClass1 {
+	
+	public int a = 10;
+	
+	
+	public void m1() {
+		Temp1 t1 = () -> System.out.println("테스트입니다.");
+		t1.m1();
+	}
+	
+	public void m2() {
+		
+		// 메소드 구현 -> this 연산자
+		// 람다식 구현 -> this 연산자 
+		Temp1 t1 = () -> { System.out.println(this); };
+		
+		Temp1 t2 = new Temp1() {
+				@Override
+				public void m1() {
+					
+				}
+		};
+		
+	}
+}
+
+class TempClass implements Temp1 {
+
+	@Override
+	public void m1() {
+		
+	}
+	
+}
+
+
+
+
+
+
+

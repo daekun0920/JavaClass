@@ -1,0 +1,58 @@
+
+public class Ex33_Class {
+	
+	public static void main(String[] args) {
+		//Ex33_Class.java
+		
+		
+		
+		Book b1 = new Book();
+		b1.setPrice(30000);
+		
+		
+		System.out.println(b1.getPrice());
+		System.out.println(b1.getTitle());
+	}
+	
+	
+}
+
+class Book {
+	
+	private String title = "이것이 자바다."; 		// 제목
+	private	 int price;			// 가격
+	private String author;		// 작가
+	private String publisher; 	// 출판사
+	private int pubdate;		// 발간일(연도)
+	
+	public void setPrice(int price) {
+		if (price > 0) {
+			this.price = price;
+		}
+		
+	}
+	
+	public int getPrice() {
+		return this.price;
+		
+	}
+	
+	public String getTitle() {
+		return this.title;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

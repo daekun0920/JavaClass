@@ -1,0 +1,88 @@
+
+public class Ex32_Class {
+	
+	public static void main(String[] args) {
+		
+		// Ex32_Class.java
+		
+		// 접근 지정자(제어자), Access Modifier
+		//   - public, private / protected, default
+		
+		AccessTest t1 = new AccessTest();
+		
+		t1.a = 10; // public
+		
+		//t1.b = 20; // private 
+		
+		t1.aaa();
+		
+		//t1.bbb();
+		
+		t1.test();
+		
+		
+		// e1
+		//   - Employee 타입의 참조변수
+		//   - e1 이라는 객체 -> 객체 변수
+		//   - e1 이라는 인스턴스 -> 인스턴스 변수
+		Employee e1 = new Employee();
+		
+		e1.name = "홍길동";
+		e1.age = 40;
+		e1.department = "영업부";
+		
+		
+		
+	}
+}
+
+
+// 사원 클래스 
+class Employee {
+	
+	// 접근 지정자 사용 가이드
+	// 1. 멤버 변수는 무조건 private으로 지정한다 
+	// 2.
+	
+	public String name;   		// 이름
+	public int age;       		// 나이
+	public String department;  // 부서
+	
+	
+	
+}
+
+class AccessTest {
+	
+	// 접근 지정자
+	//   - 클래스 멤버에게
+	public int a = 10;   // 외부 접근 가능
+	private int b = 20;  // 외부 접근 불가
+	
+	public void aaa() {
+		System.out.println("Aaa");
+	}
+	private void bbb() {
+		System.out.println("bbb");
+	}
+	
+	public void test() { // 같은 클래스내에 있는 멤버끼리는 private이라도 호출이나 출력가능 
+		System.out.println(a);
+		System.out.println(b);
+		aaa();
+		bbb();
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+1513559525151	Move compilation unit
+1513728340028	Move compilation unit
+1513733963266	Extract method 'pause'
+1513739296433	Extract method 'list'
+1513766917156	Delete element
+1513824204388	Extract method 'getFileCount'
+1513836085207	Extract method 'doubleArray'
+1513844705793	Rename package 'Homework10'
+1513844734650	Rename package 'Homework'
+1513921745407	Extract method 'getExtensions'
+1513926459993	Extract method 'filesInCommon'

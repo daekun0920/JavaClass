@@ -1,0 +1,144 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Random;
+
+import org.omg.Messaging.SyncScopeHelper;
+
+
+
+
+public class Ex {
+
+	private static ArrayList<Food> list;
+
+
+	static {
+
+		list = new ArrayList<Food>();
+	}
+
+	public static void main(String[] args) {
+
+		load();
+
+	
+	
+	
+	
+	
+	
+	
+	}
+	
+	
+
+	private static void load() {
+		
+		String path = "D:\\노원구1.txt";
+		
+		
+		try {
+
+			String line = "";
+
+			
+			BufferedReader reader = new BufferedReader(new FileReader(path));
+
+			while ((line = reader.readLine()) != null) {
+
+				String[] temp = line.split("\\.");
+
+				Food f = new Food();
+
+				f.setStoreName(temp[0]);
+				f.setStoreCategory(temp[1]);
+				f.setStoreMainfood(temp[2]);
+				f.setStoreAddress(temp[3]);
+				f.setStoreTel(temp[4]);
+				f.setFavorite(temp[5]);
+				
+
+
+				list.add(f);
+			}
+
+			
+			System.out.println(list);
+			
+			reader.close();
+
+		} catch (Exception e) {
+			System.out.println("main : " + e.toString());
+
+		}
+
+	}
+
+}
+
+class Food {
+
+	private String storeName;
+	private String storeCategory;
+	private String storeMainfood;
+	private String storeAddress;
+	private String storeTel;
+	private String favorite;
+
+	public String getStoreName() {
+		return storeName;
+	}
+
+	public void setStoreName(String storeName) {
+		this.storeName = storeName;
+	}
+
+	public String getStoreCategory() {
+		return storeCategory;
+	}
+
+	public void setStoreCategory(String storeCategory) {
+		this.storeCategory = storeCategory;
+	}
+
+	public String getStoreMainfood() {
+		return storeMainfood;
+	}
+
+	public void setStoreMainfood(String storeMainfood) {
+		this.storeMainfood = storeMainfood;
+	}
+
+	public String getStoreAddress() {
+		return storeAddress;
+	}
+
+	public void setStoreAddress(String storeAddress) {
+		this.storeAddress = storeAddress;
+	}
+
+	public String getStoreTel() {
+		return storeTel;
+	}
+
+	public void setStoreTel(String storeTel) {
+		this.storeTel = storeTel;
+	}
+
+	public String getFavorite() {
+		return favorite;
+	}
+
+	public void setFavorite(String favorite) {
+		this.favorite = favorite;
+	}
+	
+	@Override
+	public String toString() {
+		
+		return String.format("상호명 :%s\t 음식종류 :%s\t 주메뉴 :%s\t 주소:%s\t 전화번호:%s\t 좋아요수:%s\n"
+										,storeName,storeCategory,storeMainfood,storeAddress,storeTel,favorite);
+	}
+
+}

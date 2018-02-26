@@ -1,0 +1,73 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.Calendar;
+import java.util.Date;
+
+public class ttest {
+	public static void main(String[] args) throws IOException {
+		
+		//m1();
+		
+		m2();
+		
+		
+		
+	}
+
+	private static void m2() throws IOException {
+		Writer writer = new BufferedWriter(new FileWriter("C:\\Users\\SIST40\\Desktop\\daa.txt"));
+		
+		for(int i=0; i<126; i++)
+		for(int j=1; j<161; j++) {
+			String s = i+"";
+			writer.write(s+"\r\n");
+		}
+		
+		writer.close();
+	}
+
+	private static void m1() throws IOException {
+		// TODO Auto-generated method stub
+		
+		Writer writer = new BufferedWriter(new FileWriter("C:\\Users\\SIST40\\Desktop\\da.txt"));
+		
+		Calendar c = Calendar.getInstance();
+		
+		c.set(Calendar.YEAR, 2017);
+	    c.set(Calendar.MONTH, Calendar.JULY);
+	    c.set(Calendar.DATE, 1);
+		
+		while(true) {
+			int i = 1;
+			c.add(Calendar.DATE, i);
+			
+			String dateString;
+			
+		    dateString = String.format("%04d-%02d-%02d", c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1, c.get(Calendar.DAY_OF_MONTH));
+		    
+		    boolean result = true;
+		    int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+		    
+		    if (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY) {
+	            result = false;
+	               
+	        }
+		     
+		    
+		    if("2017-12-26".equals(dateString)) {
+		    	break;
+		    }
+		    
+		    if(result == true) {
+		    	for(int a=1; a<161; a++) {
+		    		System.out.println(dateString);
+		    		writer.write(dateString+"\r\n");
+		    	}
+		    }
+		}
+	}
+	
+	
+}
