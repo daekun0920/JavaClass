@@ -1,0 +1,11 @@
+admincourse.name|SELECT * FROM tbl_basic_course
+admincourse.start|SELECT course_start_date FROM tbl_course
+admincourse.end|SELECT course_end_date FROM tbl_course
+admincourse.classroom|SELECT * FROM tbl_classroom
+admincourse.coursevw|SELECT*FROM vw_course
+admincourse.add|{call proc_add_course(?,?,?,?,?)}
+admincourse.del|{call proc_del_course(?,?)}
+admincourse.edit|{call proc_edit_course(?,?,?,?,?,?)}
+admincourse.selectvw|SELECT*FROM select_coursevw WHERE 과정번호 = ?
+admincourse.datevw|SELECT*FROM vw_date
+admincourse.stulist|{call proc_course_student(?,?)}

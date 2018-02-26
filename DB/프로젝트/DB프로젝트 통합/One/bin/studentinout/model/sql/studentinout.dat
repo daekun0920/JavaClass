@@ -1,0 +1,4 @@
+myall|SELECT * FROM vw_attendance_list_forstudent  WHERE basic_info_seq = ?
+mydd|SELECT a.basic_info_seq AS basic_info_seq,b.student_name AS 학생이름,e.attendance_in_time AS 등원시간,e.ATTENDANCE_OUT_TIME AS 하원시간,f.ATTENDANCE_STATUS AS 출결상태 FROM tbl_basic_info a INNER JOIN tbl_detail_student b ON a.basic_info_seq = b.BASIC_INFO_SEQ INNER JOIN tbl_key_student_enrollment c ON b.detail_student_seq = c.detail_student_seq INNER JOIN tbl_student_enrollment d ON c.student_enrollment_seq  = d.student_enrollment_seq INNER JOIN TBL_STUDENT_ATTENDANCE e  ON d.student_enrollment_seq = e.student_enrollment_seq  INNER JOIN TBL_ATTENDANCE_STATUS f   ON e.STUDENT_ATTENDANCE_SEQ =f.STUDENT_ATTENDANCE_SEQ WHERE a.basic_info_seq = ? and substr(e.attendance_in_time,6,2) = ? 
+studentin|{call proc_add_inTime(?,?)}
+studentout|{call proc_attendance_outTime(?,?)}

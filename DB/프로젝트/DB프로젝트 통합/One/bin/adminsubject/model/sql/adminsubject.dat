@@ -1,0 +1,9 @@
+adminsubject.selectvw|SELECT*FROM vw_subjectselect WHERE 과정번호 = ?
+admincourse.subjectvw|SELECT*FROM vw_subject
+adminsubject.del|{call proc_del_subject(?,?)}
+adminsubject.basic|SELECT*FROM tbl_basic_subject
+adminsubject.basicbook|SELECT*FROM tbl_basic_book
+adminsubject.teacher|SELECT*FROM tbl_detail_teacher
+adminsubject.add|{call proc_add_subject(?,?,?,?,?,?,?)}
+admincourse.coursevw|SELECT*FROM vw_course
+adminsubject.edit|{call proc_edit_subject(?,?,?,?,?,?,?,?)}

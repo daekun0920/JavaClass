@@ -1,0 +1,7 @@
+Teacher.Schedulelist|SELECT * FROM vw_schedule_forteacher WHERE 회원번호 = ?
+Teacher.gradingList|select v1.* from vw_grading_list_forteacher v1 WHERE v1.과목번호 in (select 과목번호 from vw_subjectnum_forteacher WHERE 회원번호 = ?) order by 과목번호
+Teacher.updateGrading|update tbl_grading_standard SET GRADING_ATTENDANCE = ?, GRADING_WRITING = ?, GRADING_PRACTICAL = ?, EXAM_DATE = ? WHERE GRADING_STANDARD_SEQ = ?
+Teacher.finishedSubjectList|select * from vw_list_grade_forteacher VSFG WHERE VSFG."과목번호" IN (select 과목번호 from vw_subjectnum_forteacher vs WHERE vs."회원번호" = ?)
+Teacher.teacherStudentList|SELECT * FROM vw_student_info_forteacher WHERE 과목번호 = ?
+Teacher.updateStudentGrade|{ call proc_update_grade(?, ?, ?, ?, ?) }
+Teacher.listForStudentAttendance|select * from vw_att_list_forteacher where 교사번호 = ?

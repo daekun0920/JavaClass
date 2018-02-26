@@ -1,0 +1,2 @@
+mycourse|SELECT * FROM vw_course_forstudent WHERE basic_info_seq = ?
+mysubject|SELECT * FROM vw_subject_forstudent WHERE basic_info_seq =?

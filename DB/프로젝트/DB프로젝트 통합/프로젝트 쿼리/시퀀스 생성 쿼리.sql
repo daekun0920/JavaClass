@@ -1,0 +1,11 @@
+CREATE SEQUENCE basic_info_seq START WITH 496;
+CREATE SEQUENCE detail_teacher_seq START WITH 11;
+CREATE SEQUENCE detail_student_seq START WITH 481;
+CREATE SEQUENCE student_enrollment_seq START WITH 481;
+CREATE SEQUENCE student_grade_seq START WITH 1661;
+CREATE SEQUENCE student_quit_seq START WITH 11;
+CREATE SEQUENCE course_seq START WITH 19;
+CREATE SEQUENCE subject_seq START WITH 181;
+CREATE SEQUENCE grading_standard_seq START WITH 181;
+
+CREATE SEQUENCE attendance_seq START WITH 23841; --학생 등원 시퀀스

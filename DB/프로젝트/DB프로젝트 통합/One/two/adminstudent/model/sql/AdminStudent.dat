@@ -1,0 +1,9 @@
+adminstudent.add|{call proc_student_add(?,?,?,?,?,?,?)}
+adminstudent.list|SELECT * FROM vw_student_list
+adminstudent.selectedlist|{call proc_student_selected_list(?,?)}
+adminstudent.search|{call proc_student_search(?,?,?,?,?)}
+adminstudent.courselist|SELECT * FROM vw_course_list
+admintstudent.del|{call proc_student_del(?,?)}
+duringcourse.list| SELECT * FROM vw_student_duringcourse
+quite_add|{call proc_student_quit_insert(?,?)}
+adminstudent.edit|{call proc_student_edit(?,?,?)}

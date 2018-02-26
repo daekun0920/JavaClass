@@ -1,0 +1,8 @@
+basicsubject.list|SELECT basic_subject_seq, basic_subject_name FROM tbl_basic_subject
+adminteacher.add|{call proc_teacher_add(?,?,?,?,?,?,?)}
+adminteacher.list|SELECT * FROM vw_teacher_list
+adminteacher.selectedlist|{call proc_teacher_selected_list(?,?)}
+adminteacher.del|{call proc_teacher_del(?,?)}
+adminteacher.edittel|{call proc_edit_teacher_tel(?,?,?)}
+adminteacher.subjectlist|SELECT * FROM vw_teacher_subject
+adminteacher.editsubject|{call proc_edit_teacher_subject(?,?,?)}

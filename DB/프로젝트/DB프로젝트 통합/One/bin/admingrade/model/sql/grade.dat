@@ -1,0 +1,9 @@
+admingrade.courselist|SELECT * FROM vw_every_course
+admingrade.subjectlist|{call proc_if_grade_test(?, ?)}
+admingrade.subjectgradelist|SELECT * FROM vw_subject_grade
+admingrade.substugradelist|{call proc_students_grade(?, ?)}
+admingrade.studentgradelist|SELECT * FROM vw_curr_past_students
+admingrade.privategradelist|{call proc_stu_sub_grade(?, ?)}
+adminattendance.courseattendance|{call proc_attendance_search(?, ?, ?, ?)}
+adminattendance.personalattendance|{call proc_personal_attendance(?, ?)}
+adminattendance.fixattendancestatus|UPDATE tbl_attendance_status SET attendance_status = ? WHERE student_attendance_seq = ?

@@ -1,0 +1,36 @@
+package adminreview.model;
+
+public class AdminReviewListDTO {
+	/*
+	 AdminReviewClass
+	 - review_list() 관리자 학생 수강평 조회
+	 
+	 AdminReviewDAO
+	 - review_list()
+	  
+	 */
+	private String seq;
+	private String name;
+	private String review;
+	
+	public String getSeq() {
+		return seq;
+	}
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getReview() {
+		return review;
+	}
+	public void setReview(String review) {
+		this.review = review;
+	}
+	
+	
+}

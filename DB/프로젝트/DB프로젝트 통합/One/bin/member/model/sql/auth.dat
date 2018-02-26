@@ -1,0 +1,1 @@
+auth.login|SELECT count(*) FROM TBL_BASIC_INFO WHERE id = ? AND ssn = ?

@@ -1,0 +1,2 @@
+adminreview.list|SELECT * FROM vw_review
+adminreview.del|{call proc_delete_review(?, ?)}

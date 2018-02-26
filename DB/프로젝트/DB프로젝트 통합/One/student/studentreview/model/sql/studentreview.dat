@@ -1,0 +1,4 @@
+review.list|SELECT * FROM tbl_review
+review.add|INSERT INTO tbl_review (student_enrollment_seq,course_review) VALUES (?,?)
+review.del|DELETE FROM tbl_review WHERE student_enrollment_seq  = ?
+review.upd|UPDATE tbl_review SET  course_review = ? WHERE student_enrollment_seq = ?
