@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--ex12_link.html-->
+	<!--
+	
+	링크, Link
+	- <a>, anchor, link
+	- href : 이동할 URL, reference a hyperlink
+	
+	
+	브라우저 
+	- HTML 문서 실행기 
+	- Text 뷰어
+	- 이미지 뷰어 
+	- 동영상 뷰어
+	- 자신이 읽어들이지 못하는 포맷의 자원은 전부 다운로드를 시켜버린다.
+	-->
+	
+	<a href = "http://www.naver.com">네이버(외부 링크)</a>
+	<br>
+	<a href = "ex11_list.html">11번 예제</a> <!--내부 링크-->
+	<br>
+	<a href = "https://s.pstatic.net/static/www/mobile/edit/2018/0130/mobile_181824258956.png">네이버 이미지</a>
+	<br>
+	<a href = "ex.zip">예제 압축 파일</a> <!--다운로드-->
+	<br>
+	<!--
+	a.target 속성
+	1. _blank : 새창에서 링크열기(외부 링크)
+	2. _self : 기본값(default), 현재창에서 링크 열기(내부 링크) 
+	--------------------------
+	3. _parent : 부모 프레임에서 링크 열기
+	4. _top : 최상위 프레임에서 링크 열기
+	5. 프레임명 : 특정 프레임에서 링크 열기
+	
+	-->
+	
+	<a href = "ex11_list.html">11번 예제</a>
+	<br>
+	<a href = "ex11_list.html" target = "_blank">11번 예제</a>
+	
+	<br>
+	
+	<a href = "mailto:hong@test.com">홍길동</a>
+	<br>
+	<a href = "javascript:alert('Hello, World!');">자바스크립트</a>
+	<br>
+	<a href = "">빈링크</a>
+	<br>
+	<a>빈링크</a>
+	<br>
+	<a href = "#">빈링크</a> <!--빈 링크 만드는법-->
+	
+</body>
+</html>
