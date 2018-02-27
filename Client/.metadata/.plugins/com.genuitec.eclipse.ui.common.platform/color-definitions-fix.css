@@ -2054,6 +2054,7 @@ IEclipsePreferences#org-eclipse-ui-editors {
 		'PHPWriteOccurrenceIndicationColor=68,68,5'
 		'asOccurencesIndicationColor=68,68,5'
 		'breakpointIndicationColor=51,119,193'
+		'currentIPColor=42,42,42'
 		'currentLineColor=50,57,62'
 		'deletionIndicationColor=210,82,82'
 		'filteredSearchResultIndicationColor=27,98,145'
@@ -2076,6 +2077,7 @@ IEclipsePreferences#org-eclipse-ui-editors {
 		'searchResultIndication=true'
 		'searchResultIndicationColor=0,0,0'
 		'searchResultTextStyle=BOX'
+		'secondaryIPColor=42,42,42'
 		'spellingIndicationColor=253,170,211'
 		'writeOccurrenceIndicationColor=68,68,5'
 }
