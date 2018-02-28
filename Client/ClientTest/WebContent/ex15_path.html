@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--ex15_path.html-->
+	
+	<!--
+	
+	웹에서의 경로 표기법
+	: 현재 페이지 -> 다른 페이지(리소스)
+	
+	\ : 파일 경로 구분자(file:\\)
+	/ : 웹 경로 구분자(http://) 
+	
+	1. 상대 경로
+		- . : 현재 페이지가 소속된 폴더 
+		- .. : 부모 폴더
+		- 현재 위치(나)를 기준으로 상대를 찾는 표현
+		
+	2. 절대 경로 (더 권장됨)
+		- '/'으로 시작 : 웹사이트의 루트 폴더
+		- /ClientTest/ex14_tag.html
+		- '/' : http://localhost:8090/
+		- 'ClientTest' : 프로젝트명 or 컨텍스트 패스(Context Path)
+		- '/ClientTest' : WebContent 폴더 
+		
+	3. 로컬 경로
+		- 클라이언트 측 경로
+		- 사용 금지
+		
+	4. 외부 경로 
+		- 내부 자원용 X
+		- 외부 자원용 O
+		
+	-->
+	<h1>상대 경로</h1>
+	<h2>같은 폴더내의 자원</h2>
+	<a href = "./ex14_tag.html">14번예제</a>
+	<h2>자식 폴더내의 자원</h2>
+	<a href = "./sub/info.html">소개 페이지</a>
+	
+	<h1>절대 경로</h1>
+	<h2>같은 폴더내의 자원</h2>
+	<a href = "/ClientTest/ex14_tag.html">14번예제</a>
+	<h2>자식 폴더내의 자원</h2>
+	<a href = "/ClientTest/sub/info.html">소개 페이지</a>
+	
+	<h1>로컬 경로</h1>
+	<a href = "C:\workspace\Class\JavaClass\Client\ClientTest\WebContent\ex14_tag.html">14번 예제</a>
+	
+	<h1>외부 경로</h1>
+	<a href = "http://localhost:8090/ClientTest/ex14_tag.html">14번 예제</a>
+	
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--ex17_table.html-->
+	
+	<!--
+	
+	<table>, 표
+	- 표
+	- 레이아웃 : 표 -> <div> + CSS
+	
+	1. <table>
+		- 큰 상자
+		- 전체 컨테이너
+	
+	2. <tr>, 테이블 로우 (Table Row)
+		- 중간 상자
+		- 행 역할
+	
+	3. <td>, 테이블 데이터 (Table Data)
+		- 작은 상자
+		- 셀 역할
+		-데이터를 직접 포함하는 역할
+	
+	4. <th>, 테이블 헤더 (Table Header)
+		- 작은상자
+		- 셀 역할
+		- 테이블 헤더 역할을 하는 셀
+	
+	5. <thead>, 테이블 헤드 (Table Head)
+		- 테이블의 헤더 행 컨테이너 역할
+	
+	6. <tbody>
+		- 테이블의 데이터 행 컨테이너 역할
+		
+	7. <tfoot> 
+		- 테이블의 꼬릿말 행 컨테이너
+		
+	-->
+	<h1>2행 2열 표</h1>
+	<table border = "1" width = "200" height = "200" bgcolor = "yellow">
+		<tr bgcolor = "blue">
+			<td>
+			1
+			</td>
+			<td>
+			2
+			</td>
+		</tr>
+		<tr bgcolor = "red">
+			<td bgcolor = "pink">
+			3
+			</td>
+			<td>
+			4
+			</td>
+		</tr>
+	</table>
+	
+	<h1>2행 2열 표</h1>
+	<table border = "1" width = "200"> <!--너비는 초과 불가능, 높이 제한 초과는 가능-->
+		<tr>
+			<td width = "100" style = "word-break:break-all;">
+			<!--영어, 숫자 -> 개행 없이 강제로 오른쪽으로 밀어버림-> CSS로 강제 개행 가능-->
+			<!--한글 -> 강제로 개행(문화권 차이)-->
+			1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+			</td>
+			<td>
+			2
+			</td>
+		</tr>
+		<tr>
+			<td>
+			3
+			</td>
+			<td>
+			4
+			</td>
+		</tr>
+	</table>
+	
+	
+	<h1>주소록</h1>
+	
+	<table border = "1" width = "500">
+		<!--테이블 헤더-->
+		<tr bgcolor = "#CCCCCC">
+			<td width = "50" align = "center"><b>번호</b></td>
+			<td width = "80" align = "center"><b>이름</b></td>
+			<td width = "50" align = "center"><b>나이</b></td>
+			<td width = "50" align = "center"><b>성별</b></td>
+			<td width = "270" align = "center"><b>주소</b></td>
+		</tr>
+		<!--테이블 데이터-->
+		<!--
+			셀 데이터 수평 정렬
+			1. 고정폭
+				- 좌측, 가운데, 우측(수치 데이터)
+			2. 가변폭
+				- 좌측 
+		-->
+		<tr>
+			<td align = "center">1</td>
+			<td align = "center">홍길동</td>
+			<td align = "center">20</td>
+			<td align = "center">남자</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr bgcolor = "#EEEEEE">
+			<td align = "center">2</td>
+			<td align = "center">아무개</td>
+			<td align = "center">25</td>
+			<td align = "center">여자</td>
+			<td>서울시 강동구 천호동</td>
+		</tr>
+		<tr>
+			<td align = "center">1</td>
+			<td align = "center">홍길동</td>
+			<td align = "center">20</td>
+			<td align = "center">남자</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr bgcolor = "#EEEEEE">
+			<td align = "center">2</td>
+			<td align = "center">아무개</td>
+			<td align = "center">25</td>
+			<td align = "center">여자</td>
+			<td>서울시 강동구 천호동</td>
+		</tr>
+		<tr>
+			<td align = "center">1</td>
+			<td align = "center">홍길동</td>
+			<td align = "center">20</td>
+			<td align = "center">남자</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr bgcolor = "#EEEEEE">
+			<td align = "center">2</td>
+			<td align = "center">아무개</td>
+			<td align = "center">25</td>
+			<td align = "center">여자</td>
+			<td>서울시 강동구 천호동</td>
+		</tr>
+		
+	</table>
+	
+	
+	<h1>테이블 원형</h1>
+	
+	<table border = "1" width = "500">
+		<caption>표 1.1</caption>
+		<thead>
+			<tr>
+				<th>이름</th> <!--<th> Table Header-->
+				<th>키</th>
+				<th>몸무게</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>홍길동</td>
+				<td>180</td>
+				<td>70</td>
+			</tr>
+			<tr>
+				<td>아무개</td>
+				<td>170</td>
+				<td>60</td>
+			</tr>
+			<tr>
+				<td>하하하</td>
+				<td>160</td>
+				<td>50</td>
+			</tr>
+		</tbody>
+		<tfoot> <!--코드 순서 상관 없이 무조건 제일 밑으로 감-->
+			<tr>
+				<td colspan = "3">2018년 기준</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+	<h1>테이블</h1>
+	
+	<table border = "1" width = "500">
+		<tr>
+			<th>이름</th>
+			<td>홍길동</td>
+		</tr>
+		<tr>
+			<th>나이</th>
+			<td>20</td>
+		</tr>
+		<tr>
+			<th>주소</th>
+			<td>서울시 강남구</td>
+		</tr>
+		<tr>
+			<th>연락처</th>
+			<td>010-3000-0000</td>
+		</tr>
+	</table>
+	
+	<h1>테이블 주의점</h1>
+	
+	<table border = "1" width = "200" height = "200">
+		<tr>
+			<td width = "100" height = "100">1</td>
+			<td width = "100">2</td>
+		</tr>
+		<tr>
+			<td height = "100">3</td>
+			<td>&nbsp;</td> <!-- 빈 셀 -> &nbsp;
+			 -->
+		</tr>
+	</table>
+	
+	
+</body>
+</html>
