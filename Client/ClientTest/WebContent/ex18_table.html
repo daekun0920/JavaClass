@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border = "1" width = "200" height = "200">
+		<tr>
+			<td colspan = "2">1</td> <!-- colspan : 가로 병합 -->
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+	</table>
+	<table border = "1" width = "200" height = "200">
+		<tr>
+			<td rowspan = "2">1</td> <!-- rowspan : 세로 병합-->
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>4</td>
+		</tr>
+	</table>
+	
+	<!--셀 병합 시 주의점 : 모든 <tr>내의 <td>갯수는 동일하다.(병합 시 속성값 포함)  -->
+	<table border = "1" width = "200" height = "200">
+		<tr>
+			<td>1</td> <!-- colspan -->
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+	</table>
+	
+	<h1>성적표</h1>
+	
+	<table border = "1" width = "500">
+		<tr>
+			<th colspan = "7">모의 고사 성적</th>
+		</tr>
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>과목</th>
+			<th>1학기</th>
+			<th>2학기</th>
+			<th>3학기</th>
+			<th>4학기</th>
+		</tr>
+		<tr>
+			<td rowspan = "3">1</td>
+			<td rowspan = "3">홍길동</td>
+			<td>국어</td>
+			<td>23</td>
+			<td>53</td>
+			<td>68</td>
+			<td>99</td>
+		</tr>
+		<tr>
+			<td>영어</td>
+			<td>43</td>
+			<td>64</td>
+			<td>12</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>수학</td>
+			<td>33</td>
+			<td>77</td>
+			<td>99</td>
+			<td>78</td>
+		</tr>
+		<tr>
+			<td rowspan = "3">1</td>
+			<td rowspan = "3">홍길동</td>
+			<td>국어</td>
+			<td>23</td>
+			<td>53</td>
+			<td>68</td>
+			<td>99</td>
+		</tr>
+		<tr>
+			<td>영어</td>
+			<td>43</td>
+			<td>64</td>
+			<td>12</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>수학</td>
+			<td>33</td>
+			<td>77</td>
+			<td>99</td>
+			<td>78</td>
+		</tr>
+		<tr>
+			<td rowspan = "3">1</td>
+			<td rowspan = "3">홍길동</td>
+			<td>국어</td>
+			<td>23</td>
+			<td>53</td>
+			<td>68</td>
+			<td>99</td>
+		</tr>
+		<tr>
+			<td>영어</td>
+			<td>43</td>
+			<td>64</td>
+			<td>12</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>수학</td>
+			<td>33</td>
+			<td>77</td>
+			<td>99</td>
+			<td>78</td>
+		</tr>
+	</table>
+</body>
+</html>

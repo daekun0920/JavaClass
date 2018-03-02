@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--ex20_form.html-->
+	
+	<!--
+	
+	<form>의 하위 태그들
+	- 입력태그, 입력 컨트롤
+	
+	<input> 태그
+	- 인라인 태그
+	- 단독 태그
+	- type 속성 : 입력 컨트롤의 역할(형태) 지정
+	- id, class, name : 식별자
+	- size : 크기 (form 컨트롤은 숫자를 글자수로 취급)
+	- maxlength : 최대길이
+	- value : 기본값
+	- readonly : 읽기 전용, 플래그 타입, 전원 On, 전송 된다.
+	- disabled : 비활성화, 플래그 타입, 전원 Off 전송 안된다.
+	
+	
+	-->
+	<p>
+		<input type = "text">
+	</p>
+	<p>
+		<form action = "ex19_ok.jsp" method = "get">
+		<input type = "text" id = "data" class = "data" name = "data" size = "30" maxlength = "5" value = "" accesskey = "s" autocomplete = "off"><br>
+		<input type = "submit">
+		</form>
+	</p>
+	
+	<p>
+		<!--
+		Masking Text Box, Password Box
+		: 모든 속성이 일반 텍스트 박스와 동일
+		: value 사용하지 말것
+		-->
+		암호 : <input type = "password">
+	</p>
+	
+	<!--
+	
+	다중 라인 텍스트 박스
+	: 대부분 속성은 텍스트 박스와 동일
+	: value 없음
+	: <textarea>의 영역은 편집기 영역과 동일한 성질은 가진다.(공백 문자열 적용)	
+	: maxlength 없음
+	
+	-->
+	<textarea rows = "10" cols = "50" style = "resize:none;outline:none;">하나
+둘
+셋
+넷</textarea>
+
+	<p>
+		<!-- 
+		체크박스
+		: 논리값 입력
+		: 다중 선택
+		-->
+		체크 박스 : <input type = "checkbox">
+	
+	</p>
+	
+	<h1>약관</h1>
+	
+	<p>내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
+	</p>
+	
+	<input type = "checkbox" id = "cbAgree" value = "yes" checked><label for = "cbAgree">약관에 동의합니다.</label>  <!--텍스트를 클릭해도 체크 됨-->
+	<!--checked -> 기본으로 체크 되있게  -->
+	<br>
+	<input type = "submit" value = "다음 단계로" disabled>
+	
+	<hr>
+	
+	<label for = "txtname">이름 : </label><input type = "text" id = "txtName">
+	
+	<!--
+	
+	라디오 버튼
+	- 선택
+	- 두개 이상의 버튼을 동시에 사용
+	
+	-->
+	라디오 버튼 : <!--모두 같은 이름을 가지고 있어야함-->
+		<input type = "radio" name = "rbAgree"> 동의함
+		<input type = "radio" name = "rbAgree" checked> 동의안함
+		<input type = "radio" name = "rbAgree"> 미정
+		<input type = "radio" name = "rbAgree"> 포기
+		<br>
+		
+		성별:
+			<input type = "radio" name = "rbGender" checked> 남자
+			<input type = "radio" name = "rbGender"> 여자
+		
+		<p>
+			<!--
+			셀렉트 박스
+			- 콤보 박스, 드랍 다운 리스트 등...
+			
+			
+			-->
+			셀렉트 박스 :
+			<select name = "sel">
+				<option value = "1">강아지</option>
+				<option value = "2">고양이</option>
+				<option value = "3">병아리</option>
+			</select>
+d	</p>
+		
+		<p>
+			셀렉트 박스 :
+			<select name = "sel" size = "5" > <!--size : 항목 5개를 볼정도의 크기로 넘어가라 
+														  multiple : 플래그 형, 다중 선택 가능 -->
+				<option value = "1">강아지</option>
+				<option value = "2">고양이</option>
+				<option value = "3">병아리</option>
+			</select>
+		</p>
+</body>
+</html>
+
+
+
+
+
+
+
+

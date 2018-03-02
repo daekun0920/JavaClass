@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--ex19_form.html-->
+	
+	<!--
+	
+	<form>, 폼태그
+	
+	HTML Form + HTML Input Control
+	- 입력 양식
+	- 클라이언트(사용자)로부터 여러가지 입력 양식을 통해서 데이터 입력
+	
+	1. <form> 태그
+		- 스스로 랜더링 결과를 만들지 않음(화면에는 안보임)
+		- 모든 입력 양식(입력 컨트롤, 태그)들의 부모 역할(***)
+		- <form>의 내부 컨트롤(예 -> <input>)만 전송이 된다.(외부에 있는 컨트롤은 전송이 되지 않는다.)
+		
+		a. action
+			- 데이터를 전송할 서버측 프로그램의 주소 -> URL
+			- 서버측 프로그램 -> 서버 기술을 사용해서 제작(Servlet, JSP, Spring...)
+			
+		b. method
+			- 데이터를 전송하는 방식
+			- POST, GET(기본값)	
+			
+			- GET
+			http://localhost:8090/ClientTest/ex19_ok.jsp?name=%E3%85%87%E3%85%81%E3%84%B4%E3%85%87&age=22
+			- 데이터를 전송할 URL에 붙여서 전송
+			- URL 255자 제한 > 오버플로우 > 짤림
+			- 긴 데이터 전송 X
+			- 보안 데이터 전송 X > 브라우저 히스토리에 기록됨
+			- URL > 한글 허용 안함 > 한글 같이 URL에 쓸 수 없는 문자들은 base64라는 인코딩을 사용해서 변환 > GET 방식의 데이터 전송은 한글은 적합하지 않음 > 영문 키워드 or 숫자만 적합
+			- ex19.jsp?name=홍길동&age=19&nick=바보
+			- 페이지 주소?키=값&키=값
+			
+			- http://news.naver.com/main/read.nhn
+			  ?
+			  oid=025&
+			  sid1=103&
+			  aid=0002801802&
+			  mid=shm&
+			  mode=LSD&
+			  nh=20180302094832
+			
+			
+			- POST
+			- http://localhost:8090/ClientTest/ex19_ok.jsp
+			- 데이터를 패킷 본문에 넣어서 전송
+			- 데이터가 노출되지 않음 > 보안성 높음
+			- 전송 길이 제한 없음
+			- 모든 데이터 전송
+						
+			
+			
+	-->
+	<h1>데이터 입력</h1>
+	
+	<form action = "ex19_ok.jsp" method = "get"> 
+		이름 : <input name = "name"><br>
+		나이 : <input name = "age"><br>
+		<input type = "submit" value = "보내기">
+	</form>
+	
+	<h1>네이버 검색</h1>
+	
+	<form action = "https://search.naver.com/search.naver" method = "get">
+		검색어 : <input name = "query"><br>
+		<input type = "submit" value = "검색하기">
+	</form>
+</body>
+</html>
