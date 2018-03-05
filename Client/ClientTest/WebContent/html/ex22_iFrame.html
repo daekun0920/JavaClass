@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--ex21_iFrame.html-->
+	<h1>프레임</h1>
+	
+	<!--
+	<iFrame>
+	- inner frame
+	- inline frame
+	- 문서의 원하는 위치 & 크기로 프레임을 사용
+	
+	-->
+	<iframe src = "http://yes24.com" width = "800" height = "500" frameborder = "no" scrolling = "no"></iframe>
+	
+	
+	<h1>쇼핑몰</h1>
+	
+	<!--
+	HTML 요소의 너비 (높이는 되지 않음)
+	- width = "100%"
+	- 부모의 너비를 기준으로 100%
+	
+	HTML 요소의 높이는
+	- 무조건 절대값을 준다(픽셀).
+	
+	-->
+	<table width = "100%" height = "500">
+		<tr>
+			<td width = "200">
+				<h2>클릭하세요.</h2>
+				<ul>
+					<li><a href = "http://gmarket.co.kr" target = "iframe2">지마켓</a></li>
+					<li><a href = "http://coupang.com" target = "iframe2">쿠팡</a></li>
+					<li><a href = "http://11st.co.kr" target = "iframe2">11번가</a></li>
+					<li><a href = "http://interpark.com" target = "iframe2">인터파크</a></li>
+				</ul>
+			</td>
+			<td>
+				<iframe width = "100%" height = "500" name = "iframe2"></iframe>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+	<!--ex21_frame.html-->
+	<!--
+	프레임, Frame > iFrame
+	: 하나의 브라우저에 여러개의 문서를 출력
+	- <body> 가 필요없음
+	- noresize : 선 사이즈 고정
+	- frameborder : 테두리 제거
+	- scrolling : 스크롤바 표시 여부
+	
+	프레임 장점
+	1. 불필요한 소스나 리소스를 다시 다운로드 하지 않는다.(고정 영역 : 메뉴 등)
+	2. 클라이언트 <-> 서버간의 불필요한 트래픽 발생X
+	3. 클라이언트측 인터넷 속도 향상
+	4. 서버측 처리 비용 감소 
+	
+	프레임 단점
+	1. 디자인 문제
+	
+	-->
+<frameset rows = "100, *" noresize frameborder = "no"> <!--cols, rows : 메뉴 100픽셀, 나머지 자동계산-->
+	<frame src = "http://yes24.com" scrolling = "no">
+	
+	<frameset cols = "200, *">
+		<frame src = "http://www.kma.go.kr"  scrolling = "no">
+		<frame src = "http://aladin.co.kr">
+	</frameset>
+</frameset>
+	
+</html>
+	

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--ex24_html5.html -->
+	
+	<!--
+	
+	Semantic Web
+	- 시맨틱 웹 : 의미론적 웹
+	- HTML의 구성 요소를 좀 더 의미를 부여해서 관리하자.
+	- HTML 언어의 특성
+		: 표현은 잘하지만..데이터의 의미는 관리가 취약하다.
+		
+	식별자 > 의미 부여
+	1. name
+		- 링크, 이미지, 폼태그에만 적용
+		- HTML에서 사용
+		- CSS, JavaScript에서 사용(잘 안씀)
+		- 서버에 전송할 때 데이터의 식별자(****************)
+	2. id
+		- 모든 태그에 적용
+		- 유일한 객체 식별자
+		- 명명법 : 정규식 word와 동일
+		- CSS, JavaScript에서 사용
+	3. class 
+		- 모든 태그에 적용
+		- 그룹 식별자
+		- 명명법 : 정규식 word와 동일
+		- CSS, JavaScript에서 사용
+	-->
+	<h1>이력서</h1>
+	<div id = "name" class = "item">홍길동</div> <!--id 값은 유일값이어서 중복이 되면 안된다.(한 페이지에서)-->
+	<div id = "age" class = "item">20</div>		<!--class : 그룹을 만들기 위해서(같은 성질끼리)  -->
+	<div id = "mobile" class = "item">010-4999-9999</div>
+	<div id = "tel" class = "item">02-202-2020</div>
+	<div id = "address" class = "item">서울시 강남구 역삼동</div>
+	
+	<div id = "name" class = "item">홍길동</div>  <!--id가 통일이 되지 않는다.  -->
+	<div id = "fullname" class = "item">홍길동</div> 
+	<div id = "nick" class = "item">홍길동</div> 
+	
+	<hr>
+	
+	<h2>주의 사항</h2>
+	<div>방문하실 때 반드시 신분증을 지참하세요.</div>
+	
+	<h2>오시는 길</h2>
+	<div>지하철 역삼역 2번 출구에서 200m 걸어오세요.</div>
+	
+</body>
+</html>

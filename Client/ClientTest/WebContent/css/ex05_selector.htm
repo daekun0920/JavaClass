@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+/* 
+
+4. 그룹 선택자
+- 1 ~ 3번 선택자를 그룹으로 묶어서 일괄 적용
+- CSS 본문을 여러 선택자가 공유
+
+*/
+	/* 
+	p {
+		color:red; font-style:italic;
+	}
+	
+	div {
+		color:red; font-style:italic;
+	}
+	
+	h1 {
+		color:red; font-style:italic;
+	}
+	*/
+	
+	.my {
+		color:red; font-style:italic;
+	}
+
+	h2, span, h3 {
+		color:blue; font-style:italic;
+	}
+	
+	#span1, #h3_1, #h2_1 {
+		font-size:50pt;
+	}
+
+	h3, #h3_1, .my {
+		text-decoration:underline;
+	}
+</style>
+
+</head>
+<body>
+	<!-- ex05_selector.htm -->
+	<p class = "my">문단입니다.</p>
+	<div class = "my">영역입니다.</div>
+	<h1 class = "my">제목입니다.</h1>
+	
+	<h2>제목입니다.</h2>
+	<span id = "span1">영역입니다.</span>
+	<h3>제목입니다.</h3>
+	
+	<h2>제목입니다.</h2>
+	<span>영역입니다.</span>
+	<h3 id = "h3_1">제목입니다.</h3>
+	
+	<h2 id = "h2_1">제목입니다.</h2>
+	<span>영역입니다.</span>
+	<h3>제목입니다.</h3>
+	
+</body>
+</html>

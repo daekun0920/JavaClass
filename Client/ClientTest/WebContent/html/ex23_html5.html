@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--ex23_html5.html-->
+	<!--
+	<form> 관련 쪽 
+	
+	-->
+	<form action = "ex23_ok.jsp" method = "post">
+														  <!--클릭시 라벨 삭제-->
+		<input type = "text" value = "이름을 입력하세요." onfocus = "this.value = '';">
+		<hr>
+		
+		<input type = "password" value = "암호를 입력하세요." onfocus = "this.value = '';">
+		<hr>
+		
+		
+		<!--HTML5-->
+		<input type = "text" placeholder = "이름을 입력하세요.">
+		<hr>
+		
+		<input type = "password" placeholder = "암호를 입력하세요.">
+		<hr>
+		
+		<textarea placeholder = "자기소개"></textarea>
+		<hr>
+		
+		이름 : <input type = "text" required value = "홍길동"> ** 필수 입력 
+		<hr>
+		
+		<!--의미 부여-->
+		전화번호 : <input type = "tel">
+		<hr>
+		
+		<!--의미 부여 + 형식 유효성 검사-->
+		URL : <input type = "url" required>
+		<hr>
+		
+		Email : <input type = "email">
+		<hr>
+		
+		숫자 : <input type = "number" min = "0" max = "10" step = "2">
+		<hr>
+		
+		범위 : <input type = "range" min = "0" max = "100" value = "0" onchange = "document.getElementById('txt1').value = this.value;">
+			   <input type = "text" id = "txt1">
+			   
+		<hr>
+		
+		색상 : <input type = "color" value = "#FF0000" onchange = "document.body.bgColor = this.value;">
+		<hr>
+		
+		
+		<input type = "date" min = "2018-02-15" max = "2018-03-14">
+		<hr>
+		
+		<input type = "month">
+		<hr>
+		
+		<input type = "week">
+		<hr>
+		
+		<input type = "time">
+		<hr>
+		
+		<input type = "datetime-local"> <!--그냥 datetime은 크롬이 지원 안함-->
+		<hr>
+		
+		<input type = "search">
+		<hr>
+		
+		나이 : <input type = "text" pattern = "\d{1,3}"><!--정규식 사용--> ** 숫자만, 1 ~ 3 자리
+		<hr>
+		
+		나이 : <input type = "number" min = "0" max = "999"> ** 숫자만, 1 ~ 3 자리
+		<hr>
+		
+		이름 : <input type = "text" pattern = "[가-힣]{2,4}" required>
+		
+		<!--
+		HTML 버튼
+		1. submit 버튼
+			- 폼태그 내의 모든 입력 데이터를 서버로 전송하는 역할
+		2. reset 버튼
+			- 폼태그 내의 모든 입력 데이터를 초기화 하는 역할
+		3. image 버튼
+			- submit 버튼과 동일
+		4. 일반 버튼
+			- 아무 기능 없는 버튼 > 가장 많이 사용
+			- 자바스크립트를 사용해서 기능을 정의
+		5. 일반 버튼
+			- 4번과 거의 유사
+			
+		-->
+		<input type = "submit" value = "보내기">
+		<input type = "reset" value = "초기화">
+		<input type = "image" src = "images/face01.png">
+		<input type = "button" value = "일반버튼" onclick = "alert('클릭');">
+		<input type = "button" value = "일반버튼" onclick = "window.close();">
+		<button type = "button"><img src = "images/face02.png"></button>
+		
+		<hr>
+		
+		<h1>로그인</h1>
+		
+		<table border = "1" width = "300">
+			<tr>
+				<td>
+				아이디
+				</td>
+				<td>
+				<input type = "text" size = "10" autofocus tabindex = "1"> <!--tabindex : tab 순서 설정-->
+				</td>
+				<td rowspan = "2">
+				<input type = "submit" value = "로그인" tabindex = "3">
+				</td>
+			</tr>
+			<tr>
+				<td>
+				암호
+				</td>
+				<td>
+				<input type = "password" size = "10" tabindex = "2">
+				</td>
+				
+			</tr>
+			<tr>
+				<td colspan = "3">
+				<input type = "checkbox" tabindex = "4">
+				아이디를 기억합니다.
+				</td>
+				
+			</tr>
+		</table>
+		
+		사원명 : <input type = "text" list = "list1">
+		<br>
+		사원명 : <input type = "text" list = "list1">
+		<br>
+		사원명 : <input type = "text" list = "list1">
+		<br>
+		
+		<!--입력 & 고르기 둘다 가능-->
+		<datalist id = "list1">
+			<option value = "홍길동">
+			<option value = "홍가가">
+			<option value = "홍가나">
+			<option value = "홍가다">
+			<option value = "홍나나">
+		</datalist>
+		
+		<progress></progress>
+		<br>
+		<progress value = "0"></progress>
+		<br>
+		<progress value = "100"></progress>
+		<br>
+		<progress value = "50"></progress>
+		<br>
+		<progress value = "1"></progress> <!--1이 가장 높다.-->
+		<br>
+		<progress value = "0.35"></progress>
+		<br>
+		<progress value = "0.9"></progress>
+		<br>
+		<progress value = "35" max = "100" onmouseover = "this.title = this.value;"></progress>
+		
+		<hr>
+		
+		<meter></meter>
+		<br>
+		국어 : <meter value = "1"></meter>
+		<br>
+		수학 : <meter value = "0.9"></meter>
+		<br>
+		영어 : <meter value = "0.75"></meter>
+		<br>
+		
+		<meter value = "75" min = "-100" max = "100"></meter>
+		<br>
+		<meter value = "50" min = "0" max = "100" high = "80" low = "20" id = "m1"></meter> <!--high, low : 유효한 값 범위-->
+		
+		<hr>
+		
+		<details> 
+			<summary>자바</summary> <!--접기-->
+			<p>
+				자바에 대한 내용입니다.
+				자바에 대한 내용입니다.
+				자바에 대한 내용입니다.
+				자바에 대한 내용입니다.
+				자바에 대한 내용입니다.
+				자바에 대한 내용입니다.
+				자바에 대한 내용입니다.
+			</p>
+		</details>
+	</form>
+	
+</body>
+</html>
