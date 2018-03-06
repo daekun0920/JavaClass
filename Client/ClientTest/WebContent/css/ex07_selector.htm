@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+	
+	7. 형제 선택자, Sibling Selector
+	- 선택자 ~ 선택자
+	- 위의 형을 조건으로 동생을 검색(형이 바로 위의형, 그 위의 형, 그 위의 형 상관없음)
+	
+	8. 인접 형제 선택자, Adjacent Sibling Selector
+	- 선택자 + 선택자
+	- 위의 형을 조건으로 동생을 검색(바로 위의 형만..)
+	- 자식 선택자 유사
+	
+	*/
+	
+	/* span + p { color:red; } */
+	/* span ~ p { color:red; } */
+	/* div ~ div ~ p { color:red; } */
+	div ~ p + p { color:red; }
+	
+	
+</style>
+	
+</head>
+<body>
+	<!-- ex07_selector.htm -->
+	<p>p</p>
+	<div>div</div>
+	<span>span</span>
+	<p>p</p>
+	<span>span</span>
+	<p>p</p>
+	<div>div</div>
+	<p>p</p>
+	<p>p</p>
+	
+</body>
+</html>

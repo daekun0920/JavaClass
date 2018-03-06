@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	/*
+	1. 태그 선택자
+	2. id 선택자
+	3. 클래스 선택자
+	------------------
+	4. 그룹 선택자
+		
+	*/
+	li {
+		color:blue;
+	}
+	
+	#cat {
+		font-size:2em;
+	}
+	
+	.my {
+		text-decoration:underline;
+	}
+	
+	h1, #cat, .my {
+		font-size:italic;
+	}
+	
+	/*
+	
+	5. 자손 선택자, Descendant Selector
+		- 친자식 ~ 손자, 증손자, 고손자...
+		
+	6. 자식 선택자, Child Selector
+		- 친자식
+	
+	*/
+	
+	dt {
+		color:red;
+		font-weight:bold;
+	}
+	
+	b {
+		color:blue;
+	}
+	
+	/* 자식 선택자 */
+	dl#javaList > dd > b {
+		color:blue;
+	}
+	
+	dl#javaList b { /* 중간 세대 생략 가능 */
+		color:blue;
+		font-size:2em;
+	}
+	
+	/* 	
+	td {
+		color:blue;
+	} 
+	*/
+	
+	/* 	#member > tbody > tr > td { color:yellow; } */	
+	
+	#member td { /* 중간에 tbody 존재 */
+		color:yellow;
+	}
+	
+	#javaList b, #member td {
+		font-style:italic;
+	}
+</style>
+
+</head>
+<body>
+	<!--ex06_selector.htm-->
+	<h1>자바 용어</h1>
+	<dl id = "javaList"> <!--하나로 끝나는 세대-->
+		<dt>클래스</dt>
+		<dd>설명입니다.<b> 설명입니다.</b> 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다.</dd>
+		<dt>메소드</dt>
+		<dd>설명입니다. 설명입니다.<b> 설명입니다. 설명입니다. </b>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다.</dd>
+		<dt>인터페이스</dt>
+		<dd>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. <b> 설명입니다. </b> 설명입니다. 설명입니다. 설명입니다. 설명입니다.</dd>
+		<dt>상속</dt>
+		<dd>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. <b> 설명입니다. </b> 설명입니다. 설명입니다. 설명입니다.</dd>
+	</dl>
+	
+	<h1>오라클 용어</h1>
+	<dl>
+		<dt>클래스</dt>
+		<dd>설명입니다.<b> 설명입니다.</b> 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다.</dd>
+		<dt>메소드</dt>
+		<dd>설명입니다. 설명입니다.<b> 설명입니다. 설명입니다. </b>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다.</dd>
+		<dt>인터페이스</dt>
+		<dd>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. <b> 설명입니다. </b> 설명입니다. 설명입니다. 설명입니다. 설명입니다.</dd>
+		<dt>상속</dt>
+		<dd>설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. <b> 설명입니다. </b> 설명입니다. 설명입니다. 설명입니다.</dd>
+	</dl>
+	
+	<h1>주소록</h1>
+	
+	<table border = "1" width = "500" id = "member">
+		<tr>
+			<td>1</td><td>홍길동</td><td>남자</td><td>hong@test.com</td>
+		</tr>
+		<tr>
+			<td>1</td><td>홍길동</td><td>남자</td><td>hong@test.com</td>
+		</tr>
+		<tr>
+			<td>1</td><td>홍길동</td><td>남자</td><td>hong@test.com</td>
+		</tr>
+	</table>
+	
+	<h1>회원 명단</h1>
+	
+		<table border = "1" width = "500">
+		<tr>
+			<td>1</td><td>홍길동</td><td>남자</td><td>hong@test.com</td>
+		</tr>
+		<tr>
+			<td>1</td><td>홍길동</td><td>남자</td><td>hong@test.com</td>
+		</tr>
+		<tr>
+			<td>1</td><td>홍길동</td><td>남자</td><td>hong@test.com</td>
+		</tr>
+	</table>
+		
+	<p>
+	위의 <b>용어는 중요한</b> 내용입니다.
+	</p>
+	
+	<hr>
+	
+	<h1>애완동물</h1>
+	<ul>
+		<li class = "my">강아지</li>
+		<li id = "cat">고양이</li>
+		<li>병아리</li>
+		<li class = "my">햄스터</li>
+		<li class = "my">토끼</li>
+	</ul>
+	
+</body>
+</html>

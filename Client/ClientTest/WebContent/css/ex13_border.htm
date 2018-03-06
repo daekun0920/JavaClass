@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	/*
+	박스 모델, Box Model
+	- 태그를 상자 형태로 랜더링 한다. + 적용되는 규칙
+	1. 테두리
+	2. 너비, 높이
+	3. 여백
+	
+	
+	테두리
+	- 모든 태그는 자신의 영역을 가진다.
+	- 영역은 반드시 사각형의 형태를 가진다.
+	- 일부 요소는 이미 시각적인 테두리를 가진다.(테이블, 텍스트 박스등 ..)
+	- 모든 태그는 테두리 속성을 사용해서 테두리를 시각화할 수 있다.
+	
+	*/
+	#box1 {
+		border-color:red; /* 테두리 색상 */
+		border-width:10px; /* 테두리 두께 */
+		border-style:solid; /* 선 형태 (solid, dashed, dotted)*/
+	}
+	
+	#box2 {
+		border:10px solid blue;
+	}
+	
+	#box3 { /* 각 변별 설정 */
+		/* 
+		border-top:10px solid red;
+		border-right:20px dashed green;
+		border-bottom:30px dotted orange;
+		border-left:40px solid yellow;
+		 */
+		/* 
+		border-top-width:10px;
+		border-top-style:solid;
+		border-top-color:green;
+		*/
+		
+		/* border-width:10px; */
+		border-width:10px 20px 30px 40px; /* top right bottom left */
+		border-width:10px 50px; /* (top,bottom) (right,left) */
+		border-color:green red;
+		border-style:solid;
+		
+	}
+	
+	#txt1 {
+		/*
+		background-color:yellow;
+		border:1px solid #CCC; 
+		*/
+		
+		border:0px; /* width */
+		border-top:1px solid gray;
+		border-bottom:1px solid gray;
+		outline:none; /* 입력할 때 파란색 테두리 */
+		font-size:2em;
+		font-weight:bold;
+		color:red;
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+	<!--ex13_border.htm-->
+	<h1>테두리</h1>
+	
+	<div id = "box1" class = "box">상자</div>
+	<div id = "box2" class = "box">상자</div>
+	<div id = "box3" class = "box">상자</div>
+	<br><br>
+	<input type = "text" id = "txt1">
+	
+	
+</body>
+</html>

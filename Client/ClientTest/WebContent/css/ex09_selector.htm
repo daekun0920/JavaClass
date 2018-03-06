@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+	속성 충돌
+	
+	
+	*/
+	/* 동일한 표현의 선택자를 1회 이상 선언해도 상관 없다.(비권장) */
+	/* 	
+	div {
+		color:red;
+	}
+	
+	div {
+		font-style:italic;
+	} 
+	*/
+	
+	/* 동일한 속성이 반복되면 마지막에 적용한 속성이 처리 - 덮어쓰기 */
+	/* 
+	div {
+		color:yellow;
+	}
+	
+	div {
+		color:blue;
+	} 
+	*/
+	
+	/*
+	
+	선택자 우선 순위
+	- 서로 다른 선택자가 하나의 태그에 같은 속성을 적용했을 때 누구를 적용할지..
+	
+	점수 계산(식별자 1개당)
+	- 선택자를 구성하는 모든 식별자의 점수 합이 가장 높은게 적용됨
+	1. 태그 : 1점
+	2. 클래스 : 10점
+	3. 아이디 : 100점	
+
+	*/
+	/* div#parent div#box1 { color:red; } */
+	#box1 { color:gray !important; } /* !important : 최우선 적용 */
+	#parent #box1 { color:skyblue; }
+	#box1.box { color:pink; } 
+	div { color:orange; }
+	
+	
+	p span p {} /* 3점 */
+	span > b {} /* 2점 */
+	
+	.box span b {} /* 12점 */
+	.box span .item {} /* 21점 */
+	
+	.box .item {} /* 20점 */
+	.box a, .box span b {} /* 11점, 12점 */
+	
+	.box.item {} /* 20점 */
+	
+	#member td {} /* 101점 */
+	#member tbody tr td {} /* 103점 */
+	
+	
+	
+</style>
+	
+</head>
+<body>
+	<!-- ex09_selector.htm -->
+	<div id = "parent">
+		<div id = "box1" class = "box">상자1</div>
+		<div>상자2</div>
+		<p class = "box">상자</p>
+	</div>
+</body>
+</html>
