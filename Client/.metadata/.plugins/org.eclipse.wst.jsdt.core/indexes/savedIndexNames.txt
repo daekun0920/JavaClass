@@ -1,14 +1,9 @@
 INDEX VERSION 1.4+C:\workspace\Class\JavaClass\Client\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 328356702.index
-328356702.index
-3704554732.index
-482968069.index
 2809581253.index
-482968069.index
 3294551226.index
-4286332082.index
 1732217530.index
-861828954.index
 1301602120.index
 2956268062.index
 3299048262.index
+328356702.index

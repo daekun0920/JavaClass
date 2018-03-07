@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body {
+		margin:0px;
+	}
+
+	#tblmenu {
+		border:1px solid gray;
+		width:100%;
+		height:50px;
+		border-collapse:collapse;
+	}
+
+	#tblmenu td {
+		border:1px solid gray;
+		text-align:center;
+		width:25%;
+		font-size:14px;
+		font-weight:bold;
+		font-variant:small-caps;
+		background-color:black;
+		color:white;
+		border-right:1px dashed gray;
+	}
+	#tblmenu .lasttd {
+		border-right:0px;
+	}
+	#tblmenu td:hover {
+		color:red;
+	}
+</style>
+</head>
+<body>
+	<!--ex16_box.htm-->
+	<!--메뉴-->
+	<table id = "tblmenu">
+		<tr>
+			<td>Employee</td>
+			<td>Customer</td>
+			<td>Administrator</td>
+			<td class = "lasttd">Board</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

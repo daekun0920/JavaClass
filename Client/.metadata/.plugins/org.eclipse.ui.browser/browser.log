@@ -20,3 +20,7 @@
 3월 06, 2018 13:35:34.14 [10620:6624:0306/133534.146:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 1.979 s
 3월 06, 2018 13:36:50.79 
 3월 06, 2018 13:36:50.79 KLIB_SelfTest return : KLR_OK
+
+3월 07, 2018 11:18:46.03 NEW SESSION
+3월 07, 2018 11:18:46.03 [8464:11972:0307/111846.014:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 0.886 s
+3월 07, 2018 11:25:40.64 [8464:11972:0307/112540.640:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 0.886 s

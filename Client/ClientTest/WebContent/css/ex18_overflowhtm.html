@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "css/common.css">
+<style>
+	#box {
+		border:1px solid black;
+		width:200px;
+		height:200px;
+		
+		/* 오버플로우 제어(visible, hidden, scroll, auto) */
+		overflow:visible;
+		word-break:break-all; /* 영어, 숫자 강제 개행 */
+	}
+	
+	#box2 {
+		border:1px solid black;
+		
+		/* overflow 속성은 width, height 명시적으로 지정되었을 때 사용한다. */
+		overflow:auto;
+	}
+</style>
+</head>
+<body>
+	<!--ex18_overflow.htm-->
+
+	<div id = "box">
+	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	</div>
+	
+	<div id = "box2">
+	안녕하세요. 안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.
+	안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.
+	안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.
+	안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.
+	</div>
+	
+	<table id = "tbl1" class = "table" style = "width:200px;height:200px;">
+		<tr>
+			<td style = "width:100px;height:100px;">1</td>
+			<td style = "width:100px;height:100px;">2</td>
+		</tr>
+		<tr>
+			<td style = "width:100px;height:100px;">
+				<div style = "width:100px;height:100px;overflow:auto;"> <!-- td 에는 overflow가 작동하지 않는다. -> <div>로 한번 더 감싸줌 -->
+				안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.
+				</div>
+			</td>
+			<td style = "width:100px;height:100px;">4</td>
+		</tr>
+	</table>
+</body>
+</html>

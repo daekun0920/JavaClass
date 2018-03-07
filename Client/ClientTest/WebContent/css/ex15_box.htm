@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box2 {
+		/* background-color:yellow; */
+		background-color:rgba(255, 255, 0, .4);
+		/*
+		
+		블럭태그
+		1. 너비 : 100%
+		2. 높이 : 컨텐츠 크기
+		3. CSS + width, height : 100% 적용됨
+		
+		인라인 태그
+		1. 너비 : 컨텐츠 크기
+		2. 높이 : 컨텐츠 크기
+		3. CSS + width, height : 적용안됨
+		   예외) 시각적으로 크기가 눈에 보이는 태그에 한해서 적용(폼컨트롤, 이미지)
+		
+		*** 웹은 요소의 너비 정책은 맘대로 제어가 가능하다. 높이 정책이 불안하다.(상대크기)
+		-> 높이를 상대 크기로 지정하는 행동을 피한다.
+		
+		크기
+		1. width, 너비
+		2. height, 높이
+		
+		*/
+		/* 
+		width:200px;
+		height:200px;
+		 */
+		/*
+		width:200px;  상대 크기 : 부모 크기에 비례  
+		height:50px; 
+		*/
+		
+		/*
+		여백, margin, padding
+		
+		margin, 바깥쪽 여백
+		- 자신과 외부 객체간의 거리
+		
+		*/
+		
+		/* margin:20px; */ /* body에서도 20px 떨어짐  */
+		/* margin-top:50px; */
+		/* margin-right: */
+		/* margin-bottom:100px; */
+		/* margin-left: */
+		/* margin:100px 0px 50px 0px; */ /* top right bottom left  */
+		/* margin:100px 0px; */ /* (top, bottom) (left, right) */
+		/* margin:-50px 0px; */
+		
+		/*
+		padding, 안쪽 여백
+		- 테두리와 내용물 사이의 거리
+		
+		*/
+		/* padding:20px; */
+		padding: 40px 0px;
+		
+		/* 
+		box3과의 거리 
+		- margin의 두 개체 중에서 큰 값만 적용된다.
+		*/
+		margin-bottom: 10px;
+		
+	}	/* box2 */
+	
+	#box3 {
+		margin-top:20px;
+	}
+	
+	.box {
+		border:1px solid black; width:200px; height:200px;
+	}
+	
+	
+	body {
+		border:10px solid blue;
+		margin:0px;
+	}
+	
+	
+	#txt1{
+		width:300px;
+		height:200px;
+		text-align:right;
+	}
+	#txt2 {
+		width:300px;
+		height:200px;
+	}
+	#cat {
+		width:300px;
+	}
+	#name {
+		background-color:aqua;
+		width:150px;
+		height:150px;
+	}
+	a {
+		width:150px;
+		height:150px;
+	}
+	p {
+		margin:0px;
+	}
+	
+	#list {
+		border:1px solid blue;
+	}
+	
+	#list li {
+		border:1px solid red;
+		/* margin:0px;*/
+		margin-left:10px;
+	}
+	
+</style>
+</head>
+<body>
+	<!--ex15_box.htm-->
+	
+	<div id = "box1" class = "box">상자1</div>
+	문자열
+	<div id = "box2" class = "box">상자2</div>
+	문자열
+	<div id = "box3" class = "box">상자3</div>
+	
+	<hr>
+	
+	<p>문단입니다.</p>
+	<p>문단입니다.</p>
+	<p>문단입니다.</p>
+	
+	<hr>
+	
+	<h1>장보기</h1>
+	<ul id = "list">
+		<li>물티슈</li>
+		<li>종이컵 한줄</li>
+		<li>인스턴트 커피</li>
+	</ul>
+	
+	<hr>
+	
+	입금액 : <input type = "text" style = "text-align:right; padding-right:5px; width:50px;">
+	
+	<hr>
+	
+	<input type = "text" id = "txt1"><br>
+	<textarea id = "txt2"></textarea><br>
+	<img src = "../images/catty02.png" id = "cat">
+	<p>안녕하세요.<span id = "name">홍길동</span>입니다.<a href = "#">아무개</a>야</p>
+	
+	<p>문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 
+	문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 
+	문자열입니다. 문자열입니다. 문자열입니다. <span style = "width:500px;height:300px;display:inline-block;">홍길동입니다.</span> 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 
+	문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 
+	문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. 문자열입니다. </p>
+	
+</body>
+</html>

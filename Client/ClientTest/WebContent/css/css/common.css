@@ -1,0 +1,40 @@
+/* common.css */
+
+
+/* 
+table {
+	
+} 
+*/
+
+.table {
+	border:1px solid #999;
+	border-collapse:collapse;	
+}
+
+.table th, .table td {
+	border:1px solid #999;
+}
+
+.table.sprite th, .table.sprite td { /* <table class = "table sprite" */
+	border-left:0px;
+	border-right:0px;
+}
+
+.table.small th, .table.small td {
+	padding:0px;
+}
+
+.table.big th, .table.big td {
+	padding:10px;
+}
+
+.table.middle th, .table.middle td {
+	padding:4px;
+}
+
+/* 
+#table {
+	
+} 
+*/

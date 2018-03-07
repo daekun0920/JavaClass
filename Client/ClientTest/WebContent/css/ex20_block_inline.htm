@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box, .link {
+		border:1px solid black;
+	}
+	
+	/*
+	블럭 태그
+	- 자신의 영역안에 자신의 내용만을 출력 > 한라인 독점
+	- 너비 100%, 높이 내용물 만큼
+	- 너비, 높이 조절 가능
+	- padding, margin 조절 가능
+	
+	
+	*/
+	
+	#box2 {
+		width:200px; height:100px; padding:30px; margin:30px;
+	}
+	
+	/*
+	인라인 태그
+	- 자신의 내용 앞뒤의 요소의 내용이 같은 라인
+	- 너비 내용물만큼, 높이 내용물만큼
+	- 너비, 높이 조절 불가능
+	- padding : 수평만 가능, 수직은 불가능
+	*/
+	#link2 {
+		/* 
+		width:100px;
+		height:100px;
+		*/
+		padding:30px;
+		margin:30px;
+ 	}
+</style>
+</head>
+<body>
+	<!--ex20_block_inline.htm-->
+	
+	<h1>블럭 태그</h1>
+	
+	<div id = "box1" class = "box">상자1</div>
+	<div id = "box2" class = "box">상자2</div>
+	<div id = "box3" class = "box">상자3</div>
+	
+	<h1>인라인 태그</h1>
+	
+	문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열
+	문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열
+	문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열
+	<a href = "#" id = "link1" class = "link">링크1</a>
+	<a href = "#" id = "link2" class = "link">링크2</a>
+	<a href = "#" id = "link3" class = "link">링크3</a>
+	문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열
+	문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열
+	문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열문자열
+	
+	
+	
+</body>
+</html>
