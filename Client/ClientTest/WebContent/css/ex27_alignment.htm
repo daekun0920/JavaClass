@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+	정렬, Alignment
+	- 인라인 태그와 블럭 태그의 수평 정렬
+	
+	1. 인라인 태그
+		- 내용물을 정렬할 수 없다. > 내용물 크기와 컨테이너의 크기가 동일하기 때문.. 움직일 공간이 없음
+		- 스스로 정렬 불가능 > 부모가 정렬을 한다.
+		
+	2. 블럭 태그
+		- 수평 정렬이 존재 안함. > 성질이 너비 100%이기 때문에
+		- margin:auto 값을 사용해서 유사하게 구현
+		
+	*/
+	#span1 {
+		border:1px solid black;
+		text-align:center;
+	}
+	
+	.box {
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+	<!--ex27_alignment.htm-->
+	<div class = "box">
+		<span id = "span1">인라인1</span>
+		<span id = "span2">인라인2</span>
+	</div>
+	
+	<div style = "background-color:yellow;padding:10px; text-align:center;">
+		<div style = "background-color:red;width:100px;margin-left:auto;margin-right:auto;">상자1</div>
+	</div>
+	
+</body>
+</html>

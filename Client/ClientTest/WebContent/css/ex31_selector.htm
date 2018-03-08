@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+	
+	속성 선택자
+	1. 선택자[속성] : 해당 속성을 명시한 태그를 찾아라.  // [속성]을 구현 했느냐? (target이라는 속성이 있는걸 찾아라)  
+	2. 선택자[속성 = '값'] : 해당 속성을 명시하고 특정값을 가지는 태그를 찾아라.
+	3. 선택자[속성^='값'] : 해당 속성값이 값으로 시작하는 태그를 찾아라.
+	4. 선택자[속성$='값'] : 해당 속성값이 값으로 끝나는 태그를 찾아라.
+	5. 선택자[속성*='값'] : 해당 속성값이 포함만 되어있으면 찾아라.
+	
+	*/
+	
+	/*
+	div a[target] {
+		font-size:2em;
+	} 
+	*/
+	
+	/* 
+	div a[target = '_blank'] {
+		font-size:2em;
+	} 
+	*/
+	
+	/* 
+	div a[href$='.com'] {
+		font-size:2em;
+	}	
+	*/
+	
+	/* 
+	div a[href^='https://'] {
+		font-size:2em;
+	}
+	*/
+	
+	div a[href*='co'] {
+		font-size:2em;
+	}
+	
+	p span.word { /* border-line 으로 밑줄 효과 */
+		/* text-decoration:underline; */
+		border-bottom:1px dotted red;
+	}
+	
+	p span.word[title='중요하다능'] {
+		font-weight:bold;
+		color:red;
+	}
+</style>
+</head>
+<body>
+	<!--ex31_selector.htm-->
+	
+	<!-- 
+	
+	CSS, Cascading
+	: CSS는 부모의 속성을 자식이 물려받는다. (텍스트와 관련된 속성만 물려받는다.)
+	
+	
+	-->
+	
+	<div style = "font-family:궁서; border:1px solid black; font-style:italic; padding:30px;">
+		부모텍스트
+		<div>
+		자식텍스트
+		</div>
+		부모텍스트
+	</div>
+	
+	<p>안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.
+	안녕하세요. 홍길동입니다.안녕하세요. <span class = "word" title = "중요하다능">오라클</span>홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. <span class = "word">CSS</span>홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.
+	안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. <span class = "word">자바</span>홍길동입니다.안녕하세요. 홍길동입니다.
+	안녕하세요.<span class = "word">SQL</span> 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.
+	안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. <span class = "word" title = "중요하다능">HTML</span>홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.
+	안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.안녕하세요. 홍길동입니다.</p>
+	
+	<div><a href = "http://naver.com" target = "_self">네이버</a></div> <!-- target = 페이지 열때 새 페이지 혹은 현재 페이지에서 열지 여부  -->
+	<div><a href = "https://yes24.com" target = "_blank">예스24</a></div>
+	<div><a href = "https://daum.net">다음</a></div>
+	<div><a href = "http://11st.co.kr">11번가</a></div>
+	<div><a href = "http://kma.go.kr" target = "_blank">기상청</a></div>
+	
+</body>
+</html>

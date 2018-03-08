@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+   .box{border:1px solid black; width:150px; height:150px;}
+   #box1{
+      background-color:#ED1C24;
+   }
+   #box2{
+      background-color:#FFC90E;
+      /*
+      요소의 위치를 지정하는 방법
+      1. padding
+      2. margin
+      3. position
+      4. transform
+      
+      요소의 위치, position
+      - x 좌표 + y 좌표
+      
+      position 속성
+      - 좌표를 지정하는 방식
+      - 좌표계 지정
+      
+      1. position:static
+         - 기본값
+         - 워드방식
+         - 위 -> 아래, 좌 -> 우
+         - Flow Layout
+         - x, y 없음
+      
+      2. position: absolute
+      	- 절대 좌표
+      	- 문서의 좌측 상단을 기준(0, 0)으로 한다. > 자신의 직계 조상중 가장 처음으로 만나는 position이 static이 아닌 조상을 기준하는 좌표계
+      	- 원래 있던 자신의 공간은 사라진다.(display:none;)
+      	- 객체의 좌측 상단이 기준(왼쪽 상단 모서리가 x,y 좌표)이다.
+      	- left, bottom이 될때는 좌측 하단이 기준이 된다(0, 0)
+      	
+      3. position: relative
+      	- 상대 좌표
+      	- 자기 자신을 기준으로 한다.
+      	- 원래 있던 자신의 공간은 유지된다.(visibility:hidden;)
+      	
+      4. position: fixed
+		- 창과 붙어 스크롤링해도 같이 따라온다.
+      	
+      */
+      /* position:absolute; */
+      /* left:0px; */
+      /* right:0px; */
+      /* top: 0px; */  
+      /* bottom:0px; */
+  
+  	  /* 
+  	  position:relative;
+  	  left:100px;
+  	  top:0px; 
+  	  */
+  	  
+  	  /*  
+  	  position:fixed;
+  	  right:0px;
+  	  top:300px;
+  	  */
+  	  
+  
+   } /* #box2 */
+   #box3{
+      background-color:#22B14C;
+   }
+   #box4 {
+  	  	background-color:orange;
+  	  	width:300px;
+  	  	height:300px;
+  	  	padding:100px;
+  	  	/* 
+  	  	position:absolute;
+  	  	left:700px;
+  	  	top:300px;
+  	 	*/
+  	 	position:relative; 
+  	  	left:0px;
+  	  	top:0px;
+  	 }
+   #box5 {
+  	  	background-color:skyblue;
+  	  	width:300px;
+  	  	height:300px;
+  	  	padding:100px;
+  	  	
+  	    /*
+  	    position:absolute;
+  	  	left:700px;
+  	  	top:300px; 
+  	  	*/
+  	  	
+  	  
+  	}
+    #box6 {
+  	  	background-color:pink;
+  	  	position:absolute;
+  	  	left:0px;
+  	  	top:0px;
+    }
+</style>
+</head>
+<body>
+
+   <div id="box1" class="box">상자1</div>
+   <div id="box2" class="box">상자2</div>
+   <div id="box3" class="box">상자3</div>
+	
+	<hr>
+
+	<div id="box4" class="box">
+		<h3>할아버지</h3>
+		<div id = "box5" class = "box">
+			<h3>아버지</h3>
+			<div id = "box6" class = "box">자식</div>
+		</div>
+	</div>
+  	
+	<hr>
+	
+	
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	<p>내용입니다.</p>
+	
+</body>
+</html>

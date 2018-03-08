@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box {
+		width:200px;
+		height:200px;
+	}
+	
+	#box1 {
+		background-color:red;
+	}
+	#box2 {
+		position:absolute;
+		left:100px;
+		top:100px;
+		z-index:100; /* 레이어 변경 - 숫자는 다른 레이어 보다 크면 위로 옴 */
+		
+		background-color:rgba(255,255,0,0.5);
+		opacity:0; /* 객체 자체의 불투명도 */
+		
+	}
+	#box3 {
+		position:relative;
+		left:100px;
+		top:0px;
+		background-color:blue;
+	}
+	
+	body {
+		margin-bottom:100px;
+	}
+	#list {
+		border:1px solid black;
+		width:1250px;
+		margin-bottom:100px;
+	}
+	
+	#list img {
+		float:left;
+		opacity:.4;
+	}
+	
+	#list img:hover {
+		opacity:1;
+		cursor:pointer;
+	}
+	#logo {
+		border:0px solid black;
+		width:202px;
+		height:57px;
+		background-image:url("../images/sp_main_v171220.png");
+	}
+	
+	#naver {
+		border:0px solid black;
+		width:50px;
+		height:50px;
+		background-image:url("../images/sp_main_v171220.png");
+		background-position:0px -65px;
+	}
+</style>
+</head>
+<body>
+	<!--ex29_zindex.htm-->
+	
+	<div id = "naver"></div>
+	
+	<hr>
+	
+	<div id = "logo"></div>
+	
+	<hr>
+	
+	<img src = "../images/sp_main_v171220.png">
+	
+	<hr>
+	
+	<div id = "box1" class = "box">상자1</div>
+	<div id = "box2" class = "box">상자2</div>
+	<div id = "box3" class = "box">상자3</div>
+	
+	상단
+	<img src = "../images/dog01.jpg" style = "opacity:0;">
+	하단
+	
+	<h1>고양이를 선택하세요.</h1>
+	<div id = "list">
+		<img src = "../images/cat01.jpg">
+		<img src = "../images/cat02.jpg">
+		<img src = "../images/cat03.jpg">
+		<img src = "../images/cat04.jpg">
+		<img src = "../images/cat05.jpg">
+		<div style = "clear:both;"></div> <!-- float 마지막에 넣어주기(인식 문제)  -->
+	</div>
+	
+</body>
+</html>

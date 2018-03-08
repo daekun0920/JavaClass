@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#main {
+		border:1px solid black;
+		width:800px;
+		margin:0px auto;
+		/* search의 기준점 역할 & 자신의 원래 위치 그대로.. */
+		position:relative;
+		left:0px;
+		top:0px;
+	}
+	
+	header {
+		width:100%;
+		height:50px;
+		padding-top:20px;
+		text-align:center;
+		background-color:#EEE;
+	}
+	
+	header input {
+		width:300px;
+	}
+	
+	section {
+		
+	}
+	
+	#list {
+		background-color:#EEE;
+		border:1px solid gray;
+		width:300px;
+		
+		/* position:relative;
+		left:273px;
+		top:-341px;*/ /* relative는 자기 공간이 남아서 안된다.  */
+		
+		position:absolute;
+		left: 272px;
+		top: 42px;
+	
+	}
+</style>
+</head>
+<body>
+	<!--ex26_position.htm-->
+	<div id = "main">
+		<header>
+			검색 : <input type = "text" id = "search">
+		</header>
+		<section>
+			<p>내용물입니다.내용물입니다.내용물입니다.내용물입니다.내용물입니다.</p>
+			<p>내용물입니다.내용물입니다.내용물입니다.내용물입니다.내용물입니다.</p>
+			<p>내용물입니다.내용물입니다.내용물입니다.내용물입니다.내용물입니다.</p>
+			<p>내용물입니다.내용물입니다.내용물입니다.내용물입니다.내용물입니다.</p>
+			<p>내용물입니다.내용물입니다.내용물입니다.내용물입니다.내용물입니다.</p>
+			<p>내용물입니다.내용물입니다.내용물입니다.내용물입니다.내용물입니다.</p>
+			<p>내용물입니다.내용물입니다.내용물입니다.내용물입니다.내용물입니다.</p>
+			<p>내용물입니다.내용물입니다.내용물입니다.내용물입니다.내용물입니다.</p>
+		</section>
+		
+		<div id = "list" style = "visibility:hidden;">
+	
+			<div>추천 검색어</div>
+			<div>추천 검색어</div>
+			<div>추천 검색어</div>
+			<div>추천 검색어</div>
+			<div>추천 검색어</div>
+			<div>추천 검색어</div>
+			<div>추천 검색어</div>
+			<div>추천 검색어</div>
+			<div>추천 검색어</div>
+			<div>추천 검색어</div>
+		</div>
+		<div>추가 내용들...</div>
+	</div>
+	
+	<script>
+	
+		document.getElementById("search").onfocus = function() {
+			document.getElementById("list").style.visibility = "visible";
+		};
+		document.getElementById("search").onblur = function() {
+			document.getElementById("list").style.visibility = "hidden";
+		};
+		
+		
+	
+	</script>
+</body>
+</html>

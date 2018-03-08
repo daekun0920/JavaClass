@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+#main {
+   border: 1px solid black;
+   width: 600px;
+}
+
+#menu {
+   background-color: #ed1c24;
+   width: 600px;
+   height: 80px;
+}
+
+#submenu {
+   background-color: #ffaec9;
+   width: 150px;
+   float: left;
+   height: 400px;   
+}
+
+#content {
+   background-color: #FFC90E;
+   width: 420px;
+   float: left;
+   height: 400px;
+   padding: 15px;   
+}
+
+#footer {
+   background-color: #22b14c;
+   width: 600px;
+   height: 50px;
+   clear: both;
+}
+</style>
+</head>
+<body>
+   <!--  
+   
+   레이아웃. Layout
+   1. 표 사용
+   2. <div> + CSS 사용
+   
+   -->
+   
+   <!-- <div> + CSS -->
+   <div id="main">
+      <div id="menu">주메뉴(빨강)</div>
+      <div id="submenu">서브메뉴(핑크)</div>
+      <div id="content">콘텐츠(노랑)
+         <h1>상품 리스트 <span style="font-size: 14px; color: blue;float: right; margin-top: 20px">2018.03.08</span></h1>
+      </div>
+      <div id="footer">하단(녹색)</div>
+   </div>
+   <hr>
+   
+   <!-- Semantic + CSS -->
+   <nav id="main">
+      <nav id="menu">주메뉴(빨강)</nav>
+      <nav id="submenu">서브메뉴(핑크)</nav>
+      <section id="content">콘텐츠(노랑)</section>
+      <footer id="footer">하단(녹색)</footer>
+   </nav>
+   
+</body>
+</html>

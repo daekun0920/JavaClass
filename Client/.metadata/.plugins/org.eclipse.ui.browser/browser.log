@@ -24,3 +24,20 @@
 3월 07, 2018 11:18:46.03 NEW SESSION
 3월 07, 2018 11:18:46.03 [8464:11972:0307/111846.014:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 0.886 s
 3월 07, 2018 11:25:40.64 [8464:11972:0307/112540.640:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 0.886 s
+3월 07, 2018 16:22:28.26 [8464:11972:0307/162228.260:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 2.153 s
+3월 07, 2018 16:22:30.57 [8464:11972:0307/162230.570:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 2.153 s
+
+3월 08, 2018 11:03:40.60 NEW SESSION
+3월 08, 2018 11:03:40.60 
+3월 08, 2018 11:03:40.61 KLIB_SelfTest return : KLR_OK
+3월 08, 2018 12:07:05.60 [11436:8200:0308/120705.608:ERROR:CONSOLE(8)] "Uncaught TypeError: Cannot read property '1' of null", source: https://www.google.co.kr/_/chrome/newtab?ie=UTF-8 (8)
+3월 08, 2018 12:23:57.92 
+3월 08, 2018 12:23:57.93 KLIB_SelfTest return : KLR_OK
+3월 08, 2018 12:24:23.03 
+3월 08, 2018 12:24:23.03 KLIB_SelfTest return : KLR_OK
+3월 08, 2018 12:24:45.24 
+3월 08, 2018 12:24:45.24 KLIB_SelfTest return : KLR_OK
+3월 08, 2018 12:35:54.68 
+3월 08, 2018 12:35:54.69 KLIB_SelfTest return : KLR_OK
+3월 08, 2018 14:30:16.16 
+3월 08, 2018 14:30:16.17 KLIB_SelfTest return : KLR_OK
