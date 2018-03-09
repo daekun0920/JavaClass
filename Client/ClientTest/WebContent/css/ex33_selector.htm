@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+	
+	입력폼 선택자
+	1. focus
+	2. enabled
+	3. disabled
+	4. checked
+	5. required
+	6. optional
+	
+	*/
+	input {
+		border:1px solid white;
+		border-bottom:1px solid #CCC;
+		opacity:.4;
+	}
+	input:focus{
+		/* background-color:yellow;
+		border:1px solid red; */
+		opacity:1;
+		outline:none;
+	}
+	
+	input {
+		background-color:white;
+		border:1px solid #DDD;
+	}
+	
+	input:disabled {
+		opacity:.4;
+		cursor:not-allowed
+	}
+	
+	input:enabled {
+		/* *.cur 확장자만 걸수 있음 */
+		cursor:wait;
+	}
+	
+	input:required {
+		background-color:red;	
+	}
+	
+	input:optional {
+		background-color:yellow;
+	}
+	
+	input[type=checkbox] {
+		opacity:.3;
+		cursor:default;
+	}
+	
+	input[type=checkbox]:checked {
+		opacity:1;
+	}
+	
+	input#cb1+div {
+		display:none;
+	}
+	
+	input#cb1:checked+div {
+		display:block;
+	}
+	
+</style>
+</head>
+<body>
+	<!--ex33_selector.htm-->
+	
+	<form action="">
+		<input type="text" required/>
+		<br />
+		<input type="text" required/>
+		<br />
+		<input type="text" required/>
+		<br />
+		<input type="text" disabled/>
+		<br />
+		<input type="text" disabled/>
+		<br />
+		<input type="text" readonly/>
+		<br />
+		<input type="text" readonly/>
+		<br />
+		<input type="text" />
+		<br />
+		<input type="text" />
+		<br />
+		<input type="text" />
+		<br />
+		
+		<hr>
+		
+		<input type="checkbox" style = "background-color:red; border:10px solid red;"/>
+		<input type="checkbox" />
+		<input type="checkbox" />
+		
+		<hr>
+		
+		설명 감추기 <input type="checkbox" id = "cb1" />
+		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam enim explicabo minus aspernatur totam eligendi magnam ea rerum repellat molestias! Nobis rerum sit corrupti! Est nobis voluptatem iusto quasi voluptatibus.</div>
+		
+	</form>	
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box1 {
+		/* text-shadow:h-shadow v-shadow blur color; */
+		text-shadow: 1px 0px 0px gray;
+	}
+	
+	#box2 {
+		border:0px solid black;
+		box-shadow:2px 2px 3px gray;
+	}
+	
+	#p1 span:hover {
+		color:red;
+		text-shadow:2px 2px 2px rgba(255,0,0,.5);
+	}
+	
+	#p2, #p3 {
+		border:1px solid black;
+		width:300px;
+		white-space:nowrap; /* 강제 개행 차단  */
+		overflow:hidden;
+	}
+	
+	#p2 {
+		text-overflow:clip;
+	}
+	
+	#p3 {
+		text-overflow:ellipsis; /* 오버 플로우 부분 말 줄임표로 바뀜(width, white-space, overflow 속성이 있어야함) */
+	}
+</style>
+</head>
+<body>
+	<!--ex36_shadow.htm-->
+	
+	(p#p$>lorem10)*2
+	<p id="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id deleniti!</p>
+	<p id="p3">Expedita veniam magnam cum in deleniti consectetur quidem omnis. Et.</p>
+	
+	<input type = "text" style = "width:300px;background-color:black;outline:none;padding:4px;text-shadow:-1px -1px 0px white;">
+	
+	<!-- div#box${HTML5 & CSS3}*3-->
+	<div id="box1">HTML5 & CSS3</div>
+	<div id="box2">HTML5 & CSS3</div>
+	<div id="box3">HTML5 & CSS3</div>
+	
+	<!-- p#p1>lorem100 -->
+	<p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio rerum id provident magni repellat atque. 
+	Dolorem vel facere est ut ipsa <span>tempore ipsam numquam </span>incidunt harum aspernatur tempora assumenda ipsum ullam. Reiciendis
+	tempora sapiente earum at ex aspernatur culpa quibusdam <span>commodi debitis doloribus</span> vitae ipsum quae iste optio repudiandae 
+	veritatis possimus natus provident asperiores veniam dolorum <span>explicabo magni corrupti a eveniet</span> sed fugit recusandae itaque impedit expedita 
+	id qui enim consequuntur! Quasi illum laudantium unde fuga obcaecati consequatur sit <span>quae ea tempora dicta.</span> Id ducimus labore harum fugit sapiente nulla et 
+	aspernatur voluptatibus nostrum cupiditate nam deleniti quidem ipsa excepturi.</p>
+	 
+</body>
+</html>

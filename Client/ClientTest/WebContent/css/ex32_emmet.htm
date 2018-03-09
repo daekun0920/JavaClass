@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+</style>
+<body>
+	<!--  -->
+	<!--
+		Emmet, Zen-Coding
+		- HTML, CSS 코드를 쉽게 작성해주는 플러그인(대부분 툴)
+		- http://emmet.io
+		- sublime text, atom, brackets, notepad++
+		- CSS 선택자를 사용 + CSS3 선택자 지원
+		
+		
+	-->
+	
+	<h1>태그 선택자</h1>
+	
+	<div></div>
+	<p></p>
+	<a href="http://naver.com">네이버</a>
+	<img src="dog.jpb" alt="강아지" />
+	<input type="checkbox" />
+	
+	<h1>ID 선택자</h1>
+	
+	div#box1
+	<div id="box1"></div>
+	
+	input#age
+	<input type="text" id="age" />
+	
+	h1#title
+	<h1 id="title"></h1>
+	
+	#box{}
+	<div id="box"></div>
+	
+	<h1>클래스 선택자</h1>
+	
+	div.box{}
+	<div class="box"></div>
+	
+	<div class ="box"></div>
+	img.cat
+	<img src="" alt="" class="cat" />
+	
+	<h1>다중클래스</h1>
+	div.red.box.one
+	
+	<div class="red box one"></div>
+	
+	div.#box1.box
+	<div id="box1" class="box"></div>
+	
+	div#box1.box.red
+	<div id="box1" class="box red"></div>
+	
+	<div class="items"></div>
+	
+	<h1>속성 선택자</h1>
+	
+	div[title]{}
+	<div title="도움말">내용</div>
+	
+	div[title='상자']
+	<div title="상자"></div>
+	
+	a
+	<a href=""></a>
+	
+	a[target]
+	<a href="#" target="_blank">텍스트</a>
+	
+	a[target=_blank]
+	<a href="" target="_blank"></a>
+	
+	a[href=# target=_blank]
+	<a href="#" target="_blank"></a>
+	
+	img
+	<img src="" alt="" />
+	
+	img[width height title]
+	<img src="" alt="" width="" height="" title="" />
+	
+	
+	<h1>PCDATA</h1>
+	
+	div{상자}
+	<div>상자</div>
+	
+	a{네이버}
+	<a href="">네이버</a>
+	
+	a[href=http://naver.com]{네이버}
+	<a href="http://naver.com">네이버</a>
+	
+	div#box1.box.red[title=상자]{내용물입니다.}
+	<div id="box1" class="box red" title="상자">내용물입니다.</div>
+	
+	---------------------------------------------------------------
+	
+	반복 생산
+	
+	div*5
+	<div>하나</div>
+	<div>둘</div>
+	<div>셋</div>
+	<div>넷</div>
+	<div>다섯</div>
+    
+    div.box*5
+    <div class="box">상자1</div>
+    <div class="box">상자2</div>
+    <div class="box">상자3</div>
+    <div class="box">상자4</div>
+    <div class="box">상자5</div>
+    
+    div.box[title]{상자}*5
+    <div class="box" title="">상자</div>
+    <div class="box" title="">상자</div>
+    <div class="box" title="">상자</div>
+    <div class="box" title="">상자</div>
+    <div class="box" title="">상자</div>
+    
+    div#box1*5
+    <div id="box1"></div>
+    <div id="box1"></div>
+    <div id="box1"></div>
+    <div id="box1"></div>
+    <div id="box1"></div>
+    
+	div#box$*5
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	<div id="box4"></div>
+	<div id="box5"></div>
+	
+	div#box$.box{상자$}*3
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	
+	h$*6
+	<h1></h1>
+	<h2></h2>
+	<h3></h3>
+	<h4></h4>
+	<h5></h5>
+	<h6></h6>
+	
+	div{$. 항목}*10
+	<div>1. 항목</div>
+	<div>2. 항목</div>
+	<div>3. 항목</div>
+	<div>4. 항목</div>
+	<div>5. 항목</div>
+	<div>6. 항목</div>
+	<div>7. 항목</div>
+	<div>8. 항목</div>
+	<div>9. 항목</div>
+	<div>10. 항목</div>
+	
+	div{$$. 항목}*20
+	<div>01. 항목</div>
+	<div>02. 항목</div>
+	<div>03. 항목</div>
+	<div>04. 항목</div>
+	<div>05. 항목</div>
+	<div>06. 항목</div>
+	<div>07. 항목</div>
+	<div>08. 항목</div>
+	<div>09. 항목</div>
+	<div>10. 항목</div>
+	<div>11. 항목</div>
+	<div>12. 항목</div>
+	<div>13. 항목</div>
+	<div>14. 항목</div>
+	<div>15. 항목</div>
+	<div>16. 항목</div>
+	<div>17. 항목</div>
+	<div>18. 항목</div>
+	<div>19. 항목</div>
+	<div>20. 항목</div>
+	
+	형제 선택자
+	a ~ b // X
+	a + b // O
+	
+	div+p
+	<div></div>
+	<p></p>
+	
+	div+p+a+img
+	<div></div>
+	<p></p>
+	<a href=""></a>
+	<img src="" alt="" />
+	
+	h1+p+p
+	(h1+p+p)*3
+	<h1></h1>
+	<p></p>
+	<p></p>
+	<h1></h1>
+	<p></p>
+	<p></p>
+	<h1></h1>
+	<p></p>
+	<p></p>
+	
+	(h1#title$.titles[title=제목]{제목입니다.}+p.content{설명입니다.}*3)*2
+	<h1 id="title1" class="titles" title="제목">제목입니다.</h1>
+	<p class="content">설명입니다.</p>
+	<p class="content">설명입니다.</p>
+	<p class="content">설명입니다.</p>
+	<h1 id="title2" class="titles" title="제목">제목입니다.</h1>
+	<p class="content">설명입니다.</p>
+	<p class="content">설명입니다.</p>
+	<p class="content">설명입니다.</p>
+	
+	
+	자손 선택자
+	자식 선택자
+	
+	div a 
+	div > a
+	
+	ul>li
+	<ul>
+		<li></li>
+	</ul>
+	
+	ul>li*5
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+	ul#list1>li.item*5
+	<ul id="list1">
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+	</ul>
+	
+	ul#list1>(li.item>a{링크})*5
+	<ul id="list1">
+		<li class="item"><a href="">링크</a></li>
+		<li class="item"><a href="">링크</a></li>
+		<li class="item"><a href="">링크</a></li>
+		<li class="item"><a href="">링크</a></li>
+		<li class="item"><a href="">링크</a></li>
+	</ul>
+	
+	h1{오늘의할일}+ul#list>li{항목$}*3
+	<h1>오늘의할일</h1>
+	<ul id="list">
+		<li>항목1</li>
+		<li>항목2</li>
+		<li>항목3</li>
+	</ul>
+	
+	table+
+	ul+
+	ol+
+	dl+
+	select+
+	select>option*5
+	
+	<h1>10행 5열 테이블</h1>
+	
+	table#tbl1>tr*10>td.cell$*5
+	table#tbl1>(tr>th#col$*5)+(tr*10>td.cell$*5)
+	
+	table#tbl1
+	<table id="tbl1">
+		tr>th#cols$*5
+		<tr>
+			<th id="cols1"></th>
+			<th id="cols2"></th>
+			<th id="cols3"></th>
+			<th id="cols4"></th>
+			<th id="cols5"></th>
+		</tr>
+		
+		tr*10>td.cell$5
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+	</table>
+	
+	Lorem Ipsum
+	
+	<h1>목록</h1>
+	
+	<ul>
+		<li>안녕하세요. 홍길동 입니다.</li>
+	</ul>
+	
+	
+	<h1>목록</h1>
+	
+	ul>(li>lorem)*5
+	<ul>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum quas dignissimos consequatur ut in hic quibusdam quo ratione laudantium officiis cum eligendi minus velit facilis vel. Repellat at eos consequuntur.</li>
+		<li>Optio exercitationem aspernatur quos vitae impedit unde voluptate debitis quo ducimus illum illo quaerat quisquam nihil dignissimos inventore eius qui fugit deserunt obcaecati atque. Impedit voluptas voluptatibus illo nulla minima.</li>
+		<li>Quos a accusantium ipsum facilis aut ex maiores ipsa optio mollitia. Maxime atque aliquam aut exercitationem facere necessitatibus accusamus fuga error ipsum ipsam incidunt voluptatem tempora in consequatur repellendus pariatur.</li>
+		<li>Corrupti dolorum commodi dolor sequi nostrum exercitationem eligendi minima corporis voluptatum vero similique saepe ex natus tempore nobis ad porro doloremque soluta dicta obcaecati repudiandae ea consequatur vel sint ratione!</li>
+		<li>Architecto nisi cupiditate quisquam vitae odio minus dolorum fuga. Quasi unde vero delectus doloremque praesentium autem eveniet fugiat assumenda vel est placeat molestias nisi. Labore minima repellat ea molestias inventore!</li>
+	</ul>
+	
+	div>lorem
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptatibus soluta iusto similique suscipit officia odit eius vel reiciendis explicabo sapiente veniam deserunt repellat at ratione dolor eligendi quis consectetur.</div>
+	
+	div>lorem3
+	<div>Lorem ipsum dolor.</div>
+	
+	(div>lorem1)*5
+	<div>Lorem.</div>
+	<div>Corporis?</div>
+	<div>Illum.</div>
+	<div>Ducimus.</div>
+	<div>Iure.</div>
+	
+	div>lorem1000
+	
+	html:5
+	
+</body>
+</html>

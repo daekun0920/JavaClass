@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+	전후 선택자
+	1. before
+	2. after
+	
+	전후 선택자에서 사용하는 CSS 문법
+	1. content 속성의 값
+		a. none
+		b. 문자열
+		c. attr(속성)
+		d. open-quote
+		e. close-quote
+		
+		
+	*/
+	
+	#p1 span {
+		color:red;
+	}
+	
+	#p1 span:before {
+		/* content:"중요 : ["; */
+		content:open-quote;
+	}
+	
+	#p1 span:after {
+		/* content:"]"; */
+		content:close-quote;
+	}
+	
+	a {
+		color:black;
+		text-decoration:none;
+	}
+	
+	a:after {
+		content:"(url:" attr(href) ")"; /* 더하기 기호 없어도 더해짐 */
+	}
+	
+	.tistory {
+      width: 90%;   
+      font-weight: bold;
+      background-color: #D8D8D8;
+      border-left: 10px solid #FF8224;   
+      border-right: 10px solid #FF8224;
+      margin: 1.5em 10px;   
+      padding: 0.5em 10px;
+      quotes:"\201C""\201D""\2018""\2019";
+   }
+	.tistory:before {
+	   color: #FF8224;   
+	   content: open-quote;   
+	   font-size: 4em;
+	   line-height: 0.1em;
+	   vertical-align: -0.4em;      
+	}
+	.tistory:after {
+	   color: #FF8224;   
+	   content: close-quote;   
+	   font-size: 4em;
+	   line-height: 0.1em;
+	   vertical-align: -0.4em;      
+	}
+</style>
+</head>
+<body>
+	<!--ex35_selector.htm-->
+	
+	<p id = "p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium est quas assumenda voluptatum aut
+	 nobis labore quasi aperiam nihil mollitia! Totam aperiam autem officia incidunt aliquid velit explicabo<span> cumque debitis 
+	 vitae nisi impedit odio </span>saepe quibusdam amet <span> ipsam illum?</span> Labore quasi ducimus earum id assumenda dolor ipsa laboriosam 
+	 doloribus dolorem qui autem non sunt aliquam mollitia <a href = "http://google.com">구글</a>pariatur iure facilis dignissimos vitae repellat deleniti veniam sequi ipsum 
+	 laborum ullam  <a href = "http://naver.com">네이버</a>corporis eum excepturi? Deleniti eius eum placeat <span>voluptatem asperiores</span> quia esse nobis architecto aperiam ad cumque hic. 
+	 Laborum tempora eveniet ipsum voluptate eum praesentium dolores aliquid aspernatur similique. Nemo molestias error.</p>
+	
+	<blockquote class="tistory"> 아니 뭐라굽쇼~?</blockquote>
+</body>
+</html>
