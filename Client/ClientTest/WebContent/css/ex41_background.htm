@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box {
+		border:1px solid black;
+		width:500px;
+		height:300px;
+		margin:30px;
+	}
+	
+	#box1 {
+		background-image:url("../images/catty01.png"), 
+				         url("../images/catty02.png"),
+				         url("../images/catty03.png");
+		background-repeat:no-repeat /* repeat-x,repeat-y */;		       
+		background-position:left top, right top, right bottom;
+	}
+	
+	#box2 {
+		background-image:url("../images/cat01_big.jpg");
+		/* background-size:500px 300px; */
+		/* background-size:250px 150px; */
+		/* background-size:1px 1px; */
+		/* background-size:250px; */ /* 가로 */
+		/* background-size:100% 100%; */
+		background-size:auto 150px; /* 세로 */
+	}
+	
+	#box3 {
+		/* width:300px; height:500px; */
+		
+		background-image:url("../images/cat03_big.jpg");
+		background-repeat:no-repeat;
+		background-position:center center;
+		
+		/* 가로 */
+		/* background-size:auto 100%; */
+		
+		/* 세로 */
+		/* background-size:auto 100%; */
+		
+		/* 배경이 항상 100% 보이게 */
+		/* background-size:contatin; */
+		
+		/* 영역이 항상 100% 배경으로 꽉차게 */
+		background-size:cover;
+	 
+	}
+	
+	/* 풀 사이즈 배경 이미지 */
+	html {
+		background-image:url("../images/wall34.jpg");
+		background-repeat:no-repeat;
+		background-position:center center;
+		background-attachment:fixed; /* 화면 기준 */
+		/* background-size:100% auto; */
+		background-size:cover;
+	}
+	
+</style>
+</head>
+<body>
+	<!--ex41_background.htm-->
+	
+	<div id="box1" class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae nesciunt.</div>
+	<div id="box2" class="box">Veritatis dolorem nisi qui similique provident. Vitae debitis ipsa illum!</div>
+	<div id="box3" class="box">Dolorum voluptas laudantium architecto sequi earum quibusdam saepe aspernatur ut!</div>
+	
+	
+</body>
+</html>

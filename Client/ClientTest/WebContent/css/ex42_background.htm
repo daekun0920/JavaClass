@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box {
+		width:700px;
+		height:200px;
+		margin:30px;
+	}
+	
+	#box1 {
+		/* solid color, 단색 */
+		/* background-color:red; */	
+		
+		/* gradient:색의 변화를 시각적으로 표현 */
+		background:linear-gradient(white, #DDD);
+		
+	}
+	
+	#box2 {
+		/* background:linear-gradient(to right, red, yellow); */
+		/* background:linear-gradient(to left, red, yellow); */
+		/* background:linear-gradient(to top, red, yellow); */
+		/* background:linear-gradient(to bottom right, red, yellow); */
+		/* background:linear-gradient(to top left, red, yellow); */
+		background:linear-gradient(90deg, red, yellow);
+		
+	}
+	
+	#box3 {
+		/* background:linear-gradient(red, yellow, orange); */
+		background:linear-gradient(to right, red, orange, yellow, yellow, yellow, green, blue, indigo, violet);
+	}
+	
+	#box4 {
+		background:linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+	}
+	
+	#box5 {
+		background:radial-gradient(red, yellow, green, red);
+	}
+	
+	#box6 {
+		background:radial-gradient(circle, red, yellow, green, red);
+	}
+	
+</style>
+</head>
+<body>
+	<!--ex42_background.htm-->
+	
+	<div id = "box1" class = "box"></div>
+	<div id = "box2" class = "box"></div>
+	<div id = "box3" class = "box"></div>
+	<div id = "box4" class = "box"></div>
+	<div id = "box5" class = "box"></div>
+	<div id = "box6" class = "box"></div>
+	
+</body>
+</html>

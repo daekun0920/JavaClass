@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#div3 ul {
+		display:inline-block;
+		float:left;
+		width:48px;
+		padding:14px 20px 14px 20px;
+		position:relative;
+		left:10px;
+		margin-left:-20px;
+		margin-right:10px;
+		line-height:1.2em;
+		letter-spacing:-1px;
+	}
+	
+	#div1 {
+		width:200px;
+		border:1px solid #DDD;
+		height:110px;
+	}
+	
+	#div3 li {
+		font-size:12px;
+		font-family:돋움;
+		color:#6B6D70;
+		background-image:url("../images/dotdot.gif");
+		background-repeat:no-repeat;
+		background-position:7px;
+		background-size:2px;
+		list-style:none;
+		padding-left:16px;
+		margin:1px;
+		width:45px;
+	}
+	
+	#div3 {
+		position:relative;
+		left:0px;
+		top:-17px;
+	}
+	
+	#div2 {
+		border-bottom:1px solid #DDD;
+		padding-top:-5px;
+		padding-bottom:3px;		
+	}
+
+	#div3 ul:nth-child(2)  {
+		position:relative;
+		left:-9px;
+	}
+	
+	#div3 ul:last-child {
+		position:relative;
+		top:-102px;
+		left:54px;
+	}
+</style>
+</head>
+<body>
+	<div id = "div1">
+		<div id = "div2" class = "div">
+			<img src = "../images/h4_rt_leisure.gif" style = "margin-left:9px; margin-top:8px;">
+		</div>
+		<div id = "div3" class = "div">
+			<ul>
+				<li>산</li>
+				<li>축구장</li>
+				<li>골프장</li>
+			</ul>
+			<ul>
+				<li>해수욕장</li>
+				<li>공항</li>
+			</ul>
+			<ul>
+				<li>야구장</li>
+				<li>스키장</li>
+			</ul>	
+		</div>
+	</div>
+</body>
+</html>

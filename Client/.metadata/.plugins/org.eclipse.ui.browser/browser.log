@@ -41,3 +41,18 @@
 3월 08, 2018 12:35:54.69 KLIB_SelfTest return : KLR_OK
 3월 08, 2018 14:30:16.16 
 3월 08, 2018 14:30:16.17 KLIB_SelfTest return : KLR_OK
+
+3월 12, 2018 14:07:02.77 NEW SESSION
+3월 12, 2018 14:07:02.77 [9288:2788:0312/140702.757:ERROR:backend_impl.cc(1055)] Critical error found -8
+3월 12, 2018 14:43:08.90 [9288:2788:0312/144308.908:ERROR:backend_impl.cc(1055)] Critical error found -8
+
+3월 12, 2018 16:49:29.47 NEW SESSION
+3월 12, 2018 16:49:29.47 [1288:3700:0312/164929.333:ERROR:backend_impl.cc(1055)] Critical error found -8
+3월 12, 2018 16:49:29.55 [1288:3700:0312/164929.333:ERROR:entry_impl.cc(962)] Failed to save user data
+3월 12, 2018 16:49:30.49 [1288:3700:0312/164930.497:ERROR:backend_impl.cc(1055)] Critical error found -8
+3월 12, 2018 16:49:30.74 [1288:3700:0312/164930.748:ERROR:entry_impl.cc(962)] Failed to save user data
+3월 12, 2018 16:49:30.75 [1288:3700:0312/164930.748:ERROR:entry_impl.cc(962)] Failed to save user data
+3월 12, 2018 16:49:31.40 [1288:3700:0312/164931.402:ERROR:backend_impl.cc(1055)] Critical error found -8
+3월 12, 2018 16:49:31.40 [1288:3700:0312/164931.402:ERROR:entry_impl.cc(962)] Failed to save user data
+3월 12, 2018 16:49:50.00 [1288:7512:0312/164950.009:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+3월 12, 2018 16:50:00.37 [1288:7512:0312/165000.370:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2

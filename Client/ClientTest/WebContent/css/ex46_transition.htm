@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box1 {
+		border:1px solid black;
+		width:150px;
+		height:150px;
+		overflow:auto;
+		transition:height 1s;
+	}
+	
+	#cb1:checked + label + #box1 {
+		/* background-color:yellow; */
+		height:400px;
+	}
+	
+	#box2 {
+		border:1px solid black;
+		width:150px;
+		height:150px;
+		
+	}
+	
+	#cat1 {
+		position:relative;
+		left:0px;
+		top:0px;
+		transition:left 1s;
+	}
+	
+	#box2:hover + #cat1 {
+		left:300px;
+	}
+	
+	#cat2 {
+		position:relative;
+		left:100px;
+		top:0px;
+		transition:all 1s;
+	}
+	
+	#box3, #box4, #box5, #box6 {
+		border:1px solid black;
+		width:50px;
+		height:50px;
+	}
+	
+	#box3:hover ~ #cat2 {
+		top:-300px;
+	}
+	#box4:hover ~ #cat2 {
+		top:300px;
+	}
+	#box5:hover ~ #cat2 {
+		left:-300px;
+	}	
+	#box6:hover ~ #cat2 {
+		left:300px;
+	}
+	
+	#dog1 {
+		margin:100px;
+		transition:all 1s;
+	}
+	
+	body:hover #dog1 {
+		/* transform:translate(300px, 0px); */
+		/* transform:scale(-1, 1); */
+		/* transform:rotate(360deg); */
+		transform:skew(90deg, 0deg);
+	}
+	
+</style>
+</head>
+<body>
+	<!--ex46_transition.htm-->
+	<input type = "checkbox" id = "cb1"><label for = "cb1">확장하기</label>
+	<div id = "box1" class = "box">안녕하세요, 홍길동입니다. 안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.
+	안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.
+	안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.
+	안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.
+	안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.안녕하세요, 홍길동입니다.
+	</div>
+	
+	<hr>
+	
+	<div id = "box2">이곳에 마우스를 올리세요.</div>
+	<img src = "../images/catty01.png" id = "cat1">
+	
+	<hr>
+	<div style = "width:200px;margin:100px auto;">
+		<div id = "box3">위</div>
+		<div id = "box4">아래</div>
+		<div id = "box5">좌</div>
+		<div id = "box6">우</div>
+		<img src = "../images/catty02.png" id = "cat2">
+	</div>
+	
+	<hr>
+	
+	<img src = "../images/dog01.jpg" id = "dog1">
+	
+	
+</body>
+</html>

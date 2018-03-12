@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel = "stylesheet" href = "css/common.css">
+
+<style>
+	.box {
+		width:150px;
+		height:150px;
+		border:10px solid black;
+		margin:20px;
+	}
+	/*
+	
+	transition, 전환
+	- 객체(태그)의 속성(상태)값이 변화되는 과정을 순차적으로 보여주는 속성
+	1. 전환할 속성이 미리 정의되어 있어야 한다.
+	2. 전환에 걸리는 소요 시간을 정의한다.
+	
+	
+	*/
+	#box1 {
+		background-color:tomato;
+		
+		/* 전환을 적용할 대상 속성 */
+		/* transition-property:width height; */
+		transition-property:all;
+		transition-duration:1s;
+	}
+	
+	#box1:hover {
+		/*
+		width:500px;
+		height:500px; 
+		*/
+		
+		/*
+		transition 적용 가능 or 불가능
+		1. 적용 가능 : 수치 속성 
+		2. 적용 불가능 : 열거형
+		*/
+		
+		/* margin:100px; */
+		/* padding:100px; */
+		/* font-size:3em; */
+		/* border:dashed; */ /* transition 적용 X */
+		/* font-family:D2coding; */
+		/* border-width:0px; */ /* 10px + 10px -> 0px */
+		/* width:170px; */ /* 150px -> 170px */
+		/* height:170px; */
+		/* background-color:yellow; */
+		/* box-shadow:4px 4px 3px #555; */
+		/* opacity:.1; */
+		border-radius:50px;
+	}
+	
+	#tbl1 {
+		width:500px;
+	}
+	#tbl1 tr {
+		transition-property:background-color;
+		transition-duration:0.7s;
+	}
+	#tbl1 tr:hover {
+		background-color:cornflowerblue;
+		transition-duration:1s;
+		/* width:1000px; */
+		/* opacity:0; */	
+	}
+	
+	#cat img {
+		opacity:0.2;
+		transition:opacity 1s;
+	}
+	
+	#cat img:hover {
+		opacity:1;
+	}
+</style>
+</head>
+<body>
+	<!--ex45_transition.htm-->
+	
+	<div id = "box1" class = "box">상자1</div>
+	<hr>
+	
+	<h1>테이블</h1>
+	
+	<table id = "tbl1" class = "table middle">
+		<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+			<tr>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+			<td>항목</td>
+		</tr>
+		
+	</table>
+	
+	<hr>
+	
+	<h1>고양이들</h1>
+	<div id = "cat">
+		<img src = "../images/catty01.png">
+		<img src = "../images/catty02.png">
+		<img src = "../images/catty03.png">
+		<img src = "../images/catty04.png">
+		<img src = "../images/catty05.png">
+	</div>
+	
+	
+</body>
+</html>

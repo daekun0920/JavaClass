@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box{
+		width:200px;
+		height:200px;
+		padding:20px;
+		margin:20px;
+	}
+	
+	#box1 {
+		background-color:red;
+		/* border-radius:50px; */ /* 모서리를 둥글게 하는 속성 */
+		border-top-left-radius:50px;
+		border-bottom-right-radius:50px;
+		border-top-right-radius:100px;
+		border-bottom-left-radius:100px;
+	}
+	
+	#box2 {
+		border:5px solid black;
+		border-radius:20px;		
+		font-family:D2coding;
+		font-weight:bold;
+	}
+	
+	#box3 {
+		background-image:url("../images/cat01.jpg");
+		border-radius:20px;
+	}
+	
+	#txt1 {
+		width:200px;
+		outline:none;
+		border:1px solid #999;
+		border-radius:100px;
+		padding:3px 10px; /* 더 여유 있다 */
+	}
+	
+	#btn1 {
+		background-color:steelblue;
+		border:0px;
+		color:white;
+		padding:10px 20px;
+		font-size:1.5em;
+		border-radius:10px;
+	}
+	
+	#btn1:hover {
+		text-shadow:2px 2px 2px #555;
+		box-shadow:2px 2px 2px #555;
+		color:yellow;
+		border-radius:20px;
+	}
+	
+	#tbl1 {
+		border:0px solid gray;
+		border-radius:5px;
+		/* border-collapse:collapse; */
+	}
+	
+	#tbl1 td {
+		border:1px solid gray;
+		width:50px;
+		height:20px;
+		border-radius:5px;
+	}
+</style>
+</head>
+<body>
+	<!--ex40_border.htm-->
+	
+	<div id="box1" class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae nesciunt.</div>
+	<div id="box2" class="box">Veritatis dolorem nisi qui similique provident. Vitae debitis ipsa illum!</div>
+	<div id="box3" class="box">Dolorum voluptas laudantium architecto sequi earum quibusdam saepe aspernatur ut!</div>
+	
+	<hr>
+	
+	<input type = "text" id = "txt1">
+	
+	<hr>
+	
+	<input type = "button" value = "click" id = "btn1">
+	
+	<hr>
+	
+	<table id = "tbl1">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	
+	<hr>
+	
+	<img src = "../images/dog01.jpg" style = "border-radius:20px;">
+	
+</body>
+</html>
