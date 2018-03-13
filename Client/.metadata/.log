@@ -2720,3 +2720,674 @@ Binding(CTRL+D,
 
 !ENTRY org.eclipse.jface.text 2 0 2018-03-12 16:54:46.214
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+!SESSION 2018-03-13 08:58:23.000 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY com.genuitec.eclipse.startup 4 0 2018-03-13 08:59:06.366
+!MESSAGE Unexpected exception
+!STACK 0
+Unexpected character ( ) at position 0.
+	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
+	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
+	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
+	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
+	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
+	at com.genuitec.eclipse.startup.model.WorkspaceDataProvider.loadWorkspaceData(WorkspaceDataProvider.java:134)
+	at com.genuitec.eclipse.startup.model.WorkspaceDataProvider.getData(WorkspaceDataProvider.java:120)
+	at com.genuitec.eclipse.startup.model.WorkspaceDataProvider.getData(WorkspaceDataProvider.java:113)
+	at com.genuitec.eclipse.startup.model.WorkspaceDataProvider.lambda$8(WorkspaceDataProvider.java:283)
+	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.util.stream.DistinctOps$1$2.accept(Unknown Source)
+	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.util.stream.ReferencePipeline$2$1.accept(Unknown Source)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Unknown Source)
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.genuitec.eclipse.startup.model.WorkspaceDataProvider.getWorkspaceDataList(WorkspaceDataProvider.java:283)
+	at com.genuitec.eclipse.startup.dialogs.tabs.LaunchTabMainPage.createRecentWorkspacesComposite(LaunchTabMainPage.java:81)
+	at com.genuitec.eclipse.startup.dialogs.tabs.LaunchTabMainPage.createContents(LaunchTabMainPage.java:55)
+	at com.genuitec.eclipse.startup.dialogs.tabs.LaunchTabFactory.createPages(LaunchTabFactory.java:40)
+	at com.genuitec.eclipse.startup.dialogs.tabs.LaunchTabFactory.createTabArea(LaunchTabFactory.java:34)
+	at com.genuitec.eclipse.startup.dialogs.tabs.CodeFullyTabFactory.createContents(CodeFullyTabFactory.java:119)
+	at com.genuitec.eclipse.startup.dialogs.custom.SideTabFolder.createTabContent(SideTabFolder.java:455)
+	at com.genuitec.eclipse.startup.dialogs.custom.SideTabFolder.doCreateTabs(SideTabFolder.java:224)
+	at com.genuitec.eclipse.startup.dialogs.custom.SideTabFolder.createTabs(SideTabFolder.java:155)
+	at com.genuitec.eclipse.startup.dialogs.custom.AbstactSideTabDialog.createTabs(AbstactSideTabDialog.java:137)
+	at com.genuitec.eclipse.startup.dialogs.custom.CustomStartupDialog.createTabs(CustomStartupDialog.java:453)
+	at com.genuitec.eclipse.startup.dialogs.custom.CustomStartupDialog.createTabs(CustomStartupDialog.java:449)
+	at com.genuitec.eclipse.startup.dialogs.custom.AbstactSideTabDialog.createContents(AbstactSideTabDialog.java:117)
+	at org.eclipse.jface.window.Window.create(Window.java:426)
+	at org.eclipse.jface.window.Window.open(Window.java:783)
+	at com.genuitec.eclipse.startup.dialogs.custom.AbstactSideTabDialog.open(AbstactSideTabDialog.java:60)
+	at com.genuitec.eclipse.startup.dialogs.custom.CustomStartupDialog.prompt(CustomStartupDialog.java:325)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.showCustomDialog(IDEApplication.java:627)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.promptForWorkspace(IDEApplication.java:356)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.checkInstanceLocation(IDEApplication.java:278)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:141)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-03-13 08:59:10.835
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 08:59:20.969
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 08:59:20.985
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 08:59:21.000
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 08:59:21.000
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 08:59:21.032
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 08:59:21.032
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-03-13 08:59:25.911
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\sist00-14'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface 2 0 2018-03-13 09:00:01.038
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-03-13 09:00:01.038
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16c2da2c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(io.emmet.eclipse.commands.match_pair_outward,Match Pair Outward,
+		,
+		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@94b4ce6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 09:00:17.993
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 09:00:17.993
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:11:09.939
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:11:09.940
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:11:32.986
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:11:32.986
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:11:44.556
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:11:44.556
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:12:07.049
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:12:07.049
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:12:24.882
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:12:24.882
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:13:20.178
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:13:20.178
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:15:51.995
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:15:51.995
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:16:09.235
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:16:09.235
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:16:26.876
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:16:26.876
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:17:09.628
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:17:09.628
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:17:19.517
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:17:19.517
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:18:52.735
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:18:52.735
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:18:56.294
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:18:56.294
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:19:28.531
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:19:28.532
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:20:55.163
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:20:55.163
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:20:59.549
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:20:59.549
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2018-03-13 09:21:06.521
+!MESSAGE already installed: org.eclipse.jst.server.generic.jonas4
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:24:46.640
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:24:46.640
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2018-03-13 09:26:01.125
+!MESSAGE already installed: org.eclipse.jst.server.generic.jonas4
+
+!ENTRY org.eclipse.ui 4 0 2018-03-13 09:29:09.942
+!MESSAGE Cannot create or restore '문제2.htm' because it already exists.
+!STACK 1
+Java Model Exception: Core Exception [code 0] Cannot create or restore '문제2.htm' because it already exists.
+	at org.eclipse.jdt.internal.core.BatchOperation.executeOperation(BatchOperation.java:50)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:724)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:5660)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.DynamicValidationStateChange.perform(DynamicValidationStateChange.java:108)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:280)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.DynamicValidationStateChange.access$0(DynamicValidationStateChange.java:1)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.DynamicValidationStateChange$1.run(DynamicValidationStateChange.java:105)
+	at org.eclipse.jdt.internal.core.BatchOperation.executeOperation(BatchOperation.java:39)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:724)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:5660)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.DynamicValidationStateChange.perform(DynamicValidationStateChange.java:108)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:280)
+	at org.eclipse.ltk.internal.core.refactoring.UndoableOperation2ChangeAdapter$1.run(UndoableOperation2ChangeAdapter.java:329)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
+	at org.eclipse.ltk.internal.core.refactoring.UndoableOperation2ChangeAdapter.executeChange(UndoableOperation2ChangeAdapter.java:359)
+	at org.eclipse.ltk.internal.core.refactoring.UndoableOperation2ChangeAdapter.undo(UndoableOperation2ChangeAdapter.java:194)
+	at org.eclipse.core.commands.operations.TriggeredOperations.undo(TriggeredOperations.java:219)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.doUndo(DefaultOperationHistory.java:399)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.undo(DefaultOperationHistory.java:1147)
+	at org.eclipse.ui.operations.UndoActionHandler.runCommand(UndoActionHandler.java:87)
+	at org.eclipse.ui.operations.OperationHistoryActionHandler.lambda$0(OperationHistoryActionHandler.java:292)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:437)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:353)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:483)
+	at org.eclipse.ui.internal.operations.TimeTriggeredProgressMonitorDialog.access$6(TimeTriggeredProgressMonitorDialog.java:1)
+	at org.eclipse.ui.internal.operations.TimeTriggeredProgressMonitorDialog.lambda$0(TimeTriggeredProgressMonitorDialog.java:161)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.operations.TimeTriggeredProgressMonitorDialog.run(TimeTriggeredProgressMonitorDialog.java:173)
+	at org.eclipse.ui.operations.OperationHistoryActionHandler.run(OperationHistoryActionHandler.java:306)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:473)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:118)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:92)
+	at sun.reflect.GeneratedMethodAccessor52.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:305)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:239)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:152)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:494)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:487)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:287)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:527)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:577)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:385)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.access$0(KeyBindingDispatcher.java:331)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:88)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1271)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1078)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1103)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1088)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1130)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1126)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1547)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4962)
+	at org.eclipse.swt.widgets.Tree.WM_CHAR(Tree.java:6196)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4843)
+	at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:6191)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2560)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3815)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1039)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:680)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+Caused by: org.eclipse.core.runtime.CoreException: Cannot create or restore '문제2.htm' because it already exists.
+	at org.eclipse.ltk.internal.core.refactoring.resource.UndoDeleteResourceChange.perform(UndoDeleteResourceChange.java:72)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:280)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.DynamicValidationStateChange.access$0(DynamicValidationStateChange.java:1)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.DynamicValidationStateChange$1.run(DynamicValidationStateChange.java:105)
+	at org.eclipse.jdt.internal.core.BatchOperation.executeOperation(BatchOperation.java:39)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:724)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:5660)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.DynamicValidationStateChange.perform(DynamicValidationStateChange.java:108)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:280)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.DynamicValidationStateChange.access$0(DynamicValidationStateChange.java:1)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.DynamicValidationStateChange$1.run(DynamicValidationStateChange.java:105)
+	at org.eclipse.jdt.internal.core.BatchOperation.executeOperation(BatchOperation.java:39)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:724)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:5660)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.DynamicValidationStateChange.perform(DynamicValidationStateChange.java:108)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:280)
+	at org.eclipse.ltk.internal.core.refactoring.UndoableOperation2ChangeAdapter$1.run(UndoableOperation2ChangeAdapter.java:329)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
+	at org.eclipse.ltk.internal.core.refactoring.UndoableOperation2ChangeAdapter.executeChange(UndoableOperation2ChangeAdapter.java:359)
+	at org.eclipse.ltk.internal.core.refactoring.UndoableOperation2ChangeAdapter.undo(UndoableOperation2ChangeAdapter.java:194)
+	at org.eclipse.core.commands.operations.TriggeredOperations.undo(TriggeredOperations.java:219)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.doUndo(DefaultOperationHistory.java:399)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.undo(DefaultOperationHistory.java:1147)
+	at org.eclipse.ui.operations.UndoActionHandler.runCommand(UndoActionHandler.java:87)
+	at org.eclipse.ui.operations.OperationHistoryActionHandler.lambda$0(OperationHistoryActionHandler.java:292)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:437)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:353)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:483)
+	at org.eclipse.ui.internal.operations.TimeTriggeredProgressMonitorDialog.access$6(TimeTriggeredProgressMonitorDialog.java:1)
+	at org.eclipse.ui.internal.operations.TimeTriggeredProgressMonitorDialog.lambda$0(TimeTriggeredProgressMonitorDialog.java:161)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.operations.TimeTriggeredProgressMonitorDialog.run(TimeTriggeredProgressMonitorDialog.java:173)
+	at org.eclipse.ui.operations.OperationHistoryActionHandler.run(OperationHistoryActionHandler.java:306)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:473)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:118)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:92)
+	at sun.reflect.GeneratedMethodAccessor52.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:305)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:239)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:152)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:494)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:487)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:287)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:527)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:577)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:385)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.access$0(KeyBindingDispatcher.java:331)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:88)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:86)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1271)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1078)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1103)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1088)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1130)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1126)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1547)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4962)
+	at org.eclipse.swt.widgets.Tree.WM_CHAR(Tree.java:6196)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4843)
+	at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:6191)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2560)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3815)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1039)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:680)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+!SUBENTRY 1 org.eclipse.ltk.core.refactoring 4 0 2018-03-13 09:29:09.945
+!MESSAGE Cannot create or restore '문제2.htm' because it already exists.
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:31:20.044
+!MESSAGE Removing obsolete files from server...
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2018-03-13 09:31:20.044
+!MESSAGE Could not clean server of obsolete files: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤로그에서는 콘텐츠가 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.eclipse.jst.server.tomcat.core.internal.xml.Factory.loadDocument(Factory.java:88)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.getCatalinaServerInstance(TomcatVersionHelper.java:216)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatVersionHelper.cleanupCatalinaServer(TomcatVersionHelper.java:303)
+	at org.eclipse.jst.server.tomcat.core.internal.Tomcat90Configuration.cleanupServer(Tomcat90Configuration.java:701)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatServerBehaviour.publishServer(TomcatServerBehaviour.java:234)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:975)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 09:42:35.076
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-13 09:42:35.080
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#pbox {
+		border:1px solid black;
+		width:800px;
+		height:340px;
+	}
+	
+	.box {
+		width:100px;
+		height:50px;
+		margin:15px 0px;
+		transition:width 10s;
+	}
+	#pbox:hover .box {
+		width:800px;
+	}
+	/*
+	
+	transition-timing-funtion, 전환 패턴
+	- 구간별 속도 제어(조절)
+	1. linear: 등속
+	2. ease : 시작(느림) - 중간(빠름) - 끝(느림)
+	3. ease-in : 시작(느림) - 끝(빠름)
+	4. ease-out : 시작(빠름) - 끝(느림)
+	5. ease-in-out : 시작(빠름) - 중간(느림) - 끝(빠름)
+	
+	*/
+	#box1 {
+		background-color:red;
+		color:white;
+		transition-timing-function:linear;
+	}
+	#box2 {
+		background-color:orange;
+		transition-timing-function:ease;
+	}
+	#box3 {
+		background-color:yellow;
+		transition-timing-function:ease-in;
+	}
+	#box4 {
+		background-color:green;
+		color:white;
+		transition-timing-function:ease-out;
+	}
+	#box5 {
+		background-color:blue;
+		color:white;
+		transition-timing-function:ease-in-out;
+	}
+	
+</style>
+</head>
+<body>
+	<!--ex50_transition.htm-->
+	
+	<div id = "pbox">
+		<!-- div#box$.box*5 -->
+		<div id="box1" class="box">linear</div>
+		<div id="box2" class="box">ease(default)</div>
+		<div id="box3" class="box">ease-in</div>
+		<div id="box4" class="box">ease-out</div>
+		<div id="box5" class="box">ease-in-out</div>
+	</div>
+	
+	
+</body>
+</html>

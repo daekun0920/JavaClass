@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box{
+		width:200px;
+		height:200px;
+		position:absolute;
+		transition:z-index 2s;
+	}
+	
+	#box1 {
+		background-color: red;
+		left: 0px;
+		top: 0px;
+		z-index: 7;
+		
+	}
+	#box2 {
+		background-color: orange;
+		left: 30px;
+		top: 30px;
+		z-index: 6;
+		
+	}
+	#box3 {
+		background-color: yellow;
+		left: 60px;
+		top: 60px;
+		z-index: 5;
+		
+	}
+	#box4 {
+		background-color: green;
+		left: 90px;
+		top: 90px;
+		z-index: 4;
+		
+	}
+	#box5 {
+		background-color: blue;
+		left: 120px;
+		top: 120px;
+		z-index: 3;
+		
+	}
+	#box6 {
+		background-color: indigo;
+		left: 150px;
+		top: 150px;
+		z-index: 2;
+		
+	}
+	#box7 {
+		background-color: purple;
+		left: 180px;
+		top: 180px;
+		z-index: 1;
+		
+	}
+	body:hover #box1 {
+		z-index:8;
+	}
+	body:hover #box2 {
+		z-index:9;
+	}
+	body:hover #box3 {
+		z-index:10;
+	}
+	body:hover #box4 {
+		z-index:11;
+	}
+	body:hover #box5 {
+		z-index:12;
+	}
+	body:hover #box6 {
+		z-index:13;
+	}
+	body:hover #box7 {
+		z-index:14;
+	}
+	html, body {
+		height:100%;
+	}
+	body {
+		border:0px solid black;
+	}
+	
+	#dog {
+		margin-top:400px;
+		margin-bottom:300px;
+	}
+	
+	#dog img {
+		transition:all .5s;
+	}
+	
+	#dog img:hover {
+		border-radius:50%;
+	}
+</style>
+</head>
+<body>
+	<!--ex47.htm-->
+	<div id="box1" class="box"></div>
+	<div id="box2" class="box"></div>
+	<div id="box3" class="box"></div>
+	<div id="box4" class="box"></div>
+	<div id="box5" class="box"></div>
+	<div id="box6" class="box"></div>
+	<div id="box7" class="box"></div>
+	
+	<div id = "dog">
+		<!-- img[src=../images/dog0$.jpg]*5 -->
+		<img src="../images/dog01.jpg" alt="" />
+		<img src="../images/dog02.jpg" alt="" />
+		<img src="../images/dog03.jpg" alt="" />
+		<img src="../images/dog04.jpg" alt="" />
+		<img src="../images/dog05.jpg" alt="" />
+	</div>
+</body>
+</html>

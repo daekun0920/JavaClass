@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box {
+		border:1px solid black;
+		width:150px;
+		height:150px;
+		margin:20px;
+	}
+	/*
+	transition -> (세밀한 조작) -> animation
+	
+	
+	*/
+	
+	@keyframes key1 {
+		from {
+			background-color:red;
+		}
+		to {
+			background-color:yellow;
+		}
+	}
+	
+	#box1 {
+		background:red;
+		animation-name:key1;
+		animation-duration:3s;
+	}
+	
+	#box2 {
+		background:red;
+		animation-name:key1;
+		animation-duration:7s;
+	}
+	
+	#box3 {
+		background:red;
+		animation-duration:3s;
+	}
+	
+	#box3:hover {
+		animation-name:key1;
+	}
+	
+	#box4 {
+		background:red;
+		animation-name:key2;
+		animation-duration:5s;
+	}
+	
+	@keyframes key2 {
+		/*
+		from(begin) ~ to(end)
+		0%(begin) ~ 100%(end)
+		*/
+		
+		/*
+		from {}
+		to {}
+		*/
+		
+		0% {
+			background-color:red;
+		}
+		20%{
+			background-color:orange;
+		}
+		40%{
+			background-color:yellow;
+		}
+		60%{
+			background-color:green;	
+		}
+		80%{
+			background-color:blue;
+		}
+		100%{
+			background-color:violet;
+		}
+	}
+	
+	#box5 {
+		background-color:red;
+		position:relative;
+		left:0px;
+		top:0px;
+		animation-duration:3s;
+		animation-name:key5;
+	}
+	
+	@keyframes key5 {
+		/* from {
+			left:0px; 
+			top:0px;
+		}
+		
+		to {
+			left:500px;
+			top:300px;
+		} */
+		
+		0% {
+			left:0px;
+			top:0px;		
+		}
+		33% {
+			left:300px;
+			top:500px;		
+		}
+		66% {
+			left:500px;
+			top:300px;		
+		}
+		100% {
+			left:0px;
+			top:0px;
+		}
+		
+	}
+	
+	#box6 {
+		background-color:yellow;	
+		animation-name:key6;
+		animation-duration:3s;
+	}
+	
+	@keyframes key6 {
+		0% {
+			transform:rotate(0deg);
+		} 
+		25% {
+			transform:rotate(360deg);
+		} 
+		50% {
+			transform:rotate(-360deg);
+		}
+		75% {
+			transform:rotate(720deg);
+		} 
+		100% {
+			transform:rotate(-720deg);
+		}	
+	
+	}
+	
+	#box7 {
+		background-color:cornflowerblue;
+		animation-name:key7;
+		animation-duration:1s;
+		animation-iteration-count:infinite; /* 실행 횟수 */
+		animation-direction:alternate; /* 정방향 - 역방향 반복 */
+		animation-timing-function:linear;
+	}
+	
+	@keyframes key7 {
+		0% {
+			transform:translate(0px, 0px);
+		}
+		25% {
+			transform:translate(300px, 0px);
+		}
+		50% {
+			transform:translate(300px, 300px);
+		}
+		75% {
+			transform:translate(0px, 300px);
+		}
+		100% {
+			transform:translate(0px, 0px);
+		}
+	}
+	
+	#cat img {
+		animation-duration:1s;
+		animation-iteration-count:infinite;
+	}
+	#cat img:hover {
+		animation-name:keyCat;
+	}
+	
+	@keyframes keyCat {
+		0% {
+			
+		}
+		30% {
+			transform:translate(0px, -20px);
+		}
+		35% {
+			transform:translate(5px, -20px);
+		}
+		37% {
+			transform:translate(5px, -20px);
+		}
+		41% {
+			transform:translate(0px, -20px);
+		}
+		43% {
+			transform:translate(5px, -20px);
+		}
+		45% {
+			transform:translate(5px, -20px);
+		}
+		47% {
+			transform:translate(0px, -20px);
+		}
+		49% {
+			transform:translate(5px, -20px);
+		}
+		51% {
+			transform:translate(5px, -20px);
+		}
+		53% {
+			transform:translate(0px, -20px);
+		}
+		55% {
+			transform:translate(5px, -20px);
+		}
+		57% {
+			transform:translate(5px, -20px);
+		}
+		59% {
+			transform:translate(0px, -20px);
+		}
+		61% {
+			transform:translate(5px, -20px);
+		}
+		63% {
+			transform:translate(5px, -20px);
+		}
+		65% {
+			transform:translate(0px, -20px);
+		}
+		67% {
+			transform:translate(5px, -20px);
+		}
+		69% {
+			transform:translate(5px, -20px);
+		}
+		70% {
+			transform:translate(0px);
+		}
+	}
+</style>
+</head>
+<body>
+	<!--ex51_transition.htm-->
+	<div id="box1" class="box"></div>
+	<div id="box2" class="box"></div>
+	<div id="box3" class="box"></div>
+	<div id="box4" class="box"></div>
+	<div id="box5" class="box"></div>
+	<div id="box6" class="box"></div>
+	<div id="box7" class="box"></div>
+	<div id="box8" class="box"></div>
+	<div id="box9" class="box"></div>
+	<div id="box10" class="box"></div>
+	
+	<hr>
+	
+	<div id = "cat">
+		<img src = "../images/catty01.png">
+		<img src = "../images/catty02.png">
+		<img src = "../images/catty03.png">
+		
+	</div>
+</body>
+</html>

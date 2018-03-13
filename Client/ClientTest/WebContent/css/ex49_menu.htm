@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+	메뉴
+	1. 상단 메뉴
+	2. 붙박이
+	3. 슬라이딩
+	*/
+	body {
+		margin:0;
+	}
+	#menu {
+		position:fixed;
+		top:0px;
+		width:100%;
+		height:120px;
+		border-bottom:1px solid #CCC;
+		background-color:white;
+		box-shadow:0px 2px 2px #EEE;
+		transform:translate(0px, -90px);	
+		transition:transform 0.8s;	
+		/* #menu가 이동하려고 구현하는 것이 아니라.. span의 부모역할을 하기 위해 static 아닌 값을 지정, 본인은 이동을 안함 */
+		/* 
+		position:relative;
+		left:0px;
+		top:0px; 
+		*/
+	}
+	#menu:hover {
+		transform:translate(0px, 0px);		
+		
+	}
+	#menu span {
+		font-variant:small-caps;
+		font-weight:bold;
+		position:absolute;
+		right:20px;
+		bottom:10px;
+
+	}
+	section {
+		margin:20px;
+		margin-top:60px;
+	}
+	
+	#cat div {
+		border:20px solid black;
+		float:left;
+		margin:10px;
+		padding:10px;
+		overflow:hidden;
+	}
+	
+	/* <div style = "clear:both"></div> 추가하는 것과 동일한 효과 */
+	#cat:after { /* cat 뒤에 삽입 */
+		content:"";
+		display:block;
+		clear:both;
+	}
+	#cat div img {
+		transform:translate(150px,0px);
+		transition:transform .5s;
+	}
+	
+	#cat div:hover img {
+		transform:translate(0px, 0px);
+	}
+	
+	#cat2 {
+		width:128px;
+		height:128px;
+		border:20px solid black;
+		padding:10px;
+		margin:20px;
+		overflow:hidden;
+	}
+	
+	#cat2 #innerBox {
+		border:0px solid red;
+		width:780px;
+		transition:transform 1s;
+	}
+	
+	#cat2 #innerBox img {
+		margin-right:20px;
+	}
+	
+	#cat2:hover #innerBox {
+		transform:translate(-612px, 0px);
+	}
+	
+	#pbox, #cbox, #dbox {
+		border:10px solid orange;	
+	}
+	
+	#pbox {
+		margin:20px;
+		background-color:slateblue;
+		padding:30px;
+		width:320px;
+		height:320px;
+		overflow:hidden;
+	}
+	
+	#cbox {
+		width:300px;
+		height:300px;
+		background-color:yellow;
+		transition:transform 7s;
+	}
+	
+	#pbox:hover #cbox {
+		transform:rotate(3600deg);
+	}
+	
+	#dbox {
+		width:240px;
+		height:240px;
+		background-color:red;
+		margin:20px;
+		transition:transform 5s;
+	}
+	
+	#pbox:hover #dbox {
+		transform:rotate(-7200deg);
+	}
+	
+</style>
+</head>
+<body>
+	<!--ex49_menu.htm-->
+	<nav id = "menu">
+		<span>Menu</span>
+	</nav>
+	
+	<!-- section>div#cat>(div>img[src=../images/catty$$.png])*5 -->
+	<section>
+		<div id="cat">
+			<div><img src="../images/catty01.png" alt="" /></div>
+			<div><img src="../images/catty02.png" alt="" /></div>
+			<div><img src="../images/catty03.png" alt="" /></div>
+			<div><img src="../images/catty04.png" alt="" /></div>
+			<div><img src="../images/catty05.png" alt="" /></div>
+		</div>
+		
+	다른 내용
+	</section>
+	
+	<section>
+		<div id="cat2">
+			<div id = "innerBox">
+				<img src="../images/catty01.png" alt="" />
+				<img src="../images/catty02.png" alt="" />
+				<img src="../images/catty03.png" alt="" />
+				<img src="../images/catty04.png" alt="" />
+				<img src="../images/catty05.png" alt="" />
+			</div>
+		</div>
+		
+		<div id = "pbox">
+			<div id = "cbox">
+				<div id = "dbox"></div>
+			</div>
+		</div>
+				
+	</section>
+	
+	
+<!-- 	<section>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur natus illum maxime ducimus adipisci tempore odit quo nobis architecto dolore est voluptate non suscipit mollitia repellendus delectus voluptatum quas sed.</p>
+		<p>Blanditiis veritatis ut molestiae ducimus nulla vitae dolores quas accusamus dolorum architecto nemo ipsum doloremque laborum non iusto. Repudiandae obcaecati ad dicta consectetur quam ipsum illum iure doloremque quibusdam similique?</p>
+		<p>Repellendus laborum totam explicabo fuga voluptatibus soluta quae. Modi asperiores nostrum sunt quasi optio iure libero dolorem velit error. Ut obcaecati unde maiores laboriosam ab hic quaerat natus odit suscipit.</p>
+		<p>Ab odit doloremque nam corporis quasi neque ducimus in id omnis sapiente praesentium provident laudantium fugiat dolorum mollitia! Totam recusandae facere velit quos consequuntur eos molestiae quam suscipit voluptas sed!</p>
+		<p>Dolorem porro incidunt reiciendis. Similique ullam iusto voluptas eligendi dolorum quod facere iste consequuntur distinctio unde. Consequatur porro magni officiis atque laudantium quia quas neque quos nisi architecto necessitatibus ipsum?</p>
+		<p>Ullam delectus deleniti nulla dolor accusamus pariatur autem maiores cupiditate recusandae reiciendis alias iusto. Dolores asperiores cum aspernatur esse nemo perspiciatis aut blanditiis sunt beatae repellendus at praesentium mollitia. Blanditiis?</p>
+		<p>Illum dolores doloremque repellat quisquam libero expedita fuga assumenda sapiente quo quam dolor aperiam id quasi cupiditate rerum sed laboriosam voluptatem necessitatibus corporis beatae. Illum assumenda deserunt possimus porro accusantium!</p>
+		<p>Sequi tempore nisi quas magnam voluptatibus quisquam iusto cumque ex vel sapiente dignissimos aliquid dolorum consectetur. Itaque sint placeat ab ullam nisi incidunt dolore neque iste reprehenderit repellat ad asperiores!</p>
+		<p>Quos quibusdam minima officia nostrum eum maxime praesentium id quo placeat veniam neque quam reiciendis modi nihil est quod expedita corporis excepturi eius quia ab sint vero ipsum temporibus nesciunt!</p>
+		<p>Atque expedita ipsam cum obcaecati itaque dolores placeat similique corporis quam tenetur amet suscipit aliquam doloremque non asperiores ab minus saepe optio maiores magnam perferendis et eius maxime. Ipsa culpa.</p>
+	</section> -->
+	
+	
+</body>
+</html>
