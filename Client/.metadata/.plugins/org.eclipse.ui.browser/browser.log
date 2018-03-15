@@ -56,3 +56,7 @@
 3월 12, 2018 16:49:31.40 [1288:3700:0312/164931.402:ERROR:entry_impl.cc(962)] Failed to save user data
 3월 12, 2018 16:49:50.00 [1288:7512:0312/164950.009:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
 3월 12, 2018 16:50:00.37 [1288:7512:0312/165000.370:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+
+3월 15, 2018 09:10:08.85 NEW SESSION
+3월 15, 2018 09:10:08.85 
+3월 15, 2018 09:10:08.87 KLIB_SelfTest return : KLR_OK

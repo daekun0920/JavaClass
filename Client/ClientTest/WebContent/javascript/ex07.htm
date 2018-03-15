@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+
+
+</style>
+<script>
+
+	
+	//문자열 함수
+	var txt = "Hello~ Hong";
+	
+	//1. 문자열 길이
+	
+	
+	//2. 검색
+	// -indexof()
+	// -lastIndexOf()
+	
+	console.log(txt.indexOf("~"));
+	console.log(txt.indexOf("~", 6));
+	console.log(txt.lastIndexOf("~"));
+	console.log(txt.indexOf("!"));
+	
+	//3. 대소문자 변환
+	console.log(txt.toUpperCase());
+	console.log(txt.toLowerCase());
+	
+	//4. 치환
+	// - 자바 스크립트는 처음 만나는 요소만 치환
+	console.log(txt.replace("Hong", "Lee"));
+	console.log(txt.replace("H", "L"));
+	console.log(txt.replace(/H/gi, "L"));
+	
+	//5. 추출
+	console.log(txt.substring(2, 8));
+	console.log(txt.substring(2));
+	
+	//6. 문자 추출
+	console.log(txt.charAt(0));
+	console.log(txt.charCodeAt(0));
+	
+	//7. 분할
+	var name = "홍길동, 아무개, 하하하, 호호호";
+	console.log(name.split(","));
+	
+	
+
+</script>
+</head>
+<body>
+
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

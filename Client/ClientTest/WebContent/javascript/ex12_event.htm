@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+
+<script>
+	function f1() {
+		/* alert("안녕~"); */
+		var txt1 = window.document.form1.txt1;
+		txt1.value = "안녕";
+		
+	}
+	
+	function init() { 
+		//btn2
+		window.document.form1.btn2.onclick = function() { 
+				var txt1 = window.document.form1.txt1;
+				txt1.value = "두번째 버튼";
+		}; 
+		
+		//btn3
+		var btn3 = window.document.form1.btn3;
+		var btn4 = window.document.form1.btn4;
+		var btn5 = window.document.form1.btn5;
+		
+		btn3.onclick = function() {
+			var n = Math.round(Math.random());
+			
+			if (n == 1) {
+				btn4.onclick = function() {
+					alert("당첨!!");
+				}
+			} else {
+				btn5.onclick = function() {
+					alert("꽝!!");
+				}
+			}
+			btn3.disabled = true; /* 한번 클릭후 비활성화 */
+		};
+	}
+	
+	window.onload = init;
+	
+</script>
+</head>
+<!-- body태그의 모든 내용이 브라우저에 의해서 로딩되고 난 직후에 발생 -->
+<!-- <body onload="init();">  --><!-- 생성자와 같은 역할 -->
+<body>
+	<!--ex12_event.htm-->
+	
+	<form name = "form1">
+		<input type = "text" name = "txt1">
+		<hr>
+		<!-- 버튼이 생겨났을때부터 (페이지가 뜨자마자) 클릭 이벤트를 걸려있게... -->
+		<input type = "button" name = "btn1" value = "버튼1" onclick = "f1();">
+		<input type = "button" name = "btn2" value = "버튼2">
+		<hr>
+		
+		<input type = "button" name = "btn3" value="버튼3">
+		<input type = "button" name = "btn4" value="버튼4">
+		<input type = "button" name = "btn5" value="버튼5">
+		
+	</form>
+	
+	<script>
+
+    /* window.document.form1.btn2.onclick = function() { /
+		var txt1 = window.document.form1.txt1;
+		txt1.value = "두번째 버튼";
+	}; */
+	
+	
+	</script>
+</body>
+</html>

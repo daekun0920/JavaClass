@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	/*
+	
+	Event, 이벤트 + BOM
+	- GUI 환경에 많이 쓰임
+	- 사건
+	- 사용자와 상호 작용을 하면서 마우스(키보드)를 조작하면 그에 대한 반응
+	- 사용자 <- (이벤트) -> 프로그램
+	
+	자바스크립트 이벤트 모델
+	- 객체(태그)에 이벤트를 추가하는 방식
+	
+	1. BOM
+		- 모든 브라우저 = 동일한 방식으로 제공
+		a. 정적 이벤트 핸들러
+			- 태그의 속성으로 onXXX 이벤트 핸들러 속성을 사용하는 방법
+		b. 동적 이벤트 핸들러
+			
+	2. DOM
+		- 브라우저마다 약간 다른 방식ㅇ로 제공
+			
+	*/
+</script>
+</head>
+<body>
+	<!--ex11_event.htm-->
+	
+	<form name = "form1">
+		<input type = "button" value = "버튼1" name = "btn1" onclick="//alert('안녕~');" ondblclick="alert('안녕~');">
+		
+		<input type = "button" value = "버튼3" name = "btn3">
+		<input type = "button" value = "버튼4" name = "btn4">
+	</form>
+	
+	<input type = "button" value = "버튼2" name = "btn2" onmouseover = "this.value='방가~';">
+	
+	<script>
+		var btn3 = window.document.form1.btn3;
+		var btn4 = window.document.form1.btn4;
+		// <input onclick="f3();"
+		// btn3.onclick = f3;
+		var now = new Date();
+		if (now.getHours() < 12) {
+			// 오전
+			btn3.onclick = f3;
+		} else {
+			// 오후
+			btn3.onclick = f3_1;
+		};
+		
+		function f3() {
+			alert("안녕~");
+			
+		};
+		
+		function f3_1() {
+			alert("잘가~");
+		};
+		
+		btn4.onclick = function() {
+			alert("안녕~");
+		};
+	</script>
+</body>
+</html>

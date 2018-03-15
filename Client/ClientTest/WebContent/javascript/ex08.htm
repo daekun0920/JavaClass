@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+
+
+</style>
+<script>
+
+	/*
+	
+	날짜 시간 자료형
+	- 객체
+	- Date
+	
+	
+	*/
+	
+	//현재 시간
+	var now = new Date();
+	console.log(now);
+	
+	//c.get(Calendar.YEAR);
+	console.log(now.getYear());			//2자리 년도(2000년 이전 사용)
+	console.log(now.getFullYear());		//4자리 년도
+	console.log(now.getMonth());		//월(0~11)
+	console.log(now.getDate());			//일
+	console.log(now.getDay());			//요일(일(0) ~ 토(6))
+	console.log(now.getHours());		//시
+	console.log(now.getMinutes());		//분
+	console.log(now.getSeconds());		//초
+	console.log(now.getMilliseconds());	//1/1000초
+	console.log(now.getTime());			//틱(ms)
+
+	//출력
+	//	- toString()
+	console.log(now);
+	console.log(now.toString());
+	
+	console.log(now.toDateString());
+	console.log(now.toTimeString());
+
+	console.log(now.toLocaleString());	//toString()
+	console.log(now.toLocaleDateString());
+	console.log(now.toLocaleTimeString());
+	
+	//특정 시각
+	var christmas = new Date();
+	christmas.setMonth(11, 25);
+	console.log(christmas.toLocaleString());
+	
+	var birthday = new Date(1990, 4, 20);
+	var birthday2 = new Date(1990, 4, 20, 12, 20, 0);
+	console.log(birthday);
+	console.log(birthday2);
+	
+	//연산
+	console.log(christmas - now); //ms
+	console.log(christmas.getTime() - now.getTime());
+	console.log(christmas - now) / 1000 / 60 / 60 / 24;
+	
+	//오늘 커플 -> 100일뒤?
+	console.log(now.getTime() + (100 * 24 * 60 * 60 * 1000));
+	
+	var ani = new Date();
+	ani.setTime(now.getTime() + (100 * 24 * 60 * 60 * 1000));
+	console.log(ani.toLocaleString());
+	
+</script>
+</head>
+<body>
+
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

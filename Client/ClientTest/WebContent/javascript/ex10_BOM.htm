@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	
+	/*
+	자바 스크립트 기능
+	- 코어 + (BOM + DOM) + 확장 라이브러리
+	
+	BOM, (Browser Object Model)
+	- 자바스크립트로 HTML 문서상의 객체를 접근/조작하기 위한 체계
+	- 여전히 지원
+	- 문서상의 일부 객체를 이미 정해진 트리구조를 통해서 접근/제어 모델
+	- 식별자를 name을 사용한다.(id, class 인식 못함)
+	- 태그 중 유일한 객체는 예약어로 접근(window, document)
+	- 태그 중 중복 가능한 객체는(<body>이하...) name 식별자로 접근(form, input 등..)
+	- BOM 구조에 속해있지 않은 나머지 태그들은 접근 불가능
+	- DOM Level 0
+	
+	- DOM, Document Object Model
+	- DOM Level 1
+	- DOM Level 2
+	- DOM Level 3
+	- JavaScript DOM, Java DOM, C# DOM, C++ DOM, VB DOM..
+	
+	태그가 가질 수 있는 식별자
+	- <input type = "text" name = "txt1" id = "txt1" class = "txts">
+	
+	1. HTML 작성 중 ..
+	 - name : 내부 링크용 식별자 (<a name = "item1">Java</a> <a href = "#item1">이동</a>)
+	 - name : 서버로 입력값을 전송할 때 식별자(key) *****************
+	 - id : <label for = "id">
+	 - id, class 사용 안함
+	 
+	2. CSS 작성중 ..
+		- name : 사용 안함
+		- id : 객체명
+		- class : 그룹명
+	 
+	3. JavaScript 작성 중...
+		- name : BOM 모델 사용 시 식별자로 사용(BOM : id, class 사용안함)
+		- id, class : DOM 모델 사용 시 식별자로 사용(name 지원 함)
+	 */
+
+</script>
+</head>
+<body>
+	<!--ex10_BOM-->
+	<form name = "form1">
+		<input type = "text" name = "txt1">
+	</form>
+	
+	<script>
+		window.close(); /* window -> 브라우저 창 */
+		/* window.document.form1.txt1.value = "홍길동"; */ /* BOM 코드 */
+	</script>
+</body>
+</html>

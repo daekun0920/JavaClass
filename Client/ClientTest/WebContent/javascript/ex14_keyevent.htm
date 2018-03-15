@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+	
+	키보드 관련 이벤트
+	- onkeyXXX
+	- 폼 관련 태그들만 사용(포커스를 가질 수 있는 태그) + <a>
+	
+	1. onkeydown
+	// - 키를 눌렀을 때 발생
+	// - 모든 키에 반응(물리키)
+	2. onkeyup
+	// - 키를 떼었을 때 발생
+	// - 모든 키에 반응(물리키)
+	-----------
+	3. onkeypress
+	// - 키를 눌렀을 때 발생
+	// - 문자 키에만 반응
+	
+	*/
+	
+</style>
+<script>
+	window.onload = function() {
+		var txt1, txt2, txt3, txt4, txt5;
+		txt1 = window.document.form1.txt1;
+		txt2 = window.document.form1.txt2;
+		txt3 = window.document.form1.txt3;
+		txt4 = window.document.form1.txt4;
+		txt5 = window.document.form1.txt5;
+		
+		txt1.onkeydown = function() {
+			console.log("KEY DOWN");
+			//console.log(event.keyCode); // 눌린 키의 문자 코드값(대문자만)
+		};
+		
+		txt1.onkeyup = function() {
+			//console.log("key up");
+			
+		};
+		
+		txt1.onkeypress = function() {
+			console.log(event.keyCode); // 대소문자 코드값도 구분
+			//console.log("key press");
+		};
+		
+		txt2.onkeyup = function() {
+			//console.log(txt2.value);
+			if (txt2.value.length < 10) {
+				window.document.body.bgColor = "white";
+			} else if (txt2.value.length < 20) {
+				window.document.body.bgColor = "yellow";
+			} else if (txt2.value.length < 30) {
+				window.document.body.bgColor = "red";
+			}
+		};
+		
+		txt3.onkeyup = function() {
+			txt4.value = txt3.value;
+		};
+		
+		txt5.onkeyup = function() {
+			
+			// 금지어 사용 금지(바보, 멍청이)
+			if (txt5.value.indexOf("바보") > -1 || txt5.value.indexOf("멍청이") > -1) {
+				// 1.
+				/* alert("금지어 사용 ㄴㄴ"); */
+				
+				// 2.
+				// window.document.body.bgColor = "red";
+				//txt5.readOnly = true;
+				//alert("금지어를 사용했습니다. 삭제해주세요.\n 계속 입력하시려면 텍스트 박스를 더블 클릭하세요.");
+				
+				//txt5.ondblclick = function() {
+				//	txt5.readOnly = false;
+				//};
+				
+				// 3. 
+				txt5.value = txt5.value.replace("바보", "").replace("멍청이", "");
+				
+				
+			} else {
+				window.document.body.bgColor = "white";
+			}
+		};
+	};
+	
+	// window 객체 키 이벤트 추가 -> 전역 이벤트(포커스가 어디에 있던 항상 발생)
+	window.onkeydown = function() {
+		
+		// 특수 키 조합
+		console.log(event.ctrlKey);
+		console.log(event.keyCode);
+		console.log(event.shiftKey);
+		console.log(event.altKey);
+		
+		
+		
+		if (event.keyCode == 38 && event.ctrlKey) {
+			window.document.body.bgColor = "yellow";
+		} else if (event.keyCode == 40 && event.ctrlKey & event.shiftKey) {
+			window.document.body.bgColor = "red"; 
+		}
+		
+		var txt1 = window.document.form1.txt1;
+		if (event.keyCode == 37) {
+			txt1.size--;
+		} else if (event.keyCode == 39) {
+			txt1.size++;
+		}
+	};
+</script>
+</head>
+<body>
+	<!--ex14_keyevent.htm-->
+	
+	<form name = "form1">
+		<input type = "text" name = "txt1">
+		<hr>
+		<input type = "text" name = "txt2">
+		<hr>
+		
+		<input type = "text" name = "txt3">
+		<hr>
+		<input type = "text" name = "txt4">
+		<hr>
+		
+		<input type = "text" name = "txt5">
+		<hr>
+	</form>
+	
+</body>
+</html>

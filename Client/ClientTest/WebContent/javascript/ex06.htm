@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+
+
+</style>
+<script>
+
+	/*
+		형변환, Type Casting
+		- 대부분 상황에서는 자바스크립트가 자동으로 형변환을 한다.(암시적 형변환)
+		ex) "10"*2
+		
+		형변환 함수
+		1. int parseInt()
+		2. float parseFloat()
+		
+	*/
+	
+	var n1 = 3.14;
+		console.log(parseInt(n1));
+		
+		n1 = 3.99;
+		console.log(parseInt(n1));
+		
+		console.log(Math.round(n1));
+	
+	var n2 = 10;
+	console.log(parseFloat(n2));
+	
+	var n3 = "10";
+	var n4 = "3.14";
+	
+	console.log(typeof n3);
+	console.log(typeof n4);
+	
+	console.log(typeof parseInt(n3));
+	console.log(n3);
+	
+	console.log(parseInt(n4));
+	console.log(parseFloat(n4));
+	
+	var n5 = "100점";
+	n5 = "95점입니다. 아까워요";
+	n5 = "오늘 시험을 봤는데 100점이다!!";
+	console.log(parseInt(n5));
+	
+</script>
+</head>
+<body>
+
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

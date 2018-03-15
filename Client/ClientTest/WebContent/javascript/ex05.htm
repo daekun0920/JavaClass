@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+
+
+</style>
+<script>
+
+	/*
+	
+	자바스크립트 함수, Function
+	- 메소드, 함수
+	
+	자바 메소드 선언
+	public[static] int m1(int num){
+		
+		return 10;
+	}
+	
+	*/
+
+	function f1(){
+		
+		console.log("f1");
+	}
+	
+	f1();
+	
+	function f2(name){
+		
+		console.log(name + "안녕~");
+	}
+	
+	f2("고검");
+	f2();
+	f2("홍길동", "아무개");
+	
+	function f3(){
+		//arguments : 실인자값 배열
+		console.log(arguments.length);
+	
+		for(var i=0; i<arguments.length; i++){
+			console.log(arguments[i]);
+		}
+	}
+	
+	f3("홍길동");
+	f3("하나", "둘", "셋");
+	
+	//자바 : 컴파일 언어
+	//자바스크립트 : 인터프리터 언어
+	
+	//함수 호이스팅, Hoisting >> 페이지를 뒤져서 모든 함수 선언부를 먼저 찾아낸다. 그 다음 잘라내어 스크립트 가장 꼭대기로 강제로 옮긴다.
+	
+	f4();
+	
+	function f4(){
+		console.log("f4");
+	}
+	
+	//변수 호이스팅
+	console.log(n);
+	
+	var n = 100;
+	
+	//undefined : 변수를 생성 후 초기화를 하지 않은 상태
+	//null : 의도적으로 값을 갖지 않는 상태
+	
+	n1 = null;
+	console.log(n1);
+	
+	console.log(null == undefined); //자동 형변환 발생
+	console.log(null === undefined); //자동 형변환 없음
+	
+	console.log(10 == "10"); //값만 비교
+	console.log(10 === "10"); //값, 자료형 모두 비교
+	console.log(10 !== "10");
+	
+	/*
+	
+	변수의 종류
+	1. 전역 변수
+		- 페이지 내의 모든 장소에서 접근 가능한 변수
+	
+	
+	2. 지역 변수
+		- 블럭(메소드 제어문) 내에서 선언 : 자바
+		- 블럭(함수)내에서 선언 : 자바스크립트
+	
+	*/
+	
+	if(true){
+		var num = 10;
+	}
+		console.log("변수 : " + num);
+	
+</script>
+</head>
+<body>
+
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

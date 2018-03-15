@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+</head>
+<body>
+	<!--ex15_attribute.htm-->
+	
+	<form name = "form1">
+		<input type = "text" name = "txt1">
+		<hr>
+		<input type = "checkbox" name = "cb"> 체크빢쓰1
+		<input type = "checkbox" name = "cb"> 체크빢쓰2
+		<input type = "checkbox" name = "cb" > 체크빢쓰3
+		<hr>
+		<input type = "radio" name = "rb"> 라디오1
+		<input type = "radio" name = "rb"> 라디오2
+		<input type = "radio" name = "rb" > 라디오3
+		<hr>
+		<button type = "button" name = "btn1">버튼1</button>
+	
+		<h1>약관</h1>
+		
+		<div style = "width:300px;height:200px;border:1px solid black;overflow:auto;margin-bottom:20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		 Et vel fugiat voluptate omnis dolor ipsam quos repudiandae! Et mollitia rerum debitis inventore voluptates
+		  itaque provident quas voluptas alias. Neque fuga dolorum asperiores dolorem quaerat reiciendis aliquam 
+		  fugiat sit odit repellat! Esse natus mollitia quidem molestias quaerat ad possimus! Nobis fugiat nihil 
+		  doloribus voluptatibus tenetur. Incidunt fugit nihil eum saepe temporibus voluptatibus rem non minus rerum 
+		  commodi autem obcaecati sunt ipsa! Consequuntur obcaecati et sequi veritatis impedit laudantium cupiditate
+		  hic! Sed nulla facilis atque cumque recusandae necessitatibus neque pariatur magnam possimus deserunt 
+		  quasi fuga ullam earum quia cupiditate asperiores non laudantium.</div>
+	
+		<input type = "checkbox" id = "cbAgree" name = "cbAgree">
+		<label for = "cbAgree">약관에 동의합니다.</label>
+		
+		<input type = "button" value = "다음 단계로" name = "btnNext" disabled>
+		
+		<h1>배송지</h1>
+		
+		<h3>회원 주소</h3>
+		<input type = "text" name = "name1" placeholder = "회원명" value = "홍길동"><br>
+		<input type = "text" name = "address1" placeholder = "회원주소" value = "서울시 강남구 역삼동">
+		
+		<div>
+			<input type = "checkbox" name = "cbCopy">
+			회원과 받으실 분의 주소가 동일합니다.
+		</div>
+		
+		<h3>배송 주소</h3>
+		<input type = "text" name = "name2" placeholder = "수령인"><br>
+		<input type = "text" name = "address2" placeholder = "수령지">
+		
+	
+		<h1>다중 선택</h1>
+		
+		<h3>취미를 선택하세요.(하나 이상 가능)</h3>
+			
+		<input type = "checkbox" name = "cbHobby" value = "수영"> 수영
+		<input type = "checkbox" name = "cbHobby" value = "사이클"> 사이클
+		<input type = "checkbox" name = "cbHobby" value = "낮잠"> 낮잠
+		<input type = "checkbox" name = "cbHobby" value = "독서"> 독서
+		<input type = "checkbox" name = "cbHobby" value = "영화"> 영화
+		<input type = "checkbox" name = "cbHobby" value = "달리기"> 달리기
+		<input type = "checkbox" name = "cbHobby" value = "공작"> 공작
+		<input type = "checkbox" name = "cbHobby" value = "요리"> 요리
+		
+		<hr>
+		
+		<input type = "button" value = "결과 보기" name = "btnResult">
+		<br>
+		<textarea name = "txtResult" cols = "50" rows = "10"></textarea>
+		
+	</form>
+	
+	
+	
+	<script>
+		
+		var txt1 = window.document.form1.txt1;
+		/* 	
+		var cb1 = window.document.form1.cb1;
+		var cb2 = window.document.form1.cb2;
+		var cb3 = window.document.form1.cb3;
+		 */
+		
+		var btn1 = window.document.form1.btn1;
+		
+		var rb = window.document.form1.rb;
+		console.log(rb.length);
+		var cb = window.document.form1.cb;
+		
+		var cbAgree = window.document.form1.cbAgree;
+		var btnNext = window.document.form1.btnNext;
+		
+		var name1 = window.document.form1.name1;
+		var address1 = window.document.form1.address1;
+		var name2 = window.document.form1.name2;
+		var address2 = window.document.form1.address2;
+		var cbCopy = window.document.form1.cbCopy;
+		
+		
+		var cbHobby = window.document.form1.cbHobby;
+		var btnResult = window.document.form1.btnResult;
+		var txtResult = window.document.form1.txtResult;
+		
+		// HTML 태그의 속성 제어
+		// - 자바 스크립트 접근성을 높히기 위해 HTML 태그의 속성을 동일한 이름으로 자바 스크립트에서 제공
+		// - 속성의 대부분은 읽기/쓰기를 모두 지원한다
+		// - HTML의 속성명이 자바스크립트에서 유효하지 않으면 캐멀 표기법으로 제공
+		// - 속성값의 형태가 문자열, 숫자, 색상 등 -> 자바스크립트에서 숫자 or 문자열 표기
+		
+		// txt1.size = 10;
+		// txt1.readOnly = true;
+		
+		// 되도록 아래와 같은 근본적인 상태를 나타내는 속성값은 읽기 전용으로만 사용ㄴㅇㄴ
+		// txt1.type = "radio";
+		// txt1.name = "txt2";
+		
+		btn1.onclick = function() {
+			// <input type = "checkbox" checked>
+			/* 	
+			cb1.checked = true;
+			cb2.checked = true;
+			cb3.checked = true;
+			 */
+			for (var i = 0; i < cb.length; i++) {
+				cb[i].checked = true;
+			}
+			
+			
+			rb[0].checked = true;
+			rb[1].checked = true;
+			
+			
+		};
+			
+			// 체크박스와 라디오 버튼 - 체크할 때 이벤트
+			// - onclick
+			// - onchange : 해당 컨트롤의 값이 변경될 때마다 발생하는 이벤트. FM
+			
+			cbAgree.onchange = function() {
+				// console.log("확인");
+				// console.log(cbAgree.checked);
+				if (cbAgree.checked) {
+					// 약관에 동의 하면..
+					btnNext.disabled = false;
+				} else {
+					// 약관에 동의 안하면..
+					btnNext.disabled = true;
+				}
+			};
+			
+			cbCopy.onclick = function() {
+				//console.log(cbCopy.checked);
+				if (cbCopy.checked) {
+					name2.value = name1.value;
+					address2.value = address1.value;
+				} else {
+					name2.value = "";
+					address2.value = "";
+					name2.focus(); // 포커스 주기
+				}
+				
+			};
+			
+			
+		
+			btnResult.onclick = function() {
+				var count = 0;
+				var txt = "";
+				var txts = [];
+				
+				// 취미를 몇개 선택했는지?
+				for (var i = 0;i < cbHobby.length;i++) {
+					/* cbHobby[i].checked = !cbHobby[i].checked; */
+					if (cbHobby[i].checked) {
+						count++;
+						txt += cbHobby[i].value;
+						txts.push(cbHobby[i].value);
+					}
+				}
+				
+				// 결과 출력
+				txtResult.value = "선택한 취미는 총 " + count + "개 입니다.";
+				txtResult.value += "\r\n" + txt;
+				txtResult.value += "\r\n" + txts;
+			};
+	</script>
+</body>
+</html>

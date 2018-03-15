@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+
+
+</style>
+<script>
+
+	//배열
+	// - Array + Collection
+	
+	//int[] nums = new int[3];
+	var nums = new Array();
+	
+	nums[0] = 100;
+	nums[1] = 200;
+	nums[2] = 300;
+	
+	nums[5] = 500;
+	
+	for(var i=0; i<nums.length; i++){
+		console.log(nums[i]);
+	}
+	
+	console.clear();
+	
+	nums["one"] = "하나";
+	
+	console.log(nums["one"]);
+	
+	//배열 초기화 리스트
+	
+	var nums2 = new Array(100, 200, 300);
+	
+	console.log(nums2);
+	
+	var nums4 = new Array(); //빈배열
+	var nums5 = [];
+	
+	//0 ~ 99
+	for(var i=0; i<=99; i++){
+		nums5[i] = i;
+	}
+	
+	console.log(nums5);
+	
+	var nums6 = [];
+	
+	//3의 배수 100개...
+	
+	var index = 0;
+	for(var i=0; i<=300; i++){
+		nums6.push(i); //list.add(); - append()
+	}
+	
+	console.log(nums6);
+	
+	
+	console.log(Math.round(3.5));
+	console.log(Math.ceil(3.1));
+	console.log(Math.floor(3.9))
+	console.log(Math.pow(2, 8));
+	console.log(Math.sqrt(4));
+	console.log(Math.random());
+	
+	//1~10 사이 난수
+	console.log(parseInt(Math.random() * 10	) + 1);
+	
+	//예외 처리
+	try{
+		var n = 0;
+		console.log(100 / n);		
+	} catch (e) {
+		console.log("예외 처리");
+	}
+	
+	//var n = 0;
+	//var n = "";
+	//var n = '';
+	//var n = null;
+	//var n; //undefined
+	var n = new Date();
+	
+	
+	
+	//숫자 : 0 => false, 이외(false)
+	if(n){
+		console.log("참");
+	} else {
+		console.log("거짓");
+	}
+	
+	//문자(열) : ""(false), "문자열"(true)
+	
+	
+
+</script>
+</head>
+<body>
+
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

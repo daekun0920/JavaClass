@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#txt1 {
+		width:300px;
+		height:300px;
+		cursor:default;
+	}
+</style>
+<script>
+	window.onload = function() {
+		
+		var n = 0;
+		
+		var txt1 = window.document.all.txt1;
+		/* txt1.value = "테스트"; */
+		
+		// 마우스 사용할 때 발생하는 이벤트
+		// - onmouseXXX
+		// 1. onmouseover : 영역 위에 커서가 진입했을때
+		// 2. onmouseout : 영역밖으로 커서가 빠져나갔을 때
+		// 3. onmousedown : 영역위에서 마우스 버튼을 눌렀을 때 (버튼 종류 무관)
+		// 4. onmouseup : 영역위에서 마우스 버튼을 뗐을때(버튼 종류 무관)
+		// 5. onmousemove : 영역위에서 마우스 커서가 이동할 때
+		
+		txt1.onmouseover = function() {
+			//txt1.value = "mouseover"; 
+			//window.document.body.bgColor = "red";
+		};
+		
+		txt1.onmouseout = function() {
+			//txt1.value = "mouseout";
+			//window.document.body.bgColor = "pink";
+		};
+		
+		txt1.onmousedown = function() {
+			//txt1.value = "mousedown";
+			
+			// 어느 버튼을 사용했는지?
+			// event 객체
+			// - 주로 이벤트에 의해 호출되는 함수내에서만 사용하는 객체(예약어)
+			// - 발생한 사건의 여러가지 정보를 제공
+			// alert(event.buttons);
+			
+			// 마우스 왼쪽 버튼에만 반응
+			//if (event.buttons == 1) {
+				//txt1.value = "마우스 다운";
+			//}
+			
+			/* if (event.buttons == 2) {
+				alert("마우스 오른쪽 버튼 ㄴㄴ");
+			} */
+			
+			// 마우스 포인터 좌표
+			// 1. x, y
+			// - 문서 좌측 상단 기준
+			// - 비표준
+			// 2. clientX, clientY
+			// - 문서 좌측 상단 기준
+			// - 가장 많이 사용
+			// - 1번 대신 사용
+			// - 다른 태그들도 대부분 문서 좌측 상단으로 배치되기 때문에..
+			// 3. screenX, screenY
+			// - 모니터 화면의 좌측 상단 기준
+			// 4. offsetX, offsetY
+			// - 이벤트 발생 객체의 좌측 상단을 기준
+			
+			// txt1.value = event.x + "," + event.y;
+			/* txt1.value = event.clientX + "," + event.clientY; */
+			// txt1.value = event.screenX + "," + event.screenY;
+			// txt1.value = event.offsetX + "," + event.offsetY;
+			
+		};
+		
+		txt1.onmouseup = function() {
+			//txt1.value = "mouseup";
+			
+		};
+		
+		
+		
+		txt1.onmousemove = function() {
+			//txt1.value = "mousemove"
+			//txt1.value = n;
+			//n++;
+			//txt1.value = event.offsetX + "," + event.offsetY + "\r\n" + txt1.value;
+			
+		};
+		
+		var txt2 = window.document.all.txt2;
+		window.onmousemove = function() {
+			txt2.size = event.clientX / 30;
+		};
+	
+	}; /* 익명 함수에서는 세미콜론을 붙힌다. */
+</script>
+
+</head>
+<body>
+	<!--ex13_mouseevent.htm-->
+	
+	<textarea id = "txt1" name = "txt1"></textarea>
+	<input type = "text" name = "txt2"></input>
+	
+		
+</body>
+</html>
