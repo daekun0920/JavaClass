@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	
+	// window.document.form1.txt1
+	// document.form1.txt
+
+	// window.screen 객체
+	
+	// 화면 해상도
+	// - 1920 x 1080
+	
+	console.log(screen.availWidth);
+	console.log(screen.availHeight); // 1040 (작업 표시줄 때문에)
+	
+	function openChild() {
+		window.open("ex17_idcheck.htm", "child", "width=300, height=200 left=" + (screen.availWidth - 300) + ", top=0");
+	}
+	
+	// 16색상 -> 256색상 -> 16만 -> 24bit 색상
+	console.log(screen.colorDepth);
+	
+</script>
+</head>
+<body>
+	<!--ex18_screen.htm-->
+	<input type = "button" value = "자식창 띄우기" onclick = "openChild();">
+	
+</body>
+</html>

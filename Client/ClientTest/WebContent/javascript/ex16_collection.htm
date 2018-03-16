@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+</style>
+<script>
+	/*
+	
+	자바스크립트에서 기본으로 제공하는 배열(컬렉션)
+	1. window.document.all : 모든 태그 집합
+	2. window.document.images : 문서상의 모든 <img> 태그 배열
+	3. window.document.links : 문서상의 모든 <a href = ""> 태그 배열
+	4. window.document.forms : 문서상의 모든 <form> 태그 배열
+	5. window.document.forms.elements : 특정 폼의 하위 입력 태그 배열(label은 제외)
+	6. window.document.anchors : 문서상의 모든 <a name = ""> 태그 배열
+	
+	*/
+</script>
+</head>
+<body>
+	<!--ex16_collection.htm-->
+	
+	<h1>제목</h1>
+	<p>내용</p>
+	
+	<img src = "../images/catty01.png">
+	<img src = "../images/catty02.png">
+	<img src = "../images/catty03.png">
+	
+	<a href = "#a">네이버</a> <!--링크-->
+	<a name = "a">표지판</a> <!--앵커-->
+	<a href = "#b">구글</a>
+	<a name = "b">표지판</a>
+	<a href = "#">아마존</a>
+	
+	<form name = "form1">
+		<label>이름 : </label><input type = "text" name = "name1">
+		<br>
+		<label>나이 : </label><input type = "number" name = "age1">
+		<br>
+		<input type = "submit" value = "등록하기">
+	</form>
+	
+	<script>
+		
+		var all = window.document.all;
+		console.log(all.length);
+		console.log(all);
+		
+		console.log(window.document.images);
+		
+		console.log(window.document.links);
+		console.log(window.document.anchors);
+		
+		console.log(window.document.forms);
+		
+		console.log(window.document.form1.elements)
+		
+		// window : 프로그램 실행창(winform)
+		// windows : MS 제품명
+	</script>
+</body>
+</html>

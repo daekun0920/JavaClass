@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+</head>
+<body>
+	<!--ex23_messagebox.htm-->
+	
+	<!-- input[type=button values=버튼$ name=btn$]*3 -->
+	<input type="button" value="버튼1" name="btn1" />
+	<input type="button" value="버튼2" name="btn2" />
+	<input type="button" value="버튼3" name="btn3" />
+	
+	<script>
+		var btn1 = document.all.btn1;
+		var btn2 = document.all.btn2;
+		var btn3 = document.all.btn3;	
+		
+		
+		// 메시지 박스
+		// 1. alert(메시지) : 단순한 문자열 전달
+		// 2. confirm(메시지)
+		// 3. prompt(메시지, 초기값)
+		btn1.onclick = function() {
+			alert("메시지");
+		};
+		
+		btn2.onclick = function() {
+			// var result = confirm("메시지");
+			// console.log(result);
+			
+			if (confirm("정말 삭제하시겠습니까?")) {
+				location.href = "del.htm";
+			}
+			
+		};
+		
+		btn3.onclick = function() {
+			//prompt("메시지", "초기값");
+			var pw = prompt("암호를 입력하세요.", "");
+			
+			if (pw == "1234") {
+				location.href = "member.htm";
+			} else {
+				alert("암호가 틀렸습니다!!!");
+			}
+		};
+	</script>
+	
+	<!-- 
+	<BR> HTML 4.01
+	<br> XHTML 1.0
+	<br> or <br/> HTML 5
+	 -->
+</body>
+</html>

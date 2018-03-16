@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+
+	// window.location 객체
+	// - 현재 창이 보고있는 문서의 URL과 관련된 작업 지원
+	
+	window.onload = function() {
+		
+		var btn1 = document.all.btn1;
+		var url = document.forms[0].url;
+		var btn2 = document.forms[0].btn2;
+		
+		btn1.onclick = function() {
+			console.log(window.location.host); // localhost:8090
+			console.log(location.hostname);    // localhost
+			console.log(location.port);		   // 8090
+			console.log(location.protocol);	   // http:
+			console.log(location.href);		   // http://localhost:8090/ClientTest/javascript/ex19_location.htm
+			
+			// 자바 스크립트의 페이지 이동하기
+			// location.href = "http://naver.com";
+			
+			// F5 새로고침
+			// location.reload();
+			// location.href = "ex19_location.htm";
+			
+			// location.replace("http://google.com"); // 페이지 이동하기
+			location.href = "http://google.com";
+			
+		};
+		
+		btn2.onclick = function() {
+			if (url.value.toLowerCase().indexOf("http://") == -1) {
+				location.href = "http://" + url.value; // naver.com
+			} else {
+				location.href = url.value; // http://naver.com
+			}
+		};
+		
+		url.onkeydown = function() {
+			if (event.keyCode == 13) {
+				//alert("a");	
+				btn2.click(); // btn2를 클릭한것과 동일하게 실행(에뮬레이터 함수)
+			}
+		};
+	
+	};
+	
+	
+	/* 	
+ 	window.onkeydown = function() {
+		if (event.keyCode == 77) {
+			location.href = "member.htm";
+		} else if (event.keyCode == 65) {
+			location.href = "admin.htm";
+		} else if (event.keyCode == 66) {
+			location.href = "board.htm";
+		}
+	}; 
+	*/
+	
+	// 모든 이벤트는 false를 반환받으면 이벤트가 취소된다.
+	// form1.onsubmit = function() {
+	//	return false;
+	// }
+	
+</script>
+</head>
+<body>
+	<!--ex19_location.htm-->
+	<input type = "button" value = "버튼1" name = "btn1">
+	
+	<h1>사이트</h1>
+	
+	<nav>
+		<a href = "member.htm" accesskey = "m">회원</a>  <!-- alt + m  -->
+		<a href = "admin.htm" accesskey = "a">관리자</a> <!-- alt + a  -->
+		<a href = "board.htm" accesskey = "b">게시판</a> <!-- alt + b  -->
+	</nav>
+	
+	<hr>
+	
+	<!-- form 태그 내에 텍스트박스가 유일하면 -> 엔터가 submit 기능 내장 -->
+	<form action = "ex19.jsp" onsubmit = "return false;"> <!--전송되기 바로 직전에 발생-->
+		<!-- <input type = "text"> -->
+		<input type = "text" name = "url" size = "50">
+		<input type = "button" name = "btn2" value = "이동하기">
+	</form>
+	
+</body>
+</html>

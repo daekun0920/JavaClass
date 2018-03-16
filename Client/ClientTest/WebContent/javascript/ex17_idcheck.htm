@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	window.onload = function() {
+		var txtID = window.document.form1.txtID;
+		var btnOK = window.document.form1.btnOK;
+		
+		btnOK.onclick = function() {
+			opener.document.form1.txtID.value = window.document.form1.txtID.value;
+			window.close();
+		}
+	}
+</script>
+</head>
+<body>
+	<!--ex17_idcheck.htm-->
+	<h1>아이디 중복검사</h1>
+	<form name = "form1">
+		<input type = "text" name = "txtID">
+		<input type = "button" value = "사용하기" name = "btnOK">
+	</form>
+	
+</body>
+</html>

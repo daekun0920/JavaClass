@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+</style>
+<script>
+	window.onload = function() {
+		var btn1,btn2,btn3;
+		btn1 = document.all.btn1;
+		btn2 = document.all.btn2;
+		btn3 = document.all.btn3;
+		
+		// window.history 객체
+		// - (현재 세션에 한해서) 브라우저의 방문 기록 접근/제어
+		
+		// ex20 > google > ex20 > naver
+		
+		btn1.onclick = function() {
+			history.back(); // 브라우저의 뒤로 가기 버튼 클릭
+		};
+		
+		btn2.onclick = function() {
+			history.forward(); // 브라우저의 앞으로 가기 버튼 클릭
+		};
+		
+		btn3.onclick = function() {
+			history.go(-2); /* -1 -> 1페이지 뒤로, 2 -> 2페이지 앞으로 */
+		};
+		
+	}
+	/*
+	1. 글쓰기 (폼)페이지 : ex21_a.htm
+	2. 서버 페이지 : ex21_b.htm
+	3. 결과 페이지 : ex21_c.htm
+	
+	*/
+</script>
+</head>
+<body>
+	<!--ex20_history.htm-->
+	
+	<input type = "button" value = "뒤로 가기" name = "btn1">
+	<input type = "button" value = "앞으로 가기" name = "btn2">
+	<input type = "button" value = "? 가기" name = "btn3">
+	
+	
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://211.63.89.30/javascript/exam01.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style>
+	#box {
+		width: 890px;
+		margin: 30px auto;
+	}
+	
+	#secret {
+		border: 1px solid #aaa;
+		border-radius: 5px;
+		background-color: #eee;
+		float: left;
+		width: 500px;
+	}
+	#desc {
+		float: left;
+		width: 350px;
+		padding-left: 30px;
+		color: #555;
+	}
+	
+	#desc li {
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+	
+	#secret #pw {
+		border: 1px dashed #aaa;
+		font-size: 4.5em;
+		color: #555;
+		width: 390px;
+		display: block;
+		margin: 30px auto;
+		padding: 10px;
+		padding-left: 40px;
+		letter-spacing: .85em;
+		outline: none;
+	}
+	
+	#secret #digit {
+		padding-left: 23px;
+		padding-bottom: 30px;
+	}
+	
+	#secret #digit input {
+		display: block;
+		float: left;
+		border: 1px solid #ccc;
+		font-size: 6em;
+		text-align: center;
+		color: #555;
+		padding: 10px;
+		width: 140px;
+		height: 140px;
+		margin: 5px;
+		text-shadow: -1px -1px 2px gray; 
+		background: white;/*  linear-gradient(#ccc, white, #ccc); */
+		outline: none;
+	}
+	
+	#secret #digit input:nth-last-child(2)
+		, #secret #digit input:nth-last-child(3) {
+		font-size: 3em;
+	}
+	
+</style>
+<script>
+	var num, pw, enter, del;
+	var maxCount = 0;
+	
+	window.onload = function() {
+		
+		num = document.all.num;
+		pw = document.all.pw;
+		enter = document.all.enter;
+		del = document.all.del;
+		
+		for (var i=0; i<num.length; i++) {
+			
+			num[i].onclick = function() {
+				if (pw.value.length < 4) {
+					pw.value += event.srcElement.value;
+				}
+			};
+			
+		}
+		
+		
+		
+		del.onclick = function() {
+			pw.value = pw.value.substr(0, pw.value.length-1);
+			document.bgColor = "white";
+		};
+		
+		enter.onclick = function() {
+			if (pw.value == "0425") {
+				//alert("암호가 일치합니다.");
+				document.bgColor = "#66b3ff";
+			} else {
+				//alert("암호가 일치하지 않습니다.");
+				document.bgColor = "#ff8080";
+				
+				if (maxCount >= 2) {
+					document.bgColor = "#bb0000";
+					del.onclick = null;
+					enter.onclick = null;
+				}
+				maxCount++;
+			}
+			
+		};
+		
+		
+	};
+	
+	window.onkeydown = function() {
+		
+		var c = event.keyCode;
+		
+		if (c == 49 || c == 97) {
+			num[6].click();
+		} else if (c == 50 || c == 98) {
+			num[7].click();
+		} else if (c == 51 || c == 99) {
+			num[8].click();
+		} else if (c == 52 || c == 100) {
+			num[3].click();
+		} else if (c == 53 || c == 101) {
+			num[4].click();
+		} else if (c == 54 || c == 102) {
+			num[5].click();
+		} else if (c == 55 || c == 103) {
+			num[0].click();
+		} else if (c == 56 || c == 104) {
+			num[1].click();
+		} else if (c == 57 || c == 105) {
+			num[2].click();
+		} else if (c == 48 || c == 96) {
+			num[9].click();
+		} else if (c == 13) {
+			enter.click();
+		} else if (c == 110 || c == 8 || c == 46) {
+			del.click();
+		}
+				
+	};
+	
+	
+</script>
+</head>
+<body bgcolor="#bb0000">
+	<div id="box">
+		<div id="secret">
+			<input type="text" id="pw" readonly="" maxlength="4">
+			<div id="digit">
+				<input type="button" value="7" name="num">
+				<input type="button" value="8" name="num">
+				<input type="button" value="9" name="num">
+				<input type="button" value="4" name="num">
+				<input type="button" value="5" name="num">
+				<input type="button" value="6" name="num">
+				<input type="button" value="1" name="num">
+				<input type="button" value="2" name="num">
+				<input type="button" value="3" name="num">
+				<input type="button" value="0" name="num">
+				<input type="button" value="del" name="del">
+				<input type="button" value="enter" name="enter">
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+		<div id="desc">
+			<h1>비밀번호 입력</h1>
+			<h3>사용법</h3>
+			<ol>
+				<li>숫자 4자리를 입력한다.</li>
+				<li>enter를 누른다.</li>
+			</ol>
+			<h3>구현할 것</h3>
+			<ul>
+				<li>숫자 버튼을 눌러 입력한다.</li>
+				<li>del 버튼을 눌러 삭제한다.</li>
+				<li>4자리 이상 입력이 되지 않는다.</li>
+				<li>정답 암호 0425</li>
+				<li>암호가 틀리면 붉게 변한다.</li>
+				<li>암호가 맞으면 파랗게 변한다.</li>
+				<li>3회 틀리면 작동이 불가능하다.</li>
+				<li>상단 숫자키로 입력할 수 있다.</li>
+				<li>우측 숫자키로 입력할 수 있다.</li>
+				<li>백스페이스, Delete, Enter 키로 입력할 수 있다.</li>
+			</ul>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

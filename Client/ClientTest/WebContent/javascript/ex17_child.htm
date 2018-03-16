@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+
+	window.onload = function() {
+		
+		var txt1 = window.document.form1.txt1;
+		var btn3 = window.document.form1.btn3;
+		
+		btn3.onclick = function() {
+			
+			// 부모창 참조 객체 제공
+			opener.document.form1.txt1.value = window.document.form1.txt1.value;
+			
+		};
+	};
+	
+</script>
+</head>
+<body>
+	<!---->
+	<form name = "form1">
+		<input type = "text" name = "txt1">
+		<input type = "button" value = "부모창에 접근하기" name = "btn3">
+	</form>
+	
+	
+	
+</body>
+</html>

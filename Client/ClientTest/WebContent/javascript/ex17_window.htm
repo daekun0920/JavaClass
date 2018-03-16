@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	window.onload = function() {
+		
+		var btn1 = window.document.form1.btn1;
+		var btn2 = window.document.form1.btn2;
+		var btn3 = window.document.form1.btn3;
+		var child;
+		var txt1 = window.document.form1.txt1;
+		
+		var txtID = window.document.form1.txtID;
+		var btnCheck = window.document.form1.btnCheck;
+		
+		var btn4 = window.document.form1.btn4;
+		var btn5 = window.document.form1.btn5;
+		var btn6 = window.document.form1.btn6;
+		var btn7 = window.document.form1.btn7;
+		
+		// window 객체
+		// - 브라우저(창)를 참조하는 객체
+		// - 창을 조작하는 행동
+		// - BOM 최상위 객체
+		
+		btn1.onclick = function() {
+			// window.open("URL", "자식창의 이름", "옵션");
+			// window.open("ex16_collection.htm", "child", "width=200, height=200, left=500, top=300"); /* 팝업 */
+			// window.open("ex16_collection.htm", "child", "fullscreen"); /* 팝업 */
+			child = window.open("ex17_child.htm", "child", "width=400, height=300");
+		};
+		btn2.onclick = function() {
+			// window.close(); // 본인 닫기
+			child.close();  // 자식 닫기
+		};
+		
+		btn3.onclick = function() {
+			
+			// 부모창 -> 자식창
+			// child.document.form1.txt1.value = "부모창에서 접근했음 ㅋㅋ";
+			child.document.form1.txt1.value = window.document.form1.txt1.value;
+			
+		}
+		
+		btnCheck.onclick = function() {
+			
+			window.open("ex17_idcheck.htm", "idcheck", "width=300, height=250");
+			
+		};
+		
+		btn4.onclick = function() {
+			
+			child.moveTo(1000, 5000);
+			
+		};
+		btn5.onclick = function() {
+			
+			child.moveBy(100, 100); /* 현재 위치 */
+			
+		};
+		btn6.onclick = function() {
+			
+			child.resizeTo(500, 500); 
+			
+		};
+		btn7.onclick = function() {
+			
+			child.resizeBy(50, 50);
+			
+		};
+		// window.open("ex16_collection.htm", "child", "width=200, height=200"); /* 자동 팝업은 차단 */
+	};
+</script>
+</head>
+<body>
+	<!--ex17_window.htm-->
+	
+	<form name = "form1">
+		<input type = "button" value = "자식창 띄우기" name = "btn1">
+		<input type = "button" value = "자식창 닫기" name = "btn2">
+		<hr>
+		<input type = "text" name = "txt1">
+		<input type = "button" value = "자식창에 접근하기" name = "btn3">
+		<hr>
+		아이디 : <input type = "text" name = "txtID" readonly>
+		<input type = "button" value = "아이디 중복검사" name = "btnCheck">
+		
+		<hr>
+		
+		<input type="button" name="btn4" value="자식창 움직이기(절대값)" />
+		<input type="button" name="btn5" value="자식창 움직이기(상대값)" />
+		<input type="button" name="btn6" value="자식창 크기 조절하기(절대값)" />
+		<input type="button" name="btn7" value="자식창 크기 조절하기(상대값)" />
+	</form>
+	
+</body>
+</html>

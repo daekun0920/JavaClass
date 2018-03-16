@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	window.onload = function() {
+		var btn1 = document.form1.btn1;
+		
+		// var link1 = document.links["link1"];
+		var link1 = document.links[0];
+		
+		
+		btn1.onclick = function() {
+			// console.log(link1);
+			link1.href = "http://google.com";
+			link1.target = "_black"; /* 새 창으로 */
+			link1.title = "구글로 이동합니다.";
+			
+			// PCDATA -> BOM(X), DOM(O)
+			// alert(link1.innerText);
+			link1.innerText;
+		};
+	};
+
+</script>
+</head>
+<body>
+	<!--ex22_link.htm-->
+	
+	<form name = "form1">
+		<a href = "http://naver.com" name = "link1">네이버</a>
+		<hr>
+		<input type = "button" value = "버튼1" name = "btn1">
+	</form>
+	
+</body>
+</html>
