@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	#secret {
+		width:500px;
+		height:800px;
+		border:1px solid grey;
+		margin:auto;
+		border-radius: 2ex;
+		background-color:#DDD;
+		
+	}
+	
+	
+	
+	#ip {
+		margin-left:35px;
+		margin-top:20px;
+		margin-bottom:30px;
+		border:1px dashed black;
+		height: 100px;
+		width: 400px;
+		padding-left:30px;
+		letter-spacing:0.5em;
+		
+	}
+	
+	.btn {
+		width:130px;
+		height:130px;
+		border:1px solid black;
+		background-color:white;
+		margin:5px;
+		text-shadow: -1px 2px 2px grey;
+		font-size:6em;
+		outline-color: white;
+	}
+	
+	#nums {
+		text-align:center;
+	}
+	
+	#btn11, #btn12 {
+		position:relative;
+		top:-16px;
+		font-size:3em;
+	}
+</style>
+<script>
+	window.onload = function() {
+		var btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12;
+		var ip1;
+		var count = 0;
+		
+		ip1 = window.document.form2.ip1;
+		
+		btn1 = window.document.form1.btn1;
+		btn2 = window.document.form1.btn2;
+		btn3 = window.document.form1.btn3;
+		btn4 = window.document.form1.btn4;
+		btn5 = window.document.form1.btn5;
+		btn6 = window.document.form1.btn6;
+		btn7 = window.document.form1.btn7;
+		btn8 = window.document.form1.btn8;
+		btn9 = window.document.form1.btn9;
+		btn10 = window.document.form1.btn10;
+		btn11 = window.document.form1.btn11;
+		btn12 = window.document.form1.btn12;
+
+			window.onkeydown = function() {
+				if (event.keyCode == 48 || event.keyCode == 96) {
+					ip1.value += 0;	
+				} else if (event.keyCode == 49 || event.keyCode == 97) {
+					ip1.value += 1;	
+				} else if (event.keyCode == 50 || event.keyCode == 98) {
+					ip1.value += 2;	
+				} else if (event.keyCode == 51 || event.keyCode == 99) {
+					ip1.value += 3;	
+				} else if (event.keyCode == 52 || event.keyCode == 100) {
+					ip1.value += 4;	
+				} else if (event.keyCode == 53 || event.keyCode == 101) {
+					ip1.value += 5;	
+				} else if (event.keyCode == 54 || event.keyCode == 102) {
+					ip1.value += 6;	
+				} else if (event.keyCode == 55 || event.keyCode == 103) {
+					ip1.value += 7;	
+				} else if (event.keyCode == 56 || event.keyCode == 104) {
+					ip1.value += 8;	
+				} else if (event.keyCode == 57 || event.keyCode == 105) {
+					ip1.value += 9;	
+				} else if (event.keyCode == 13) {
+						
+						if (ip1.value == "0425") {
+							window.document.body.bgColor = "cornflowerblue";
+						} else if (ip1.value != "0425") {
+							count++;
+							if (count == 1) {
+								window.document.body.bgColor = "red";
+							} else if (count == 2) {
+								window.document.body.bgColor = "#A60A0A";
+								window.document.form1.btn11.readOnly = "true";
+							}
+						}
+				} else if (event.keyCode == 8) {
+					if (ip1.value.length != 1) {
+						ip1.value = ip1.value.substring(0, (ip1.value.length - 1));
+					} else {
+						ip1.value = "";
+					}
+				} 
+				  
+			};
+			
+			btn1.onmousedown = function() {
+				if (event.buttons == 1) {
+					ip1.value += 9;
+				}
+			}; 
+			btn2.onmousedown = function() {
+				if (event.buttons == 1) {
+					ip1.value += 8;
+				}
+			};
+			btn3.onmousedown = function() {
+				if (event.buttons == 1) {
+					ip1.value += 7;
+				}
+			};
+			
+			btn4.onmousedown = function() {
+				if (event.buttons == 1) {
+					ip1.value += 6;
+				}
+			};
+			btn5.onmousedown = function() {
+				if (event.buttons == 1) {
+					ip1.value += 5;
+				}
+			};
+			btn6.onmousedown = function() {
+				if (event.buttons == 1) {
+					ip1.value += 4;
+				}
+			};
+			btn7.onmousedown = function() {
+				if (event.buttons == 1) {
+					ip1.value += 3;
+				}
+			};
+			btn8.onmousedown = function() {
+				if (event.buttons == 1) {
+					ip1.value += 2;
+				}
+			};
+			btn9.onmousedown = function() {
+				if (event.buttons == 1) {
+					ip1.value += 1;
+				}
+			};
+			btn10.onmousedown = function() {
+				if (event.buttons == 1) {
+					ip1.value += 0;
+				}
+			};
+			btn11.onmousedown = function() {
+				if (event.buttons == 1) {
+					if (ip1.value.length != 1) {
+						ip1.value = ip1.value.substring(0, (ip1.value.length - 1));
+					} else {
+						ip1.value = "";
+					}
+				}
+			};
+			btn12.onmousedown = function() {
+				
+				if (event.buttons == 1 && ip1.value == "0425") {
+					window.document.body.bgColor = "cornflowerblue";
+				} else if (event.buttons == 1 && ip1.value != "0425") {
+					count++;
+					if (count == 1) {
+						window.document.body.bgColor = "red";
+					} else if (count == 2) {
+						window.document.body.bgColor = "#A60A0A";
+						window.document.form1.btn11.readOnly = "true";
+					}
+				}
+			};
+		}
+
+</script>
+</head>
+<body>
+	<!---->
+	<div id = "secret">
+		<form name = "form2" id = "form2">
+			<input type = "text" id = "ip" name = "ip1" class = "btn" maxlength="4">
+		</form>
+		<div id = "nums">
+			<form name = "form1" id = "form1">
+				<input type = "button" id  = "btn1" name = "btn1" class = "btn" value = "9">
+				<input type = "button" id  = "btn2" name = "btn2" class = "btn" value = "8">
+				<input type = "button" id  = "btn3" name = "btn3" class = "btn" value = "7">
+				<input type = "button" id  = "btn4" name = "btn4" class = "btn" value = "6">
+				<input type = "button" id  = "btn5" name = "btn5" class = "btn" value = "5">
+				<input type = "button" id  = "btn6" name = "btn6" class = "btn" value = "4">
+				<input type = "button" id  = "btn7" name = "btn7" class = "btn" value = "3">
+				<input type = "button" id  = "btn8" name = "btn8" class = "btn" value = "2">
+				<input type = "button" id  = "btn9" name = "btn9" class = "btn" value = "1">
+				<input type = "button" id  = "btn10" name = "btn10" class = "btn" value = "0">
+				<input type = "button" id  = "btn11" name = "btn11" class = "btn" value = "del">
+				<input type = "button" id  = "btn12" name = "btn12" class = "btn" value = "enter">
+			</form>
+		</div>
+	</div>
+	
+		
+</body>
+</html>
