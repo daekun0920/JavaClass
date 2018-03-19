@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/* 
+	#txt1:focus {
+		background-color:yellow;
+	} 
+	*/
+	body > form > fieldset > div {
+		margin-bottom:10px;
+	}
+	
+	body > form > fieldset > div > label {
+		display:inline-block; /* inline 태그에는 width가 먹지 않으니까 */
+		width:80px;
+		text-align:right;
+		margin-right:10px;
+	}
+	
+</style>
+<script>
+	var txt1;
+	var jumin1, jumin2;
+	var btnsubmit, txtname, txtage;
+	var txtid, btncheck;
+	var ischeck = false; // 아이디 중복 검사 버튼을 눌러서 검사를 했는지 유무
+	var txtpw, txtpwc;
+	
+	window.onload = function() {
+		jumin1 = document.all.jumin1;
+		jumin2 = document.all.jumin2;
+		
+		btnsubmit = document.form1.btnsubmit;
+		txtname = document.form1.txtname;
+		txtage = document.form1.txtage;
+		
+		txtid = document.form1.txtid;
+		btncheck = document.form1.btncheck;
+		
+		txtpw = document.form1.txtpw;
+		txtpwc = document.form1.txtpwc;
+		
+		
+		txt1 = document.all.txt1;	
+		
+		txt1.onfocus = function() {
+			txt1.style.backgroundColor = "yellow"; // CSS 제어
+		};
+		
+		txt1.onblur = function() { /* 포커스 잃었을때 */
+			txt1.style.backgroundColor = "white"; // CSS 제어
+		};
+		
+		// 주민번호 앞자리를 입력하면 뒷자리 텍스트박스로 포커스 이동
+		jumin1.onkeyup = function() {
+			if (jumin1.value.length == 6) { // 주민번호 앞자리 마지막 숫자를 입력할 때..
+				jumin2.focus(); // 포커스 주기
+			}
+		};
+		
+		
+		// 전송 버튼 클릭
+		btnsubmit.onclick = function() {
+			
+			//유효성 검사
+			// - 잘못된 경우를 검사
+			
+			// 이름 : 필수값
+			if (txtname.value == "") {
+				alert("이름은 반드시 입력하세요.");	
+				txtname.focus(); /* 포커스 주기 */
+				return; // 함수 종료 -> 전송 버튼 작업 취소
+			}
+			
+			// 나이 : 필수값, 숫자만, 19~60세
+			if (txtage.value == "") {
+				alert("나이를 반드시 입력하세요.");
+				txtage.focus();
+				return;
+			}
+			
+			if (isNaN(txtage.value)) {
+				alert("나이를 숫자로 입력하세요.");
+				txtage.select();
+				return;
+			} 
+			
+			if (txtage.value < 19 || txtage.value > 60) {
+				alert("나이는 19세 이상 60세 이하만 가능합니다.");
+				txtage.select();
+				return;
+			}
+			
+			/* isNaN : 숫자가 아닌게 들어있으면 true, 숫자만 들어있으면 false */
+			
+			// 아이디 유효성 검사
+			// 아이디 형태 + 아이디 중복 검사를 통해서 입력
+			if (!ischeck) {
+				alert("아이디 중복 검사를 반드시 실행하세요.");
+				return;
+			}
+			if (txtpw.value != txtpwc.value) {
+				alert("암호가 일치하지 않습니다. 다시 확인하세요.");
+				txtpw.value = "";
+				txtpwc.value = "";
+				txtpw.focus();
+				return;
+			}
+			
+			document.form1.submit(); // 전송 버튼 클릭과 동일
+		};
+		
+		btncheck.onclick = function() {
+			var child = window.open("ex27_idcheck.htm", "idcheck", "width=300, height=200");
+			/* 
+			BOM
+			child.onload = function() {
+			child.document.form1.txtid.value = document.form1.txtid.value;  칸이 생기기 전에 이미 실행된다. 
+			}; 
+			*/
+			
+			// DOM
+			child.addEventListener("load", function() {
+				child.document.form1.txtid.value = document.form1.txtid.value;
+			});
+		};
+		
+		// 버튼을 통하지 않고 직접 아이디를 수정했는지??
+		// - onchange : 해당 컨트롤의 값이 변경이 발생하면..
+		txtid.onchange = function() {
+			ischeck = false;
+		};
+				
+	};
+	
+	function test() {
+		alert("부모창의 함수");
+	}
+	
+	// 버튼 1개가 on/off 역할을 모두 실행 > 토글 버튼(toggle button)
+	function togglepw() {
+		if (txtpw.type == "password") {
+			txtpw.type = "text";
+			event.srcElement.innerText = "[암호 감추기]"
+		} else {
+			txtpw.type = "password";
+			event.srcElement.innerText = "[암호 보이기]"	
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<!--ex27_form.htm-->
+	
+	<input type = "text" name = "txt1" id = "txt1">
+	<hr>
+	
+	주민번호 : 
+	<input type = "text" name = "jumin1" size = "6" maxlength = "6">
+	-
+	<input type = "text" name = "jumin2" size = "7" maxlength = "7">
+	
+	<h1>유효성 검사</h1>
+	
+	<form name = "form1" action = "ex27.jsp">
+		
+		<fieldset>
+			<legend>필수 입력</legend>
+			<div>
+				<label>이름 :</label> <input type = "text" name = "txtname"> <!-- required -->
+			</div>
+			<div>
+				<label>나이 :</label> <input type = "number" name = "txtage"> <!-- required -->
+			</div>
+			<div>
+				<label>아이디 :</label> <input type = "text" name = "txtid"> <!-- required -->
+				<input type = "button" value = "아이디 중복검사" name = "btncheck">
+			</div>
+			<div>
+				<label>암호 :</label> <input type = "password" name = "txtpw"> <!-- required -->
+				<span onclick = "togglepw();">[암호 보이기]</span>
+			</div>
+			<div>
+				<label>암호 확인 :</label> <input type = "password" name = "txtpwc"> <!-- required -->
+			</div>
+			
+		</fieldset>
+		
+		<fieldset>
+			<legend>선택 입력</legend>
+			<div>
+				학교 : <input type = "text" name = "txtschool">
+			</div>
+		</fieldset>
+		
+		<div>
+			<input type = "button" value = "등록하기" name = "btnsubmit">
+		</div>
+		
+	</form>
+	
+</body>
+</html>

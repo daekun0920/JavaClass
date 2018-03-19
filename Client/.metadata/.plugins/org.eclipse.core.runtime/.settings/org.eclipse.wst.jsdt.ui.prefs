@@ -1,5 +1,6 @@
 CONTENT_ASSIST_BACKGROUND_COLOR=48,54,59
 CONTENT_ASSIST_FOREGROUND_COLOR=235,237,239
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"/>
 content_assist_parameters_background=48,54,59
 content_assist_parameters_foreground=235,237,239
 content_assist_proposals_background=48,54,59

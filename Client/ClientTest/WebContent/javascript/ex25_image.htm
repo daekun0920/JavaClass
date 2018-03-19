@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+
+</head>
+<body>
+	<!---->
+	<!--
+	
+	window:창 제어
+		- screen : 화면 정보
+		- location : URL 제어
+		- history : 방문 기록 제어
+		- document : 문서 객체
+			- link : <a>
+			- anchor : <a>
+			- image 
+	
+	-->
+	<input type = "button" value = "테스트" name = "btn1">
+	<hr>
+	<img src = "../images/switch.png" name = "img1">
+	<hr>
+	<img src = "../images/switch_off.png" name = "img2" style = "border:0px solid black">
+	
+	<img src = "../images/cat01.jpg" name = "cat">
+	
+	<hr>
+	
+	<img src = "../images/0.png" name = "number">
+	
+<script>
+	var cat; // 전역 변수 : 페이지가 닫힐때까지..
+	var n = 1;
+	var number;
+	
+	
+	
+	
+	window.onload = function() {
+		var btn1, img1, img2;
+		
+		
+		btn1 = document.all.btn1;
+		img1 = document.images["img1"];
+		img2 = document.images["img2"];
+		cat = document.images["cat"];
+		number = document.images["number"];
+		
+		
+		btn1.onclick = function() {
+			// console.log(img1.src);
+			// console.log(img1.width);
+			// console.log(img1.height);
+			// img1.src = "../images/switch_on.png";
+			img1.width = 500;
+			img1.height = 500;
+		};
+		
+		/*
+		롤 오버 이미지
+		img2.onmouseover = function() {
+			img2.src = "../images/switch_on.png";
+		};
+		img2.onmouseout = function() {
+			img2.src = "../images/switch_off.png";
+		};
+		*/
+		
+		/* 
+		img2.onclick = function() {
+			if (getFileName(img2.src) == "switch_on.png") {
+				img2.src = "../images/switch_off.png";
+				document.body.bgColor = "black";
+			} else {
+				img2.src = "../images/switch_on.png";	
+				document.body.bgColor = "white";
+			}
+		};
+		*/
+		
+		//var filename = ["switch_off.png", "switch_on.png"];
+		//filename[1] // on
+		//filename[0] // off
+		
+		var filename = [];
+		filename["on"] = "switch_on.png";
+		filename["off"] = "switch_off.png";
+		
+		img2.onclick = function() {
+			
+			if (getFileName(img2.src) == filename["on"]) {
+				img2.src = "../images/" + filename["off"];
+			} else {
+				img2.src = "../images/" + filename["on"];
+			}
+			
+		};
+		
+		function getFileName(path) {
+			var index = path.lastIndexOf("/");
+			if (index > -1) {
+				return path.substr(index + 1)
+			} else {
+				return null;
+			}
+		}
+		
+		cat.onclick = function() {
+			n++;
+			if (n > 5) n = 1;
+			cat.src = "../images/cat0" + n + ".jpg";
+		};
+	};
+	
+/* 	window.onkeydown = function() {
+		
+		if (event.keyCode == 39) {
+			//right
+			//n++;
+			//if (n > 5) n = 1;
+			//cat.src = "../images/cat" + n + ".jpg";
+			
+			cat.click(); // cat.onclick 호출
+		} else if (event.keyCode == 37) {
+			//left
+			n--;
+			if (n < 1) n = 5;
+			cat.src = "../images/cat0" + n + ".jpg";
+		}
+		
+	}; */
+	
+	window.onkeydown = function() {
+		
+		if (event.keyCode == 39) {
+			// right
+			n++;
+			if (n > 5) {
+				alert("마지막 이미지 입니다.");
+				n = 5;
+			}
+		} else if (event.keyCode == 37) {
+			//left
+			n--;
+			if (n < 1) { 
+				alert("처음 이미지 입니다.");
+				n = 1;
+			}
+		}
+		cat.src = "../images/cat0" + n + ".jpg";
+		
+		// console.log(event.keyCode);
+		// 0(48) ~ 9(57)
+		if (event.keyCode >= 48 && event.keyCode <= 57) {
+			number.src = "../images/" + (event.keyCode - 48) + ".png";		
+		}
+		
+		
+		
+	};
+	
+
+</script>
+</body>
+</html>
