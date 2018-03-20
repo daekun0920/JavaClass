@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+CONTENT_ASSIST_BACKGROUND_COLOR=48,54,59
+CONTENT_ASSIST_FOREGROUND_COLOR=235,237,239
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"/>
+content_assist_parameters_background=48,54,59
+content_assist_parameters_foreground=235,237,239
+content_assist_proposals_background=48,54,59
+content_assist_proposals_foreground=235,237,239
+>>>>>>> 76a348ab558acdfc0e8799e9c8dee0cb103eccd8
 eclipse.preferences.version=1
 fontPropagated=true
 org.eclipse.jface.textfont=1|D2Coding|11.25|0|WINDOWS|1|-15|0|0|0|400|0|0|0|0|3|2|1|49|D2Coding;
