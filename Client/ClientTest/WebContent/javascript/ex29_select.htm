@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	function test1() {
+		// 폼 컨트롤
+		// - 사용자 입력 값 제어(읽기/쓰기)
+		// - 컨트롤.value
+		// - 1.텍스트 박스(암호, 멀티) : txt1.value
+		// - 2.라디오 버튼, 체크 박스 : cb1.value / cb1.checked
+		// - 3. 셀렉트 박스 : sel1.value
+		
+		var sel1 = document.all.sel1;
+		// var btn1 = event.srcElement; // ?
+		alert(sel1.value); // 1, 2, 3, 4, 5, 6
+		
+	}
+	function test2() {
+		var sel1 = document.all.sel1;
+		sel1.value = 5; // 원하는 옵션을 선택 상태로 만들기
+	}
+	function test3() {
+		var sel1 = document.all.sel1;
+		
+		// 애완동물을 반드시 선택했는지?
+		/* 
+		if (sel1.value != 0) {
+			alert("업무 진행");
+		} else {
+			alert("애완 동물을 반드시 선택하세요.");	
+		} 
+		*/
+		if (sel1.selectedIndex != 0) {
+			alert("업무 진행");
+		} else {
+			alert("애완 동물을 반드시 선택하세요.");	
+		} 
+		
+		// alert(sel1.selectedIndex); // 옵션들의 순서(인덱스)를 리턴(zero-based index)
+	}
+	function test4() {
+		var sel1 = document.all.sel1;
+		// alert(sel1.options.length);
+		//alert(sel1.options[1].value);
+		//alert(sel1.options[1].innerText); // DOM : 모든 태그에 적용  안쪽 텍스트 PCDATA (강아지)
+		//alert(sel1.options[1].text); // BOM : option 태그에만 적용
+		
+		alert(sel1.value); // 선택한 value
+		alert(sel1.options[sel1.selectedIndex].text); // 선택한 text
+	}
+	function test5() {
+		var sel1 = document.all.sel1;
+		
+		// 동적으로 <option> 태그 추가하기
+		
+		// 이미 사막여우가 존재하면 작업 중단
+		for (var i = 0;i < sel1.options.length;i++) {
+			if (sel1.options[i].text == "사막여우") {
+				return; // 전체 중지
+			}
+		}
+		
+		// <option value = "7">사막여우</option>
+		// 1. <option></option>
+		var op = new Option();
+		
+		// 2. <option value = "7"></option>
+		op.value = 7;
+		
+		// 3. <option value = "7">사막여우</option>
+		op.text = "사막여우";
+		op.innerTest = "사막여우";
+		
+		// 4. 기존의 select의 자식으로 추가
+		sel1.options.add(op);
+		
+	}
+	
+	window.onload = function() {
+		// 년도 option 동적 추가
+		var selyear = document.all.selyear;
+		for (var year = 1950; year <= 2010; year++) {
+			var op = new Option();
+			op.value = year;
+			op.text = year + "년";
+			selyear.options.add(op); // ***
+		}
+		
+		selyear.value = "1990";
+		
+	};
+	
+	function test6() {
+		
+		var sel1 = document.all.sel1;
+		var selyear = document.all.selyear;
+		
+		// <select>의 <option> -> <select>으로 복사/이동
+		
+		// 이동
+		// selyear.options.add(sel1.options[3]);
+		
+		// 복사
+		var op = new Option();
+		op.value = sel1.options[3].value;
+		op.text = sel1.options[3].text;
+		
+		selyear.options.add(op);
+		
+	}
+	
+	function test7() {
+		var sel1 = document.all.sel1;
+		
+		// <option> 삭제
+		// sel1.options.remove(3); // index
+		// sel1.options.remove(0);
+		
+		// while (sel1.options.length != 0) {
+		//	 sel1.options.remove(0);
+		// }
+		
+		// 선택한 항목을 삭제
+		if (sel1.selectedIndex > 0) {
+			sel1.options.remove(sel1.selectedIndex);
+		}
+	}
+	function test8() {
+		var selhobby = document.all.selhobby;
+		
+		// 단일 선택
+		// alert(selhobby.value);
+		var txt = "";
+		
+		for (var i=0; i < selhobby.options.length; i++) {
+			// alert(selhobby.options[i].selected); // 선택 유무
+			if (selhobby.options[i].selected) {
+				txt += selhobby.options[i].text + "\n";
+			}
+		}
+		
+		alert("당신의 선택 : " + txt);
+	}
+	function change() {
+		document.body.bgColor = event.srcElement.value;
+	}
+	
+</script>
+</head>
+<body>
+	<!--ex29_select.htm-->
+	
+	<label>애완동물 : </label>
+	<select name = "sel1">
+		<option value = "0">선택하세요.</option>
+		<option value = "1">강아지</option>
+		<option value = "2">고양이</option>
+		<option value = "3">병아리</option>
+		<option value = "4">거북이</option>
+		<option value = "5">토끼</option>
+		<option value = "6">도마뱀</option>
+	</select>
+		
+	<hr>
+	<input type = "button" value = "테스트1" onclick = "test1();"><br>
+	<input type = "button" value = "테스트2" onclick = "test2();"><br>
+	<input type = "button" value = "테스트3" onclick = "test3();"><br>
+	<input type = "button" value = "테스트4" onclick = "test4();"><br>
+	<input type = "button" value = "테스트5" onclick = "test5();"><br>
+	<input type = "button" value = "테스트6" onclick = "test6();"><br>
+	<input type = "button" value = "테스트7" onclick = "test7();"><br>
+	<hr>
+	
+	<label>태어난 년도 : </label>
+	<select name = "selyear">
+		<!-- <option value = "1990">1990년</option>-->
+		
+	</select>
+	<hr>
+	
+	<label>취미 : </label>
+	<select name = "selhobby" size = "7" multiple="multiple">
+		<option value = "a01">운동</option>
+		<option value = "a02">독서</option>
+		<option value = "a03">낮잠</option>
+		<option value = "a04">먹기</option>
+		<option value = "a05">코딩</option>
+	</select>
+	<input type = "button" value = "테스트8" onclick = "test8();"><br>
+	
+	<hr>
+	<label>배경색 :</label>
+	<select onchange = "change();">
+		<option value = "white">흰색</option>
+		<option value = "black">검정</option>
+		<option value = "yellow">노랑</option>
+		<option value = "blue">파랑</option>
+		<option value = "orange">주황</option>
+	</select> 
+	
+
+</body>
+</html>

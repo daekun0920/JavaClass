@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	
+	var btn1, txt1;
+	var n = 1;
+	var btn2, txt2, btn3;
+	var timer = 0;
+	
+	var color = ["red","orange","yellow","green","blue","indigo","violet"];
+	
+	window.onload = function() {
+		btn1 = document.all.btn1;
+		txt1 = document.all.txt1;
+		
+		btn2 = document.all.btn2;
+		btn3 = document.all.btn3;
+		txt2 = document.all.txt2;
+		
+		btn4 = document.all.btn4;
+		
+		btn1.onclick = function() {
+			
+			// 타이머 함수
+			
+			// 1. window.setTimeout(함수, 시간)
+			//	- 1회성
+			// 2. window.setInterval(함수, 시간)
+			//	- 무한반복
+			
+			// test();
+			// setTimeout(test, 2000);
+			// setInterval(test, 3000);
+			
+			// txt1.size += 1;
+			
+			setInterval(function() {
+				txt1.size += 1;
+			}, 1000);
+		};
+		/* 
+		setInterval(function() {
+			txt1.value = (new Date()).toLocaleTimeString();
+		}, 1000);
+		*/
+		
+		/* 
+		setInterval(function() {
+			txt1.value = n;
+			n++;
+		}, 10);
+		*/
+		
+		btn2.onclick = function() {
+			if (timer == 0) {
+				timer = setInterval(function() { /* 숫자 리턴 */
+					txt2.value = n;
+					n++;
+				}, 100);
+				
+				console.log(timer);
+			}
+		};
+		
+		btn3.onclick = function() {
+			// setInterval() -> clearInterval(timer id)
+			clearInterval(timer);
+			console.log(timer);
+			timer = 0; // 재 초기화
+		};
+		
+		btn4.onclick = function() {
+			var index = 0;
+			
+			setInterval(function() {
+				document.body.bgColor = color[index];
+				index++;
+				if (index >= color.length) index = 0;
+			}, 100);
+		};
+		
+	}; // window.onload
+	
+	function test() {
+		alert("따르릉");
+	}
+	
+	var cat;
+	var timer2 = 0;
+	
+	function change() {
+		// event.srcElement.src = "../images/catty02.png";
+		cat = event.srcElement;
+		n = 1;
+		
+		if (timer2 == 0) {
+			timer2 = setInterval(function() { /* 1 반환 */
+				// alert(timer2);
+				n++;
+				if (n > 9) n = 1;
+				cat.src = "../images/catty0" + n + ".png";
+			}, 10);
+		} else {
+			clearInterval(timer2);
+			timer2 = 0;
+		}
+	}
+</script>
+</head>
+<body>
+	<!--ex31_timer.htm-->
+	<input type = "button" value = "테스트" name = "btn1">
+	<hr>
+	<input type = "text" name = "txt1">
+	<hr>
+	<input type = "text" name = "txt2" style = "text-align:right;">
+	<hr>
+	<input type = "button" value = "시작" name = "btn2">
+	<input type = "button" value = "멈춤" name = "btn3">
+	<input type = "button" value = "전자마약" name = "btn4">
+	<hr>
+	<img src = "../images/catty01.png" onclick = "change();">
+</body>
+</html>

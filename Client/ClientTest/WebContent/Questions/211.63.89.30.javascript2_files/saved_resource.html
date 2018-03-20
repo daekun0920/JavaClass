@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://211.63.89.30/javascript/exam02.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style>
+	#timer {
+		border: 1px solid gray;
+		width: 440px;
+		margin: 50px auto 20px auto;
+		padding: 5px;
+	}
+	#timer:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	#timer input, #timer span {
+		float: left;
+		font-size: 7em;
+	}
+	#timer input {
+		width: 130px;
+		border: 0px;
+		outline: none;
+	}
+	#timer span {
+		margin-top: -25px;
+	}
+	#btns {
+		width: 440px;
+		margin: 20px auto;
+		text-align: center;
+	}
+	#btns input {
+		border: 1px solid #aaa;
+		background-color: white;
+		width: 30%;
+		height: 50px;
+		outline: none;
+		cursor: pointer;
+	}
+	#btns input:disabled {
+		background-color: #eee;
+		cursor: not-allowed;
+	}
+</style>
+<script>
+	var txt1, txt2, txt3;
+	var btn1, btn2, btn3;
+	var n = 0;
+	var timer = 0;
+	
+	window.onload = function() {
+		txt1 = document.all.txt1;
+		txt2 = document.all.txt2;
+		txt3 = document.all.txt3;
+		btn1 = document.all.btn1;
+		btn2 = document.all.btn2;
+		btn3 = document.all.btn3;
+		init();
+		
+		//시작
+		btn1.onclick = function() {
+			if (timer == 0) {
+				timer = setInterval(function() {
+					txt3.value = formatnumber(n % 100);
+					txt2.value = formatnumber(n / 100 % 60);
+					txt1.value = formatnumber(n / 100 / 60)
+					n++;
+				}, 10);
+				btn1.disabled = true;
+				btn2.disabled = false;
+				btn3.disabled = false;
+			}
+		};
+		
+		//멈춤
+		btn2.onclick = function() {
+			clearInterval(timer);
+			timer = 0;
+			btn1.disabled = false;
+			btn2.disabled = true;
+			btn3.disabled = false;
+		};
+		
+		//종료
+		btn3.onclick = function() {
+			clearInterval(timer);
+			timer = 0;
+			btn1.disabled = false;
+			btn2.disabled = true;
+			btn3.disabled = true;
+			init();
+			n = 0;
+		};
+	};
+	
+	function formatnumber(num) {
+		if (num < 10)
+			return "0" + num;
+		else
+			return num;
+	}
+	
+	function init() {
+		txt1.value = "00";
+		txt2.value = "00";
+		txt3.value = "00";
+	}
+</script>
+</head>
+<body>
+	<!--  -->
+	<div id="timer">
+		<input type="text" name="txt1" id="txt1">
+		<span>:</span>
+		<input type="text" name="txt2" id="txt2">
+		<span>:</span>
+		<input type="text" name="txt3" id="txt3">
+	</div>
+	<div id="btns">
+		<input type="button" value="시작" name="btn1" disabled="">
+		<input type="button" value="멈춤" name="btn2">
+		<input type="button" value="종료" name="btn3">
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

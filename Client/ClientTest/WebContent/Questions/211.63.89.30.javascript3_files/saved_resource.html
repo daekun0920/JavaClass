@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://211.63.89.30/javascript/exam03.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style>
+	#timer {
+		border: 1px solid gray;
+		width: 410px;
+		margin: 50px auto 20px auto;
+		padding: 25px;
+	}
+	#timer:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	#timer img, #timer span {
+		float: left;
+		font-size: 7em;
+	}
+	#timer img {
+		width: 60px;
+		height: 88px;
+		border: 0px;
+		outline: none;
+	}
+	#timer span {
+		margin-top: -45px;
+	}
+	#btns {
+		width: 440px;
+		margin: 20px auto;
+		text-align: center;
+	}
+	#btns input {
+		border: 1px solid #aaa;
+		background-color: white;
+		width: 30%;
+		height: 50px;
+		outline: none;
+		cursor: pointer;
+	}
+	#btns input:disabled {
+		background-color: #eee;
+		cursor: not-allowed;
+	}
+</style>
+<script>
+	var img1, img2, img3, img4, img5, img6;
+	var btn1, btn2, btn3;
+	var n = 0;
+	var timer = 0;
+	
+	window.onload = function() {
+		img1 = document.all.img1;
+		img2 = document.all.img2;
+		img3 = document.all.img3;
+		img4 = document.all.img4;
+		img5 = document.all.img5;
+		img6 = document.all.img6;
+		btn1 = document.all.btn1;
+		btn2 = document.all.btn2;
+		btn3 = document.all.btn3;
+		init();
+		
+		//시작
+		btn1.onclick = function() {
+			if (timer == 0) {
+				timer = setInterval(function() {
+					console.log(n);
+					console.log(formatnumber(n % 100));
+					console.log(formatnumber(n % 100).substr(0, 1));
+					console.log(formatnumber(n % 100).substr(1, 1));
+					
+					img5.src = "images/" + formatnumber(n % 100).substr(0, 1) + ".png";
+					img6.src = "images/" + formatnumber(n % 100).substr(1, 1) + ".png";
+					
+					img3.src = "images/" + formatnumber(n / 100 % 60).substr(0, 1) + ".png";
+					img4.src = "images/" + formatnumber(n / 100 % 60).substr(1, 1) + ".png";
+					
+					img1.src = "images/" + formatnumber(n / 100 / 60).substr(0, 1) + ".png";
+					img2.src = "images/" + formatnumber(n / 100 / 60).substr(1, 1) + ".png";
+					
+					n++;
+				}, 10);
+				btn1.disabled = true;
+				btn2.disabled = false;
+				btn3.disabled = false;
+			}
+		};
+		
+		//멈춤
+		btn2.onclick = function() {
+			clearInterval(timer);
+			timer = 0;
+			btn1.disabled = false;
+			btn2.disabled = true;
+			btn3.disabled = false;
+		};
+		
+		//종료
+		btn3.onclick = function() {
+			clearInterval(timer);
+			timer = 0;
+			btn1.disabled = false;
+			btn2.disabled = true;
+			btn3.disabled = true;
+			init();
+			n = 0;
+		};
+	};
+	
+	function formatnumber(num) {
+		if (num < 10)
+			return "0" + num;
+		else
+			return "" + num;
+	}
+	
+	function init() {
+		img1.src = "images/0.png";
+		img2.src = "images/0.png";
+		img3.src = "images/0.png";
+		img4.src = "images/0.png";
+		img5.src = "images/0.png";
+		img6.src = "images/0.png";
+	}
+</script>
+</head>
+<body>
+	<!--  -->
+	<div id="timer">
+		<img name="img1" src="./0.png">
+		<img name="img2" src="./0.png">
+		<span>:</span>
+		<img name="img3" src="./0.png">
+		<img name="img4" src="./0.png">
+		<span>:</span>
+		<img name="img5" src="./0.png">
+		<img name="img6" src="./0.png">
+	</div>
+	<div id="btns">
+		<input type="button" value="시작" name="btn1">
+		<input type="button" value="멈춤" name="btn2" disabled="">
+		<input type="button" value="종료" name="btn3" disabled="">
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

@@ -69,3 +69,28 @@
 3월 18, 2018 17:02:32.09 [8996:6068:0318/170232.088:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 6.942 s
 3월 18, 2018 17:03:07.34 [8996:6068:0318/170307.342:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 6.942 s
 3월 18, 2018 17:18:13.81 [8996:6068:0318/171813.814:ERROR:page_load_metrics_update_dispatcher.cc(208)] Invalid first_meaningful_paint (unset) for time_to_interactive 6.942 s
+
+3월 20, 2018 10:40:09.90 NEW SESSION
+3월 20, 2018 10:40:09.90 [4180:4932:0320/104009.896:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 10:40:09.93 [4180:4932:0320/104009.929:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 10:40:10.16 [4180:4932:0320/104010.164:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 10:40:10.47 [4180:4932:0320/104010.475:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 14:30:10.59 [4180:4932:0320/143010.596:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 14:30:10.63 [4180:4932:0320/143010.637:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 14:30:10.87 [4180:4932:0320/143010.877:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 14:30:11.16 [4180:4932:0320/143011.161:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 15:28:34.16 [4180:7736:0320/152834.161:ERROR:media_internals.cc(102)] Cannot get RenderProcessHost
+3월 20, 2018 15:28:34.63 
+3월 20, 2018 15:28:34.64 KLIB_SelfTest return : KLR_OK
+3월 20, 2018 15:34:02.81 
+3월 20, 2018 15:34:02.82 KLIB_SelfTest return : KLR_OK
+3월 20, 2018 15:42:56.69 [11668:1424:0320/154256.693:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 15:42:56.73 [11668:1424:0320/154256.733:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 15:42:58.78 [11668:1424:0320/154258.783:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 15:42:59.07 [11668:1424:0320/154259.072:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 16:16:15.11 [11668:1424:0320/161615.117:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 16:16:15.16 [11668:1424:0320/161615.161:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 16:16:15.48 [11668:1424:0320/161615.485:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 16:16:15.76 [11668:1424:0320/161615.767:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 20, 2018 17:40:20.90 
+3월 20, 2018 17:40:20.91 KLIB_SelfTest return : KLR_OK

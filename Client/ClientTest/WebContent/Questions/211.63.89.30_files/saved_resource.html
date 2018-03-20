@@ -1,3 +1,66 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://211.63.89.30/css/exam20.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!-- saved from url=(0011)about:blank -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body></body></html>
+<title></title>
+<style>
+	#box {
+		border: 10px solid black;
+		width: 1200px;
+		height: 451px;
+		column-count: 3;
+		column-width: 400px;
+		column-gap: 0px;
+		margin: 100px auto;
+		overflow: hidden;
+	}
+	
+	#box img.big {
+		width: 400px;
+	}
+	#box img.middle {
+		width: 200px;
+	}
+	#box img.small {
+		width: 100px;
+	}
+	
+	#box img {
+		display: block;
+		float: left;
+		border-radius: 20px;
+		opacity: 0;
+		transform: scale(5, 5);
+	}
+	#box:hover img {
+		opacity: 1;
+		transform: scale(1, 1);
+	}
+	
+	#box img:nth-child(1) { transition: all 1.5s; transition-delay: .2s;}
+	#box img:nth-child(2) { transition: all 1.3s; transition-delay: .6s;}
+	#box img:nth-child(3) { transition: all 2.2s; transition-delay: .1s;}
+	#box img:nth-child(4) { transition: all 0.8s; transition-delay: 1.5s;}
+	#box img:nth-child(5) { transition: all 1.1s; transition-delay: 1s;}
+	#box img:nth-child(6) { transition: all 1.8s; transition-delay: .3s;}
+	#box img:nth-child(7) { transition: all 1.4s; transition-delay: .6s;}
+	#box img:nth-child(8) { transition: all 1.3s; transition-delay: .5s;}
+	#box img:nth-child(9) { transition: all .7s; transition-delay: 1.7s;}
+	
+</style>
+</head>
+<body>
+	<div id="box">
+		<img src="./cat02_big.jpg" class="big">
+		<img src="./cat01.jpg" class="middle">
+		<img src="./dog01.jpg" class="middle">
+		<img src="./dog02.jpg" class="middle">
+		<img src="./cat04.jpg" class="middle">
+		<img src="./cat03_big.jpg" class="big">
+		<img src="./cat04_big.jpg" class="big">
+		<img src="./dog05.jpg" class="middle">
+		<img src="./cat05.jpg" class="middle">
+		<div style="clear:both;"></div>
+	</div>
+
+</body></html>
