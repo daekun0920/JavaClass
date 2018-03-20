@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#tbl1 {
+		border:1px solid gray;
+		border-collapse:collapse;
+		width:500px;
+	}
+	#tbl1 th, #tbl1 td {
+		border:1px solid gray;
+		font-size:14px;
+		padding:4px;
+	}
+	#tbl1 th {
+		width:100px;
+		background-color:#EEE;
+	}
+	#tbl1 td {
+		width:400px;
+	}
+	#btns {
+		margin-top: 20px;
+	}
+</style>
+<script>
+	var btnregister, form1;
+	window.onload = function() {
+		form1 = document.forms[0];
+		btnregister = form1.btnregister;
+		
+		btnregister.onclick = function() {
+			// 1. 유효성 검사
+			
+			// 2. 전송
+			
+			
+			// 자바스크립트에서 정규 표현식 사용하기
+			// 1. 정규식 객체 생성하기
+			// 2. 사용하기
+			// var regex = /\d{6}-\d{7}/;
+			// var result = regex.test("안녕하세요. 저는 홍길동입니다. 제 주민번호는 901222-1023456 입니다.")
+			// alert(result); // 찾으면 true
+			 
+			// 이름
+			// - 필수값
+			// - 2 ~ 5자 이내
+			// - 한글만
+			var regex = /^[가-힣]{2,5}$/;
+			if (!regex.test(form1.txtname.value)) {
+				alert("이름이 올바르지 않습니다.");
+				form1.txtname.select();
+				return;
+			}
+			
+			// 아이디
+			// - 필수값
+			// - 4 ~ 10자 이내
+			// - 영문자 + 숫자 + _ 
+			// - 숫자로 시작 불가능
+			regex = /^[A-Za-z_][A-Za-z0-9_]{3,9}$/;
+			
+			if (!regex.test(form1.txtid.value)) {
+				alert("아이디가 올바르지 않습니다.");
+				form1.txtid.select();
+				return;
+			}
+			
+			// 나이
+			// - 필수값
+			// - 19세 이상 60세 이하
+			// - 수치의 범위검사는 정규식을 사용하지 않는다.
+			// regex = //; 
+			
+			if (form1.txtage.value < 19 || form1.txtage.value > 60) {
+				 alert("나이가 올바르지 않습니다.");
+				 form1.txtage.select();
+				 return;
+			}
+			// 직업 
+			// - 반드시 선택
+			if (form1.seljob.selectedIndex == 0) {
+				alert("직업을 반드시 선택하세요.");
+				form1.seljob.focus();
+				return;
+			}
+			
+			form1.submit();
+		}; // btn.onclick
+		
+		dummy();	
+		
+		
+	};
+	
+	// 더미 데이터(개발용)
+	function dummy() {
+		form1.txtname.value = "홍길동";
+		form1.txtid.value = "hong";
+		form1.txtage.value = "25";
+	}
+	
+</script>
+</head>
+<body>
+	<!--ex30_form.htm-->
+	
+	<h1>회원 가입(유효성 검사)</h1>
+	
+	<form action="ex30.jsp">
+	
+	<!-- table#tbl1>tr*6>th+td -->
+	<table id="tbl1">
+		<tr>
+			<th>이름</th>
+			<td><input type = "text" name = "txtname" size = "5"></td>
+		</tr>
+		<tr>
+			<th>아이디</th>
+			<td><input type = "text" name = "txtid" size = "10"></td>
+		</tr>
+		<tr>
+			<th>나이</th>
+			<td><input type = "text" name = "txtage" size = "5"></td>
+		</tr>
+		<tr>
+			<th>직업</th>
+			<td>
+				<select name = "seljob">
+					<option>선택하세요.</option>				
+					<option value = "1">학생</option>
+					<option value = "2">주부</option>
+					<option value = "3">직장인</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+	<div id = "btns">
+		<input type = "button" value = "가입하기" id = "btnregister">
+	</div>
+	
+	</form>
+	
+</body>
+</html>

@@ -1,16 +1,14 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=f29225eec73a862983b0855301e297896ce26ca1
 applyBackground=false
 approved.defs.file.last.changed.time=1512058756000
 configurationInstallLocation=/C\:/Users/sist00-14/Desktop/gyun/eclipse/
 eclipse.preferences.version=1
 iconcolormode=primary
 includeThemingInOomph=false
-<<<<<<< HEAD
-last.download.attempt.time=1521159123380
-lastConfiguration=1521418429919
-=======
-last.download.attempt.time=1521071917150
-lastConfiguration=1521350465611
->>>>>>> f29225eec73a862983b0855301e297896ce26ca1
+last.download.attempt.time=1521449576752
+lastConfiguration=1521537557953
 newinstall=false
 showWelcomeDialog=false
 workbench.theme=Dark Gray
