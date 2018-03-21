@@ -51,25 +51,20 @@
 	}
 </style>
 <script>
-	window.onload = function() {
-		var btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12;
+	window.onload = () => {
+		
+		let test = {
+				name : "hong",
+				age : "20"
+				
+		};
+		
+		console.log(test);
+	
 		var ip1;
 		var count = 0;
 		
 		ip1 = window.document.form2.ip1;
-		
-		btn1 = window.document.form1.btn1;
-		btn2 = window.document.form1.btn2;
-		btn3 = window.document.form1.btn3;
-		btn4 = window.document.form1.btn4;
-		btn5 = window.document.form1.btn5;
-		btn6 = window.document.form1.btn6;
-		btn7 = window.document.form1.btn7;
-		btn8 = window.document.form1.btn8;
-		btn9 = window.document.form1.btn9;
-		btn10 = window.document.form1.btn10;
-		btn11 = window.document.form1.btn11;
-		btn12 = window.document.form1.btn12;
 
 			window.onkeydown = function() {
 				if (ip1.value.length < 4) {
@@ -162,7 +157,7 @@
 								ip1.value += 0;
 								break;
 					
-							} 
+							}
 							
 						} // big if
 						switch (val) {
@@ -181,8 +176,12 @@
 									if (count == 1) {
 										window.document.body.bgColor = "red";
 									} else if (count == 2) {
+										console.log(document.form1.btn);
+										for (var i = 0; i < btn.length;i++) {
+											window.document.form1.btn[i].disabled = true;
+										}
 										window.document.body.bgColor = "#A60A0A";
-										window.document.form1.btn.disabled = true;
+										
 									}
 							}
 							break;
@@ -267,6 +266,15 @@
 				}; 
 			}*/ // if
 		}; // onload
+		
+		function test() {
+			
+			setInterval(() => {
+				console.log("123");
+			}, 1000);
+		}
+		
+		test();
 
 </script>
 </head>
