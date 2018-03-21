@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://211.63.89.30/javascript/exam07.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style>
+	#tbl1 {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	#tbl1 td {
+		border: 1px solid black;
+		width: 126px;
+		height: 126px;
+		font-size: 5em;
+		font-weight: bold;
+		text-align: center;
+		cursor: pointer;
+	}
+	#tbl1 td img {
+		display: block;
+	}
+</style>
+<script>
+	
+	window.onload = function() {
+		
+		var cell = document.getElementsByClassName("cell");
+		
+		for (var i=0; i<cell.length; i++) {
+			
+			cell[i].onmousedown = function() {
+								
+				var c = event.srcElement;
+				var n = parseInt(c.innerHTML);
+				
+				if (event.buttons == 1) {
+					n++;
+					c.innerText = n;
+					c.bgColor = "white";
+				} else if (event.buttons == 2) {
+					n--;
+					if (n <= 0) {
+						n = 0;
+						c.bgColor = "#ccc";
+					}
+					c.innerText = n;
+				}
+				
+			};
+			
+		}
+		
+	};
+	
+</script>
+</head>
+<body oncontextmenu="return false;">
+	<table id="tbl1">
+		<tbody><tr>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>			
+		</tr>
+		<tr>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>			
+		</tr>
+		<tr>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>			
+		</tr>
+		<tr>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>			
+		</tr>
+		<tr>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>
+			<td class="cell">0</td>			
+		</tr>
+	</tbody></table>
+
+</body></html>

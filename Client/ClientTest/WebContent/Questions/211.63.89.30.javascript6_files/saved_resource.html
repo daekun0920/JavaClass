@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://211.63.89.30/javascript/exam06.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style>
+	#tbl1 {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	#tbl1 td {
+		border: 1px solid black;
+		width: 126px;
+		height: 126px;
+	}
+	#tbl1 td img {
+		display: block;
+	}
+</style>
+<script>
+	
+	window.onload = function() {
+		
+		var cell = document.getElementsByClassName("cell");
+		
+		for (var i=0; i<cell.length; i++) {
+			
+			cell[i].onmousedown = function() {
+								
+				if (event.buttons == 1) {
+					var c = event.srcElement;
+					if (c.innerHTML == "") {
+						c.innerHTML = "<img src='images/rect_icon01.png'>";
+					}
+				} else if (event.buttons == 2) {
+					var c = event.srcElement;
+					if (c.innerHTML == "") {
+						c.innerHTML = "<img src='images/rect_icon02.png'>";
+					}
+				}
+				
+			};
+			
+		}
+		
+	};
+	
+</script>
+</head>
+<body oncontextmenu="return false;">
+	<table id="tbl1">
+		<tbody><tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"><img src="./rect_icon02.png"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+	</tbody></table>
+
+</body></html>

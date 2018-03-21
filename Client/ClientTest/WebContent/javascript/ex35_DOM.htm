@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	/*
+	
+	자바스크립트를 사용해서 HTML 접근 & 제어
+	
+	
+	1.BOM
+		- 여태까지 사용했던 방식
+		- 미리 정해져 있는 트리 구조를 사용
+		- 태그마다 정해진 속성이 있다.
+		
+	2.DOM
+		- Document Object Model
+		- 트리 구조가 미리 정해져 있지 않다. -> 해당 페이지의 소스를 보고 만든다.
+		- 모든 태그를 인식 -> 모든 태그가 객체화(인스턴스화)
+		- 모든 태그마다 동일한 속성을 제공한다.
+	
+	DOM 검색 방식
+	- HTML 태그 검색
+	
+	1. 특정 객체 검색하기
+		- 식별자로 검색하기
+		a. id(************)
+		b. class
+		c. name
+		d. tag name(태그명)
+		
+	2. 특정 객체를 중심으로 상대 검색하기
+		- 위의 1번으로 미리 특정 객체를 검색한 후 사용한다.
+		- Axis(축)
+		- 부모 or 자식 관계를 표현으로 검색
+		
+		
+	*/
+
+	window.onload = function() {
+		
+		// BOM
+		var btn = document.form1.btn1;
+		
+		// DOM
+		// 1. id 검색
+		var btn2 = document.getElementById("btn1");
+		var div1 = document.getElementById("div1");
+		
+		// div1.style.border = "1px solid black";
+		// alert(btn === btn2); // true
+		
+		// 2. name 검색
+		// - 되도록 1번 사용
+		btn3 = document.getElementsByName("btn1"); /* 한명이던 여러명이던 무조건 배열을 리턴 */
+		// alert(btn3.length);
+		// alert(btn3[0]); /* NodeList */
+		// alert(btn3[1]);
+		
+		// 3. 태그명 검색
+		var btns = document.getElementsByTagName("input");
+		// alert(btns.length);
+		
+		for (var i=0;i < btns.length; i++) {
+			btns[i].value = "접근했습니다.";
+		}
+		
+		// 4. 클래스 검색 
+		var a = document.getElementsByClassName("a");
+		alert(a.length);
+		
+		for (var i=0;i < a.length; i++) {
+			a[i].value = "클라쓰";
+		}
+		
+	};
+	
+</script>
+</head>
+<body>
+	<!--ex35_DOM.htm-->
+	<!-- core + BOM > DOM > jQuery -->
+	<section>
+		<form name = "form1">
+			<div id = "div1" class = "divs"> <!--name은 form, image, a 태그 (BOM) 만 가질수 있다-->
+				<input type = "button" name = "btn1" id = "btn1" value = "버튼1" class = "a">
+				<input type = "button" name = "btn2" id = "btn2" value = "버튼2">
+				<input type = "button" name = "btn3" id = "btn3" value = "버튼3" class = "a">
+			</div>
+		</form>
+	</section>
+	
+	<input type = "button" name = "btn4" id = "btn4" value = "버튼4">
+</body>
+</html>
