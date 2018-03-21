@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://211.63.89.30/javascript/exam08.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style>
+	div, span, input, th, td, fieldset {
+		font-size: 14px;
+	}
+
+	#add {
+		border: 1px solid gray;
+		padding: 10px;
+		width: 300px;
+	}
+	
+	#add > div {
+		margin-bottom: 5px;
+	}
+	
+	#add > div > label:first-child {
+		display: inline-block;
+		width: 50px;
+		text-align: right;
+		margin-right: 10px;
+	}
+	
+	#btnadd {
+		margin-top: 10px;
+		margin-left: 15px;
+	}
+
+	#tbl1 {
+		border: 1px solid gray;
+		border-collapse: collapse;
+		width: 500px;
+		margin-top: 20px;
+	}
+	#tbl1 th {
+		background: #ddd;
+	}
+	#tbl1 th, #tbl1 td {
+		border: 1px solid gray;
+		padding: 4px;
+		text-align: center;
+	}
+	#tbl1 th:nth-child(1) { width: 50px; }
+	#tbl1 th:nth-child(2) { width: 70px; }
+	#tbl1 th:nth-child(3) { width: 50px; }
+	#tbl1 th:nth-child(4) { width: 120px; }
+	#tbl1 th:nth-child(5) { width: 210px; }
+	
+	
+	
+</style>
+<script>
+	
+	var txtname, selage, rbgender1, rbgender2, txtaddress, btnadd, tbody1;
+	var num = 1;
+	
+	window.onload = function() {
+		
+		txtname = document.getElementById("txtname");
+		selage = document.getElementById("selage");
+		rbgender1 = document.getElementById("rbgender1");
+		rbgender2 = document.getElementById("rbgender2");
+		txtaddress = document.getElementById("txtaddress");
+		btnadd = document.getElementById("btnadd");
+		tbody1 = document.getElementById("tbody1");
+		
+		btnadd.onclick = additem;
+		
+		for (var i=20; i<=60; i++) {
+			selage.innerHTML += "<option value='" + i + "'>" + i + "</option>";
+		}		
+		
+		txtaddress.onkeydown = function() {
+			if (event.keyCode == 13) {
+				additem();
+			}
+		};
+		
+	};
+	
+	function additem() {
+		
+		if (txtname.value == "") {
+			txtname.focus();
+			return;
+		}
+		
+		if (txtaddress.value == "") {
+			txtaddress.focus();
+			return;
+		}
+		
+		
+		if (tbody1.innerText == "등록된 항목이 없습니다.") {
+			tbody1.innerHTML = "";
+		}
+		
+		var row = "<tr>";
+		
+		row += "<td>";
+		row += num;
+		num++;
+		row += "</td>";
+		
+		row += "<td>";
+		row += txtname.value;
+		row += "</td>";
+		
+		row += "<td>";
+		row += selage.value;
+		row += "</td>";
+		
+		row += "<td>";
+		if (rbgender1.checked) {
+			row += "<img src='images/gender_m.png'>";
+		} else {
+			row += "<img src='images/gender_f.png'>";
+		}
+		row += "</td>";
+		
+		row += "<td>";
+		row += txtaddress.value;
+		row += "</td>";
+		
+		row += "</tr>";
+		
+		tbody1.innerHTML += row;
+		
+		
+		txtname.value = "";
+		selage.selectedIndex = 0;
+		rbgender1.checked = true;
+		txtaddress.value = "";
+		txtname.focus();
+		
+	}
+	
+</script>
+</head>
+<body>
+	
+	<h1>데이터 추가하기</h1>
+	
+	<fieldset id="add">
+		<legend>입력 항목</legend>
+		<div><label for="txtname">이름 : </label><input type="text" id="txtname" autofocus=""></div>
+		<div><label for="selage">나이 : </label><select id="selage"><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option></select></div>
+		<div><label for="rbgener">성별 : </label><label><input type="radio" name="rbgender" id="rbgender1" value="m" checked=""> 남자</label><label><input type="radio" name="rbgender" id="rbgender2" value="f"> 여자</label></div>
+		<div><label for="txtaddress">주소 : </label><input type="text" id="txtaddress"></div>
+		<div><input type="button" id="btnadd" value="추가하기"></div>
+	</fieldset>
+	
+	
+	<table id="tbl1">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>성별</th>
+				<th>주소</th>
+			</tr>
+		</thead>
+		<tbody id="tbody1">
+			<tr>
+				<td colspan="5">등록된 항목이 없습니다.</td>
+			</tr>
+		</tbody>
+	</table>
+	
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

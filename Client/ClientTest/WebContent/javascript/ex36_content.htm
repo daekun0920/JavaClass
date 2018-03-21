@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	var btn1, div1;
+	
+	window.onload = function() {
+		
+		btn1 = document.getElementById("btn1");
+		div1 = document.getElementById("div1");
+		
+		
+		
+		btn1.onclick = function() {
+			
+			
+			// <tag>content</tag>
+			
+			// 1.innerText
+			// - 순수한 문자열 내용물을 취급
+			// - HTML 구문은 인식 불가
+			// - 비표준(IE), 사용 빈도 높음(대다수 브라우저 사용)
+			
+			// 2.innerHTML
+			// - 문자열 + HTML을 인식
+			// - 동적으로 HTML을 생성
+			// - 표준, 사용빈도 노ㅠㅍ음
+			
+			// 3. outerText
+			// - 비표준, 사용 빈도 낮음
+			
+			// 4. outerHTML
+			// - 비표준, 사용 빈도 낮음
+			
+			// alert(div1.innerText); // 읽기
+			// div1.innerText = "아무개";
+			// div1.innerText = "아<b>무</b>개"; // <div>홍길동</div> -> <div>아<b>무</b>개</div>
+			
+			// alert(div1.innerHTML);
+			// div1.innerHTML = "호호호";
+			// div1.innerHTML = "아<b>무</b>개";
+			
+			/*
+			for (var i = 1; i < 10; i++) {
+				div1.innerHTML += "<img src='../images/catty0'" + i + "'png'"
+			}
+			
+			*/
+			// inner -> 안에 내용물만 변경
+			// outer -> 해당 태그까지 통째로 변경
+			
+			// div1.outerText="아무개";
+			// div1.outerHTML="<i>아무개</i>";
+			
+			// alert(div1.innerHTML);
+			// alert(div1.outerHTML);
+			
+			// alert(div1.innerText);
+			// alert(div1.outerText);
+			
+			// textContent == innerText
+			// alert(div1.textContent);
+			
+			
+			
+		};
+		
+		var btndog = document.getElementById("btndog");
+		var btncat = document.getElementById("btncat");
+		
+		
+		btndog.onclick = function() {
+			add("dog");
+		};
+		
+		btncat.onclick = function() {
+			add("cat");		
+		};
+		
+
+		var btnaddfile = document.getElementById("btnaddfile"); //<input>
+		var filelist = document.getElementById("filelist");
+		
+		btnaddfile.onclick =function() {
+			filelist.innerHTML += "<div>파일 : <input type = \"file\"></div>";
+		}
+		
+		
+		var btnaddrow = document.getElementById("btnaddrow");
+		var tbl1 = document.getElementById("tbl1");
+		
+		btnaddrow.onclick = function() {
+			
+			// 행 추가하기 -> <tr> + <td>
+			var row = "<tr><td>1</td><td>홍길동</td><td>20</td></tr>";
+			
+			//	tbl1.innerHTML += row; // ***
+			document.getElementById("tbody").innerHTML += row;
+		};
+		
+		// 행 + 열 -> <option>
+		
+		var selrow = document.getElementById("selrow");
+		var selcolumn = document.getElementById("selcolumn");
+		
+		// BOM
+		for (var i=1;i <= 50; i++) {
+			var op = new Option(i, i);
+			// op.text(PCDATA) = i;
+			// op.value = i;
+			selrow.options.add(op);
+		}
+		
+		// DOM
+		for (var i = 1; i<= 10;i++) {
+			selcolumn.innerHTML += "<option value = '" + i + "'>" + i + "</option>";
+		}
+		
+		document.getElementById("btnaddrow2").onclick = function() {
+			
+			var temp = "";
+			
+			for (var i = 0; i<selrow.value;i++) { // 행 <tr>
+				temp += "<tr>";
+				for (var j = 0; j < selcolumn.value; j++) { // 컬럼, 셀 <td>
+					temp += "<td>";	
+					temp += "내용물";	
+					temp += "</td>";	
+				}	
+				temp += "</tr>";
+			}
+			document.getElementById("tbody2").innerHTML = temp;
+			
+		};
+	};
+	
+	function add(name) {
+		var list = document.getElementById("list"); // <div id = "list">
+		var n = parseInt(Math.random() * 5) + 1; // 1 ~ 5 정수 난수
+		var m = Math.random();
+		alert(m);
+		
+		alert(m * 5);
+		alert(parseInt(m * 5));
+		alert(parseInt(m * 5) + 1);
+		list.innerHTML += "<img src='../images/" + name + "0" + n + ".jpg'>";
+		
+	
+	}
+	
+</script>
+</head>
+<body>
+	<!--ex36_content.htm-->
+	<input type = "button" value = "테스트" id = "btn1">
+	<hr>
+	<div id = "div1">홍길동</div>
+	
+	<h1>애완 동물</h1>
+	
+	<input type = "button" value = "강아지" id = "btndog">
+	<input type = "button" value = "고양이" id = "btncat">
+	<hr>
+	<div id = "list"></div>
+	
+	<h1>게시판</h1>
+	
+	<label>첨부파일 : </label>
+	<div id = "filelist">
+		<div>파일 : <input type = "file"></div>
+	</div>
+	<input type = "button" id = "btnaddfile" value = "첨부파일 추가하기">
+	
+	<h1>테이블</h1>
+	
+	<div>
+		<input type = "button" value = "행 추가하기" id = "btnaddrow">
+	</div>
+	
+	<table id = "tbl1" border width = "500px">
+		<tbody id = "tbody"></tbody> <!--tbody를 미리 만들어놓아 중복생성을 막는다  -->
+	</table>
+	
+	<h1>테이블</h1>
+	
+	<div>
+		<select id = "selrow"></select>
+		*
+		<select id = "selcolumn"></select>
+		<input type = "button" value = "테이블 만들기" id = "btnaddrow2">
+	</div>
+	
+	<table id = "tbl1" border width = "500px">
+		<tbody id = "tbody2"></tbody> <!--tbody를 미리 만들어놓아 중복생성을 막는다  -->
+	</table>
+	
+	
+</body>
+</html>

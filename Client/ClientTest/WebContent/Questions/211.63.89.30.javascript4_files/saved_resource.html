@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://211.63.89.30/javascript/exam04.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style>
+	#main {
+		border: 1px solid #ccc;
+		width: 1000px;
+		margin: 50px auto;
+		padding: 20px;
+	}
+	#main #txt1, #main #txt2 {
+		width: 100%;
+		height: 200px;
+		outline: none;
+	}
+</style>
+<script>
+	var txt1, txt2, btn1;
+	var length = 0;
+	var timer = 0;
+	
+	window.onload = function() {
+		
+		txt1 = document.all.txt1;
+		txt2 = document.all.txt2;
+		btn1 = document.all.btn1;
+		
+		btn1.onclick = function() {
+			
+			timer = setInterval(function() {
+				
+				txt1.value = txt2.value.substr(0, length);
+				length++;
+				if (length == txt2.value.length) clearInterval(timer);
+				
+			}, 50);
+			
+		};
+		
+	};
+	
+</script>
+</head>
+<body>
+	<!--  -->
+	<div id="main">
+	<textarea name="txt1" id="txt1" readonly=""></textarea>
+	<hr>
+	<textarea name="txt2" id="txt2">네, 낮동안에도 찬바람이 강하게 불고있습니다.
+때문에 체감상 느껴지는 온도는 현재기온보다 2~3도가량 낮게 나타나고 있는데요.
+남부해안지역과 제주도를 중심으로는 강풍주의보도 이어지고 있기 때문에 시설물 피해 없도록 주의하셔야겠습니다.
+쌀쌀했던 어제보다도 기온이 더 오르지 못하고있습니다.
+현재기온 서울 7.3도, 대전 9.3도, 부산 6.8도로 이맘때 평년수준을 밑돌고있고요. 
+찬바람이 더해지면서 체감상 느껴지는 날씨는 더 쌀쌀합니다.
+꽃샘추위는 내일 절정을 보이겠습니다. 
+밤사이 공기가 더욱 차가워지면서 서울은 내일 아침기온 1도 안팎까지 떨어질텐데요. 
+봄의 기운이 완연해지던 중 찾아온 반짝 추위에 감기 걸리지 않도록 조심하셔야겠습니다.
+절기상 춘분인 내일은 전국적으로 눈 또는 비가 내리겠습니다.
+	</textarea>
+	<input type="button" value="시작" name="btn1" id="btn1">
+	</div>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

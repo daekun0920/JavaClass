@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://211.63.89.30/javascript/exam05.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style>
+	#tbl1 {
+		border: 1px solid #ccc;
+		border-collapse: collapse;
+		margin: 0px auto;
+	}
+	#tbl1 td {
+		border: 1px solid #ccc;
+		padding: 10px;
+	}
+	#tbl1 td img {
+		width: 128px;
+		height: 128px;
+	}
+	#money {
+		width: 50px;
+	}
+	#btn1 {
+		display: block;
+		margin: 10px auto;
+		width: 50px;
+		height: 50px;
+	}
+	#tbl1 .item {
+		text-align: center;
+	}
+	#tbl1 .item span:first-child {
+		margin-right: 20px;
+	}
+	#tbl1 .item img {
+		width: 50px;
+		height: 50px;
+	}
+</style>
+<script>
+	var img1, img2, img3, btn1;
+	var timer = 0;
+	var money;
+	var m = 1000;
+	var score = [[1,1,1,2], [2,2,2,3], [3,3,3,4], [4,4,4,5], [5,5,5,6], [1,1,2,7], [1,2,3,8], [2,3,4,9]];
+	var temp = [];
+	
+	window.onload = function() {
+		
+		img1 = document.all.img1;
+		img2 = document.all.img2;
+		img3 = document.all.img3;
+		btn1 = document.all.btn1;
+		money = document.all.money;
+		
+		
+		money.value = m;
+		
+		btn1.onclick = function() {
+			if (timer == 0) {
+				timer = setInterval(function() {
+					
+					var n = parseInt(Math.random() * 5) + 1;
+					img1.src = "images/catty0" + n + ".png";
+					temp[0] = n;
+					
+					n = parseInt(Math.random() * 5) + 1;
+					img2.src = "images/catty0" + n + ".png";
+					temp[1] = n;
+					
+					n = parseInt(Math.random() * 5) + 1;
+					img3.src = "images/catty0" + n + ".png";
+					temp[2] = n;
+					
+				}, 30);
+				
+				m -= 100;
+				
+			} else {
+				clearInterval(timer);
+				timer = 0;
+				
+				for (var i=0; i<score.length; i++) {
+					if (score[i][0] == temp[0] && score[i][1] == temp[1] && score[i][2] == temp[2]) {
+						m += 100 * score[i][3];
+						break;
+					}
+				}
+				
+				if (m == 0) {
+					btn1.disabled = true;
+				}
+			}
+			
+			money.value = m;
+			
+		};
+		
+	};
+</script>
+</head>
+<body>
+	<!-- exam05.htm -->
+	<table id="tbl1">
+		<tbody><tr>
+			<td>
+				<img src="./catty01.png" name="img1">
+				<img src="./catty02.png" name="img2">
+				<img src="./catty03.png" name="img3">
+			</td>
+			<td>
+				$<input type="text" name="money" id="money">
+				<input type="button" value="$" name="btn1" id="btn1">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div class="item">
+					<span>
+					<img src="./catty01.png">
+					<img src="./catty01.png">
+					<img src="./catty01.png">
+					x 2
+					</span>
+					<span>
+					<img src="./catty02.png">
+					<img src="./catty02.png">
+					<img src="./catty02.png">
+					x 3
+					</span>
+				</div>
+				<div class="item">
+					<span>
+					<img src="./catty03.png">
+					<img src="./catty03.png">
+					<img src="./catty03.png">
+					x 4
+					</span>
+					<span>
+					<img src="./catty04.png">
+					<img src="./catty04.png">
+					<img src="./catty04.png">
+					x 5
+					</span>
+				</div>
+				<div class="item">
+					<span>
+					<img src="./catty05.png">
+					<img src="./catty05.png">
+					<img src="./catty05.png">
+					x 6
+					</span>
+					<span>
+					<img src="./catty01.png">
+					<img src="./catty01.png">
+					<img src="./catty02.png">
+					x 7
+					</span>
+				</div>
+				<div class="item">
+					<span>
+					<img src="./catty01.png">
+					<img src="./catty02.png">
+					<img src="./catty03.png">
+					x 8
+					</span>
+					<span>
+					<img src="./catty02.png">
+					<img src="./catty03.png">
+					<img src="./catty04.png">
+					x 9
+					</span>
+				</div>
+			</td>
+		</tr>
+	</tbody></table>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

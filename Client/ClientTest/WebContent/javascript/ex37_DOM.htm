@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+		border:1px solid black;
+		padding:20px;
+		margin:20px;
+	}
+	
+	#n7 {
+		 border-width: 3px;
+	}
+</style>
+<script>
+	window.onload = function() {
+		document.getElementById("btn1").onclick = function() {
+			
+			// 나를 기준으로 하는 상대 표현
+			var n7 = document.getElementById("n7");
+			
+			// Node, 노드
+			// - DOM 트리를 구성하는 요소
+			// - 태그, 속성, PCDATA, Comment(주석) 등...
+			// 1. nodeName
+			// 2. nodeType
+			//	- 1 : 태그(엘레먼트)
+			//	- 2 : 속성
+			//  - 3 : PCDATA
+			//  - 8 : 주석
+			// 3. nodeValue
+			
+			// 태그일 경우
+			console.log(n7.nodeName);  // 태그명 반환
+			console.log(n7.nodeType);  // 1
+			console.log(n7.nodeValue); // null
+			
+			// 자식 접근
+			// - firstChild : 첫번째 자식 '노드' (=childNodes[0])
+			// - childNodes : 자식 노드들
+			// - lastChild : 마지막 자식 노드 (=childNodes[childNodes.length - 1])
+			
+			// 주석 일 경우
+			console.log(n7.firstChild.nodeName); // #comment
+			console.log(n7.firstChild.nodeType); // 8
+			console.log(n7.firstChild.nodeValue); // 주석 내용
+			
+			//PCDATA일 경우(문자열 + 공백 포함)
+			console.log(n7.childNodes[1].nodeName); // #text
+			console.log(n7.childNodes[1].nodeType); // 3
+			console.log(n7.childNodes[1].nodeValue); // PCDATA
+			
+			//자식 태그
+			console.log(n7.childNodes[2].nodeName); // 태그명 
+			console.log(n7.childNodes[2].nodeType); // 1
+			console.log(n7.childNodes[2].nodeValue); // null
+			
+			// 자식들
+			console.clear();
+			console.log(n7.childNodes.length);
+					
+			// 자식 태그만 접근
+			for (var i = 0;i < n7.childNodes.length; i++) {
+				if (n7.childNodes[i].nodeType == 1 && n7.childNodes[i].nodeName == "DIV") {
+					alert(n7.childNodes[i].outerHTML);
+				}
+			}
+			for (var i = 0;i < n7.childNodes.length; i++) {
+				var c = n7.childNodes[i];
+				console.log(c.nodeName, c.nodeType, c.nodeValue);
+			}
+			
+			
+			// 부모 노드(태그)
+			console.log(n7.parentNode.nodeName);
+			console.log(n7.parentNode.nodeType);
+			console.log(n7.parentNode.nodeValue);
+			console.log(n7.parentNode.id);
+			console.log(n7.parentNode.parentNode.id);
+			console.log(n7.parentNode.parentNode.parentNode.nodeName);
+			console.log(n7.parentNode.parentNode.parentNode.parentNode.nodeName);
+			console.log(n7.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName); /* #document : 문서 객체, 돔(DOM)의 최상위 노드 */
+			console.log(n7.parentNode.parentNode.parentNode.parentNode.parentNode.nodeType); /* 9 */
+			console.log(n7.parentNode.parentNode.parentNode.parentNode.parentNode.nodeValue); /* null */
+			
+			
+			console.clear();
+			
+			
+			// 형제 노드
+			// - previousSibling : 형
+			// - nextSibling : 동생
+			
+			// 형
+			console.log(n7.previousSibling.nodeName);
+			console.log(n7.previousSibling.nodeType);
+			
+			console.log(n7.previousSibling.previousSibling.nodeName);
+			console.log(n7.previousSibling.previousSibling.nodeType);
+			
+			console.log(n7.previousSibling.previousSibling.previousSibling.nodeName);
+			console.log(n7.previousSibling.previousSibling.previousSibling.nodeType);
+			
+			// 동생
+			console.log(n7.nextSibling.nextSibling.nodeName);
+			console.log(n7.nextSibling.nextSibling.nodeType);
+			console.log(n7.nextSibling.nextSibling.id);
+			
+			
+		};
+		
+		document.getElementById("btn2").onclick = function() {
+			
+			// 200개의 <td> 접근
+			// 1. 태그명
+			// - document.getElementByTagName("td");
+			// - 탈락(다른 테이블 <td> 까지도 검색하기 때문에)
+			
+			// 2. name
+			// - document.getElementByName("");
+			// - 탈락(<td> 태그는 name 속성을 가질 수 없기 때문에)
+			
+			// 3. id 
+			// - document.getElementById("id");
+			// - 탈락(200개의 id;;;;)
+			
+			// 4. class
+			// - document.getElementsByClassName("class");
+			// - 합격(<td class = "cell"></td>)
+			
+			// 5. id + Axis
+			// - var tbl1 = document.getElementById("#tbl1");
+			// - tbl1.childNodes -> <td>들...
+			// - 합격
+			
+			var tbl1 = document.getElementById("tbl1");
+			
+			// console.log(tbl1.childNodes.length);
+			// console.log(tbl1.firstChild.nodeType);
+			// console.log(tbl1.lastChild.nodeType);
+			
+			var tbody = tbl1.lastChild;
+			
+			// console.log(tbody.childNodes.length);
+			
+			for (var i = 0; i < tbody.childNodes.length; i++) {
+				
+				if (tbody.childNodes[i].nodeType == 1) {
+					
+					// console.log("tr");
+					var tr = tbody.childNodes[i];
+					
+					// <tr> 이벤트 추가
+					// - 이벤트 버블링, Event Bubbling
+					// - 이벤트 터널링, Event Tunneling
+					tr.onmouseover = function() {
+						// console.log(event.srcElement.nodeName);
+						event.srcElement.parentNode.bgColor = "yellow";
+					};
+					tr.onmouseout = function() {
+						event.srcElement.parentNode.bgColor = "transparent";
+					};
+					
+					for (var j = 0; j < tr.childNodes.length;i++) {
+						
+						if (tr.childNodes[j].nodeType == 1 && tr.childNodes[j].nodeName == "TD") {
+						
+							tr.childNodes[j].bgColor = "red";
+							
+							// tr.childNodes[j].innerText = "cell";
+							// tr.childNodes[j].innerHTML = "<img src = '../images/catty01.png'>";
+								
+							// 모든 <td> 접근
+							// tr.childNodes[j].onmouseover = function() {
+							// 	   event.srcElement.bgColor = "red";
+							// };
+							
+							//tr.childNodes[j].onclick = function() {
+							//	event.srcElement.textContent = "클릭";
+							//};
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		};
+		
+	};// onload
+</script>
+</head>
+<body>
+	<!--ex37_DOM.htm-->
+	
+	<input type = "button" value = "테스트" id = "btn1">
+	<hr>
+	
+	<div id = "n1"> <!--할아버지-->
+		<div id = "n2"> <!-- 큰아빠  -->
+			큰 아빠
+			<div id = "n5">사촌</div><!--사촌-->
+		</div>
+		<div id = "n3"> <!-- 부모 -->
+			부모
+			<div id = "n6">형</div><!-- 형 -->
+			<div id = "n7"><!--나(중심)  -->
+				나 
+				<div id = "n9">첫째 자식</div>
+				<div id = "n10">
+					둘째 자식
+					<div id = "n12">손자</div> <!--손자  -->
+				</div>
+				<div id = "n11">셋째 자식</div>
+			</div>
+			<div id = "n8">동생</div> <!--동생  -->
+		</div>
+		<div id = "n4">작은 아빠</div> <!--작은 아빠  -->
+	</div>
+	
+	
+	<hr>
+	
+	<input type = "button" value = "테스트" id = "btn2">
+	
+	<hr>
+	
+	<!-- table#tbl1>tr*20>td{item}*10 -->	
+	<table id="tbl1" border width = "500px" cellspacing = "0">
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+	</table>	
+</body>
+</html>

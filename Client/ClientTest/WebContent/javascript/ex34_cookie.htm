@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#tbl1 {
+		border:1px solid gray;
+		border-collapse:collapse;
+		width:300px;
+	}
+	
+	#tbl1 th, #tbl1 td {
+		border: 1px solid gray;
+		padding:5px;
+	}
+	
+	#tbl1 th {
+		width:80px;
+		background:#EEE;
+	}
+	
+	#txtid, #txtpw {
+		width:100px;
+	}
+	
+	#btnlogin {
+		width:50px;
+		height:40px;
+		display:block;
+		margin:0px auto; /* 인라인 태그를 혼자 가운데 정렬 */
+	}
+	
+	/* 
+	#tbl1 tr:first-child td:last-child {
+		text-align:center;
+	}
+	*/
+	
+	/* 
+	인라인 -> 부모가 text-align 으로 정렬
+	블럭 - > margin:auto; 로 정렬
+	*/
+</style>
+<script src = "js/cookie.js"></script>
+<script>
+	var txtid, txtpw, btnlogin, cbid;
+	
+	window.onload = function() {
+		
+		txtid = document.all.txtid;
+		txtpw = document.all.txtpw;
+		btnlogin = document.all.btnlogin;
+		cbid = document.all.cbid;
+		
+		
+		//txtid.focus();
+		
+		// 로그인 클릭
+		btnlogin.onclick = function() {
+			// 로그인 처리를 진행했다고 가정
+			if ((txtid.value == "hong" && txtpw.value == "1234") || 
+				(txtid.value == "test" && txtpw.value == "1234")){
+				
+				// 아이디 기억하기 (로그인을 성공했을 때만..)
+				if (cbid.checked) {
+					// 아이디 기억하기 -> 아이디를 어딘가에 저장
+					// 쿠키에 저장하기
+					setCookie("id", txtid.value, 365);
+				} else {
+					// 더 이상 아이디를 기억하지 않겠다 :3 (쿠키 삭제) 
+					setCookie("id", "", -1);
+				}
+				
+				//로그인 성공
+				alert("로그인 성공했습니다.");
+				location.href = "ex33_a.htm"; //시작 페이지
+				
+			} else {
+				
+				// 로그인 실패
+				alert("로그인 실패했습니다.");
+			}
+		};
+		
+		// 쿠키에 아이디가 저장되어 있으면 미리 채워넣기
+		// alert(getCookie("id") == "");
+		// alert(getCookie("id") == null);
+		// alert(getCookie("id") == undefined);
+		
+		if (getCookie("id") != "") {
+			// 지난번 로그인 떄 아이디 기억하기를 체크 했다면..
+			txtid.value = getCookie("id");
+			txtpw.focus();
+			cbid.checked = true;
+		} else {
+			txtid.focus();
+		}
+	};
+
+</script>
+</head>
+<body>
+	<!--ex34_cookie.htm-->
+	<h1>자동 로그인 or 아이디 기억하기</h1>
+	
+	<table id = "tbl1">
+		<tr>
+			<th>아이디</th>
+			<td><input type = "text" name = "txtid" id = "txtid" tabindex="1"></td>
+			<td rowspan = "2"><input type = "button" value = "login" name = "btnlogin" id = "btnlogin"></td>
+		</tr>
+		<tr>
+			<th>암호</th>
+			<td><input type = "password" name = "txtpw" id = "txtpw" tabindex = "2"></td>
+		</tr>
+		<tr>
+			<td colspan = "3">
+				<input type = "checkbox" name = "cbid" id = "cbid">
+				<label for = "cbid">아이디 기억하기</label>
+			</td>
+		</tr>
+	</table>
+	
+</body>
+</html>
