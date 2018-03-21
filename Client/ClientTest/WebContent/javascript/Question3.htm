@@ -14,9 +14,9 @@
 	#div1 {
 		width:460px;
 		height:150px;
+		margin:0px auto;
 		border:1px solid black;
-		margin-left:500px;
-		margin-top:70px;
+		text-align:center;
 		padding-left:30px;	
 	}
 		
@@ -28,20 +28,132 @@
 		font-weight: bold;
 		border:0px;
 	}
+	
+	.ipt {
+		width: 150px;
+		height:90px;
+		border:1px solid #444;
+		background-color:white;
+		text-align:center;
+	}
+	
+	#div2 {
+		margin-top:20px;
+		text-align:center;
+	}
 </style>
+<script>
+	
+
+	window.onload = function() {
+		var btn1 = document.form1.btn1;
+		var btn2 = document.form1.btn2;
+		var btn3 = document.form1.btn3;
+		
+		var timer = 0;
+		
+		var inpSec = document.form1.inpSec;		
+		var inpMin = document.form1.inpMin;		
+		var inpHour = document.form1.inpHour;		
+		
+		var n = 0;
+		var ns = 0;
+		
+		var min = 0;
+		var minf = 0;
+		
+		var hour = 0;
+		var hourf = 0;
+		start();
+		
+		btn1.onclick = function() {
+			btn1.disabled = true;
+			btn2.disabled = false;
+			btn3.disabled = false;
+			if (timer == 0) {
+				timer = setInterval(function() {
+					if (n < 10) {
+						inpSec.value = ns + "" + n;
+						n++;
+					} else {
+						n = 0;
+						ns++;
+					}
+					if (minf == 10) { 
+						min++;
+						minf = 0;
+						inpMin.value = min + "0";
+					}
+					if (ns + "" + n == 100) {
+						n = 0;
+						ns = 0;
+						minf++;
+						inpMin.value = min + "" + minf; 
+					} 
+					if (inpMin.value == 60) {
+						hourf++;
+						min = 0;
+						inpMin.value = min + "" + minf;
+						inpHour.value = hour + "" + hourf;
+					}
+					
+					if (inpHour.value == 10) {
+						hour++;
+						hourf = 0;
+						inpHour.value = hour + "0";
+					}
+				}, 10);
+				
+			}
+		};
+		
+		btn2.onclick = function() {
+			btn1.disabled = false;
+			btn2.disabled = true;
+			btn3.disabled = false;
+			
+			clearInterval(timer);
+			timer = 0;
+			
+		};
+		
+		btn3.onclick = function() {
+			btn1.disabled = false;
+			btn2.disabled = true;
+			btn3.disabled = true;
+			
+			clearInterval(timer);
+			timer = 0;
+			start();
+		};
+		
+	};
+	
+	function start() {
+		document.form1.inpHour.value = "00";
+		document.form1.inpMin.value = "00";
+		document.form1.inpSec.value = "00";
+		
+	}
+</script>
 </head>
 <body>
 	<!---->
-	<div id = "div1">
-		<input type = "text" value = "00">
-		<span>:</span>
-		<input type = "text" value = "00">
-		<span>:</span>
-		<input type = "text" value = "00">
-	</div>
-	<input><input><input>
-	
-	 
+	<form name = "form1">
+		<div id = "div1">
+			<input type = "text" name = "inpHour">
+			<span>:</span>
+			<input type = "text" name = "inpMin">
+			<span>:</span>
+			<input type = "text" name = "inpSec" style = "text-align:right;">
+			
+		</div>
+		<div id = "div2">
+			<input type = "button" class = "ipt" value = "시작" name = "btn1">
+			<input type = "button" class = "ipt" value = "일시정지" name = "btn2"> 
+			<input type = "button" class = "ipt" value = "종료" name = "btn3">
+		</div>
+	</form>
 	
 </body>
 </html>

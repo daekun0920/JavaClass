@@ -163,7 +163,7 @@
 						event.srcElement.parentNode.bgColor = "transparent";
 					};
 					
-					for (var j = 0; j < tr.childNodes.length;i++) {
+					for (var j = 0; j < tr.childNodes.length;j++) {
 						
 						if (tr.childNodes[j].nodeType == 1 && tr.childNodes[j].nodeName == "TD") {
 						
@@ -177,9 +177,9 @@
 							// 	   event.srcElement.bgColor = "red";
 							// };
 							
-							//tr.childNodes[j].onclick = function() {
-							//	event.srcElement.textContent = "클릭";
-							//};
+							tr.childNodes[j].onclick = function() {
+								event.srcElement.textContent = "클릭";
+							};
 							
 						}
 						
