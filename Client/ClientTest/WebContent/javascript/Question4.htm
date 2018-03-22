@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#timer {
+	 	width:450px;
+	 	height:150px;
+	 	border:1px solid black;
+	 	margin: 0px auto;
+	 	margin-top:50px;
+	}
+	
+	#timer span {
+		font-size: 5em;
+		font-weight:bold;
+		display:inline-block;
+	}
+	
+	#timer img {
+		width:55px;
+		height:75px;
+		vertical-align:middle;
+		margin-bottom:30px;
+		margin-left:5px;
+	}
+	
+	#div2 {
+		text-align:center;
+		margin-top:30px;
+	}
+	
+	#div2 input {
+		border:1px solid black;
+		background-color:white;
+		width:150px;
+		text-align:center;
+		height:50px;
+	}
+	/* 인라인 : 부모가 text-align, 블럭 : 자기 자신이 margin:0px auto; */
+</style>
+<script>
+	
+	window.onload = function() {
+		var start = document.getElementById("start");
+		var pause = document.getElementById("pause");
+		var end = document.getElementById("end");
+		
+		var misecb = document.all.misecb;
+		var misecf = document.all.misecf;
+		
+		var secb = document.all.secb;
+		var secf = document.all.secf;
+		
+		var minb = document.all.minb;
+		var minf = document.all.minf;
+		
+		var i = 0;
+		var j = 0;
+		
+		var k = 0;
+		var m = 0;
+		
+		var n = 0;
+		var y = 0;
+		
+		var timer = 0;
+		start.onclick = function() {
+			pause.disabled = false;
+			pause.style.cursor = "default";
+			pause.style.backgroundColor = "white";
+			
+			start.disabled = true;
+			start.style.backgroundColor = "grey";
+			start.style.cursor = "not-allowed";
+			
+			end.disabled = false;
+			end.style.cursor = "default";
+			end.style.backgroundColor = "white";
+			
+			if (timer == 0) {
+				timer = setInterval(function() {
+						
+					if (i < 10) {	
+						misecb.src = "../images/" + i + ".png";
+						 
+						i++;
+						
+					} else {
+						i = 0;
+						j++;
+						misecf.src = "../images/" + j + ".png";
+					}
+					
+					if (j > 8) {
+						j = 0;
+						k++;
+						secb.src = "../images/" + k + ".png"; 
+					}
+					
+					if (k > 9) {
+						k = 0;
+						m++;
+						
+						secb.src = "../images/" + k + ".png"; 
+						secf.src = "../images/" + m + ".png"; 
+						
+					}
+					
+					if (m == 6 && k == 0) {
+						m = 0;
+						n++;
+						
+						secf.src = "../images/" + m + ".png"; 
+						minb.src = "../images/" + n + ".png"; 
+					}
+					
+					if (n > 8) {
+						n = 0;
+						y++;
+						
+						minb.src = "../images/" + n + ".png"; 
+						minf.src = "../images/" + y + ".png"; 
+					}
+					
+				}, 1);
+			}
+			
+		};
+		
+		pause.onclick = function() {
+			pause.disabled = true;
+			pause.style.backgroundColor = "grey";
+			pause.style.cursor = "not-allowed";
+			
+			start.disabled = false;
+			start.style.cursor = "default";
+			start.style.backgroundColor = "white";
+			
+			end.disabled = false;
+			end.style.cursor = "default";
+			end.style.backgroundColor = "white";
+			
+			clearInterval(timer);
+			timer = 0;
+			
+		};
+		
+		end.onclick = function() {
+			pause.disabled = true;
+			pause.style.cursor = "not-allowed";
+			pause.style.backgroundColor = "grey";
+			
+			start.disabled = false;
+			start.style.cursor = "default";
+			start.style.backgroundColor = "white";
+		
+			end.disabled = true;
+			end.style.backgroundColor = "grey";
+			end.style.cursor = "not-allowed";
+			
+			clearInterval(timer);
+			timer = 0;
+			
+			minf.src = "../images/0.png";
+			minb.src = "../images/0.png";
+			
+			secf.src = "../images/0.png";
+			secb.src = "../images/0.png";
+			
+			misecf.src = "../images/0.png";
+			misecb.src = "../images/0.png";
+			
+			i = 0;
+			j = 0;
+			
+			k = 0;
+			m = 0;
+			
+			n = 0;
+			y = 0;
+			
+		};
+	};
+	
+	
+</script>
+</head>
+<body>
+	<!--Question4.htm-->
+	
+	<div id = "timer">
+		<img src="../images/0.png" name = "minf">
+		<img src="../images/0.png" name = "minb">
+		<span>:</span>
+		<img src="../images/0.png" name = "secf">
+		<img src="../images/0.png" name = "secb">
+		<span>:</span>
+		<img src="../images/0.png" name = "misecf">
+		<img src="../images/0.png" name = "misecb">
+	</div>
+	<div id = "div2">
+		<input name = "start" id = "start" class = "btn" value = "시작"> 
+		<input name = "pause" id = "pause" class = "btn" value = "일시정지"> 
+		<input name = "end" id = "end" class = "btn" value = "종료">
+	</div>
+	 
+	
+</body>
+</html>
