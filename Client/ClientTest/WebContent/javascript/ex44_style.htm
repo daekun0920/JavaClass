@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box {
+		border:1px solid black;
+		width:100px;
+		height:100px;
+		position:absolute;
+	}
+</style>
+<script>
+	
+	var list = [];
+	var length = 500;
+	
+	window.onload = function() {
+		for (var i = 0; i < length; i++) {
+		
+			var box = document.createElement("div"); // <div></div>
+			box.innerText = "상자"; // PCDATA
+			box.className = "box"; // BOM
+			// box.setAttribute("class", "box"); // DOM
+			
+			var r = parseInt(Math.random() * 256);
+			var g = parseInt(Math.random() * 256);
+			var b = parseInt(Math.random() * 256);
+			
+			box.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")"; 
+				
+			document.body.appendChild(box); // 화면에 보이기 위해서 추가
+			list.push(box); // 나중에 관리하기 위해서 추가
+		}
+	};
+	
+	var index = 0;
+	var zindex = 1;
+	window.onmousedown = function() {
+		list[index].style.left = event.clientX - 50 + "px";
+		list[index].style.top = event.clientY - 40 + "px";
+		list[index].style.zindex = zindex;
+		
+		index++;
+		zindex++;
+		
+		if (index == list.length) index = 0;
+	};
+</script>
+</head>
+<body>
+	<!--ex44_style.htm-->
+	
+
+
+</body>
+</html>

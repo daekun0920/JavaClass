@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#s1, #d1, #b1 {
+		padding:50px;
+	}
+	
+	#s1 {
+		background:orange;
+	}
+	
+	#d1 {
+		background:cornflowerblue;
+	}
+	
+	
+	
+</style>
+<script>
+	/*
+	
+	DOM 이벤트 처리
+	- addEventListener("이벤트종류", fn, boolean)
+	- 3번째 인자(boolean) : capture | non-capture;
+	- Event Bubbling, Event Capturing(Tunneling)
+	
+	Event Propagation, 이벤트 전파
+	- 이벤트 전파 현상은 부모 객체와 자식 객체간 발생
+	- 양방향으로 발생
+	
+	- 이벤트 터널링(이벤트 발생 전달)
+	window -> document -> sec -> div -> btn 
+	
+	- 이벤트 버블링(이벤트에 대한 작업 종료 전달)
+	window <- document <- sec <- div <- btn 
+	
+	1. window에서 이벤트 타겟의 부모
+		- capture
+		- 처리 가능한 capture 리스너가 호출된다.
+		
+	2. 이벤트 타겟
+		- target 단계
+		- 해당 타겟이 가지고 있는 모든 리스너가 호출된다.
+		
+	3. 이벤트 타겟의 부모로부터 window까지
+		- bubble 단계
+		- 처리 가능한 non-capture 리스너가 호출된다.
+		
+	*/
+	
+	var s1, d1, b1;
+	
+	window.addEventListener("load", f3);
+	
+	function f1() {
+		s1 = document.getElementById("s1");
+		d1 = document.getElementById("d1");
+		b1 = document.getElementById("b1");
+		
+		b1.onclick = function() {
+			console.log("버튼 클릭");
+		};
+		
+		d1.onclick = function() {
+			console.log("패널 클릭");
+		};
+		
+		s1.onclick = function() {
+			console.log("섹션 클릭");
+		};
+		
+		document.onclick = function() {
+			console.log("문서 클릭");
+		};
+		
+		// DOM 에서는 window가 document의 부모가 아니다. 이벤트 관련 처리 파트에서는 부모 취급을 한다.
+		window.onclick = function() {
+			console.log("창 클릭");
+		};
+		
+	}
+	
+	function f2() {
+		s1 = document.getElementById("s1");
+		d1 = document.getElementById("d1");
+		b1 = document.getElementById("b1");
+		
+		b1.onclick = function() {
+			console.log("버튼 클릭");
+		
+			// 이벤트 타겟 객체(당사자)
+			// - event.srcElement
+			// - event.target
+			// console.log(event.srcElement);
+			// console.log(event.target); // 원래 타겟
+			// console.log(event.currentTarget); // 현재 실제 위치(타겟)
+			console.log(event.eventPhase); // 내려가는지 올라가는지 하 : 1, 타겟 : 2, 상 : 3
+		};
+		
+		d1.onclick = function() {
+			console.log("패널 클릭");
+			//console.log(event.srcElement);
+			//console.log(event.target);
+			//console.log(event.currentTarget);
+			console.log(event.eventPhase);
+		};
+		
+		s1.onclick = function() {
+			console.log("섹션 클릭");
+			//console.log(event.srcElement);
+			//console.log(event.target);
+			//console.log(event.currentTarget);
+			console.log(event.eventPhase);
+		};
+		
+	}
+	
+	function f3() {
+		s1 = document.getElementById("s1");
+		d1 = document.getElementById("d1");
+		b1 = document.getElementById("b1");
+		
+		// (캡처 -> 타겟) -> 버블 (캡쳐 방향)
+		s1.addEventListener("click", function() {
+			console.log("섹션 클릭");
+			console.log(event.eventPhase);
+			
+			//event.stopPropagation(); // 전파 흐름 끊기
+			
+		}, true); // capture
+		
+		d1.addEventListener("click", function() {
+			console.log("패널 클릭");
+			console.log(event.eventPhase);
+		}, true); // capture
+	
+		b1.addEventListener("click", function() {
+			console.log("버튼 클릭");
+			console.log(event.eventPhase);
+		}, true); // capture
+	
+		// 버블에 반응(코딩 순서와 관계X)
+		b1.addEventListener("click", function() {
+			
+			// 전파 중단
+			// event.stopPropagation();
+			// event.stopImmediatePropagation();
+			
+			event.cancelBubble = true;
+			
+			console.log("버튼 클릭");
+			console.log(event.eventPhase);
+			
+			event.stopPropagation(); // 전파 흐름 끊기
+			
+		}); // bubble(false)
+		
+		d1.addEventListener("click", function() {
+			console.log("패널 클릭");
+			console.log(event.eventPhase);
+		}); // bubble(false)
+
+		s1.addEventListener("click", function() {
+			console.log("섹션 클릭");
+			console.log(event.eventPhase);
+		}); // bubble(false)
+	}
+	
+	function f0() {
+		s1 = document.getElementById("s1");
+		d1 = document.getElementById("d1");
+		b1 = document.getElementById("b1");
+		
+		
+	}
+</script>
+</head>
+<body>
+	<!--ex41_DOM.htm-->
+	
+	<section id = "s1">
+		<div id = "d1">
+			<input type = "button" value = "버튼" id = "b1">
+		</div>
+	</section>
+	
+	<hr>
+	
+	<input type = "text" id = "txt1">
+	
+	<script>
+		
+		var txt1 = document.getElementById("txt1");
+		
+		// 버블링 (일단 기본으로 걸려있다, 캡쳐링 : DOM 에서만)
+		/* 
+		txt1.onkeydown = function() {
+			
+			event.stopPropagation();
+			event.cancel = true;
+			
+		}; 
+		*/
+		
+		// window.event 작동 안되는 브라우저들이 가끔 있음
+		// 함수 호출 매개 변수
+		/* 
+		txt1.onkeydown = function(evt) {
+			// alert(evt === event); // true
+			event.stopPropagation();
+			event.cancel = true;
+			
+		};
+		*/
+		txt1.onkeydown = function() {
+			
+			// 컨트롤의 기본 행동을 없었던 일로..
+			console.log(event.keyCode);
+			event.preventDefault(); // 데이터로서는 존재하지만 보여주지는(출력되지는) 않음
+			console.log(event.keyCode);
+			
+			// 영어 대문자만 입력 가능하게..
+			// var regex = /^[A-Z]{1,}$/;
+						
+			
+		};
+		
+		/* 
+		window.onkeydown = function() {
+			
+			if (event.keyCode == 65) {
+				location.href = "admin.htm";
+			}
+		
+		}; 
+		*/
+		
+	</script>
+	
+</body>
+</html>

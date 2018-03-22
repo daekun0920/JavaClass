@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	
+	var btn1, box;
+	
+	window.onload = function() {
+		
+		btn1 = document.getElementById("btn1");
+		box = document.getElementById("box");
+		
+		btn1.onclick = function() {
+			
+			// 태그 조작
+			// 1. 생성
+			// 2. 삭제
+			// 3. 수정(제어)
+			
+			// 태그 생성
+			// 1. innerHTML
+			// - 쉽다.
+			// - 생성될 태그를 문자열로 취급
+			// - 어렵다.(현재 상태에서는 동적으로 만들어진 태그가.. 문자열)
+			
+			// box.innerHTML = "<a href = 'http://naver.com'>네이버</a>";
+			
+			// 추가 업무
+			// - 위의 링크에 target = "_blank" 로 지정
+			
+			// 2. DOM 메소드
+			// - 표준
+			// <a href = 'http://naver.com'>네이버</a>
+			// a. <a>
+			var a = document.createElement("a");
+			console.log(a.nodeName);
+			console.log(a.nodeType);
+			console.log(a.nodeValue);
+			
+			// b. href = "http://naver.com"
+			var href = document.createAttribute("href"); // href = ""
+			href.value = "http://naver.com"; // href = "http://naver.com"
+			
+			console.log(href.nodeName); // 속성명
+			console.log(href.nodeType); // 2
+			console.log(href.nodeValue); // 속성값
+			
+			// c. <a href = "http://naver.com"></a>
+			a.setAttributeNode(href);
+			
+			//console.log(a.attributes);
+			console.log(a.href);
+			
+			// d. <a href = "http://naver.com">네이버</a>
+			var txt = document.createTextNode("네이버");
+			console.log(txt.nodeType);
+			
+			// 부모에게 자식 노드를 추가하는 메소드
+			a.appendChild(txt);
+			
+			// e. box에 추가
+			box.appendChild(a);
+			
+			
+			var br = document.createElement("br");
+			
+			box.appendChild(br);
+			
+			// 동적 추가 업무
+			var target = document.createAttribute("target");
+			target.value = "_blank"; // 새 창에서 띄우기
+			a.setAttributeNode(target);
+			
+			// <a href = "http://google.com>구글</a>"
+			var a2 = document.createElement("a");
+			
+			a2.setAttribute("href", "http://google.com");
+			a2.innerText = "구글";
+			
+			box.appendChild(a2);
+			
+		};
+		
+	};
+	
+</script>
+</head>
+<body>
+	<!--ex38_DOM.htm-->
+	
+	<input type = "button" value = "동적으로 태그 생성하기" id = "btn1">
+	<hr>
+	
+	<div id = "box"></div>
+	
+</body>
+</html>

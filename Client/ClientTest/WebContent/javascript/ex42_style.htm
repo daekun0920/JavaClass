@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box1 {
+		border:1px solid black;
+		width:200px;
+		height:200px;
+		background-color:yellow;
+	}
+	
+	#small, #big {
+		font-weight:bold;
+		padding:5px;
+		cursor:pointer;
+	}
+</style>
+<script>
+	
+	var btn1, box1;
+	
+	window.onload = function() {
+		
+		btn1 = document.getElementById("btn1");
+		box1 = document.getElementById("box1");
+		
+		btn1.onclick = function() {
+			
+			// JavaScript -> CSS 제어
+			// - 태그.style.CSS속성명 = "CSS 속성값";
+			
+			// 속성명  
+			// 1. CSS 속성명 그대로 사용한다.
+			// 2. '-'이 들어있는 속성명 -> 캐멀 표기법으로 제공
+			
+			//console.log(box1.style);
+			
+			//box1.style.color = "white";
+			//box1.style.backgroundColor = "red";
+			//box1.style.border = "10px dashed blue"
+			//box1.style.fontSize = "3em";
+			
+			
+			//box1.style.width = "400px";
+			
+			//box1.style.width = 20;
+			
+			//box1.style.width = "200px";
+			//console.log(box1.style.width);
+			
+			//console.log(parseInt(box1.style.width += box1.style.width) + 20);
+			//box1.style.width = parseInt(box1.style.width) + 20 + "px";
+			
+			// 토글 버튼(Toggle Button)
+			if (box1.style.visibility != "hidden") {
+				box1.style.visibility = "hidden";
+				btn1.value = "상자 보이기"
+			} else {
+				box1.style.visibility = "visible";
+				btn1.value = "상자 감추기"
+			}
+			
+		};
+		
+		document.getElementById("btn2").onclick = function() {
+			
+			var p1 = document.getElementById("p1");
+			
+			// p1.style.color = "blue";
+			// p1.style.fontSize = "30px";
+			// p1.style.textAlign = "center";
+			
+		}; // btn2.onclick
+		
+		
+		
+		document.getElementById("small").onclick = function() {
+			var p1 = document.getElementById("p1");
+			
+			p1.style.fontSize = parseInt(p1.style.fontSize) - 2 + "px";
+		};
+		
+		document.getElementById("big").onclick = function() {
+			var p1 = document.getElementById("p1");
+			
+			p1.style.fontSize = parseInt(p1.style.fontSize) + 2 + "px";
+		};
+	};
+	
+</script>
+</head>
+<body>
+	<!--ex42_style.htm-->
+	
+	<input type = "button" value = "상자 감추기" id = "btn1">
+	<hr>
+	<div id = "box1" style = "width:200px;">상자</div>
+	
+	<hr>
+	
+	<h1>News</h1>
+	
+	<header>
+		<input type = "button" value = "테스트" id = "btn2">
+		<span id = "small">-</span>
+		<span id = "big">+</span> 
+	</header>
+	
+	<!-- p#p1>lorem100 -->
+	<p id="p1" style = "font-size:14px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+	Quod voluptate et est tempora inventore dolorem debitis quo sit placeat nostrum sequi aspernatur. 
+	Ipsam maiores ullam at minus incidunt quaerat tempora dignissimos iure sed ea ad accusantium vitae 
+	aliquid cum doloremque voluptas repellat eum vel eligendi eaque commodi perspiciatis sit praesentium 
+	quod hic itaque illo debitis perferendis natus corporis harum repellendus consectetur beatae a officia 
+	quos dolore consequuntur omnis nemo nostrum. Voluptate expedita vitae consectetur delectus autem enim sint 
+	dolor nam aspernatur eum eveniet repudiandae dicta eius quasi dolorum nisi assumenda omnis ratione nihil animi quisquam?
+    Dolorum eius consequatur at incidunt!</p>
+	
+	
+</body>
+</html>

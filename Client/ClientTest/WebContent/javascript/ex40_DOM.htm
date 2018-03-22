@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	var btn1, box1;
+	
+	window.onload = function() {
+		
+		btn1 = document.getElementById("btn1");
+		box1 = document.getElementById("box1");
+		
+		// 이벤트 처리
+		
+		// 1. BOM
+		// a. <input click = "">
+		// b. btn1.onclick = fn;
+		
+		// 2. DOM
+		//	a. addEventListener(이벤트 종류, 처리 함수)
+		// 		- 이벤트 리스너
+		
+		//btn1.onclick = function() {};
+		//btn1.addEventListener("click", function() {}); /* on 이 빠진다 */
+		
+		// TypeError: Cannot read property 'addEventListener' of undefined at window.onload
+		
+		//btn1.onclick = f1;
+		//btn1.addEventListener("click", f1);
+		
+		//btn1.onclick = f1;
+		//btn1.onclick = f2; // 덮어쓴다
+		
+		/* 
+		btn1.onclick = function() {
+			f1();
+			f2();
+			f3();
+		};
+		*/
+		
+		btn1.addEventListener("click", f1);
+		btn1.addEventListener("click", f2);
+		btn1.addEventListener("click", f3); // 누적
+		
+		btn1.removeEventListener("click", f2);
+	};
+	
+	function f1() {
+		alert("f1");
+	}
+	
+	function f2() {
+		alert("f2");
+	}
+	
+	function f3() {
+		alert("f3");
+	}
+	
+</script>
+</head>
+<body>
+	<!--ex40_DOM.htm-->
+	<input type = "button" value = "버튼" id = "btn1">
+	<hr>
+	<div id = "box1"></div>
+	
+</body>
+</html>
