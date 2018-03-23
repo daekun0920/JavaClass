@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://211.63.89.30/javascript/exam12.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style>
+
+	body {
+		margin: 0px;
+		overflow-x:hidden; 
+		overflow-y:auto;
+		transition: all 1s;
+	}
+	
+	#menu {
+		width: 126px;
+		transform: translate(-100px, 0px);
+	}
+	
+	#menu .item {
+		float: left;
+		transition: all .3s;
+		cursor: pointer;
+		transition-timing-function: ease-in;
+		border: 1px solid white;
+		margin-top: -1px;
+	}
+	
+</style>
+<script>
+
+	var colors = ["#A67F62", "#BE4F3B", "#E7C758", "#666666", "#63AFD1"];
+	var item;
+	var sel;
+	var n;
+	
+	window.onload = function() {
+		
+		item = document.getElementsByClassName("item");
+		
+		for (var i=0; i<item.length; i++) {
+			
+			item[i].onmousedown = function() {
+				
+				sel = event.srcElement;
+				
+				sel.style.transform = "translate(" + (screen.availWidth - 26) + "px, 0px)";
+				n = sel.src.substr(sel.src.lastIndexOf(".")-1, 1);
+				
+				
+				setTimeout(function() {
+					sel.style.transition = "all 3s";
+					sel.style.transform = "translate(" + (screen.availWidth - 26 + 146) + "px, 0px)";
+					//sel.style.opacity = "0";
+				}, 500);
+				
+				setTimeout(function() {
+					document.body.style.backgroundColor = colors[n-1];					
+				}, 900);
+				
+				setTimeout(function() {
+					sel.style.transition = "all 1ms";
+					sel.style.transform = "translate(-100px, 0px)";	
+				}, 2200);
+				
+				setTimeout(function() {
+					sel.style.transition = "all 1s";
+					sel.style.transform = "translate(0px, 0px)";	
+				}, 2300);
+				
+				setTimeout(function() {
+					sel.style.transition = "all .3s";
+					sel.style.transform = "translate(0px, 0px)";	
+				}, 3300);
+				
+				
+			};
+			
+		}
+		
+	};
+	
+</script>
+</head>
+<body>
+	<nav id="menu">
+		<img src="./rect_icon01.png" class="item">
+		<img src="./rect_icon02.png" class="item">
+		<img src="./rect_icon03.png" class="item">
+		<img src="./rect_icon04.png" class="item">
+		<img src="./rect_icon05.png" class="item">
+	</nav>
+
+</body></html>

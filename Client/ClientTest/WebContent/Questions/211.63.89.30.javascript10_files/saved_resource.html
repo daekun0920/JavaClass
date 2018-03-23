@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://211.63.89.30/javascript/exam10.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style>
+	
+	#cat {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		transition: all 1s;
+	}
+	
+</style>
+<script>
+	
+	var cat;
+	
+	window.onload = function() {
+		
+		cat = document.getElementById("cat");
+		
+	};
+	
+	window.onmousedown = function() {
+		
+		cat.style.left = event.clientX - 64 + "px";
+		cat.style.top = event.clientY - 64 + "px";
+		
+	};
+	
+</script>
+</head>
+<body>
+	
+	<img src="./catty01.png" id="cat" style="left: 1410px; top: 209px;">
+	
+
+</body></html>

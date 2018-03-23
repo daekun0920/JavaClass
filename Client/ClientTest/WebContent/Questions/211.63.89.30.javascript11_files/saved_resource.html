@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://211.63.89.30/javascript/exam11.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style>
+	html, body {
+		height: 100%;
+		margin: 0;
+	}
+	
+	#hbar, #vbar {
+		border: 0px;
+		border-top: 1px solid red;
+		position: relative;
+		left: 0px;
+		top: 0px;
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	#vbar {
+		transform-origin: 0px 0px;
+		transform: rotate(90deg);
+	}
+</style>
+<script>
+	
+	var hbar, vbar;
+	
+	window.onload = function() {
+		
+		hbar = document.getElementById("hbar");
+		vbar = document.getElementById("vbar");
+		
+		hbar.style.width = screen.availWidth;
+		vbar.style.width = screen.availHeight;
+		
+	};
+	
+	window.onmousemove = function() {
+		
+		vbar.style.left = event.clientX + "px";
+		hbar.style.top = event.clientY + "px";
+		
+	};
+	
+</script>
+</head>
+<body>
+	<pre style="position:absolute;left:0;top:0;">	#수직바 {
+		transform-origin: 0px 0px;
+		transform: rotate(90deg);
+	}
+	</pre>
+	<hr id="hbar" style="top: 235px;">
+	<hr id="vbar" style="left: 715px;">
+
+</body></html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#tbl1 {
+		width:500px;
+		height:400px;
+		border:1px solid #DDD;
+		border-collapse: collapse;
+		
+	}
+	
+	#tbl1 td {
+		border:1px solid #DDD;
+	}
+	
+	#tbl1 #tr1 td:FIRST-CHILD {
+		width:400px;
+		height:150px;
+	}
+	
+	#money {
+		width:54px;
+		height:17px;
+		position:relative;
+		left:10px;
+		top:0px;
+	}
+	
+	#btn1 {
+		width:50px;
+		height:50px;
+		margin-left:20px;
+		position:relative;
+		left:0;
+		top:20px;
+	}
+	
+	#tbl1 #tr2 img{
+		display:inline-block;
+		width:50px;
+		height:50px;
+		margin:5px;
+		position:relative;
+		left:30px;
+	}
+	
+	#tbl1 #tr2 span{
+		position:relative;
+		left:22px;
+		top:-10px;
+	}
+
+</style>
+<script>
+	var slot1; 
+	var slot2;
+	var slot3;
+	var btn1;
+	var money;
+	var timer = 0;
+	
+	window.onload = function() {
+		slot1 = document.getElementById("slot1");
+		slot2 = document.getElementById("slot2");
+		slot3 = document.getElementById("slot3");
+		btn1 = document.getElementById("btn1");
+		money = document.getElementById("money");
+		
+		btn1.onclick = function() {
+			
+			
+			
+			if (timer == 0) {
+				money.value -= 100;
+				timer = setInterval(function() {
+					
+					slot1.src = "../images/catty0" + parseInt(Math.random() * 5 + 1) + ".png";
+					slot2.src = "../images/catty0" + parseInt(Math.random() * 5 + 1) + ".png";
+					slot3.src = "../images/catty0" + parseInt(Math.random() * 5 + 1) + ".png";
+					
+				}, 10);
+			} else {
+				clearInterval(timer);
+				timer = 0;
+				var num1 = slot1.src.substring(slot1.src.lastIndexOf(".") - 1, slot1.src.lastIndexOf("."));
+				var num2 = slot2.src.substring(slot1.src.lastIndexOf(".") - 1, slot2.src.lastIndexOf("."));
+				var num3 = slot3.src.substring(slot1.src.lastIndexOf(".") - 1, slot3.src.lastIndexOf("."));
+				console.log(num1);
+				console.log(num2);
+				console.log(num3);
+				var result = "";
+				
+				result = num1 + "" + num2 + "" + num3;
+					console.log(result);
+				
+				switch (result) {
+					
+				case "111": money.value = parseInt(money.value) + 200;
+					break;
+				case "222": money.value = parseInt(money.value) + 300;
+					break;
+				case "333": money.value = parseInt(money.value) + 400;
+					break;
+				case "444": money.value = parseInt(money.value) + 500;
+					break;
+				case "555": money.value = parseInt(money.value) + 600;
+					break;
+				case "112": money.value = parseInt(money.value) + 700;
+					break;
+				case "123": money.value = parseInt(money.value) + 800;
+					break;
+				case "234": money.value = parseInt(money.value) + 900;
+					break;
+				
+				}
+				if (money.value == 0) {
+					btn1.disabled = true;
+				}
+			}
+			
+			
+		};
+		
+	};	
+</script>
+</head>
+<body>
+	<!--Question6.htm-->
+	<table id="tbl1">
+		<tr id = "tr1">
+			<td>
+				<img src = "../images/catty01.png" class = "slot" id = "slot1">
+				<img src = "../images/catty01.png" class = "slot" id = "slot2">
+				<img src = "../images/catty01.png" class = "slot" id = "slot3">
+			</td>
+			<td>
+				$<input type = "text" id = "money" name = "money" value = "1000">
+				<input type = "button" value = "$" id = "btn1" name = "btn1">	
+			</td>
+		</tr>
+		<tr id = "tr2">
+			<td colspan = "2">
+				<img src = "../images/catty01.png">
+				<img src = "../images/catty01.png">
+				<img src = "../images/catty01.png">
+				<span>x 2</span>
+				
+				<img src = "../images/catty02.png">
+				<img src = "../images/catty02.png">
+				<img src = "../images/catty02.png">
+				<span>x 3</span>
+				
+				<img src = "../images/catty03.png">
+				<img src = "../images/catty03.png">
+				<img src = "../images/catty03.png">
+				<span>x 4</span>
+				
+				<img src = "../images/catty04.png">
+				<img src = "../images/catty04.png">
+				<img src = "../images/catty04.png">
+				<span>x 5</span>
+			
+				<img src = "../images/catty05.png">
+				<img src = "../images/catty05.png">
+				<img src = "../images/catty05.png">
+				<span>x 6</span>
+			
+				<img src = "../images/catty01.png">
+				<img src = "../images/catty01.png">
+				<img src = "../images/catty02.png">
+				<span>x 7</span>
+			
+				<img src = "../images/catty01.png">
+				<img src = "../images/catty02.png">
+				<img src = "../images/catty03.png">
+				<span>x 8</span>
+			
+				<img src = "../images/catty02.png">
+				<img src = "../images/catty03.png">
+				<img src = "../images/catty04.png">
+				<span>x 9</span>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
