@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box {
+		width:250px;
+		height:188px;
+		border:30px solid orange;
+		overflow:hidden;
+	}
+	
+	#list {
+		width:2500px;
+		transition:all 1s;
+		transition-timing-function:linear;
+	}
+	
+	#list img {
+		float:left;
+	}
+	
+	/* 
+	#list:hover {
+		transform:translate(-500px, 0px);
+	} 
+	*/
+</style>
+<script>
+	
+	var sel1, list;
+	var old = 1; // 기존 선택 동물
+	
+	window.onload = function() {
+		
+		sel1 = document.getElementById("sel1");
+		list = document.getElementById("list");
+		
+		sel1.onchange = function() {
+			
+			var n = sel1.value - 1;
+			
+			// n * 250
+			
+			// 현재 동물 - 선택동물
+			list.style.transitionDuration = Math.abs(old - sel1.value) + "s"; // 절대값 (양수화)
+			
+			list.style.transform = "translate(-" + (n * 250) + "px, 0px)";
+			
+			old = sel1.value;
+			
+		};
+		
+	};
+	
+</script>
+</head>
+<body>
+	<!--ex49_style.htm-->
+	<!-- div#box>div#list>img[src=../images/cat0$.jpg]*5+img[src=../images/dog0$.jpg]*5-->
+	<div id="box">
+		<div id="list">
+			<img src="../images/cat01.jpg" alt="" />
+			<img src="../images/cat02.jpg" alt="" />
+			<img src="../images/cat03.jpg" alt="" />
+			<img src="../images/cat04.jpg" alt="" />
+			<img src="../images/cat05.jpg" alt="" />
+			<img src="../images/dog01.jpg" alt="" />
+			<img src="../images/dog02.jpg" alt="" />
+			<img src="../images/dog03.jpg" alt="" />
+			<img src="../images/dog04.jpg" alt="" />
+			<img src="../images/dog05.jpg" alt="" />
+		</div>
+	</div>
+	<hr>
+	<select id = "sel1">
+		<option value = "1">고양이1</option>
+		<option value = "2">고양이2</option>
+		<option value = "3">고양이3</option>
+		<option value = "4">고양이4</option>
+		<option value = "5">고양이5</option>
+		<option value = "6">강아지1</option>
+		<option value = "7">강아지2</option>
+		<option value = "8">강아지3</option>
+		<option value = "9">강아지4</option>
+		<option value = "10">강아지5</option>
+	</select>
+	
+</body>
+</html>

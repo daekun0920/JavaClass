@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box1 {
+		border:10px solid black;
+		width:200px;
+		height:200px;
+		background-color:yellow;
+		margin:15px;
+		transition:all 1s;
+	}
+	
+	#tbl1 {
+		border:0px solid black;
+		border-collapse:separate;
+		width:800px;
+		height:800px;
+
+	}
+	
+	#tbl1 td {
+		border:1px solid black;
+		border-radius:5px;
+		width:80px;
+		height:80px;
+		transition:all 1s;
+	}
+	
+	
+</style>
+<script>
+	window.onload = function() {
+		
+		var deg = 0;
+		var cells;
+		cells = document.getElementsByTagName("td");
+		
+		document.getElementById("btn1").onclick = function() {
+			
+			var box1 = document.getElementById("box1");
+			
+			
+			
+			//box1.style.transform = "translate(500px, 300px)";
+			//box1.style.transform = "scale(1, 1)";
+			//box1.style.transform = "rotate(3600deg)";
+			
+			var x = parseInt(Math.random() * screen.availWidth);
+			var y = parseInt(Math.random() * screen.availHeight);
+			box1.style.transform = "translate(" + x + "px, " + y + "px)"
+			
+			deg += parseInt(Math.random() * 360); // 0 ~ 10000도
+			box1.style.transform = "rotate(" + deg + "deg)";
+		};
+		//<td> 처리
+		for (var i = 0; i < cells.length; i++) {
+			
+			cells[i].innerHTML = "<img src = '../images/cat05.jpg' style = 'width:80px;height:80px;'>";
+			
+			cells[i].onmouseover = function () {
+				//event.srcElement.style.backgroundColor = "red";
+				//event.srcElement.style.transform = "rotate(180deg)";
+				//event.srcElement.style.opacity = "0";
+				//event.srcElement.style.transform = "translate(0px, -43px)";
+				event.srcElement.style.transform = "scale(1, -1)";
+				
+			}
+			
+		}
+		
+	};
+	
+	
+	
+</script>
+</head>
+<body>
+	<!--ex54_style.htm-->
+	<input type = "button" value = "테스트" id = "btn1">
+	<hr>
+	<div id = "box1">상자</div>
+	<hr>
+	
+	<!-- table#tbl1>tr*10>td*10 -->
+	<table id="tbl1">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	
+	
+</body>
+</html>

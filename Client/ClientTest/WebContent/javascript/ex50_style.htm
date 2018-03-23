@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#tbl1 {
+		border:1px solid black;
+		border-collapse:collapse;
+		width:500px;
+		height:500px;
+	}
+	
+	#tbl1 td {
+		border:1px solid black;
+		width:100px;
+		height:100px;
+	}
+</style>
+<script>
+	var cells;
+	var now = 0; // <td> 들의 index 제어
+	
+	window.onload = function() {
+		
+		cells = document.getElementsByTagName("td");
+		cells[now].style.backgroundColor = "#fff380";
+		
+	};
+	
+	window.onkeydown = function() {
+		clear();
+		
+		if (event.keyCode == 37) { // 좌
+			//clear();
+			now--;
+			//if (now < 0) now = 0;
+			if (now < 0) now = cells.length - 1;
+			//cells[now].style.backgroundColor = "#fff380";
+			
+		} else if (event.keyCode == 39) { // 우
+			// cells[now].style.backgroundColor = "white";
+			//clear();
+			now++;
+			if (now >= cells.length) now = 0;
+			//cells[now].style.backgroundColor = "#fff380";
+		};
+		
+		cells[now].style.backgroundColor = "#fff380";
+	};
+	
+	function clear() {
+		for (var i = 0; i < cells.length; i++) {
+			cells[i].style.backgroundColor = "transparent";
+		}
+	}
+</script>
+</head>
+<body>
+	<!--ex50_style.htm-->
+	
+	<!-- table#tbl1>tr*5>td*5 -->
+	<table id="tbl1">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

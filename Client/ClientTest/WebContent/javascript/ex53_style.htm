@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img, button, input, li {
+		position:absolute;
+	}
+</style>
+<script>
+	
+	var img1;
+	var isdown = false;
+	var imgX, imgY;
+	var zindex = 1;
+	
+	
+	window.onload = function() {
+		//img1 = document.getElementById("img1");
+	};
+	
+	// 객체 선택(클릭)
+	window.onmousedown = function() {
+		//alert(event.srcElement.nodeName);
+		if (event.srcElement.nodeName != "HTML") {
+			
+			img1 = event.srcElement; // 눌린 고양이
+			img1.zIndex = zindex;
+			zindex++;
+			
+			isdown = true;
+			imgX = event.offsetX; /* 이미지내에서 클릭 지점 */
+			imgY = event.offsetY;
+			
+		} 	
+	};
+	
+	// 드래그
+	window.onmousemove = function() {
+		
+		if (isdown) {
+		
+			img1.style.left = event.clientX - imgX + "px";
+			img1.style.top = event.clientY - imgY + "px";
+			
+			event.preventDefault();
+			return false;
+		}
+		
+	};
+	
+	// 드랍
+	window.onmouseup = function() {
+		isdown = false;
+	
+	};
+</script>
+</head>
+<body>
+	<!--ex53_style.htm-->
+	
+	<img src = "../images/catty01.png" id = "img1">
+	<img src = "../images/catty02.png" id = "img2">
+	<img src = "../images/catty03.png" id = "img3">
+	<img src = "../images/catty04.png" id = "img4">
+	<img src = "../images/catty05.png" id = "img5">
+	
+	<button>버튼</button>
+	
+	<input type = "text">
+	
+	<input type = "checkbox">
+	
+	<ul>
+		<li>고양이</li>
+		<li>강아지</li>
+		<li>병아리</li>
+	</ul>
+	
+</body>
+</html>

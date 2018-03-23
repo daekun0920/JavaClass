@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.txt {
+		outline:none;
+		width:10px;
+		/* transition:all 1s; */
+	}
+	
+	/* 
+	.txt:focus {
+		width:300px;	
+	} 
+	*/
+	
+	.edit {
+		visibility:hidden;
+	}
+</style>
+<script>
+	var txts;
+	var now;
+	var timer;
+	
+	window.onload = function() {
+			
+		txts = document.getElementsByClassName("txt");
+		
+		for (var i = 0; i < txts.length; i++) {
+			
+			txts[i].onfocus = function() {
+				event.srcElement.style.transition = "all 1s";
+				event.srcElement.style.width = "300px";
+				
+				event.srcElement.nextSibling.nextSibling.style.visibility = "visible";
+				
+				var temp = event.srcElement.nextSibling.nextSibling;
+				
+				event.srcElement.dataset.add = "1"; // 사용자 정의 속성 data-add = "1"
+				
+				temp.style.visibility = "visible";
+				
+				timer = setInterval(function() {
+					if (temp.style.visibility != "hidden"){
+						temp.style.visibility = "hidden";
+					} else {
+						temp.style.visibility = "visible";
+					}
+				}, 400);
+				
+			};
+			
+			txts[i].onblur = function() {
+				event.srcElement.style.transition = "all 3s";
+				event.srcElement.style.width = "10px";
+				
+				// 클로저(Closure);
+				var temp = event.srcElement.nextSibling.nextSibling;
+				
+				setTimeout(function() {
+					temp.style.visibility = "hidden";
+					clearInterval(timer);
+				}, 2700)
+			
+			
+			};
+
+		}
+	};
+	
+</script>
+</head>
+<body>
+	<!--ex51_style.htm-->
+	
+	<h1>데이터 입력</h1>
+	 
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	<div class = "item">
+		<label>데이터 : </label><input type = "text" class = "txt"> <img src = "../images/bullet02.png" class = "edit">
+	</div>
+	 
+</body>
+</html>
