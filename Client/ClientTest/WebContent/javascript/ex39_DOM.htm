@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#list3 {
+		border:0px solid black;
+		list-style-type:none;
+		margin:0;
+		padding:0;
+		width:200px;
+	}
+	
+	#list3 li {
+		border-top:1px solid #999;
+		border-left:1px solid #999;
+		border-right:1px solid #999;
+		
+		margin:0px;
+		padding:0px;
+		height:28px;
+	}
+	
+	#list3 li:last-child {
+		border-bottom:1px solid #999;
+	}
+	
+	#list3 li:nth-child(even) { /* 짝수 행만 */
+		background-color:#EEE;
+	}
+	
+	#list3 li:first-child {
+		border-top-left-radius:5px;
+		border-top-right-radius:5px;
+		
+	}
+	
+	#list3 li:first-child span:last-child {
+		border-top-right-radius:4px;
+	}
+	
+	#list3 li:last-child {
+		border-bottom-left-radius:5px;
+		border-bottom-right-radius:5px;
+		
+	}
+	
+	#list3 li span {
+		font-size:14px;
+		color:#444;
+		display:inline-block;
+	}
+	
+	#list3 li span:first-child {
+		padding-top:5px;
+	}
+	
+	#list3 li span:last-child {
+		float:right;
+		height:100%;
+		width:30px;
+		text-align:center;
+		border-left:1px solid #999;
+		background:#CCC;
+		cursor:pointer;
+	}
+	
+</style>
+<script>
+
+</script>
+</head>
+<body>
+	<!--ex39_DOM.htm-->
+	
+	
+	<h1>목록</h1>
+	
+	<ul id = "list1">
+		<li>자바</li>
+		<li>오라클</li>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>JavaScript</li>
+	</ul>
+	<input type = "button" value = "항목 삭제하기" id = "btn1">
+	
+	<hr>
+	
+	<h1>목록</h1>
+	
+	<ul id = "list2">
+		<li>자바</li>
+		<li>오라클</li>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>JavaScript</li>
+	</ul>
+	
+	<hr>
+	
+	<h1>목록</h1>
+	
+	<ul id = "list3">
+		<li><span class = "item">자바</span><span>&times;</span></li>
+		<li><span class = "item">오라클</span><span>&times;</span></li>
+		<li><span class = "item">HTML</span><span>&times;</span></li>
+		<li><span class = "item">CSS</span><span>&times;</span></li>
+		<li><span class = "item">JavaScript</span><span>&times;</span></li>
+	</ul>
+	
+	
+	<script>
+		var list1, btn1;
+		
+		list1 = document.getElementById("list1");
+		btn1 = document.getElementById("btn1");
+		list2 = document.getElementById("list2");
+		
+		
+		btn1.onclick = function() {
+			
+			// 삭제의 형태
+			// 1. 부모가 행동
+			// 2. 자식 스스로가 행동
+			
+			// console.log(list1.childNodes[5]);
+			// list1.removeChild(list1.childNodes[5]); // HTML -> 자식 -> 텍스트(공백), 주석 포함
+			
+			// 자식 노드들
+			// 1. childNodes
+			//	- 자식 노드들(태그, PCDATA, 주석 등...)
+			// 2. children
+			//	- 자식 태그들
+			
+			list1.removeChild(list1.children[2]);
+			
+			
+			
+		};
+		
+		for (var i = 0; i < list2.children.length; i++) {
+			list2.children[i].onclick = function() {
+				var li = event.srcElement;
+				// alert(li.innerText);
+				
+				// alert(event.ctrlKey);
+				if (event.ctrlKey) { // 컨트롤키 + 클릭 에만 반응
+					if (confirm("ㄹㅇ "+ li.innerText +" 을(를) 삭제하시겠습니까?")) {
+						li.parentNode.removeChild(li);
+					}
+				}
+			};
+		}
+		
+		var list3 = document.getElementById("list3");
+		
+		var lis = list3.children;
+		
+		for (var i=0;i < lis.length; i++) {
+			
+			var li = lis[i];
+			
+			li.children[1].onclick = function() {
+				// alert("click");
+				list3.removeChild(event.srcElement.parentNode);
+			};
+			
+		}
+		
+		
+		
+	</script>
+	
+</body>
+</html>

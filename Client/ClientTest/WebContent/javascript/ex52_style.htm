@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#img1 {
+		position:absolute;
+	}
+</style>
+<script>
+	
+	var img1;
+	var isdown = false;
+	var imgX, imgY;
+	
+	window.onload = function() {
+		img1 = document.getElementById("img1");
+	};
+	
+	// 객체 선택(클릭)
+	window.onmousedown = function() {
+		//alert(event.srcElement.nodeName);
+		if (event.srcElement.nodeName == "IMG") {
+			isdown = true;
+			imgX = event.offsetX;
+			imgY = event.offsetY;
+			
+		} 	
+	};
+	
+	// 드래그
+	window.onmousemove = function() {
+		
+		if (isdown) {
+		
+			img1.style.left = event.clientX - imgX + "px";
+			img1.style.top = event.clientY - imgY + "px";
+			
+			event.preventDefault();
+			return false;
+		}
+		
+	};
+	
+	// 드랍
+	window.onmousemove = function() {
+		isdown = false;
+	};
+</script>
+</head>
+<body>
+	<!--ex52_style.htm-->
+	
+	<img src = "../images/catty01.png" id = "img1">
+	
+</body>
+</html>

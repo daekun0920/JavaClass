@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box {
+		border:1px solid black;
+		width:150px;
+		height:150px;
+		left:10px;
+		top:50px;
+		
+	
+	}
+	
+	#box1 {
+		background-color:red;
+	}
+	#box2 {
+		background-color:orange;
+	}
+	#box3 {
+		background-color:yellow;
+	}
+	#box4 {
+		background-color:green;
+	}
+	#box5 {
+		background-color:cornflowerblue;
+	
+	}
+	
+</style>
+<script>
+	var btn1, box5, list;
+	var zindex = 0;
+	var index = 0;
+	window.onload = function() {
+		btn1 = document.getElementById("btn1");
+		box5 = document.getElementById("box5");
+		list = document.getElementsByClassName("box");
+		
+		btn1.onclick = function() {
+			box5.style.left = "300px";
+			box5.style.top = "200px";
+		};
+	};
+	
+	window.onmousedown = function() {
+		// 클릭한 좌표
+		// - 마우스 이벤트에서만 확인
+		// - onclick : 확인 후 사용
+		
+		// alert(event.clientX);
+		//box5.style.left = event.clientX + "px";
+		//box5.style.top = event.clientY + "px";
+		list[index].style.left = event.clientX - 75 + "px";
+		list[index].style.top = event.clientY -75 + "px";
+		
+		
+		list[index].style.zIndex = zindex;
+		
+		zindex++;
+		index++;
+		
+		if (index == list.length) index = 0;
+		
+	};
+</script>
+</head>
+<body>
+	<!--ex43_style.htm-->
+	<input type = "button" value = "테스트" id = "btn1">
+	<hr>
+	
+	<!-- div#box$.box{상자}*5 -->
+	<div id="box1" class="box">상자</div>
+	<div id="box2" class="box">상자</div>
+	<div id="box3" class="box">상자</div>
+	<div id="box4" class="box">상자</div>
+	<div id="box5" class="box">상자</div>
+	
+	
+	
+</body>
+</html>

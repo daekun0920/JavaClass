@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box1 {
+		border:10px solid black;
+		width:200px;
+		height:200px;
+		background:yellow;
+		margin:20px;
+	}
+	
+	#box1.one { /* id가 box이면서 class가 one인아이 */
+		font-size:4em;
+		width:300px;
+		text-decoration:underline;
+	}
+	
+	#box1.two {
+		background-color:orange;
+		border-style:dashed;
+	}
+	
+	#box1.three {
+		color:blue;
+		font-weight:bold;
+	}
+	
+	.bold {
+		font-weight:bold;
+	}
+	
+	.italic {
+		font-style:italic;
+	}
+	
+	.underline {
+		text-decoration:underline;
+	}
+</style>
+<script>
+	var box1, btn1, btn2, btn3;
+	
+	window.onload = function() {
+		box1 = document.getElementById("box1");
+		btn1 = document.getElementById("btn1");
+		btn2 = document.getElementById("btn2");
+		btn3 = document.getElementById("btn3");
+		
+		btn1.onclick = function() {
+			
+			// 1. CSS 속성을 하나씩 직접 제어
+			//box1.style.fontSize = "4em";
+			//box1.style.width = "300px";
+			//box1.style.textDecoration = "underline";
+			
+			// 2. CSS 속성 집합으로 제어 > id, class, tag 선택자 등
+			//box1.className = "one";
+			//box1.setAttribute("class", "one");
+			
+			// 3. 여러개의 CSS class 속성을 제어
+			// box1.className = "one";
+			// box1.className = "one two";
+			// box1.className = "one two three";
+			
+			// console.log(box1.classList);
+			
+			box1.classList.add("one");
+			box1.classList.add("two");
+			box1.classList.add("three");
+			
+			
+		};
+		btn2.onclick = function() {
+			
+			// two 제거
+			// box1.className = "one three";
+			box1.classList.remove("two");
+		
+		};
+		btn3.onclick = function() {
+			box1.classList.toggle("three");
+			
+		};
+		
+	};
+</script>
+</head>
+<body>
+	<!--ex45_style.htm-->
+	
+	<input type = "button" value = "속성 추가" id = "btn1">
+	<input type = "button" value = "속성 삭제" id = "btn2">
+	<input type = "button" value = "속성 토글" id = "btn3">
+	
+	<hr>
+	
+	<div id = "box1">상자</div>
+	
+	<hr>
+	
+	<h1>텍스트 서식</h1>
+	<div>
+		<input type = "button" value = "B" onclick = "c1();" id = "c1">
+		<input type = "button" value = "I" onclick = "c2();" id = "c2">
+		<input type = "button" value = "U" onclick = "c3();" id = "c3">
+	</div>
+	<!-- p#p1>lorem100 -->
+	<p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+	 Temporibus nemo ducimus veniam quia placeat libero magnam consequuntur 
+	 quas esse consequatur repellat ex! Ad exercitationem inventore est laborum
+	  soluta modi mollitia quos nisi animi aliquid odio reiciendis ullam libero 
+	  fuga repudiandae rem itaque vero nobis obcaecati sequi nulla error eveniet!
+	   Ullam eius dicta laboriosam eaque cumque non sunt laudantium repellendus iusto 
+	   facilis nobis eum commodi fugit nam provident. Non consequuntur saepe quam dolore
+	    aspernatur unde dolorem neque deserunt odit aliquam laudantium similique laborum
+	     asperiores quia accusamus illo nemo autem commodi cumque et blanditiis officiis
+	      dicta omnis dolor eius aut error quas!</p>
+	
+	<script>
+		document.getElementById("c1").onclick = function() {
+			document.getElementById("p1").classList.toggle("bold");
+		};	
+		
+		document.getElementById("c2").onclick = function() {
+			document.getElementById("p1").classList.toggle("italic");
+		};
+		
+		document.getElementById("c3").onclick = function() {
+			document.getElementById("p1").classList.toggle("underline");
+		};
+	</script>
+	
+</body>
+</html>

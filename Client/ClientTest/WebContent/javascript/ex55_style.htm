@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	html, body {
+		margin:0px;
+	
+	}
+	
+	body {
+		transition:all 1s;
+	}
+	
+	#main {
+	
+	}
+	
+	#menu {
+		border:0px solid black;
+		width:630px;
+		height:126px;
+		margin:0px auto;
+		transform:translate(0px, -100px);
+	}
+	
+	#menu .item {
+		float:left;
+		cursor:pointer;
+		transition:all 1s;
+	}
+	/* 
+	#menu .item:hover {
+		transform: translate(0px, 100px);
+	} 
+	*/
+	
+</style>
+<script>
+	
+	var colors = ["#A67F62", "#BE4F3B", "#E7C758", "#666666", "#63AFD1"];
+	var items;
+	
+	window.onload = function() {
+		
+		items = document.getElementsByClassName("item"); // 메뉴 5개
+		
+		for (var i = 0; i < items.length; i++) {
+			items[i].onmousedown = function() {
+				
+				// 혹시 펼쳐있는 메뉴가 있다면 .. 접기
+				for (var j = 0; j < items.length; j++) {
+					
+					if (items[j] != event.srcElement && items[j].transform != "translate(0px, 0px)") {
+						items[j].style.transform = "translate(0px, 0px)";
+					}
+				}
+				
+				if (event.srcElement.style.transform != "translate(0px, 100px)") {
+				
+				// 메뉴 선택
+				event.srcElement.style.transform = "translate(0px, 100px)";
+				
+				// 배경색
+				document.body.style.backgroundColor = colors[event.srcElement.dataset.no];
+				
+				} else {
+					
+					event.srcElement.style.transform = "translate(0px, 0px)";
+					document.body.style.backgroundColor = "white";
+				}
+			};
+		}
+		
+	};
+	
+</script>
+</head>
+<body>
+	<!--ex55_style.htm-->
+	<div id = "main">
+		<nav id = "menu">
+			<img src = "../images/rect_icon01.png" class = "item" data-no = "0">
+			<img src = "../images/rect_icon02.png" class = "item" data-no = "1">
+			<img src = "../images/rect_icon03.png" class = "item" data-no = "2">
+			<img src = "../images/rect_icon04.png" class = "item" data-no = "3">
+			<img src = "../images/rect_icon05.png" class = "item" data-no = "4">
+		</nav>
+		<section>
+	
+		</section>
+	</div>
+	
+</body>
+</html>
