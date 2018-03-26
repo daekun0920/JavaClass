@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	/*
+	
+	자바스크립트에서의 함수
+	- 함수를 객체처럼 취급한다.
+	
+	1. 함수를 변수나 데이터 구조에 담는게 가능하다.
+	2. 함수를 매개변수에 전달할 수 있다.
+	3. 함수를 반환값을 사용할 수 있다.
+	
+	*/
+	
+	function m1() {
+		alert("m1");
+	}
+	
+	var n1;
+	
+	// 자바스크립트에서 이벤트 모델이 아래 형태로 구현
+	// btn1.onclick = function() {};
+	// btn1.onclick = f1;
+	
+	n1 = m1; // 변수 = 함수;
+	
+	// n1이 곧 m1과 같다. 
+	//n1();
+	
+	var n2 = function() {
+		alert("m2");
+	};
+	
+	function m3() {
+		alert("m3");
+	}
+	
+	// var m = m3;
+	function f3(m) {
+		m();		
+	}
+	
+	//f3(m3);
+	
+	// setInterval(function(){}, 100);
+	/* function setInterval(f, interval) {
+		for (루프) {
+			interval 지연;
+			f();
+		}
+	}
+	 */
+	 
+	//btn1.addEventListener("click", function() {});
+	//function addEventListener(type, f) {
+	//	이벤트 발생
+	//	f();
+	//}
+	
+	function m4() {
+		alert("m4");
+	}
+	
+	function f4() {
+		return m4;	
+	}
+	
+	var f5 = f4();
+	
+	//f5();
+	
+	// f4()();
+	
+	// 자바스크립트에서 함수 선언하는 방법
+	// 1. 선언적 함수
+	// 2. 함수 리터럴
+	
+	// 1. 선언적 함수
+	function m6() {
+		
+	}
+	m6();
+	
+	// 2. 함수 리터럴
+	var m7 = function() {
+		
+	};
+	m7();
+	
+	//다형성
+	var add = function(a, b) {
+		return a + b;
+	};
+	
+	var multi = function(a, b) {
+		return a * b;
+	};
+	
+	// 계산 함수는 어떤 계산을 할지 미리 정의 안되어있다. -> 런타임에 정하도록 구현
+	function calc(a, b, op) { // 중간자 역할(복덕방 아저씨 역할)
+		return op(a, b);
+	}
+	
+	alert(calc(10, 20, add));
+	alert(calc(10, 20, multi));
+	
+</script>
+</head>
+<body>
+	<!--ex58_function.htm-->
+	
+</body>
+</html>

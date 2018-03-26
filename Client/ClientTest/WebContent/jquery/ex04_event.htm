@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src = "js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		// 버튼1 클릭 이벤트
+		// 1. BOM
+		// btn1.onclick = function() {};
+		
+		// 2. DOM
+		// btn1.addEventListener("click", function() {});
+		
+		// 3.jQuery
+		// a. 전용 이벤트 함수
+		// jQuery("#btn1").click(function() {
+		// 	 alert("클릭!");	
+		// });
+		
+		// b. 범용 이벤트 함수
+		// 객체, bind(event, function);
+		// 객체, on(event, function);
+		// 객체, live(event, function);
+		
+		//jQuery("#btn1").on("click", function() {
+		//	alert("click!");
+		//});
+		
+		// jQuery() 함수
+		// - 매개변수 : 선택자(String) or 자바스크립트 객체
+		
+		// jQuery("div#box1") // 선택자
+		// - 태그를 검색해서 jQuery 객체로 반환받는다.
+		console.log(typeof jQuery("#btn1"));
+		console.log(jQuery("#btn1").constructor);
+		
+		// jQuery(document.getElementById("box1")) // 자바스크립트 객체
+		
+		console.log(document.getElementById("btn1").constructor);
+		
+		
+		// Wrapping
+		// - 자바스크립트 객체 -> jQuery 객체화
+		// - 형변환 역할
+		// - 더 많은 기능을 사용하려고
+		// jQuery(document.getElementById("btn1"));
+		
+		
+	});
+</script>
+</head>
+<body>
+	<!--ex04_event.htm-->
+	
+	<input type = "text"><br>
+	<input type = "text" disabled><br>
+	<input type = "text"><br>
+	<input type = "checkbox" value = "cb1" id = "cb1"><br>
+	<input type = "checkbox" value = "cb2"><br>
+	<input type = "checkbox" value = "cb3"><br>
+	
+	<input type = "button" value = "버튼1" id = "btn1">
+	<input type = "button" value = "버튼2">
+	<button type = "button">버튼3</button>
+	
+	
+</body>
+</html>

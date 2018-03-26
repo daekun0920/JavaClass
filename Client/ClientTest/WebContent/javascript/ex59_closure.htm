@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	/*
+	
+	클로저, Closure
+	- 나중에 사용될(호출될) 내부 함수를 위해서 이미 소멸되어야할 지역 변수를 임시로 끝까지 살려두는 기술
+	- 자바 : 람다내에서 외부 호출 함수의 지역 변수나 멤버 변수를 접근할 수 있다. 단 읽기 전용
+	
+	함수내에서 함수를 선언
+	- outer() : 전역 함수(window 프로퍼티)
+	- inner() : 지역 함수(outer() 함수를 영역으로 하는 지역함수, outer() 밖에서는 사용 불가능)
+	
+	*/
+/* 	function outer() {
+		
+		var num = 10; // 지역 변수(outer)
+		
+		console.log("outer");
+		
+		function inner() {
+			console.log("inner");	
+		}
+		
+		inner();
+	}
+	
+	outer(); */
+	//inner();
+	
+	// AWT, Swing
+	// - 클래스내에 클래스를 선언할 수 있다.(내부 클래스, 이너 클래스)
+	/* 
+	function outer() { // 생성자 함수
+		this.a = "홍길동";
+		
+		this.b = function inner() { // 멤버 함수(멤버 메소드)
+			console.log("inner");
+		};
+		
+	}
+	
+	// outer(); // 잘못된 사용법
+	var o1 = new outer(); // 올바른 사용법
+	o1.b // 내부 함수X -> 멤버 메소드 O
+	 */
+	
+	function outer() {
+		
+		var num = 10; // 지역 변수(outer)
+		
+		function inner() {
+			console.log("num", num); // 밖의 지역 변수 사용
+		}
+		
+		inner();
+		
+	} 
+	
+	outer();
+	
+	//var m;
+	
+	window.onload = function() {
+		
+		var n = 200; // 지역 변수(onload)
+		//m = n;
+		
+		document.getElementById("btn1").onclick = function() {
+			console.log(n);	
+			console.log(m);
+		};
+		/* 
+		document.getElementById("btn1").onclick = test;
+		
+		function test() {
+			
+		}
+		*/
+	};
+</script>
+</head>
+<body>
+	<!--ex59_closure.htm-->
+	
+	
+	<input type = "button" value = "버튼" id = "btn1">
+</body>
+</html>

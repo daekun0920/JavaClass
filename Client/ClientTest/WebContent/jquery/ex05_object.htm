@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src = "js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function() {
+		// 1. DOM
+		// var box1 = document.getElementById("box");
+		// box1.style.backgroundColor = "yellow";
+		// box1.css("background-color", "blue");
+		// box1.childNodes[1].childNodes[1].value = "접근";
+		
+		
+		// 2. jQuery
+		var box2 = jQuery("#box"); // <div id = "box">
+		// box2.style.backgroundColor = "blue";
+		// box2.css("background-color", "blue");
+		// box2.find("input").val("확인"); // 모든 자손 중에서 input을 찾아라
+		
+		// Wrapping, 형변환(js객체 -> jQuery 객체화)
+		// DOM -> jQuery
+		// jQuery(box1).find("input").val("형변환");
+		
+		// jQuery 객체 -> DOM 객체 변환
+		// - 배열에서 꺼내면 된다.
+		// box2.title = "풍선 도움말";
+		
+		// jQuery(선택자) : 결과는 항상 배열이다.
+		// console.log(box2.length);
+		// console.log(box2.constructor); // jQuery()
+		// console.log(box2[0].constructor); // DOM
+		// box2[0].title = "풍선 도움말";
+		
+		// jQuery("div") : 별칭(Alias)
+		$("#box").css("border", "1px solid red");
+		
+	});
+</script>
+</head>
+<body>
+	<!--ex05_object.htm-->
+
+	<div id = "box">
+		<div>
+			<input type = "text">
+		</div>
+	</div>
+	
+</body>
+</html>

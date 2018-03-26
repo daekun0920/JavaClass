@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+</style>
+<script>
+/*
+
+자바스크립트 구성
+1. 코어 : 언어
+2. 브라우저 : BOM, DOM 
+
+자바스크립트 객체, Object
+
+1. 내장 객체
+	- Array, Math, Date 등...
+
+2. BOM 객체 
+	- window, document, form, text, button 등..	
+
+3. DOM 객체
+	- element, attribute, text 등.. 
+	
+4. 사용자 정의 객체
+	- 클래스를 사용하는 것과 비슷한 행동 
+	
+	사용자 정의 객체 만들기
+
+	1. Object 클래스
+	2. {} : 객체 상수 표기법
+	
+*/
+
+	//객체 생성 - 홍길동 정보
+	var name = "홍길동";
+	var age = 20;
+	var school = "역삼 대학교";
+	
+	var hong = new Object();
+	// Object hong = new Object(); - 자바
+	// Student hong = new Student();
+	
+	
+	// 자바의 멤버 변수
+	// 자바스크립트의 프로퍼티(Property)
+	// - 프로퍼티는 객체에 추가/삭제가 자유롭다.
+	hong.name = "홍길동";
+	hong.age = 20;
+	hong.school = "역삼 대학교";
+	
+	console.log(hong.name);
+	console.log(hong);
+	
+	var lee = new Object();
+	
+	lee.name = "이순신";
+	lee.age = 25;
+	lee.school = "역삼 대학교";
+	
+	console.log(lee);
+	
+	var ha = {}; // 빈 객체
+	
+	ha.name = "하하하";
+	ha.age = 26;
+	ha.school = "역삼 대학교";
+	
+	console.log(ha);
+	
+	// 객체 상수 표기 -> JSON
+	var ho = {
+		name:"호호호",
+		age:22,
+		school:"역삼 대학교"
+	};
+	
+	console.log(ho);
+	
+	ho.age = 28;
+	
+	console.log(ho);
+	
+	// 프로퍼티 접근 : 멤버 접근 연산자
+	// 프로퍼티 접근 : 연관 배열 형태
+	ho.gender = "여자"; // 새로운 프로퍼티 추가
+	ho["mobile-number"] = "010-222-3333"; // 새로운 프로퍼티 추가
+	
+	console.log(ho);
+	
+	var input = "gender";
+	
+	// 대다수 언어들은 식별자를 변수내에 넣어서 다룰 수 없다.
+	// console.log(ho.input);
+	console.log(ho[input]);
+	// console.log(ho.mobile-number);
+	console.log(ho["mobile-number"]);
+	
+	console.clear();
+	
+	// 프로퍼티 집합 탐색 - for 문
+	for (var p in ho) {
+		console.log(p);
+	}
+	
+	console.clear();
+	
+	for (var p in window) {
+		console.log(p);
+	}
+	
+	console.clear();
+	
+	console.log(hong);
+	
+	// hong.address = "서울시 강남구 역삼동";
+	
+	console.log(hong);
+	
+	var address = {
+		sido:"서울시",
+		gugun:"강남구",
+		dong:"역삼동",
+		bunji:"22-1번지"
+	};
+	
+	/* 
+	class {
+		public String name;
+		public String age;
+		public Address address;
+	};
+	*/
+	 
+	// 객체안에 객체 넣기
+	hong.address = address;
+	
+	console.log(hong);
+	
+	// 테스트
+	var test = {
+		name:"테스트",
+		age:25,
+		school:"역삼 대학교",
+		address:{
+			sido:"서울시",
+			gugun:"동대문구",
+			hong:"휘경동",
+			bunji:"55번지",
+		},
+		gender:"남자",
+		weight:70,
+		height:180
+	};
+	
+	console.log(test);
+	
+	for (var p in test) {
+		console.log(p, test[p]);
+	}
+	
+	
+	// 자바스크립트의 전역멤버 vs 지역 멤버
+	// 1. 전역 멤버 
+	// - <script> 자식으로 선언
+	
+	// 2. 지역 멤버
+	// - 함수내에서 선언
+	
+	var n1 = 10; // 전역 변수
+	
+	function f1() {
+		var n2 = 20; // 지역 변수(f1)
+		if (true) {
+			var n3 = 30; // 지역 변수(f1)
+		}
+		var n1 = 40;
+		
+		
+		// 지역 공간에서 변수들 접근
+		console.log("n1", n1);
+		console.log("n2", n2);
+		console.log("n3", n3);
+		console.log("n1(지역변수)", n1);
+		
+		// 함수내외에서 this라는 표현은 window 객체를 뜻한다.
+		console.log("n1(전역변수)", this.n1);
+		console.log("n1(전역변수)", window.n1);
+		console.log("n1(전역변수)", window["n1"]);
+		// 자바스크립트는 전역으로 선언된 멤버는 window의 프로퍼티가 된다.
+		
+		
+	}
+	
+	f1();
+	
+	// 전역 공간에서 변수들 접근
+	// console.log("n1", n1);
+	//console.log("n2", n2);
+	//console.log("n3", n3);
+	
+	console.clear();
+	
+	for (var p in window) {
+		console.log(p);
+	}
+	
+	// 변수 vs 프로퍼티의 차이
+	// - 둘 다 데이터 저장 공간
+	// - 프로퍼티 : 맵의 요소같은 성격(추가/삭제 가능)
+	
+	delete window["n1"];
+	//delete window.n1;
+	
+	/* 
+	for (var p in window) {
+		console.log(p);
+	}
+	*/
+	
+	delete hong["age"];
+	
+	console.log(hong);
+	
+	function f2() {
+		
+		var m = 20; // 그냥 변수
+		delete m;
+		console.log(m);
+		
+	}
+	
+	f2();
+	
+	// 프로퍼티
+	// 1. 사용자 정의 객체의 멤버(변수 + 함수)
+	// 2. 전역 멤버 -> window 프로퍼티
+	
+</script>
+</head>
+<body>
+	<!--ex56_object.htm-->
+	
+</body>
+</html>
