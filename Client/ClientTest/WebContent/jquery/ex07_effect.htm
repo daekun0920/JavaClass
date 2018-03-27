@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box1, #box2 {
+		border:1px solid black;
+		width:200px;
+		height:200px;
+		background-color:yellow;
+	}
+	
+	.cat, .dog {
+		opacity: .2;
+	}
+	
+</style>
+<script src = "js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		$("#box1").hide(); /* display:none; 으로 감춘다(자기 공간이 사라진다) */
+		
+		$("#btn1").click(function() {
+			
+			// jQuery Effect
+			// - hide();
+			// - show();
+			// - toggle();
+			
+			//$("#box1").show(1000); // slow(600), fast(400)
+			$("#box1").toggle(500);
+			
+		});
+		
+		$("#btncat").click(function() {
+			
+			// 고양이 x 5 마리
+			// - $() 로 찾은 태그들은 항상 집합 -> 메소드 바로 적용(순환 구조)
+			// $(".cat").toggle();
+			$(".cat").css("opacity", "1");
+		});
+		
+		$("#btndog").click(function() {
+			
+			// 강아지 x 5 마리
+			// - $() 로 찾은 태그들은 항상 집합 -> 메소드 바로 적용(순환 구조)
+			// $(".dog").toggle();
+			$(".dog").css("opacity", "1");
+		});
+		
+		$("#btn2").click(function() {
+			
+			// show(), hide(), toggle()
+			// fadeIn(), fadeOut(), fadeToggle()
+			// slideDown(), slideUp(), slideToggle()
+			// animate() : 사용자 정의형(CSS 속성)
+			
+			//$("#box2").fadeIn(); // 보이기
+			//$("#box2").fadeOut(); // 감추기
+			//$("#box2").fadeToggle(1000);
+			
+			//$("#box2").slideUp(); // 감추기
+			//$("#box2").slideDown(); // 보이기
+			//$("#box2").slideToggle(1000);
+			
+			// 색상 애니메이션 지원 X -> jQuery UI 지원 O
+			/* 
+			$("#box2").animate({
+				//opacity:0
+				//width:0,
+				//height:0
+			}, 1000);
+			*/
+			/* 
+			$("#box2").animate({
+				height:"toggle",
+				opacity:"toggle",
+				width:"toggle"
+				
+			});
+			*/
+			/* 
+			$("#box2").animate({
+				width:"+=200px"
+			}, 1000);
+		    */
+		    
+		    // jQuery도 메소드 체이닝을 지원한다.
+		    // - 행동을 연속적으로 실행할 수 있다.
+		    
+		    //$("#box2").hide(100).show(100).slideUp(100).slideDown(100).fadeOut(100).fadeIn(100);
+			/* 		  
+		    $("#box2").animate({
+		    	width:"+=200px"
+		    }, 1000).animate({
+		    	height:"+=200px"
+		    }, 1000).animate({
+		    	opacity:0
+		    }, 1000).animate({
+		    	opacity:1
+		    }, 1000).animate({
+		    	opacity:0
+		    }, 1000).animate({
+		    	opacity:1
+		    }, 1000).animate({
+				height:"-=200px"
+		    }, 1000).animate({
+		    	width:"-=200px"
+		    }, 1000);
+			 */
+		    
+		    
+		});
+		/*
+		$("#btn3").click(function() {
+			// 애니메이션 중지 버튼
+				$("#box2").stop();
+			
+		});
+		*/
+		
+		// 콜백 함수, CallBack
+		// - 사용자가 직접 호출하지 않고 시스템(환경)에 의해서 호출되는 함수
+		
+		//$("#box2").hide(3000);
+		//alert("상자가 사라졌습니다.");
+		
+		$("#box2").hide(3000, function() {
+			//alert("상자가 사라졌습니다."); // 3초뒤 상자가 사라진 뒤에 실행
+			$("#btn2").hide(3000, function() {
+				$("#btn3").hide(3000);
+			});
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<!--ex07_effect.htm-->
+	<input type = "button" value = "버튼" id = "btn1">
+	<hr>
+	<div id = "box1">상자</div>
+	
+	<hr>
+	
+	<input type = "button" value = "고양이" id = "btncat">
+	<input type = "button" value = "강아지" id = "btndog">
+	
+	<hr>
+	
+	<!-- img[src=../iamges/cat0$.jpg class=cat]*5 -->
+	<img src="../images/cat02.jpg" alt="" class="cat" />
+	<img src="../images/dog01.jpg" alt="" class="dog" />
+	<img src="../images/cat01.jpg" alt="" class="cat" />
+	<img src="../images/cat03.jpg" alt="" class="cat" />
+	<img src="../images/cat04.jpg" alt="" class="cat" />	
+	<img src="../images/dog02.jpg" alt="" class="dog" />
+	<img src="../images/dog04.jpg" alt="" class="dog" />
+	<img src="../images/dog03.jpg" alt="" class="dog" />
+	<img src="../images/cat05.jpg" alt="" class="cat" />
+	<img src="../images/dog05.jpg" alt="" class="dog" />
+	
+	<hr>
+	
+	<input type = "button" value = "버튼" id = "btn2">
+	<input type = "button" value = "버튼" id = "btn3">
+	
+	<hr>
+	<div id = "box2">상자</div>
+	
+</body>
+</html>

@@ -458,7 +458,7 @@ public class AdminGradeClass {
 				System.out.println("-=-=-=-=-=-=-=-={성적 & 시험날짜 등록 여부}=-=-=-=-=-=-=-=-");;
 				for (int i = rec - 5; i < rec - minus; i++) {
 					AdminSubjectStatusDTO dto = list.get(i);
-					
+				
 					System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n" +
 									   "[과목명]     : " + dto.getSubject_name() + "\n" +
 									   "[과목시작일] : " + dto.getSubject_start_date() + "\n" +
