@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+	.one {
+		background-color:yellow;
+	}
+	
+	.two {
+		border-width:50px important;
+	}
+	
+	.three {
+		padding:30px;
+	}
+</style>
+<script src = "js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function() {
+		/*
+		
+		jQuery 함수 형태
+		
+		1. A 타입
+			- 전용 함수(목적이 단순 0 아니면 1)
+			- obj.test();      // getter, 읽기
+			- obj.test(value); // setter, 쓰기
+		
+		2. B 타입
+			- 범용 함수(목적이 여러 종류가 될 수 있음. 딱 단정 불가(특정 속성에 종속 되지 않음))
+			- obj.test(name);  // getter, 읽기
+			- obj.test(name, value);  // setter, 쓰기
+		
+		Content Setter/Getter
+		- text(), html(), val() : A 타입
+		
+		*/
+		
+		$("#btn1").click(function() {
+			
+			// Content
+			// <div>content(PCDATA)</div>
+			
+			//box1.innerText
+			//box1.textContent
+			
+			//console.log($("#box1").text());
+			//$("#box1").text("값");
+			
+			//box1.innerHtml
+			//$("#box1").html("<b>홍길동</b>");
+			//$("#box1").text("<b>홍길동</b>");
+			//$("#box1").html("<input>");
+			
+			// 컨트롤.value
+			//console.log($("#box1").val());
+			//console.log($("#txt1").val());
+			//$("#txt1").val("하하하");
+			
+			//text(), html()
+			// - 폼태그가 아닌 나머지 태그들에게 사용
+			
+			// val()
+			// - 폼태그 들만 사용
+			
+			
+			// Attribute 제어
+			// - B 타입
+			//console.log($("#link1").attr("title"));
+			/* 
+			$("#link1").attr("title", "구글");
+			$("#link1").attr("href", "http://google.com");
+			$("#link1").text("구글");
+			*/
+			
+			$("#btn1").on({
+				mouseover:function() {
+					
+				},
+				mouseout:function() {
+					
+				}
+			});
+			
+			$("#link1").attr({
+				href:"http://google.com",
+				title:"구글"
+			})
+			.text("구글")
+			
+			// 내용을 계속(***) 추가하기
+			// box2.innerHTML = "<img src = '../images/catty01.png'>"
+			// box2.innerHTML += "<img src = '../images/catty01.png'>"
+			
+			// $("#box2").html("<img src = '../images/catty01.png'>");
+			// $("#box2").html($("#box2").html() + "<img src = '../images/catty01.png'>");
+			
+			// 내용 쓰기 : = 역할
+			// text()
+			// html()
+			
+			// 추가하기(누적) : += 역할 + text() / html()
+			// append()
+			// prepend()
+			
+			//$("#box2").append("<img src = '../images/catty05.png'>");
+			//$("#box2").prepend("<img src = '../images/catty05.png'>");
+			
+			// innerHTML 역할
+			// $("#box2").append("<p>내용물</p>");
+			
+			// 원시적 방식(모든걸 문자열로 처리)
+			// $("#box2").append("<p style = 'color:blue'>내용물</p>);
+			
+			// 세련된 방식
+			// $("#box2").append($("<p></p>").text("홍길동").css("color", "blue"));
+			
+			var p = document.createElement("p");
+			p.innerText = "아무개";
+			p.style.color = "red";
+			
+			// $("#box2").append(p);
+			// $("#box2").append($(p));
+			// $("#box2").html(p);
+			
+			// 본인 삭제(+ 자식 포함)
+			// $("#box3").remove();
+			
+			// 자식 삭제
+			// $("#box3").empty();
+			
+			// $("#box3 .cat").remove();
+			// $("#box3 .dog").remove();
+			
+			var cname = " .dog";
+			// $("#box3" + cname).remove();
+			$("#box3 img").remove(cname); // remove(filter)
+			
+			
+			
+			
+			// CSS 제어
+			// 1. css()
+			// - element.style.속성명 = "값"
+			
+			// $("#box3").css("border-color", "red");
+			
+			/* 
+			$("#box3")
+				.css("border-color", "red")
+				.css("width", "300px")
+				.css("border-width", "40px");
+			*/
+			
+			/* 
+			$("#box3").css({
+				width:"300px",
+				height:"500px"
+			});
+			*/
+			
+			/* 
+			box3.classList.add("one");
+			box3.classList.add("two");
+			box3.classList.add("three");
+			box3.classList.remove("one");
+			*/
+			
+			$("#box3").addClass("one");
+			$("#box3").addClass("two");
+			
+			$("#box3").removeClass("two");
+			
+			$("#box3").toggleClass("three"); // 메뉴 on - off
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<!--ex08_manipulation.htm-->
+	<h1>jQuery 사용해서 HTML 조작(get/set)</h1>
+	
+	<input type = "button" value = "버튼" id = "btn1">
+	<hr>
+	
+	<div id = "box1">상자입니다.</div>
+	<div id = "box2">
+		<img src = '../images/catty02.png'>
+		<img src = '../images/catty03.png'>
+		<img src = '../images/catty04.png'>
+	</div>
+	
+	<input type = "text" id = "txt1">
+	<a href= "http://naver.com" title = "네이버" id = "link1">네이버</a>
+	
+	<div id = "box3" style = "border:10px solid orange;"> <!--인라인 스타일 시트는 우선순위가 가자아아아앙 높다-->
+		<img src = '../images/catty01.png' class = "dog">
+		<img src = '../images/catty02.png' class = "dog">
+		<img src = '../images/catty03.png' class = "cat">
+		<img src = '../images/catty04.png'>
+		<img src = '../images/catty05.png' class = "cat">
+	</div>
+</body>
+</html>

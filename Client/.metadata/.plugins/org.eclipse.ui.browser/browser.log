@@ -208,3 +208,27 @@
 3월 23, 2018 17:42:53.14 NEW SESSION
 3월 23, 2018 17:42:53.14 
 3월 23, 2018 17:42:53.15 KLIB_SelfTest return : KLR_OK
+
+3월 27, 2018 09:02:01.77 NEW SESSION
+3월 27, 2018 09:02:01.77 [9192:1976:0327/090201.743:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+3월 27, 2018 09:02:41.37 
+3월 27, 2018 09:02:41.37 KLIB_SelfTest return : KLR_OK
+3월 27, 2018 09:09:19.40 [8344:3256:0327/090919.405:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+3월 27, 2018 12:30:28.72 [8344:10868:0327/123028.727:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 12:30:28.75 [8344:10868:0327/123028.759:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 12:30:30.49 [8344:10868:0327/123030.497:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 12:43:17.23 [8344:10868:0327/124317.235:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 12:43:17.27 [8344:10868:0327/124317.270:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 12:43:17.60 [8344:10868:0327/124317.601:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+
+3월 27, 2018 14:15:18.37 NEW SESSION
+3월 27, 2018 14:15:18.37 [6936:9600:0327/141518.367:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+3월 27, 2018 14:58:46.50 [6936:7724:0327/145846.506:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 14:58:46.53 [6936:7724:0327/145846.536:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 14:58:46.86 [6936:7724:0327/145846.861:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 16:06:21.88 [6936:7724:0327/160621.879:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 16:06:21.91 [6936:7724:0327/160621.916:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 16:06:22.11 [6936:7724:0327/160622.117:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 16:11:14.44 [6936:7724:0327/161114.445:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 16:11:14.46 [6936:7724:0327/161114.462:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 27, 2018 16:11:14.63 [6936:7724:0327/161114.631:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box1 {
+		border:20px solid black;
+		width:300px; height:300px;
+		padding:50px;margin:100px;
+	}
+</style>
+<script src = "js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#box1").click(function() {
+			// jQuery에서 영역에 관련된 기능들..
+			// 요구사항] box1의 너비?
+			// console.log(document.getElementById("box1").style.width);
+			// console.log($("#box1").css("width"));
+			
+			// $("#box1")
+			
+			$(this).append($(this).css("width"));
+			$(this).append("<br>");
+			$(this).append($(this).css("height"));
+			$(this).append("<br>");
+			
+			// 영역 관련 멤버
+			// - width, height : 컨텐츠 영역
+			$(this).append($(this).width());
+			$(this).append("<br>");
+			$(this).append($(this).height());
+			$(this).append("<br>");
+			
+			// - innerWidth, innerHeight : 컨텐츠 영역 + padding
+			$(this).append($(this).innerWidth());
+			$(this).append("<br>");
+			$(this).append($(this).innerHeight());
+			$(this).append("<hr>");
+			
+			// - outerWidth, outerHeight : 컨텐츠 영역 + padding + border
+			$(this).append($(this).outerWidth());
+			$(this).append("<br>");
+			$(this).append($(this).outerHeight());
+			$(this).append("<hr>");
+			
+			// - outerWidth(true), outerHeight(true) : 컨텐츠 영역 + padding + border + margin
+			$(this).append($(this).outerWidth(true));
+			$(this).append("<br>");
+			$(this).append($(this).outerHeight(true));
+			$(this).append("<hr>");
+		});
+	});
+</script>
+</head>
+<body>
+	<!--ex09_area.htm-->
+	<div id = "box1"></div>
+	
+	
+</body>
+</html>

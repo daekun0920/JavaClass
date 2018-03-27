@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src = "js/jquery-1.12.4.js"></script>
+<script>
+	//document.onload = function() {}; // BOM - window.onload 와 거의 같음
+	//document.addEventListener("load", function() {}); // DOM
+	//$(document).ready(function() {}); // jQuery 
+	//$(function() {}); // 위 문장의 축약 표현
+	
+	$(document).ready(function() {
+		
+		//jQuery 문법
+		// - $(selector).action();
+		
+		// 1. $() or jQuery()
+		//   - jQuery 함수
+		// 2. selector
+		//   - CSS 선택자 or 자바스크립트 객체
+		// 3. action()
+		//   - jQuery가 제공하는 여러가지 기능들...
+		
+		// 이벤트 함수
+		$("#btn1").click(function() {
+			alert("버튼1 클릭");
+		});
+		// $("#btn1").click(test);
+		
+		$("#btn2").on("click", function() {
+			alert("버튼2 클릭");
+		});
+		
+		$("#txt1").mouseover(function() { // jQuery로 이벤트
+			// txt1
+			// event.srcElement.style.backgroundColor = "yellow"; // DOM - 추천 X
+			
+			//$("#txt1").css("background-color", "red"); // jQuery로 제어
+			
+			//$(event.srcElement).css("background-color", "blue") // DOM(형변환) + jQuery 제어 , 추천 O
+			
+			// jQuery에서 this 를 재정의 시켜놨다.
+			//   - this == event.srcElement
+			// this.style.backgroundColor = "orange";
+			
+			$(this).css("background-color", "orange");
+			
+			
+		});
+		$("#txt1").on("mouseout", function() {
+			$(this).css("background-color", "white");
+		});
+		
+		// txt2
+		//$("#txt2").focus(function() {
+	
+		//});
+		
+		// mouseover == mouseenter
+		// mouseout == mouseleave
+		//$("#txt2").mouseenter(function() {
+		//	document.title = "테스트";
+		//});
+		
+		
+		// txt2 -> mouseenter + mouseleave
+		
+		// jQuery는 복수개의 이벤트를 동시에 바인딩하는게 가능
+		// - on()
+		
+		var evt = {
+			mouseenter:function() {
+				$(this).css("color", "red");
+			},
+			mouseleave:function() {
+				$(this).css("color", "black");
+			}
+			
+			
+		};
+		
+		//$("#txt2").on("이벤트 종류", 함수);
+		//$("#txt2").on(객체);
+		//$("#txt2").on(evt);
+		
+		// 가장 대중적인 코드
+		$("#txt3").on({
+			mouseenter:function() {
+				$(this).css("color", "blue");
+			},
+			mouseleave:function() {
+				$(this).css("color", "black");
+			}
+		});
+		
+	});
+	
+	function test() {
+		
+	}
+	
+</script>
+</head>
+<body>
+	<!--ex06_event.htm-->
+	
+	<input type = "button" value = "버튼1" id = "btn1">
+	<input type = "button" value = "버튼2" id = "btn2">
+	<hr>
+	<input type = "text" id = "txt1">
+	<input type = "text" id = "txt2">
+	<input type = "text" id = "txt3">
+	
+</body>
+</html>

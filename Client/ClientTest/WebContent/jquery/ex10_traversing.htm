@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="js/jquery-1.12.4.js"></script>
+<style>
+div{
+   border: 5px solid #aaa;
+   margin: 10px;
+   padding: 10px;
+}
+#me {
+   border-color: orange; 
+}
+</style>
+<script>
+   $(document).ready(function() {
+      // DOM Node search
+      // 1. get***()
+      // 2. Axis
+      //   - childNodes, children
+      //   - parentNode
+      //   - nextSibling, previousSibling
+      
+     // 부모 검색
+     // $("#me").parent().css("border-color","blue"); // 친부모
+     // $("#me").parents().css("border","5px solid red"); // 조상들(끝까지)
+	 // $("#me").parentsUntil().css("border-color","blue"); // 조상들(Body 전 까지)
+	      
+	 // 자식 검색
+	 // - childNodes, children, firstChild, lastChild .. : DOM
+	 // - children(), find()
+	 // $("#me").children().css("border-color", "green");
+	 // $("#me").children().css("border-color", "green").children().css("border-color", "green");
+	
+	 // 자식 + 자손들을 대상으로 필터로 검색
+	 // $("#me").find(".item"); // #me 의 자식 & 자손인 .item 클래스 태그들
+	 // $("#me").find("div").css("border-color", "pink");
+	 
+	 // div:first-child - CSS 문법 : 각각의 노드가 자신이 속한 집합에서 첫째 역할(자손들 중에 첫째들)
+	 // div:first - jQuery 문법 : 앞의 선택자의 모든 집합에서 모든 집합에서 첫째 역할 (자식들 중에 첫째 - 자손(손자)도 동급 취급)
+	 
+	 // $("#me").find("div:first").css("border-color", "pink");
+	 // $("#me").find("div:last-child").css("border-color", "pink");
+	 
+	 // $(".item")
+	 // $(window).find(".item");
+	
+	 //$("#me").children(".s").css("border-color", "yellow"); // 직계 자식 중에 s 클래스
+	 
+	 // 형제 검색
+	 // 위아래 모든 형제들
+	 // $("#me").siblings().css("border-color", "blue"); 
+	 
+	 // 내 바로 아랫 동생
+	 // $("#me").next().css("border-color", "blue");
+	 
+	 // 내 바로 위에 형
+	 // $("#me").prev().css("border-color", "red");
+	
+	 // 모든 형들(필터링 가능)
+	 // $("#me").prevAll(".p").css("border-color", "red");
+	
+	// 모든 동생들
+	// $("#me").nextAll(".p").css("border-color", "blue");
+		
+	// 필터 함수
+	// $("div").filter(".p, .s").css("border-color", "yellow"); 
+	// $(".p, .s").css("border-color", "yellow"); 
+	
+	// 반필터 함수
+	// $("div").not(".p").css("border-color", "yellow");	 
+	
+   })
+</script>
+</head>
+<body>
+   <!--  -->
+   <div>
+      <div>
+      	 <div></div>
+      	 <div class = "p"></div>
+         <div></div>
+         <div id="me">
+         	나
+            <div></div>
+            <div class = "s">
+               <div></div>
+            </div>
+            <div class = "s"></div>
+         </div>
+         <div></div>
+         <div class = "p"></div>
+         <div class = "p"></div>      
+      </div>
+   </div>
+   
+</body>
+</html>
