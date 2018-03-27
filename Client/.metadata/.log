@@ -12316,6 +12316,7 @@ Binding(CTRL+D,
 =======
 >>>>>>> 187ceec838c4ea5758d5892618c96315deba53cb
 >>>>>>> bef894ad837a9c174bd0f125cebda929bafda379
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.ui 4 4 2018-03-27 19:07:09.717
 !MESSAGE An internal error has occurred.
@@ -12411,3 +12412,5 @@ org.eclipse.swt.SWTException: Widget is disposed
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+=======
+>>>>>>> 334f3312d2d5a9e0575139fd148c66fdfef69b5c
