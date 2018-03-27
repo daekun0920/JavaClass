@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src = "js/jquery-1.12.4.js"></script>
+<script>
+	// window.onload = function() {}
+	$(document).ready(function() {
+		
+		// CSS : 1. 태그 찾기(선택자) -> 2. 속성 제어
+		// JavaScript : 1. 태그 찾기(BOM, DOM) -> 속성, PCDATA, CSS 제어
+		
+		// JavaScript에서 CSS 선택자를 이용해 태그를 찾을 수 있다면..
+		
+		// 1. 태그 선택자
+		// - div {}
+		
+		/* 
+		var div = document.getElementsByTagName("div");
+		
+		for (var i = 0; i < div.length; i++) {
+			if (div[i].nodeType == 1 && div[i].nodeName == "DIV") {
+				div[i].style.color = "red";
+			}
+		}
+		*/
+		
+		// console.log(jQuery);
+		
+		// 1. 태그 선택자
+		// div {}
+		// jQuery("div").css("color", "blue");
+		
+		// 2. id 선택자
+		// #box3 {}
+		// jQuery("#box3").css("color", "orange");
+		
+		// 3. class 선택자
+		// .box {}
+		jQuery(".box").css("color", "red");
+		
+		// 4. 자식/자손 선택자
+		jQuery("#list1 li").css("color", "red");
+		jQuery("#list2>li").css("color", "blue");
+		jQuery("li span").css("font-size", "3em");
+		
+		// 5. 형제 선택자
+		jQuery("div + div").css("text-decoration", "underline");
+		jQuery("div ~ ul").css("border", "1px solid black");
+		
+		// 6. 속성 선택자
+		jQuery("a[target=_blank]").css("color", "blue");
+		
+		// 7. CSS3 선택자
+		jQuery("li:nth-child(2)").css("background-color", "yellow");
+		
+	}); // onload
+</script>
+</head>
+<body>
+	<!--ex02_selector.htm-->
+	<!-- div#box$.box{상자$}*5 -->
+	<div id="box1" class="box">상자1</div>
+	<div id="box2">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	<div id="box4">상자4</div>
+	<div id="box5" class="box">상자5</div>
+	
+	
+	<hr>
+	
+	<ul id="list1">
+		<li>하나</li>
+		<li><span>둘</span></li>
+		<li>셋</li>
+	</ul>
+	
+	<ol id="list2">
+		<li><span>넷</span></li>
+		<li>다섯</li>
+		<li><span>여섯</span></li>
+	</ol>
+	
+	<p>문단입니다.<span>홍길동입니다.</span>문단입니다.</p>
+	<p>문단입니다.<span>홍길동입니다.</span>문단입니다.</p>
+	<p>문단입니다.<span>홍길동입니다.</span>문단입니다.</p>
+	
+	
+</body>
+</html>

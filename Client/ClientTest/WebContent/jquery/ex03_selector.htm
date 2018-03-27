@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src = "js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		// CSS(가상 클래스) -> jQuery(필터)
+		//jQuery("li:nth-child(2)").css("color", "blue"); // one-based index
+		//jQuery("li:eq(2)").css("color", "blue"); // zero-based index
+		
+		//jQuery("li:first-child").css("color", "red");
+		//jQuery("li:first").css("color", "red");
+		
+		//jQuery("li:last-child").css("color", "pink");
+		//jQuery("li:last").css("color", "yellow");
+		
+		//jQuery("li:nth-child(even)").css("color", "blue");
+		//jQuery("li:even").css("color", "blue");
+		
+		//jQuery("li:nth-child(odd)").css("color", "red");
+		//jQuery("li:odd").css("color", "red");
+		
+		// &gt; (>) 2보다 큰 애들
+		//jQuery("li:gt(2)").css("color", "red");
+		
+		// &It (<)
+		//jQuery("li:It(2)").css("color", "red");
+		
+		//jQuery("li > span")
+		//jQuery("li:has(span)").css("color", "blue"); // 자식을 조건으로한다. (span을 가지고 있는 li)
+		
+		
+		
+	});
+</script>
+</head>
+<body>
+	<!--ex03_selector.htm-->
+	
+	<ul id = "list1">
+		<li>하나</li>
+		<li><span>둘</span></li>
+		<li>셋</li>
+		<li>넷</li>
+		<li><span>다섯</span></li>
+		<li>여섯</li>
+	</ul>
+	
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	/*
+	
+	객체 = 데이터(프로퍼티) + 행동(함수, 메소드)
+	
+	*/
+	
+	var dog1 = {};
+	
+	dog1.name = "멍멍이",
+	dog1.color= "검정",
+	dog1.bark = function() {
+		console.log("멍멍");
+	};
+	
+	console.log(dog1);
+	
+	console.log(dog1.name);
+	dog1.bark();
+	
+	var dog2 = {
+		name: "잠보",
+		color: "갈색",
+		bark: function() {
+			// 객체내의 함수에서 표기되는 변수명은 선언되지 않은 지역변수라면 window의 프로퍼티로 생각한다.
+			// 객체 함수 내의 멤버는 단드시 this를 붙여야 한다.(필수!!!)
+			console.log("내 이름은" + this.name + "입니다 멍멍멍")
+		}
+	};
+	
+	console.log(dog2);
+	dog2.bark();
+	
+	for (var p in window) {
+		console.log(p);
+	}
+	
+	
+	console.clear();
+	
+	// 동일한 성격의 객체 x 3 (자바에서 클래스 선언 후 객체  생성 x 3개)
+	var m1 = {
+		name:"홍길동",
+		age:20
+	}
+	var m2 = {
+		name:"아무개",
+		age:20
+	}
+	var m3 = {
+		name:"하하하",
+	} // 실수(age 구현 안함) => 사용자 정의 자료형에 대한 제약 X
+	
+	// 자바스크립트에서 타입 정의하는 방법 -> 클래스 역할 같은.. -> 함수 사용
+	// 객체를 생성하는 함수 정의 -> "생성자 함수"(=클래스, 자료형 역할)
+	
+	// var m = {} + fucntion = 섞어놓은 형태
+	function Man(name, age) {
+		this.name = name; // 객체 프로퍼티
+		this.age = age; // 객체 프로퍼티
+		this.hello = function() {
+			console.log("저는" + this.name + "입니다. 안녕하세요.")
+		}
+		
+	}
+	
+	var m4 = new Man("하하하", 20);
+	console.log(m4);
+	m4.hello();
+	
+	var m5 = new Man("호호호");
+	console.log(m5);
+	m5.hello();
+	
+	console.log(m3);
+	
+	// 내장 객체 -> 생성자 ㅎㅁ수
+	var list = new Array();
+	var now = new Date();
+	
+	console.clear();
+	
+	// 일반함수(window 멤버 함수)
+	function f1() {
+		var m1 = 10;
+		console.log(this.m1);
+	}
+	
+	window.f1 = function() {};
+	
+	// 객체 생성
+	var o1 = {
+		m2:20,
+		check:function() {
+			console.log(this.m2); // 객체내의 함수에서 사용하는 this -> 객체 자신을 표현
+		}
+	};
+	
+	// 생성자함수
+	function student() {
+		this.m3 = 30;
+		this.check = function() {
+			console.log(this.m3); // 객체내의 함수에서 사용하는 this -> 객체 자신을 표현
+		};
+	} 
+	
+	var m4 = 40; // m1과 동일한 상황
+	//window.m4 = 40;
+	
+	
+	//f1();
+	//o1.check();
+	//var s = new Student();
+	//s.check();
+	//console.log(this.m4);
+	console.log(this.m4);
+	console.log(m4);
+	
+	// m1 == m4 : 같은 의미 // 전역 변수(window 객체 멤버)
+	// m2 == m3 : 같은 의미 // 객체 멤버
+	
+	// 해당 객체가 어떤 자료형 인지? -> 확인?
+	var num = 10;
+	var str = "문자열";
+	var flag = true;
+	var list = [];
+	var now = new Date();
+	var cat = { name:"냐옹이"};
+	
+	console.clear();
+	// 1. typeof 연산자
+	console.log(typeof num);
+	console.log(typeof str);
+	console.log(typeof flag);
+	console.log(typeof list);
+	console.log(typeof now);
+	console.log(typeof cat);
+	
+	// 2. 생성자 함수 확인
+	console.log(num.constructor);
+	console.log(str.constructor);
+	console.log(flag.constructor);
+	console.log(list.constructor);
+	console.log(now.constructor);
+	console.log(cat.constructor);
+	
+	console.log(typeof m5);
+	console.log(m5.constructor);
+	
+	m5.color = "black";
+	m5["address"] = "서울시";
+	
+	console.log(m5);
+	console.log(m5.constructor);
+	
+	
+</script>
+</head>
+<body>
+	<!--ex57_object.htm-->
+	
+</body>
+</html>
