@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box1 {
+		border:1px solid black;
+		width:400px; height:400px;
+		background:yellow;
+		transform:translate(500px, 200px);
+	}
+	
+	#cat1  {
+		z-index:1;
+	}
+</style>
+<link rel = "stylesheet" href = "css/jquery-ui.css">
+<script src = "js/jquery-1.12.4.js"></script>
+<script src = "js/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		// Interaction > droppable
+		$("#cat1").draggable({
+			cursor:"move",
+			opacity: .3
+		});
+		
+		// 콜백 함수
+		$("#box1").droppable({
+			drop:function() {
+				//alert("확인");
+				$(this).css("background-color", "red");
+				$("#cat1").draggable({
+					containment:"#box1"
+				});
+				
+			}
+		});
+		
+		$("#cat1").dblclick(function() {
+			$("#cat1").draggable({
+				containment:"" // 해제
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<!--ex16.htm-->
+	<img src = "../images/catty01.png" id = "cat1">
+	
+	<div id = "box1"></div>
+
+</body>
+</html>
