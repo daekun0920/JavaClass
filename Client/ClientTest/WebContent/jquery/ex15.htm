@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box1, .box {
+		border:1px solid black;
+		width:300px; height:300px;
+		background:yellow;
+		margin:50px;
+	}
+</style>
+<link rel = "stylesheet" href = "css/jquery-ui.css">
+<script src = "js/jquery-1.12.4.js"></script>
+<script src = "js/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		$("#cat1").draggable({
+			axis: "y"
+		});
+		
+		$("#cat2").draggable({
+			containment: "#box1"
+		});
+		
+		$(".cat").draggable({
+			containment:"parent" // 자기 부모를 못 벗어나게	
+		});
+		
+		$("#cat3").draggable({
+			cursor:"move",
+			//cursorAt: {
+			//	left:0,
+			//	top:0
+			//}
+			// snap: "img" // 특정 개체 가까이 가면 달라 붙게
+			grid:[50, 50] // 해당 값만큼 드래그 이동 
+		});
+	});
+</script>
+</head>
+<body>
+	<!--ex15.htm-->
+	<img src = "../images/catty01.png" id = "cat1">
+	
+	<div id = "box1">
+		<img src = "../images/catty02.png" id = "cat2">
+	</div>
+	
+	<div class = "box">
+		<img src = "../images/catty03.png" class = "cat">
+	</div>
+	
+	<div class = "box">
+		<img src = "../images/catty03.png" class = "cat">
+	</div>
+	
+	<div class = "box">
+		<img src = "../images/catty04.png" class = "cat">
+	</div>
+	
+	<div class = "box">
+		<img src = "../images/catty05.png" class = "cat">
+	</div>
+	
+	<img src = "../images/catty06.png" id = "cat3">
+	
+</body>
+</html>
