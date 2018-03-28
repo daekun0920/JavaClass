@@ -10,16 +10,12 @@
 		<item value="250" key="dialogHeight"/>
 		<item value="350" key="dialogWidth"/>
 		<list key="textEntries">
-			<item value="1"/>
 		</list>
 		<list key="orderedElements">
-			<item value="org.eclipse.ui.console.ConsoleView"/>
 		</list>
 		<list key="orderedProviders">
-			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
 		<list key="textArray">
-			<item value="console"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">

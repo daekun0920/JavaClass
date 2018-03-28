@@ -16,6 +16,22 @@
 	* {
 		outline:none; /* 파란색 바깥선 */
 	}
+	
+	#slider1, #slider2, #c1, #c2, #c3 {
+		margin:20px;
+	}
+	
+	
+	#slider2 {
+		height:8px;
+		font-size:14px; /* 엄지 버튼 크기 조절(span 태그) */		
+	}	
+	
+	/* 
+	#slider2 span {
+		height:16px;
+	} 
+	*/
 </style>
 <link rel = "stylesheet" href = "css/jquery-ui.css">
 <script src = "js/jquery-1.12.4.js"></script>
@@ -58,7 +74,89 @@
 			
 		});
 		
-		$("#birthday").datePicker("option", "dateFormat", "yy-mm-dd");
+		$("#birthday").datepicker("option", "dateFormat", "yy-mm-dd");
+		
+		
+		
+		// 대화 상자, Dialog Box
+		// - alert(), confirm(), prompt()
+		$("#dialog1").hide();
+		
+		
+		// 대화 상자의 형태
+		//  - 업무 순서
+		// 1. Modless
+		//	- 자식 창과 부모 창간의 포커스 전환이 자유
+		// 2. Modal
+		//  - 자식 창이 포커스를 독점
+		
+		$("#btn1").click(function() {
+			
+			$("#dialog1").dialog({
+				title:"확인",
+				width:300,
+				height:250,
+				draggable:false,
+				resizable:false,
+				modal:true, // 주변 화면 어두워 지고 뒤 배경 비활성화
+				buttons:{
+					"확인":function() {
+						$("#dialog1").dialog("close");
+					},						
+					"취소":function() {
+						$("#dialog1").dialog("close");
+					}
+				}
+			});
+			
+		});
+		
+		// 셀렉트 박스
+		$("#sel1").selectmenu();
+		
+		
+		// 슬라이더 
+		$("#slider1").slider({
+			
+			slide:function(event, ui) {
+				//console.log("슬라이딩");
+				//ui : 해당 객체 정보
+				console.log(ui.value);
+			},
+			min:0,
+			max:1000,
+			step:100,
+			animate:true
+		});
+		
+		// 문서 배경색 조작
+		$("#c1, #c2, #c3").slider({
+			min:0,
+			max:255,
+			value:255,
+			slide:function(evt, ui) {
+				var r = $("#c1").slider("value");
+				var g = $("#c2").slider("value");
+				var b = $("#c3").slider("value");
+				
+				$("body").css("background-color", "rgb(" + r + ", " + g + ", " + b + ")");
+				$("*").css("color", "rgb(" + (255 - r) + ", " + (255 - g) + ", " + (255 - b) + ")");
+				
+			}
+		});
+		
+		
+		// 멀티 슬라이더(엄지 버튼 2개짜리)
+		$("#slider2").slider({
+			range:true,
+			min:0,
+			max:300,
+			values:[50, 250],
+			change:function(evt, ui) {
+				console.log(ui.values[0], ui.values[1]);
+			}
+		});
+		
 	});
 </script>
 </head>
@@ -71,6 +169,38 @@
 		1. 정해진 규칙 > 태그 구현
 		2. 1번을 대상으로 jQuery 호출
 	-->
+	<h2>멀티 슬라이더</h2>
+	<div id = "slider2"></div>
+	
+	
+	<h2>문서 배경색</h2>
+	
+	<div id = "c1"></div>
+	<div id = "c2"></div>
+	<div id = "c3"></div>
+	
+	<h2>Slider</h2>
+	
+	<div id = "slider1"></div>
+	
+	<h2>셀렉트 박스</h2>
+
+	<select name="" id="sel1">
+		<option value="">대한민국</option>
+		<option value="">일본</option>
+		<option value="">중국</option>
+		<option value="">미국</option>
+	</select>
+	
+	
+	<h2>대화 상자</h2>
+	
+	<input type = "button" value = "확인" id = "btn1">
+	<div id = "dialog1">
+		안녕하세요.
+		<button>버튼</button>
+	</div>
+	
 	
 	<h2>날짜/시간</h2>
 	
