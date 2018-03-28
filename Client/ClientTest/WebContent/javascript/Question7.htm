@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#tbl1 {
+		border-collapse:collapse;
+		border:1px solid black;
+		width:640px;
+		height:640px;
+		margin:0;
+		padding:0;
+	}
+	
+	#tbl1 tr td {
+		border:1px solid black;
+		width:129px;
+		height:129px;
+		margin:0;
+		padding:0;
+	}
+	
+	#tbl1 tr td img {
+		margin:0;
+		width:100%;
+		height:100%;
+	}
+</style>
+<script>
+	var td = document.getElementsByTagName("td");
+	
+	window.onload = function() {
+		for (var i = 0;i < td.length; i++) {
+			td[i].onmousedown = function() {
+				if (event.buttons == 1) {
+					event.srcElement.innerHTML = "<img src = '../images/rect_icon01.png'>";
+				} else if (event.buttons == 2) {
+					
+					event.srcElement.innerHTML = "<img src = '../images/rect_icon02.png'>";
+					event.srcElement.preventDefault();
+				}			
+			}
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<!---->
+	<table id = "tbl1">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+			<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</body>
+</html>
