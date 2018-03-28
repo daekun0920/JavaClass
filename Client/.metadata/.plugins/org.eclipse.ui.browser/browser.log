@@ -232,3 +232,6 @@
 3월 27, 2018 16:11:14.44 [6936:7724:0327/161114.445:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
 3월 27, 2018 16:11:14.46 [6936:7724:0327/161114.462:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
 3월 27, 2018 16:11:14.63 [6936:7724:0327/161114.631:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+
+3월 27, 2018 19:15:43.89 NEW SESSION
+3월 27, 2018 19:15:43.89 [1436:4860:0327/191543.893:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
