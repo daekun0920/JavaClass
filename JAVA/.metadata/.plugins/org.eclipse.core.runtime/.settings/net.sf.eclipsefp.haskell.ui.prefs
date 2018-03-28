@@ -7,6 +7,7 @@ eclipse.preferences.version=1
 functionColor=216,216,216
 keywordColor=255,255,255
 literateCommentColor=199,221,12
+overriddenByCSS=,conColor,thColor,sourceHoverBackgroundColor,symbolColor,keywordColor,literateCommentColor,varSymColor,varColor,functionColor,cppColor,docColor,charColor,commentColor,pragmaColor,stringColor,
 pragmaColor=199,221,12
 sourceHoverBackgroundColor=0,0,0
 stringColor=255,198,0

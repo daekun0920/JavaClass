@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+	#list1 .ui-selected {
+		background-color:yellow;
+	}
+	
+	#list2 {
+		list-style-type:none;
+		border:1px solid #AAA;
+		border-radius:3px;
+		padding:5px;
+		width:120px;
+	}
+	
+	#list2 li {
+		border:1px solid #777;
+		height:60px;
+		border-radius:50%;
+		width:100px;
+		text-align:center;
+		margin:3px auto;
+		padding:3px;
+		padding-top:40px;
+		cursor:pointer;
+	}
+	
+	#list2 li.ui-selected {
+		background-color:#CCC;
+		box-shadow:3px 3px 5px #888;
+	}
+	
+	#list3 {
+		border:10px solid black;
+		padding:5px;
+		width:785px;
+		text-align:center;
+	}
+	
+	#list3 img {
+		border:10px solid #555;
+		display:inline-block;
+		margin:2px;
+		cursor:pointer;
+		opacity:.3;
+		/* transition:all .5s; */
+	}
+	
+	#list3 img.ui-selected {
+		opacity:1;
+	}
+</style>
+<link rel = "stylesheet" href = "css/jquery-ui.css">
+<script src = "js/jquery-1.12.4.js"></script>
+<script src = "js/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+
+		// Interaction > selectable
+		// Interaction > sortable
+		
+		// $("#list1, #list2, #list3").selectable();
+		$("#list1, #list2, #list3").sortable();
+		
+	});
+</script>
+</head>
+<body>
+	<!--ex18.htm-->
+	<h1>사무용품</h1>
+	
+	<ol id = "list1">
+		<li>노트</li>
+		<li>스캐너</li>
+		<li>복사기</li>
+		<li>볼펜</li>
+		<li>A4 용지</li>
+	</ol>
+	
+	<h1>사무용품</h1>
+	
+	<ol id = "list2">
+		<li>노트</li>
+		<li>스캐너</li>
+		<li>복사기</li>
+		<li>볼펜</li>
+		<li>A4 용지</li>
+	</ol>
+	
+	<!-- 규칙 : 부모 컨테이너와 동급의 다수의 자식이 있어야 한다. -->
+	<h1>고양이</h1>
+	
+	<div id = "list3"> 
+		<img src = "../images/catty01.png">
+		<img src = "../images/catty02.png">
+		<img src = "../images/catty03.png">
+		<img src = "../images/catty04.png">
+		<img src = "../images/catty05.png">
+	</div>
+	
+</body>
+</html>
