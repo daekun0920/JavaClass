@@ -4,19 +4,51 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-
+	#box1 {
+		border:1px solid black;
+		width:400px; height:400px;
+		background:yellow;
+	}
 </style>
 <link rel = "stylesheet" href = "css/jquery-ui.css">
 <script src = "js/jquery-1.12.4.js"></script>
 <script src = "js/jquery-ui.js"></script>
 <script>
 	$(document).ready(function() {
-
+		
+		// Interaction > resizable
+		$("#box1").resizable({
+			maxWidth:700,
+			maxHeight:500,
+			minWidth:100,
+			minHeight:100,
+			grid:[10, 10],
+			resize:function() {
+				//console.log($("#box1").width());
+				//console.log($("#box1").height());
+				if ($("#box1").width() < 150) {
+					$("#box1").css("background-color", "red");
+				} else if ($("#box1").width() > 550) {
+					$("#box1").css("background-color", "blue");
+				} else {
+					$("#box1").css("background-color", "yellow");
+				}
+			}
+		});
+		
+		$("#cat1").resizable({
+			aspectRatio: $("#cat1").width() / $("#cat1").height()
+		});
+		
+		
 	});
 </script>
 </head>
 <body>
 	<!--ex17.htm-->
-
+	
+	<div id = "box1"></div>
+	<img src = "../images/cat01.jpg" id = "cat1">
+	
 </body>
 </html>

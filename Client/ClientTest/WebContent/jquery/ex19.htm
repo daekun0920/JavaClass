@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#a1 {
+		width:500px;
+		font-size:14px;
+	}
+	
+	#a1 h3 {
+		outline:none;
+	}
+	
+	* {
+		outline:none; /* 파란색 바깥선 */
+	}
+</style>
+<link rel = "stylesheet" href = "css/jquery-ui.css">
+<script src = "js/jquery-1.12.4.js"></script>
+<script src = "js/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		// 아코디언
+		$("#a1").accordion({
+			collapsible:true
+		});
+		
+		// 버튼
+		// $(".btn").button();
+		
+		// <input type = "button">
+		// <input type = "submit">
+		// <input type = "reset">
+		// <button> </button> 
+		
+		$(":button").button(); // 버튼 종류만 다 찾기
+		$("#btns").controlgroup(); 
+		
+		// 라디오(체크박스)
+		$(".rb").button();
+		$("#level").controlgroup(); // 한 팀 처럼
+		
+		// 날짜/시간
+		// $("#birthday").datepicker(); // text
+		$("#birthday2").datepicker(); // div
+		
+		
+		$("#birthday").datepicker({
+			//minDate:"-5", // 현재 날짜 기준
+			//maxDate:"5",
+			//minDate:"-1M -5D",
+			//maxDate: "+1M +5D",
+			minDate:"02/15/2018",
+			maxDate: "03/30/2018"
+			
+		});
+		
+		$("#birthday").datePicker("option", "dateFormat", "yy-mm-dd");
+	});
+</script>
+</head>
+<body>
+	<!--ex19.htm-->
+
+	<h1>jQuery UI Controls, Components, Widgets</h1>
+	
+	<!--
+		1. 정해진 규칙 > 태그 구현
+		2. 1번을 대상으로 jQuery 호출
+	-->
+	
+	<h2>날짜/시간</h2>
+	
+	생일 : <input type = "date">
+	<hr>
+	생일 : <input type = "text" id = "birthday" title = "생일을 입력하세요.">
+	<hr>
+	생일 : <div id = "birthday2"></div>
+	
+	
+	
+	<h2>라디오(체크박스)</h2>
+	
+	<div id = "level">
+		<input type = "radio" name = "rb" class = "rb" id = "rb1"><label for = "rb1">상</label>
+		<label><input type = "radio" name = "rb" class = "rb" id = "rb2">중</label>
+		<input type = "radio" name = "rb" class = "rb" id = "rb3"><label for = "rb3">하</label>
+	</div>
+	
+	<h2>버튼</h2>
+	
+	<div id="btns">
+		<input type = "button" value = "버튼">
+		<input type = "button" value = "버튼">
+		<input type = "button" value = "버튼" class = "btn">
+		<input type = "button" value = "버튼" class = "btn">
+	</div>
+	
+	<h2>Accordion</h2>
+	
+	<div id = "a1">
+		<h3>자바, Java</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit vitae dolorum ipsa temporibus placeat corporis. Accusantium officia fugit repudiandae quod sapiente vel quidem fuga voluptates ipsa distinctio ipsum rem vitae numquam debitis eos unde quaerat dolor amet excepturi culpa. Odit laboriosam officiis aspernatur architecto dicta perspiciatis nisi id et accusamus voluptas voluptatibus in impedit minima eveniet doloremque nemo ratione tenetur laudantium sunt aut a. Beatae expedita eveniet iure incidunt! Nihil distinctio numquam consequatur voluptas ab error maiores ullam dolore quidem illum dicta ipsam eum asperiores at sint praesentium provident quos aliquam ratione perferendis excepturi magnam sit ad ipsum quia qui?</p>
+		<h3>오라클, Oracle</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse architecto praesentium temporibus officiis dolore accusamus adipisci corporis delectus provident nulla minus a pariatur earum laboriosam deserunt consequatur perferendis voluptates ea explicabo nemo aspernatur commodi recusandae veniam laborum sequi perspiciatis quidem tempore inventore quos! Odio eius placeat esse consequatur earum iste eligendi quaerat doloribus labore ut totam adipisci vel assumenda culpa ipsam corporis quidem optio. Modi id neque velit autem assumenda eos accusamus illum alias qui quam eaque sit magni reprehenderit debitis adipisci aperiam doloremque consequuntur hic numquam cupiditate nostrum dicta libero esse fuga perferendis corporis voluptates labore asperiores animi ad!</p>
+		<h3>서블릿, Servlet</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius accusamus natus quas voluptates voluptatibus earum consequatur vitae aliquam possimus quod unde voluptatum facere placeat eos distinctio veritatis cum necessitatibus ea corrupti provident cupiditate ipsum consectetur saepe laboriosam quo et impedit ullam eum alias repellendus temporibus fugit tempore magni facilis explicabo iure asperiores velit libero mollitia commodi ad ducimus. Dolores ea doloremque nobis veritatis sequi aut facere consequatur vitae illo tempora reiciendis aperiam voluptatum repudiandae explicabo velit dolor cumque reprehenderit et fugiat similique ex a quidem iste ratione voluptates quos quo non provident eaque unde odit enim necessitatibus magnam quibusdam possimus.</p>
+		<h3>스프링, Spring</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quidem ea voluptate dolore ad quod maiores atque quisquam deleniti distinctio dicta repellendus animi recusandae consequatur eligendi consectetur reprehenderit officiis dolores eveniet quis dolorum consequuntur ratione accusamus. Omnis quidem autem aperiam natus commodi quam iste voluptate soluta. Quis facere sint eaque cum maiores praesentium corrupti similique odio! Ipsum quibusdam eveniet voluptate asperiores saepe ut labore fugiat minus quia perspiciatis rem qui impedit praesentium maiores provident culpa ipsa unde? Nesciunt placeat quis mollitia commodi voluptas quidem repudiandae natus iusto libero obcaecati doloribus nihil blanditiis quas soluta consequatur provident expedita. Explicabo sunt dignissimos.</p>
+	</div>
+	
+</body>
+</html>
