@@ -263,3 +263,6 @@
 
 3월 29, 2018 21:58:03.36 NEW SESSION
 3월 29, 2018 21:58:03.36 [10480:11224:0329/215803.361:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+
+3월 29, 2018 22:30:45.34 NEW SESSION
+3월 29, 2018 22:30:45.34 [4748:2744:0329/223045.343:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
