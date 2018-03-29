@@ -260,3 +260,6 @@
 =======
 >>>>>>> 1e3bdd37c5f6e46c8512e28bb6a6177273c8810e
 >>>>>>> bd404c5986e286de51a5477c5c26c18fa23fb5cf
+
+3월 29, 2018 21:58:03.36 NEW SESSION
+3월 29, 2018 21:58:03.36 [10480:11224:0329/215803.361:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
