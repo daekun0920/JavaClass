@@ -32,6 +32,10 @@
 		height:16px;
 	} 
 	*/
+	
+	#tab1 {
+		font-size:14px;
+	}
 </style>
 <link rel = "stylesheet" href = "css/jquery-ui.css">
 <script src = "js/jquery-1.12.4.js"></script>
@@ -157,18 +161,77 @@
 			}
 		});
 		
+		// 툴팁
+		$(".tooltip").tooltip({
+			track:true
+			
+		});
+		
+		// 탭
+		$("#tab1").tabs({
+			active:0
+		});
+		
+		
+		var index = 1;
+		
+		$("#btn3").click(function() {
+		
+			$("#tab1").tabs("option", "active", index);
+			index++;
+			if (index >= 3) {
+				index = 0;
+			}
+			
+			// $(this).attr("disabled", true);
+		});
+		
 	});
 </script>
 </head>
 <body>
 	<!--ex19.htm-->
-
+	
+	<!--
+	
+	개인 포트폴리오 페이지 작성
+	- 컨텐츠 : 프로젝트 내용(개인 업무 위주 - 제출한 워드 파일 기반)
+	1. HTML
+	2. CSS
+	3. JavaScript
+	4. 추가 라이브러리(*****)
+		a. jQuery + jQuery UI
+		b. 부트스트랩
+		c. 다른 라이브러리(디자인 프레임 워크) 
+	
+	-->
+	
 	<h1>jQuery UI Controls, Components, Widgets</h1>
 	
 	<!--
 		1. 정해진 규칙 > 태그 구현
 		2. 1번을 대상으로 jQuery 호출
 	-->
+	<h2>탭</h2>
+	
+	<div id = "tab1">
+		<ul>
+			<li><a href = "#page1">자바, Java</a></li>
+			<li><a href = "#page2">오라클, Oracle</a></li>
+			<li><a href = "#page3">스프링, Spring</a></li>
+		</ul>
+		<div id = "page1">자바 설명. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium doloremque vel assumenda ad harum at voluptatibus nesciunt natus perferendis maxime aliquid. Adipisci sed qui aut mollitia dolore aspernatur doloribus.</div>
+		<div id = "page2">오라클 설명. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum praesentium itaque nobis architecto aspernatur maiores aliquam fuga iste molestias dignissimos. Voluptatem aliquam voluptate impedit perspiciatis facilis possimus deleniti! Pariatur odio.</div>
+		<div id = "page3">스프링 설명. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas cupiditate ipsum enim distinctio corporis culpa error architecto soluta possimus quidem atque modi nobis ab amet consectetur suscipit numquam? Deserunt facilis.</div>
+	</div>
+	
+	<input type = "button" value = "다음 탭으로.." id = "btn3" style = "margin-top:10px;">
+	
+	<h2>툴팁</h2>
+	
+	<input type = "text" id = "txt1" title = "검색어를 입력하세요." class = "tooltip">
+	<input type = "button" value = "버튼" id = "btn2" class = "tooltip" title = "검색을 합니다.">
+	
 	<h2>멀티 슬라이더</h2>
 	<div id = "slider2"></div>
 	
@@ -196,6 +259,7 @@
 	<h2>대화 상자</h2>
 	
 	<input type = "button" value = "확인" id = "btn1">
+	
 	<div id = "dialog1">
 		안녕하세요.
 		<button>버튼</button>
@@ -235,7 +299,7 @@
 		<h3>자바, Java</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit vitae dolorum ipsa temporibus placeat corporis. Accusantium officia fugit repudiandae quod sapiente vel quidem fuga voluptates ipsa distinctio ipsum rem vitae numquam debitis eos unde quaerat dolor amet excepturi culpa. Odit laboriosam officiis aspernatur architecto dicta perspiciatis nisi id et accusamus voluptas voluptatibus in impedit minima eveniet doloremque nemo ratione tenetur laudantium sunt aut a. Beatae expedita eveniet iure incidunt! Nihil distinctio numquam consequatur voluptas ab error maiores ullam dolore quidem illum dicta ipsam eum asperiores at sint praesentium provident quos aliquam ratione perferendis excepturi magnam sit ad ipsum quia qui?</p>
 		<h3>오라클, Oracle</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse architecto praesentium temporibus officiis dolore accusamus adipisci corporis delectus provident nulla minus a pariatur earum laboriosam deserunt consequatur perferendis voluptates ea explicabo nemo aspernatur commodi recusandae veniam laborum sequi perspiciatis quidem tempore inventore quos! Odio eius placeat esse consequatur earum iste eligendi quaerat doloribus labore ut totam adipisci vel assumenda culpa ipsam corporis quidem optio. Modi id neque velit autem assumenda eos accusamus illum alias qui quam eaque sit magni reprehenderit debitis adipisci aperiam doloremque consequuntur hic numquam cupiditate nostrum dicta libero esse fuga perferendis corporis voluptates labore asperiores animi ad!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur consectetur adconsectetur adconsectetur adconsectetur adconsectetur adconsectetur adconsectetur adconsectetur adconsectetur adconsectetur adconsectetur adconsectetur adconsectetur adconsectetur adconsectetur adconsectetur adadipisicing elit. Esse architecto praesentium temporibus officiis dolore accusamus adipisci corporis delectus provident nulla minus a pariatur earum laboriosam deserunt consequatur perferendis voluptates ea explicabo nemo aspernatur commodi recusandae veniam laborum sequi perspiciatis quidem tempore inventore quos! Odio eius placeat esse consequatur earum iste eligendi quaerat doloribus labore ut totam adipisci vel assumenda culpa ipsam corporis quidem optio. Modi id neque velit autem assumenda eos accusamus illum alias qui quam eaque sit magni reprehenderit debitis adipisci aperiam doloremque consequuntur hic numquam cupiditate nostrum dicta libero esse fuga perferendis corporis voluptates labore asperiores animi ad!</p>
 		<h3>서블릿, Servlet</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius accusamus natus quas voluptates voluptatibus earum consequatur vitae aliquam possimus quod unde voluptatum facere placeat eos distinctio veritatis cum necessitatibus ea corrupti provident cupiditate ipsum consectetur saepe laboriosam quo et impedit ullam eum alias repellendus temporibus fugit tempore magni facilis explicabo iure asperiores velit libero mollitia commodi ad ducimus. Dolores ea doloremque nobis veritatis sequi aut facere consequatur vitae illo tempora reiciendis aperiam voluptatum repudiandae explicabo velit dolor cumque reprehenderit et fugiat similique ex a quidem iste ratione voluptates quos quo non provident eaque unde odit enim necessitatibus magnam quibusdam possimus.</p>
 		<h3>스프링, Spring</h3>

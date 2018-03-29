@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1#title {
+		width:800px;
+		margin:40px auto;
+		/* text-align:center; */
+	}
+	#tblList {
+		width:800px;
+		margin:0px auto;
+	}
+	
+	#tblList th:nth-child(1) {
+		width:70px;
+	}
+	#tblList th:nth-child(2) {
+		width:420px;
+	}
+	#tblList th:nth-child(3) {
+		width:100px;
+	}
+	#tblList th:nth-child(4) {
+		width:140px;
+	}
+	#tblList th:nth-child(5) {
+		width:70px;
+	}
+	
+	#tblList th, td {
+		text-align:center;
+	}
+	
+	#tblList td:nth-child(2) {
+		text-align:left;
+	}
+	
+	#tblList tr:nth-child(1) {
+		background:#EEE;
+	}
+	
+	#btns {
+		width:800px;
+		margin:0px auto;
+	}
+	
+	#btns button:last-child {
+		float:right;
+	}
+	
+	#page {
+		width:800px;
+		margin:20px auto;
+		text-align:center
+	}
+	
+</style>
+<script src = "js/jquery-1.12.4.js"></script>
+<script src = "js/bootstrap.js"></script>
+<link rel = "stylesheet" href = "css/bootstrap.css"> 
+<script>
+
+</script>
+</head>
+<body>
+	<!--ex22_bootstrap.htm-->
+	<h1 id = "title">Board <small>Bootstrap</small></h1>
+	
+	<table id = "tblList" class = "table table-striped">
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>이름</th>
+			<th>날짜</th>
+			<th>읽음</th>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>게시판 테스트</td>
+			<td>홍길동</td>
+			<td>2018-03-29</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>부트스트랩 연습중</td>
+			<td>아무개</td>
+			<td>2018-03-30</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>안녕하세요</td>
+			<td>김덕배</td>
+			<td>2018-03-31</td>
+			<td>33</td>
+		</tr>
+			<tr>
+			<td>3</td>
+			<td>게시판 테스트</td>
+			<td>홍길동</td>
+			<td>2018-03-29</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>부트스트랩 연습중</td>
+			<td>아무개</td>
+			<td>2018-03-30</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>안녕하세요</td>
+			<td>김덕배</td>
+			<td>2018-03-31</td>
+			<td>33</td>
+		</tr>
+			<tr>
+			<td>3</td>
+			<td>게시판 테스트</td>
+			<td>홍길동</td>
+			<td>2018-03-29</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>부트스트랩 연습중</td>
+			<td>아무개</td>
+			<td>2018-03-30</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>안녕하세요</td>
+			<td>김덕배</td>
+			<td>2018-03-31</td>
+			<td>33</td>
+		</tr>
+			<tr>
+			<td>3</td>
+			<td>게시판 테스트</td>
+			<td>홍길동</td>
+			<td>2018-03-29</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>부트스트랩 연습중</td>
+			<td>아무개</td>
+			<td>2018-03-30</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>안녕하세요</td>
+			<td>김덕배</td>
+			<td>2018-03-31</td>
+			<td>33</td>
+		</tr>
+			<tr>
+			<td>3</td>
+			<td>게시판 테스트</td>
+			<td>홍길동</td>
+			<td>2018-03-29</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>부트스트랩 연습중</td>
+			<td>아무개</td>
+			<td>2018-03-30</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>안녕하세요</td>
+			<td>김덕배</td>
+			<td>2018-03-31</td>
+			<td>33</td>
+		</tr>	
+	</table>
+	
+			<nav id = "page">
+			  <ul class="pagination">
+			    <li>
+			      <a href="#" aria-label="Previous">
+			        <span aria-hidden="true">&laquo;</span>
+			      </a>
+			    </li>
+			    <li><a href="#">1</a></li>
+			    <li><a href="#">2</a></li>
+			    <li><a href="#">3</a></li>
+			    <li><a href="#">4</a></li>
+			    <li><a href="#">5</a></li>
+			    <li><a href="#">6</a></li>
+			    <li><a href="#">7</a></li>
+			    <li><a href="#">8</a></li>
+			    <li><a href="#">9</a></li>
+			    <li><a href="#">10</a></li>
+			    <li>
+			     <a href="#" aria-label="Next">
+			        <span aria-hidden="true">&raquo;</span>
+			      </a>
+			    </li>
+			  </ul>
+			</nav>		
+	
+	<div id = "btns">
+		<button type = "button" class = "btn btn-default">
+			<span class = "glyphicon glyphicon-home"></span>
+			Home
+		</button>
+			
+		<button type = "button" class = "btn btn-primary">
+			<span class = "glyphicon glyphicon-ok"></span>
+			Write
+		</button>
+	</div>
+	
+</body>
+</html>
