@@ -1,8 +1,17 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
->>>>>>>=8c53e16cf242241ae60196b6d5ea65fa48c40717
+<<<<<<< HEAD
+>>>>>>>=bd404c5986e286de51a5477c5c26c18fa23fb5cf
 CONTENT_ASSIST_BACKGROUND_COLOR=48,54,59
 CONTENT_ASSIST_FOREGROUND_COLOR=235,237,239
+=======
+>>>>>>>=8c53e16cf242241ae60196b6d5ea65fa48c40717
+<<<<<<< HEAD
+CONTENT_ASSIST_BACKGROUND_COLOR=48,54,59
+CONTENT_ASSIST_FOREGROUND_COLOR=235,237,239
+=======
+>>>>>>> 0ed29d5f117814f6c764003bfcdc8c3c8a43a8f9
+>>>>>>> 6f2b5a00ac5a00b48ec506c813e04a7fcdcb3e6f
 content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"/>
 content_assist_parameters_background=48,54,59
 content_assist_parameters_foreground=235,237,239
@@ -30,7 +39,14 @@ org.eclipse.wst.jsdt.ui.formatterprofiles.version=11
 org.eclipse.wst.jsdt.ui.javadoclocations.migrated=true
 org.eclipse.wst.jsdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 org.eclipse.wst.jsdt.ui.text.templates_migrated=true
+<<<<<<< HEAD
 overriddenByCSS=,CONTENT_ASSIST_BACKGROUND_COLOR,CONTENT_ASSIST_FOREGROUND_COLOR,content_assist_parameters_background,content_assist_parameters_foreground,content_assist_proposals_background,content_assist_proposals_foreground,java_bracket,java_comment_task_tag,java_default,java_doc_default,java_doc_keyword,java_doc_link,java_doc_tag,java_keyword,java_keyword_return,java_multi_line_comment,java_operator,java_single_line_comment,java_string,semanticHighlighting.localVariable.bold,semanticHighlighting.localVariable.color,semanticHighlighting.localVariable.enabled,semanticHighlighting.localVariable.italic,semanticHighlighting.localVariable.strikethrough,semanticHighlighting.localVariable.underline,semanticHighlighting.localVariableDeclaration.bold,semanticHighlighting.localVariableDeclaration.color,semanticHighlighting.localVariableDeclaration.enabled,semanticHighlighting.localVariableDeclaration.italic,semanticHighlighting.localVariableDeclaration.strikethrough,semanticHighlighting.localVariableDeclaration.underline,semanticHighlighting.methodDeclarationName.bold,semanticHighlighting.methodDeclarationName.color,semanticHighlighting.methodDeclarationName.enabled,semanticHighlighting.methodDeclarationName.italic,semanticHighlighting.methodDeclarationName.strikethrough,semanticHighlighting.methodDeclarationName.underline,tagName,
+=======
+<<<<<<< HEAD
+overriddenByCSS=,CONTENT_ASSIST_BACKGROUND_COLOR,CONTENT_ASSIST_FOREGROUND_COLOR,content_assist_parameters_background,content_assist_parameters_foreground,content_assist_proposals_background,content_assist_proposals_foreground,java_bracket,java_comment_task_tag,java_default,java_doc_default,java_doc_keyword,java_doc_link,java_doc_tag,java_keyword,java_keyword_return,java_multi_line_comment,java_operator,java_single_line_comment,java_string,semanticHighlighting.localVariable.bold,semanticHighlighting.localVariable.color,semanticHighlighting.localVariable.enabled,semanticHighlighting.localVariable.italic,semanticHighlighting.localVariable.strikethrough,semanticHighlighting.localVariable.underline,semanticHighlighting.localVariableDeclaration.bold,semanticHighlighting.localVariableDeclaration.color,semanticHighlighting.localVariableDeclaration.enabled,semanticHighlighting.localVariableDeclaration.italic,semanticHighlighting.localVariableDeclaration.strikethrough,semanticHighlighting.localVariableDeclaration.underline,semanticHighlighting.methodDeclarationName.bold,semanticHighlighting.methodDeclarationName.color,semanticHighlighting.methodDeclarationName.enabled,semanticHighlighting.methodDeclarationName.italic,semanticHighlighting.methodDeclarationName.strikethrough,semanticHighlighting.methodDeclarationName.underline,tagName,
+=======
+>>>>>>> 0ed29d5f117814f6c764003bfcdc8c3c8a43a8f9
+>>>>>>> 6f2b5a00ac5a00b48ec506c813e04a7fcdcb3e6f
 proposalOrderMigrated=true
 semanticHighlighting.localVariable.bold=false
 semanticHighlighting.localVariable.color=121,171,255

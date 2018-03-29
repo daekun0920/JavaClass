@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src = "js/jquery-1.12.4.js"></script>
+<script src = "js/bootstrap.js"></script>
+<link rel = "stylesheet" href = "css/bootstrap.css"> <!-- bootstrap과 jQuery UI는 충돌난다. -->
+<script>
+
+</script>
+</head>
+<body style = "padding:20px;">
+	<!--ex20_bootstrap.htm-->
+	<!--
+	
+	http://getbootstrap.com
+	http://bootstrapk.com
+	
+	CDN
+	- content delivery network
+	- content distribution network
+	
+	jQuery 설치 파일
+	- jQuery.js
+	
+	jQuery CDN
+	- 예) http://google.com/jquery/jquery.js
+	
+	실제 프로젝트 진행
+	<script src = "/js/jquery.js">
+	<script src = "http://google.com/jquery/jquery.js">
+	
+	jQuery UI : 디자인을 CSS + JavaScript
+	Bootstrap : 디자인을 CSS -> class 정의
+	
+	-->
+	<div style = "margin:30px;">
+	
+		<h1>Bootstrap</h1>
+	
+		<h2>버튼의 종류</h2>
+		
+		<!-- <input type = "button" value = "버튼입니다." class = "부트스트랩에서 정의한 클래스"> -->
+		<input type = "button" value = "버튼입니다." class = "btn">
+		<input type = "button" value = "버튼입니다." class = "btn btn-default">
+		<input type = "button" value = "버튼입니다." class = "btn btn-warning">
+		<input type = "button" value = "버튼입니다." class = "btn btn-danger">
+		<input type = "button" value = "버튼입니다." class = "btn btn-success">
+		<input type = "button" value = "버튼입니다." class = "btn btn-info">
+		<input type = "button" value = "버튼입니다." class = "btn btn-primary">
+		
+		<h2>버튼의 크기</h2>
+		
+		<input type = "button" value = "버튼입니다." class = "btn btn-primary btn-xs">
+		<input type = "button" value = "버튼입니다." class = "btn btn-primary btn-sm">
+		<input type = "button" value = "버튼입니다." class = "btn btn-primary">
+		<input type = "button" value = "버튼입니다." class = "btn btn-primary btn-lg">
+		
+		<h2>테이블</h2>
+		
+		<!-- <table style = "width:700px;" class = "table table-bordered">-->	
+		<!-- <table style = "width:700px;" class = "table table-striped"> --> <!-- 줄무늬  -->
+		<!-- <table style = "width:700px;" class = "table table-condensed"> 여백이 줄어듬 -->
+		<table style = "width:700px;" class = "table table-hover table-bordered table-condensed">
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>주소</th>
+				<th>성별</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>홍길동</td>
+				<td>22</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>아무개</td>
+				<td>23</td>
+				<td>부산시</td>
+				<td>여자</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>김길동</td>
+				<td>24</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+				<tr>
+				<td>1</td>
+				<td>홍길동</td>
+				<td>22</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>아무개</td>
+				<td>23</td>
+				<td>부산시</td>
+				<td>여자</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>김길동</td>
+				<td>24</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+				<tr>
+				<td>1</td>
+				<td>홍길동</td>
+				<td>22</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>아무개</td>
+				<td>23</td>
+				<td>부산시</td>
+				<td>여자</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>김길동</td>
+				<td>24</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+				<tr>
+				<td>1</td>
+				<td>홍길동</td>
+				<td>22</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>아무개</td>
+				<td>23</td>
+				<td>부산시</td>
+				<td>여자</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>김길동</td>
+				<td>24</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+				<tr>
+				<td>1</td>
+				<td>홍길동</td>
+				<td>22</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>아무개</td>
+				<td>23</td>
+				<td>부산시</td>
+				<td>여자</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>김길동</td>
+				<td>24</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+				<tr>
+				<td>1</td>
+				<td>홍길동</td>
+				<td>22</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>아무개</td>
+				<td>23</td>
+				<td>부산시</td>
+				<td>여자</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>김길동</td>
+				<td>24</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+				<tr>
+				<td>1</td>
+				<td>홍길동</td>
+				<td>22</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>아무개</td>
+				<td>23</td>
+				<td>부산시</td>
+				<td>여자</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>김길동</td>
+				<td>24</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+				<tr>
+				<td>1</td>
+				<td>홍길동</td>
+				<td>22</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>아무개</td>
+				<td>23</td>
+				<td>부산시</td>
+				<td>여자</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>김길동</td>
+				<td>24</td>
+				<td>서울시</td>
+				<td>남자</td>
+			</tr>
+		</table>
+		
+		<h2>폼</h2>
+		
+		<table class="table table-bordered">
+			<tr>
+				<th style = "width:150px;">텍스트 박스</th>
+				<td><input type = "text" class = "form-control"></td>
+			</tr>
+			<tr>
+				<th style = "width:150px;">암호 박스</th>
+				<td><input type = "password" class = "form-control"></td>
+			</tr>
+			<tr>
+				<th style = "width:150px;">다중 라인</th>
+				<td><textarea rows = "10" class = "form-control"></textarea></td>
+			</tr>
+			<tr>
+				<th style = "width:150px;">셀렉트</th>
+				<td>
+					<select class = "form-control">
+						<option>항목</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th style = "width:150px;">체크 박스(사용 금지)</th>
+				<td><input type = "checkbox" class = "form-control"></td>
+			</tr>
+			<tr>
+				<th style = "width:150px;">파일</th>
+				<td><input type = "file" class = "form-control"></td>
+			</tr>
+		</table>
+		
+	</div>
+	
+	<h2>텍스트</h2>
+	
+	<blockquote>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+		Officia tempore veniam molestias distinctio temporibus dolorem 
+		vero natus alias voluptas et rem harum laboriosam facere numquam in 
+		voluptatem nisi sed culpa ducimus necessitatibus atque ipsum nobis pariatur 
+		laudantium libero ipsam eum dignissimos enim magni perspiciatis architecto ea 
+		veritatis totam. Earum quam repudiandae quas autem et atque nihil possimus quaerat 
+		dignissimos aut! Quam saepe dolorum eum quidem quae eos ratione perferendis nulla 
+		omnis suscipit repudiandae officiis temporibus ipsam dolore debitis dicta porro quaerat 
+		consequuntur incidunt mollitia. Veritatis vel sint aperiam neque rem dolore accusantium 
+		esse maxime vitae blanditiis assumenda repellendus quam nihil!
+	</blockquote>
+	
+	<blockquote class = "blockquote-reverse">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+		Officia tempore veniam molestias distinctio temporibus dolorem 
+		vero natus alias voluptas et rem harum laboriosam facere numquam in 
+		voluptatem nisi sed culpa ducimus necessitatibus atque ipsum nobis pariatur 
+		laudantium libero ipsam eum dignissimos enim magni perspiciatis architecto ea 
+		veritatis totam. Earum quam repudiandae quas autem et atque nihil possimus quaerat 
+		dignissimos aut! Quam saepe dolorum eum quidem quae eos ratione perferendis nulla 
+		omnis suscipit repudiandae officiis temporibus ipsam dolore debitis dicta porro quaerat 
+		consequuntur incidunt mollitia. Veritatis vel sint aperiam neque rem dolore accusantium 
+		esse maxime vitae blanditiis assumenda repellendus quam nihil!
+	</blockquote>
+	
+	
+	<h2>정의 목록</h2>
+	
+	<dl>
+		<dt>Lorem.</dt>
+		<dd>Lorem ipsum dolor sit amet.</dd>
+		<dt>Hic!</dt>
+		<dd>Iure ipsa aliquam accusamus placeat!</dd>
+		<dt>Modi.</dt>
+		<dd>Fugit quos vero doloribus quidem!</dd>
+		<dt>Eius.</dt>
+		<dd>Ipsam enim necessitatibus est quisquam.</dd>
+		<dt>Quod.</dt>
+		<dd>Accusantium dolor autem odit reiciendis?</dd>
+	</dl>
+	
+	
+	<h2>프로그래밍 코드</h2>
+	
+	<p>태그를 설명 중입니다. <code>&lt;table&gt;</code> 태그는 테이블을 생성합니다</p>
+	<p>자바의 변수 선언 <code>int a = 10;</code> 과 같은 문장으로 작성합니다.</p>
+	
+	<h2>키보드</h2>
+	
+	<p>이클립스의 실행은 <kbd>Ctrl + F11</kbd> 로 합니다.</p>
+	
+	
+	<h2>Preformatted Text</h2>
+	
+	<pre>
+	class Test {
+		public <span style = "color:red;">static</span> void main(String[] args) {
+			System.out.println("Hello, World!");
+		}
+	}
+	</pre>
+	
+	
+	<h2>텍스트 색상</h2>
+	
+	<p class="text">Cupiditate deserunt dolor ad nihil repudiandae laudantium porro asperiores beatae.</p>	
+	<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores unde.</p>
+	<p class="text-primary">Aliquid reiciendis harum recusandae nihil dolorem non atque amet veritatis.</p>
+	<p class="text-success">Ipsam a voluptatem enim culpa quibusdam reiciendis assumenda neque ex!</p>
+	<p class="text-info">Aliquid accusamus quidem iusto dolore soluta dolorem totam. Veritatis omnis.</p>
+	<p class="text-warning">Neque culpa iure animi dolore assumenda! Quas ipsa odit est.</p>
+	<p class="text-danger">Voluptas voluptatum officiis minima facilis sit suscipit quaerat numquam iusto.</p>
+	
+	<h2>텍스트 색상</h2>
+	
+	<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores unde.</p>
+	<p class="bg-primary">Aliquid reiciendis harum recusandae nihil dolorem non atque amet veritatis.</p>
+	<p class="bg-success">Ipsam a voluptatem enim culpa quibusdam reiciendis assumenda neque ex!</p>
+	<p class="bg-info">Aliquid accusamus quidem iusto dolore soluta dolorem totam. Veritatis omnis.</p>
+	<p class="bg-warning">Neque culpa iure animi dolore assumenda! Quas ipsa odit est.</p>
+	<p class="bg-danger">Voluptas voluptatum officiis minima facilis sit suscipit quaerat numquam iusto.</p>
+	<p class="text-danger bg-info">Cupiditate deserunt dolor ad nihil repudiandae laudantium porro asperiores beatae.</p>
+	
+	
+	<h2>테이블</h2>
+	
+	<table class = "table table-bordered">
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Veritatis ut esse?</td>
+			<td>Eos dolores illum.</td>
+			<td>Dolor explicabo ex.</td>
+			<td>Iusto praesentium repellendus.</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Commodi totam fuga!</td>
+			<td>Omnis error eveniet.</td>
+			<td>Voluptatum possimus amet.</td>
+			<td>Fugiat nam repellendus!</td>
+		</tr>
+		<tr class = "active">
+			<td>Lorem ipsum dolor.</td>
+			<td>Doloribus dicta rerum.</td>
+			<td>Assumenda ut voluptas.</td>
+			<td>Sed officiis libero!</td>
+			<td>Ut voluptates recusandae.</td>
+		</tr>
+		<tr class = "success">
+			<td>Lorem ipsum dolor.</td>
+			<td>In id voluptate.</td>
+			<td>Nihil ab delectus.</td>
+			<td>Hic voluptas earum.</td>
+			<td>Nam accusamus itaque.</td>
+		</tr>
+		<tr class = "info">
+			<td>Lorem ipsum dolor.</td>
+			<td>Dolorum expedita dolor.</td>
+			<td>Nihil ducimus deleniti.</td>
+			<td>Fugiat non beatae.</td>
+			<td>Voluptates repellendus reprehenderit.</td>
+		</tr>
+		<tr class = "warning">
+			<td>Lorem ipsum dolor.</td>
+			<td>Repellendus odit aliquam.</td>
+			<td>Illum necessitatibus quam.</td>
+			<td>Quisquam veniam enim.</td>
+			<td>Error et quis.</td>
+		</tr>
+		<tr class = "danger">
+			<td>Lorem ipsum dolor.</td>
+			<td>Quibusdam commodi autem.</td>
+			<td>Pariatur officiis molestiae.</td>
+			<td>Voluptate fugiat omnis.</td>
+			<td>Velit expedita quas.</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Officiis excepturi quia?</td>
+			<td class = "danger">Dicta explicabo dolorum!</td>
+			<td>Esse fugiat aspernatur.</td>
+			<td>Iste architecto dolorum.</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Natus dolor beatae.</td>
+			<td>Voluptatum modi dolores?</td>
+			<td>Mollitia ex amet.</td>
+			<td>Laborum totam dolore.</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Dolores fugiat vitae.</td>
+			<td>Suscipit doloribus possimus.</td>
+			<td>Culpa laborum cupiditate.</td>
+			<td>Recusandae vitae ex?</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Dignissimos ut autem.</td>
+			<td>Ut laboriosam a?</td>
+			<td>At accusantium reiciendis!</td>
+			<td>Laudantium modi ipsum.</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Odit commodi architecto!</td>
+			<td>Veniam facere nam!</td>
+			<td>Dolor repudiandae repellendus.</td>
+			<td>Quidem quasi sunt!</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Temporibus voluptatibus obcaecati.</td>
+			<td>Similique quisquam ducimus.</td>
+			<td>Aperiam et hic?</td>
+			<td>Animi magni dignissimos.</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Ex nulla amet!</td>
+			<td>Quos cupiditate tempora.</td>
+			<td>Soluta dolor minima.</td>
+			<td>Natus dolorem illo.</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Laborum autem iste!</td>
+			<td>Sunt veniam necessitatibus.</td>
+			<td>Dolore autem a.</td>
+			<td>Nostrum velit dignissimos!</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Iste laboriosam aliquid!</td>
+			<td>Dolores qui sequi.</td>
+			<td>Nesciunt illum molestiae.</td>
+			<td>Iure magnam nam.</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Aut consectetur ipsa.</td>
+			<td>Doloribus ducimus ex.</td>
+			<td>In recusandae nesciunt?</td>
+			<td>Et earum voluptatibus.</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Deserunt tenetur error.</td>
+			<td>Natus quae esse.</td>
+			<td>Dolores dolorem explicabo!</td>
+			<td>Libero autem dolorem.</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Suscipit corrupti quis.</td>
+			<td>Earum quis recusandae.</td>
+			<td>Libero iure possimus!</td>
+			<td>Expedita laborum maiores.</td>
+		</tr>
+		<tr>
+			<td>Lorem ipsum dolor.</td>
+			<td>Ex fugit facere.</td>
+			<td>Ratione error obcaecati.</td>
+			<td>Voluptatibus voluptates blanditiis.</td>
+			<td>Corporis expedita sunt.</td>
+		</tr>
+	</table>
+	
+	<h2>이미지</h2>
+	
+	<p><img src = "../images/cat01.jpg" class = "img-thumbnail"></p>
+	<p><img src = "../images/cat02.jpg" class = "img-circle"></p>
+	<p><img src = "../images/cat03.jpg" class = "img-rounded"></p>
+	
+	
+</body>
+</html>

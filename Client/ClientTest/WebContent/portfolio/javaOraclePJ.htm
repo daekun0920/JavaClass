@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#a1 h1 {
+		
+		outline:none;
+		font-variant:small-caps;
+		color:black;
+		border:2px solid white;
+		border-radius:4px;
+	}
+	p {
+		line-height:1.2;
+	}
+	
+	body {
+		background-color:black;
+	}
+	
+	#a1 p {
+		color:black;
+	}
+	
+	#tbl1 {
+		border:2px solid black;
+		width:600px;
+		height:300px;
+	}
+	
+	
+	#title {
+		text-align:center;
+		border:2px solid white;
+		border-radius:4px;
+		font-variant:small-caps;
+	}
+</style>
+<link rel = "stylesheet" href = "assets/css/jquery-ui.css">
+<script src = "assets/js/jquery-1.12.4.js"></script>
+<script src = "assets/js/jquery-ui.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	$("#a1").accordion({
+		collapsible:true,
+		heightStyle: "content" /* 완전 중요 */
+	});
+
+});
+
+</script>
+</head>
+<body>
+	<!---->
+	<h1 id = "title" style = "color:white;">Java & Oracle DB Project</h1>
+	
+	<div id = "a1" style = "background-color:#EEE;border-radius:4px;">
+		<h1>Topic</h1>
+		<p>쌍용교육센터를 모델로 한 교육 센터 운영 및 관리 프로그램</p>
+		<h1>Requirements</h1>
+		<pre style = "font-family:D2coding">7. 시험관리 및 성적 조회 공통
+- 전체 개설 과정 정보를 출력할 경우 등록된 개설 과정 정보(과정명, 강의실, 수강인원, 과정시작일, 과정종료일)을 출력한다.
+-특정 개설 과정의 정보를 출력하는 경우 위 출력된 전체 개설 과정 정보 목록을 바탕으로 한 과정을 번호로 선택하여 출력한다.
+- 특정 개설 과정 정보 출력 시 해당 과정에 등록된 개설 과목 정보(과목명, 개설 과목 기간, 교사명)와 개설 과목 별 성적 등록 여부,
+ 시험 날짜 등록 여부를 확인 할 수 있다.
+
+7-1. 성적 조회 
+
+- 성적 정보 출력시 개설 과목별, 교육생 개인별 중 선택하여 해당 조건에 맞춰 출력 할 수 있다.
+- 과목별 출력 시 해당 과목이 속한 과정명, 개설 과정기간, 강의실명, 개설 과목명, 교사명, 교재명 등을 출력한다.
+- 위 출력된 모든 과목 목록을 바탕으로 한 과목을 선택하여 밑의 교육생들의 성적 정보를 출력한다.
+- 해당 개설 과목을 수강한 모든 교육생들의 성적 정보(교육생 이름, 주민번호 뒷자리, 출력, 필기, 실기)를 출력한다.
+- 중도포기 학생은 제외하고 출력한다
+- 교육생 개인별 출력 시 전체 교육생 정보를 출력하여 해당 교육생 정보(이름, 주민번호, 수강 과정명, 과정기간, 강의실명) 를 출력한다.
+- 위의 전체 교육생 정보를 출력 받은 그 목록을 토대로 선택하여 교육생 개인별 출력을 할 수 있다.
+- 교육생 개인별 출력 시 교육생 개인이 수강한 모든 개설 과목에 대한 성적 정보(개설 과목명, 개설 과목 기간, 교사명, 출력, 필기, 실기)와 
+위의 전체 교육생 정보에 포함되었던 정보와 같이 출력한다.
+
+8. 출결 조회 및 수정 
+- 전체 개설 과정 목록을 출력하여 그 목록에서 특정 개설 과정을 선택하는 경우
+- 해당 개설 과정을 수강하는 모든 교육생의 출결을 일정 기간을 입력하여 조회할 수 있어야 한다.
+- 모든 출결 조회는 근태 상황을 구분할 수 있어야 한다.(정상, 지각, 조퇴, 외출, 병가, 기타) 
+- 외출, 병가는 관리자 권한으로만 지정할 수 있다.
+- 위에서 특정 학생의 번호를 입력하여 해당 학생의 기본 정보와 출결 현황을 조회 할 수 있다.
+- 정상, 지각, 조퇴를 제외한 외출과 병가는 학생 번호와 날짜를 선택 받아 관리자 권한으로만 지정할 수 있다.
+- (먼저 과거 & 현재 학생 목록 출력하여 학생 선택 후 -> "해당 학생의 출결날짜 목록 출력" -> 한 날짜 선택)
+
+9. 수강평 조회 및 삭제
+- 관리자는 교육생이 작성한 수강평을 조회할 수 있다.
+- 관리자는 해당 수강평을 조회함과 동시에 한 수강평을 선택하여(수강평 번호를 입력하여) 삭제를 할 수 있다. 
+		</pre>
+		<h1>Modeling</h1>
+		<p><img src = "images/ERD.PNG" style = "float:left;"></p>
+		<h1>Database objects</h1>
+		<p><table id = "tbl1">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table></p>
+		<h1>Results</h1>
+		
+	</div>
+	
+</body>
+</html>

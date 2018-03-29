@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src = "js/jquery-1.12.4.js"></script>
+<script src = "js/bootstrap.js"></script>
+<link rel = "stylesheet" href = "css/bootstrap.css"> 
+<script>
+
+</script>
+</head>
+<body>
+	<!--ex21_bootstrap.htm-->
+	
+	<div class = "container">
+		<div class = "jumbotron">
+			<h1>Bootstrap Example</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos ab doloremque praesentium aut perferendis sapiente odio consequuntur suscipit dolorem et quasi tempora dignissimos blanditiis unde esse nihil repellendus nulla incidunt.</p>
+		</div>	
+		
+		<section>
+			<p>나머지 내용입니다.</p>
+			<p>나머지 내용입니다.</p>
+			<p>나머지 내용입니다.</p>
+			<p>나머지 내용입니다.</p>
+			<p>나머지 내용입니다.</p>
+		</section>
+		
+		<h2>Wells</h2>
+		
+		<div>이 부분은 독립된 영역입니다.</div>
+		<div class = "well">이 부분은
+		 독립된 영역입니다.</div>
+		<div class = "well well-sm">이 부분은 독립된 영역입니다.</div>
+		<div class = "well well-lg">이 부분은 독립된 영역입니다.</div>
+		
+		<!--개행이 된다 -->
+		<pre>이 부분은 독립된
+		 영역입니다.</pre>
+		
+		
+		<h2>Alerts</h2>
+		
+		<div class = "alert alert-success">
+			<strong>Java</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quia.
+		</div>
+		
+		<div class = "alert alert-warning">
+			<strong>Oracle</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quia.
+		</div>
+		
+		<div class = "alert alert-danger">
+			<strong>HTML</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quia.
+		</div>
+		
+		<div class = "alert alert-success">
+			<strong>주의할점!!!</strong> 사진은 4cm 이상을 첨부 하셔야 합니다.
+		</div>
+		
+		<div class = "alert alert-danger alert-dismissable fade in">
+			<a href = "#" class = "close" data-dismiss = "alert" aria-label = "close">&times;</a>
+			<strong>Spring</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quia.
+		</div>
+		
+		<h2>아이콘</h2>
+		<!--http://bootstrapk.com/components/-->
+		<p id = "p1">
+			<span class = "glyphicon glyphicon-eye-open"></span>
+		</p>
+		
+		<style>
+			#p1 span {
+			/* 	width:100px;
+				height:100px;
+				border:1px solid black; */
+				font-size:10em;
+				color:cornflowerblue;
+			}
+			
+			#p1 span:hover {
+				color:orange;
+			}
+			
+		</style>
+		
+		<p>
+			<input type = "button" value = "search" class = "btn btn-primary">
+		</p>
+		
+		<p>
+			<button class = "btn btn-success">
+			<span class = "glyphicon glyphicon-eye-open"></span>
+			search		
+			</button>
+		</p>
+		
+		
+		
+		<h2>배지, Badges</h2>
+		
+		<ul>
+			<li>Java <span class = "badge">5</span></li>
+			<li>Oracle</li>
+			<li>HTML <span class = "badge">2</span></li>
+			<li>JavaScript <span class = "badge">10</span></li>
+		</ul>
+		
+		<button class = "btn btn-danger">
+			<span class = "glyphicon glyphicon-trash"></span>
+			Remove Items
+			<span class = "badge">5</span>
+		</button>
+		
+		<!-- badge는 색조절이 안되고 label은 된다 -->
+		<h2>라벨, Label</h2>
+		
+		<p>게시판에 새글을 썼습니다.</p>
+		<p>반갑습니다~ 방금 가입했습니다.~<span class = "label label-default">new</span></p>
+		<p>반갑습니다~ 방금 가입했습니다.~<span class = "label label-primary">new</span></p>
+		<p>반갑습니다~ 방금 가입했습니다.~<span class = "label label-success">new</span></p>
+		<p>반갑습니다~ 방금 가입했습니다.~<span class = "label label-info">new</span></p>
+		<p>반갑습니다~ 방금 가입했습니다.~<span class = "label label-warning">new</span></p>
+		<p>반갑습니다~ 방금 가입했습니다.~<span class = "label label-danger">new</span></p>
+		
+		<h2>프로그레스바</h2>
+		
+		<div class = "progress">
+			<div class = "progress-bar" role = "progressbar" aria-valuenow = "70" aria-valuemin = "0" aria-valuemax = "100" style = "width:80%">
+			<span>80% Complete</span>
+			</div>
+		</div>
+		
+		<div class = "progress">
+			<div class = "progress-bar progress-bar-danger" role = "progressbar" aria-valuenow = "70" aria-valuemin = "0" aria-valuemax = "100" style = "width:80%">
+			<span>80% Complete</span>
+			</div>
+		</div>
+		
+		<div class = "progress">
+			<div class = "progress-bar progress-bar-info" role = "progressbar" aria-valuenow = "70" aria-valuemin = "0" aria-valuemax = "100" style = "width:80%">
+			<span>80% Complete</span>
+			</div>
+		</div>
+		
+		<!--게시판 페이징 링크-->		
+		<h2>Pagination</h2>
+		
+		<ul class = "pagination pagination-sm">
+			<li><a href = "#">1</a></li>
+			<li><a href = "#">2</a></li>
+			<li><a href = "#">3</a></li>
+			<li><a href = "#">4</a></li>
+			<li class = "active"><a href = "#">5</a></li>
+			<li><a href = "#">6</a></li>
+			<li><a href = "#">7</a></li>
+			<li class = "disabled"><a href = "#">8</a></li>
+			<li><a href = "#">9</a></li>
+			<li><a href = "#">10</a></li>
+		</ul>
+		
+		
+		<h2>Pager</h2>
+		
+		<ul class = "pager">
+			<li class = "previous"><a href = "#">이전 페이지</a></li>
+			<li class = "next"><a href = "#">다음 페이지</a></li>
+		</ul>
+		
+		
+		<h2>목록 그룹</h2>
+		
+		<ul class = "list-group">
+			<li class = "list-group-item">Java</li>
+			<li class = "list-group-item">Oracle <span class = "badge">5</span></li>
+			<li class = "list-group-item">JDBC</li>
+			<li class = "list-group-item">HTML <span style = "float:right;color:#aaa;" class = "glyphicon glyphicon-hourglass"></span></li>
+			<li class = "list-group-item">CSS</li>
+			<li class = "list-group-item">JavaScript <span class = "label label-warning">new</span></li>
+			<li class = "list-group-item active">jQuery</li>
+			<li class = "list-group-item disabled">Bootstrap</li>
+			<li class = "list-group-item list-group-item-success">Servlet</li>
+			<li class = "list-group-item list-group-item-danger">JSP</li>
+		</ul>
+		
+		<div class = "list-group">
+			<a href = "#" class = "list-group-item">
+				<h4 class = "list-group-item-heading">Lorem ipsum dolor sit amet.</h4>
+				<p class = "list-group-item-test">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores porro incidunt nobis officia fuga tempora consequatur numquam reprehenderit esse repellat!
+				</p>
+			</a>
+		
+			<a href = "#" class = "list-group-item">
+				<h4 class = "list-group-item-heading">Lorem ipsum dolor sit amet.</h4>
+				<p class = "list-group-item-test">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores porro incidunt nobis officia fuga tempora consequatur numquam reprehenderit esse repellat!
+				</p>
+			</a>
+	
+			<a href = "#" class = "list-group-item" style = "">
+				<img src = "../images/gender_m.png" style = "float:left">
+				<h4 class = "list-group-item-heading">Lorem ipsum dolor sit amet.</h4>
+				<p class = "list-group-item-test">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores porro incidunt nobis officia fuga tempora consequatur numquam reprehenderit esse repellat!
+				</p>
+			</a>
+	
+			<a href = "#" class = "list-group-item">
+				<h4 class = "list-group-item-heading">Lorem ipsum dolor sit amet.</h4>
+				<p class = "list-group-item-test">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores porro incidunt nobis officia fuga tempora consequatur numquam reprehenderit esse repellat!
+				</p>
+			</a>
+		</div>
+	
+	</div>
+	
+</body>
+</html>
