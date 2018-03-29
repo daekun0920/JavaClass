@@ -1,6 +1,10 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
+<<<<<<< HEAD
 >>>>>>>=bd404c5986e286de51a5477c5c26c18fa23fb5cf
+=======
+>>>>>>>=8c53e16cf242241ae60196b6d5ea65fa48c40717
+>>>>>>> 0ed29d5f117814f6c764003bfcdc8c3c8a43a8f9
 commentBorder=\#C7DD0C | null | null | false | null | null
 commentText=\#C7DD0C | null | null | false | null | null
 declBoder=\#FFFFFF | null | null | null | null | null
@@ -9,8 +13,8 @@ doctypeExternalPubref=\#FFFFFF | null | null | null | null | null
 doctypeExtrenalSysref=\#FFFFFF | null | null | null | null | null
 doctypeName=\#FFFFFF | null | null | null | null | null
 eclipse.preferences.version=1
-entityReference=\#FFFFFF | null | false | null | null | null
 newFileTemplateName=New HTML File (5)
+<<<<<<< HEAD
 org.eclipse.wst.sse.ui.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="html_new" deleted\="false" description\="html 5" enabled\="true" id\="org.eclipse.wst.html.ui.templates.html5" name\="New HTML File (5)">&lt;\!DOCTYPE html&gt;\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;meta charset\="${encoding}"&gt;\r\n&lt;title&gt;Insert title here&lt;/title&gt;\r\n&lt;style&gt;\r\n\r\n&lt;/style&gt;\r\n&lt;script src \= "js/jquery-1.12.4.js"&gt;&lt;/script&gt;\r\n&lt;script src \= "js/bootstrap.js"&gt;&lt;/script&gt;\r\n&lt;link rel \= "stylesheet" href \= "css/bootstrap.css"&gt; \r\n&lt;script&gt;\r\n\r\n&lt;/script&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n\t&lt;\!--${cursor}--&gt;\r\n\r\n&lt;/body&gt;\r\n&lt;/html&gt;</template></templates>
 overriddenByCSS=,entityReference,tagAttributeEquals,tagAttributeName,tagAttributeValue,tagBorder,tagName,xmlContent,
 tagAttributeEquals=\#D8D8D8 | null | null | null | null | null
@@ -19,3 +23,6 @@ tagAttributeValue=\#FFC600 | null | null | null | null | null
 tagBorder=\#79ABFF | null | null | null | null | null
 tagName=\#BED6FF | null | null | null | null | null
 xmlContent=\#D8D8D8 | null | null | null | null | null
+=======
+org.eclipse.wst.sse.ui.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="html_new" deleted\="false" description\="html 5" enabled\="true" id\="org.eclipse.wst.html.ui.templates.html5" name\="New HTML File (5)">&lt;\!DOCTYPE html&gt;\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;meta charset\="${encoding}"&gt;\r\n&lt;title&gt;Insert title here&lt;/title&gt;\r\n&lt;style&gt;\r\n\r\n&lt;/style&gt;\r\n&lt;script&gt;\r\n\r\n&lt;/script&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n\t&lt;\!--${cursor}--&gt;\r\n\r\n&lt;/body&gt;\r\n&lt;/html&gt;</template></templates>
+>>>>>>> 0ed29d5f117814f6c764003bfcdc8c3c8a43a8f9
