@@ -261,11 +261,71 @@
 >>>>>>> 1e3bdd37c5f6e46c8512e28bb6a6177273c8810e
 >>>>>>> bd404c5986e286de51a5477c5c26c18fa23fb5cf
 
+<<<<<<< HEAD
+3월 30, 2018 11:36:27.36 NEW SESSION
+3월 30, 2018 11:36:27.36 [6500:12344:0330/113627.345:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+3월 30, 2018 11:36:47.37 
+3월 30, 2018 11:36:47.38 KLIB_SelfTest return : KLR_OK
+3월 30, 2018 11:36:48.72 [11568:7348:0330/113648.727:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+3월 30, 2018 11:36:59.02 [11568:12652:0330/113659.026:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 11:36:59.06 [11568:12652:0330/113659.065:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 11:36:59.38 [11568:12652:0330/113659.384:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 11:36:59.66 [11568:12652:0330/113659.661:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 11:54:30.39 [11568:12652:0330/115430.395:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 11:54:30.47 [11568:12652:0330/115430.478:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 11:54:30.70 [11568:12652:0330/115430.708:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 11:54:31.01 [11568:12652:0330/115431.009:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 11:59:43.15 [11568:6372:0330/115943.151:ERROR:CONSOLE(318)] "Uncaught TypeError: this.querySelectorAll is not a function", source: chrome-devtools://devtools/bundled/inspector.js (318)
+3월 30, 2018 11:59:46.88 [11568:6372:0330/115946.884:ERROR:CONSOLE(318)] "Uncaught TypeError: this.querySelectorAll is not a function", source: chrome-devtools://devtools/bundled/inspector.js (318)
+3월 30, 2018 14:25:15.03 
+3월 30, 2018 14:25:15.04 KLIB_SelfTest return : KLR_OK
+3월 30, 2018 14:25:19.20 [12236:12848:0330/142519.206:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+3월 30, 2018 15:38:14.73 [12236:8916:0330/153814.738:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:14.79 [12236:8916:0330/153814.796:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:15.02 [12236:8916:0330/153815.025:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:15.31 [12236:8916:0330/153815.314:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:16.42 [12236:8916:0330/153816.424:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:34.71 [12236:8916:0330/153834.714:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:34.82 [12236:8916:0330/153834.822:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:35.11 [12236:8916:0330/153835.117:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:35.40 [12236:8916:0330/153835.400:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:38.14 [12236:8916:0330/153838.140:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:38.14 [12236:8916:0330/153838.143:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:40.54 [12236:8916:0330/153840.541:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:41.62 [12236:8916:0330/153841.629:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:38:42.41 [12236:8916:0330/153842.411:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:48:45.58 [12236:8916:0330/154845.581:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:48:45.62 [12236:8916:0330/154845.620:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:48:45.83 [12236:8916:0330/154845.836:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:48:46.12 [12236:8916:0330/154846.119:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:49:50.75 [12236:8916:0330/154950.753:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:49:50.79 [12236:8916:0330/154950.793:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:49:50.95 [12236:8916:0330/154950.956:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:49:51.27 [12236:8916:0330/154951.270:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 15:49:52.03 [12236:8916:0330/154952.037:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+3월 30, 2018 16:42:26.40 [12236:8180:0330/164226.408:ERROR:media_internals.cc(102)] Cannot get RenderProcessHost
+3월 30, 2018 16:42:26.41 [12236:8180:0330/164226.410:ERROR:media_internals.cc(102)] Cannot get RenderProcessHost
+3월 30, 2018 16:42:33.39 
+3월 30, 2018 16:42:33.40 KLIB_SelfTest return : KLR_OK
+3월 30, 2018 16:42:57.95 [7152:2152:0330/164257.950:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+3월 30, 2018 16:43:05.73 
+3월 30, 2018 16:43:05.73 KLIB_SelfTest return : KLR_OK
+3월 30, 2018 16:43:08.05 [7864:6604:0330/164308.054:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+3월 30, 2018 16:58:09.26 
+3월 30, 2018 16:58:09.27 KLIB_SelfTest return : KLR_OK
+3월 30, 2018 17:44:00.70 [6056:6336:0330/174400.701:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+3월 30, 2018 17:48:49.08 
+3월 30, 2018 17:48:49.09 KLIB_SelfTest return : KLR_OK
+=======
 3월 29, 2018 21:58:03.36 NEW SESSION
 3월 29, 2018 21:58:03.36 [10480:11224:0329/215803.361:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
 
 3월 29, 2018 22:30:45.34 NEW SESSION
 3월 29, 2018 22:30:45.34 [4748:2744:0329/223045.343:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+<<<<<<< HEAD
 3월 29, 2018 22:50:26.72 [11204:6516:0329/225026.729:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
 3월 30, 2018 01:57:32.76 [11204:8:0330/015732.765:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
 3월 31, 2018 01:30:53.90 [11204:8:0331/013053.907:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+=======
+>>>>>>> e8e3746076a0fa2465637d336ba790363cf91814
+>>>>>>> e9970223d3fb66bf4d5f5dad6f03a24468a2cef5
