@@ -261,6 +261,7 @@
 >>>>>>> 1e3bdd37c5f6e46c8512e28bb6a6177273c8810e
 >>>>>>> bd404c5986e286de51a5477c5c26c18fa23fb5cf
 
+<<<<<<< HEAD
 3월 30, 2018 11:36:27.36 NEW SESSION
 3월 30, 2018 11:36:27.36 [6500:12344:0330/113627.345:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
 3월 30, 2018 11:36:47.37 
@@ -315,3 +316,10 @@
 3월 30, 2018 17:44:00.70 [6056:6336:0330/174400.701:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
 3월 30, 2018 17:48:49.08 
 3월 30, 2018 17:48:49.09 KLIB_SelfTest return : KLR_OK
+=======
+3월 29, 2018 21:58:03.36 NEW SESSION
+3월 29, 2018 21:58:03.36 [10480:11224:0329/215803.361:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+
+3월 29, 2018 22:30:45.34 NEW SESSION
+3월 29, 2018 22:30:45.34 [4748:2744:0329/223045.343:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+>>>>>>> e8e3746076a0fa2465637d336ba790363cf91814
