@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/bootstrap.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src = "js/highcharts.js"></script>
+<script>
+$(document).ready(function() {
+	Highcharts.chart('container', {
+
+	    title: {
+	        text: '영업 매출 분석'
+	    },
+
+	    subtitle: {
+	        text: '2017년도 매출'
+	    },
+
+	    yAxis: {
+	        title: {
+	            text: '판매량'
+	        }
+	    },
+	    /* 범례 */
+	    legend: {
+	        layout: 'vertical',
+	        align: 'right',
+	        verticalAlign: 'middle'
+	    },
+
+	    plotOptions: {
+	        series: {
+	            label: {
+	                connectorAllowed: false
+	            },
+	            pointStart: 2010
+	        }
+	    },
+		
+	    /* 데이터 */
+	    
+	    series: [{
+	        name: '홍길동',
+	        data: [100, 150, 222, 240, 260, 280, 300, 400, 420, 10]
+	    },
+	    {
+	        name: '아무개',
+	        data: [100, 120, 122, 144, 460, 280, 100, 400, 220, 210]
+	    },
+	    {
+	        name: '김덕배',
+	        data: [300, 350, 122, 440, 160, 480, 100, 200, 120, 410]
+	    }],
+
+	    responsive: {
+	        rules: [{
+	            condition: {
+	                maxWidth: 500
+	            },
+	            chartOptions: {
+	                legend: {
+	                    layout: 'horizontal',
+	                    align: 'center',
+	                    verticalAlign: 'bottom'
+	                }
+	            }
+	        }]
+	    }
+
+	});
+	
+});
+
+		
+</script>
+</head>
+<body>
+	<!--ex24_chart-->
+	<div id="container"></div>
+</body>
+</html>

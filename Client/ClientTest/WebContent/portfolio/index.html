@@ -13,26 +13,33 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<link rel = "stylesheet" href = "assets/css/jquery-ui.css">
+		
+		
+		
 		<script src = "assets/js/jquery-1.12.4.js"></script>
 		<script>
 			$(document).ready(function() {
 				
 				$("#imgPJ2").click(function() {
 					event.preventDefault();
-					/* var scroll = $(document).scrollTop();
-					$("html, body").animate({
-						scrollTop:scroll
-					},10);	 */
-					window.open("javaOraclePJ.htm", "child", "width=850,height=800,screenX=600,screenY=100");
+				
+					window.open("javaOraclePJ.htm", "child", "width=1875,height=950,screenX=0,screenY=0");
 				});				
 				
-			});
-		
+				$("#linkPJ1").click(function() {
+					event.preventDefault();
+				
+					window.open("javaOraclePJ.htm", "child", "width=1875,height=950");
+				});	
+				
+				
+				
+			});  
+		 
 		</script>
 	</head>
 	
-	<body>
+	<body class = "modal-open">
 
 		<!-- Nav -->
 			<nav id="nav">
@@ -49,7 +56,7 @@
 				<article class="container" id="top">
 					<div class="row">
 						<div class="4u 12u(mobile)">
-							<span class="image fit"><img src="images/pic00.jpg" alt="" /></span>
+							<span class="image fit"><img src="images/received_10207045664754210.png" alt="" /></span>
 						</div>
 						<div class="8u 12u(mobile)">
 							<header>
@@ -112,11 +119,12 @@
 						<div class="row">
 							<div class="4u 12u(mobile)" style = "margin:0px auto;float:none;">
 								<article class="box style2">
-									<a href="#" class="image featured"><img src="images/Java-9-600x304.png" id = "imgPJ2" style = "width:383px;height:268px;" alt="" /></a>
-									<h3><a href="#">Java + Oracle DB Project</a></h3>
+									<a href="#" class="image featured"><img src="images/Java-9-600x304.png" id = "imgPJ2" style = "width:383px;height:268px;" alt=""/></a>
+									<h3><a id = "linkPJ1" href="#">Java + Oracle DB Project</a></h3>
 									<p>자바 + 오라클 DB 콘솔 프로젝트</p>
 								</article>
 							</div>
+						
 						<!-- 	<div class="4u 12u(mobile)">
 								<article class="box style2">
 									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
@@ -210,13 +218,13 @@
 								<hr />
 								<h3>Find me on ...</h3>
 								<ul class="social">
-									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<!-- 	<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 									<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 									<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
-									<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-									<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+									<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li> -->
+									<li><a href="https://plus.google.com/u/0/104222733690708257875" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+									<li><a href="https://github.com/daekun0920" class="icon fa-github"><span class="label">Github</span></a></li>
 									<!--
 									<li><a href="#" class="icon fa-rss"><span>RSS</span></a></li>
 									<li><a href="#" class="icon fa-instagram"><span>Instagram</span></a></li>
@@ -249,7 +257,7 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-			
+		
 			
 			
 		<script src = "assets/js/jquery-ui.js"></script>

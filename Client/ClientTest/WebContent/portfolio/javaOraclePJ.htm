@@ -12,8 +12,28 @@
 		border:2px solid white;
 		border-radius:4px;
 	}
+	#div33 {
+		text-align:center;
+	}
+	
+	#div33 img, #div33 span {
+		display:block;
+		margin:0px auto;
+		margin-bottom:50px;
+		font-size:2em;
+	}
+	
+	#div00 span {
+		font-variant:small-caps;
+		color:black;
+		font-size:2em;
+		line-height:2em;
+		display:inline-block;
+		margin:20px;
+	}
+	
 	p {
-		line-height:1.2;
+		line-height:1;
 	}
 	
 	body {
@@ -24,23 +44,46 @@
 		color:black;
 	}
 	
-	#tbl1 {
+	#tbl1, #tbl2 {
 		border:2px solid black;
 		width:600px;
 		height:300px;
+		margin:0px auto;
+		border-radius:4px;
+		border-collapse:collapse;
+		
 	}
 	
+	#tbl1 tr th, #tbl1 tr td, #tbl2 tr th, #tbl2 tr td {
+		border:2px solid black;
+		padding:10px 15px;	
+		text-align:center;
+	}
+	
+	#tbl1 tr:first-child, #tbl2 tr:first-child {
+	
+		background-color:#EEE;
+	}
 	
 	#title {
-		text-align:center;
-		border:2px solid white;
-		border-radius:4px;
+		text-align:left;
 		font-variant:small-caps;
+		font-size:3em;		
+		margin-left:5px;
+	}
+	
+	#tbl1 tr:hover, #tbl2 tr:hover {
+		background-color:#EEE;
+	}
+	
+	.btn {
+		outline:none;
 	}
 </style>
 <link rel = "stylesheet" href = "assets/css/jquery-ui.css">
 <script src = "assets/js/jquery-1.12.4.js"></script>
 <script src = "assets/js/jquery-ui.js"></script>
+
 <script>
 
 $(document).ready(function() {
@@ -49,20 +92,42 @@ $(document).ready(function() {
 		collapsible:true,
 		heightStyle: "content" /* 완전 중요 */
 	});
-
+	
+	var td = document.getElementsByTagName("td");
+	
+	for (var i = 0; i < td.length; i++) {
+		if (td[i].innerText == "") {
+			td[i].innerText = "//";
+			td[i].style.backgroundColor = "#888888";
+		}
+		
+	}
+	$(":button").button(); 
+	
+	$(":button").click(function() {
+		$("html, body").animate({
+			scrollTop:0
+		},500);
+	});
+	
+	
 });
 
 </script>
 </head>
 <body>
-	<!---->
+	<div id = "total111">
+
 	<h1 id = "title" style = "color:white;">Java & Oracle DB Project</h1>
 	
 	<div id = "a1" style = "background-color:#EEE;border-radius:4px;">
 		<h1>Topic</h1>
 		<p>쌍용교육센터를 모델로 한 교육 센터 운영 및 관리 프로그램</p>
 		<h1>Requirements</h1>
-		<pre style = "font-family:D2coding">7. 시험관리 및 성적 조회 공통
+		
+		<pre style = "font-family:D2coding">
+		<div style = "font-size:2em;">Personal Requirements</div>
+7. 시험관리 및 성적 조회 공통
 - 전체 개설 과정 정보를 출력할 경우 등록된 개설 과정 정보(과정명, 강의실, 수강인원, 과정시작일, 과정종료일)을 출력한다.
 -특정 개설 과정의 정보를 출력하는 경우 위 출력된 전체 개설 과정 정보 목록을 바탕으로 한 과정을 번호로 선택하여 출력한다.
 - 특정 개설 과정 정보 출력 시 해당 과정에 등록된 개설 과목 정보(과목명, 개설 과목 기간, 교사명)와 개설 과목 별 성적 등록 여부,
@@ -92,69 +157,166 @@ $(document).ready(function() {
 9. 수강평 조회 및 삭제
 - 관리자는 교육생이 작성한 수강평을 조회할 수 있다.
 - 관리자는 해당 수강평을 조회함과 동시에 한 수강평을 선택하여(수강평 번호를 입력하여) 삭제를 할 수 있다. 
+																						<input type = "button" class = "btn" value = "맨 위로">
 		</pre>
 		<h1>Modeling</h1>
-		<p><img src = "images/ERD.PNG" style = "float:left;"></p>
+		<p><img src = "images/ERD.PNG" style = "float:left;">
+				<input type = "button" class = "btn" value = "맨 위로" style = "float:right;">
+		</p>
+		
 		<h1>Database objects</h1>
-		<p><table id = "tbl1">
+		<div id = "div00" class = "container">
+		<table id = "tbl1" class = "table table-hover table-bordered table-condensed">
+			<span>Personal Task</span>
+			<span style = "float:right; margin-right:60px;">
+				<span style = "color:red;">■</span><span style = "font-variant:small-caps;font-size:0.8em;">PK</span> <span style = "color:blue;">■</span><span style = "font-variant:small-caps;font-size:0.8em;">FK</span>
+			</span>
 			<tr>
+				<th>TBL_COURSE</th>
+				<th>TBL_KEY_SUBJECT_COURSE</th>
+				<th>TBL_SUBJECT</th>
+				<th>TBL_KEY_TEACHER_SUBJECT</th>
+				<th>TBL_DETAIL_TEACHER</th>
+				<th>TBL_BASIC_INFO</th>
+				<th>TBL_DETAIL_STUDENT</th>
+			</tr>
+			<tr>
+				<td style = "color:red;">course_seq</td>
+				<td style = "color:blue;">course_seq</td>
+				<td style = "color:red;">subject_seq</td>
+				<td style = "color:blue;">subject_seq</td>
+				<td style = "color:red;">detail_teacher_seq</td>
+				<td style = "color:red;">basic_info_seq</td>
+				<td style = "color:red;">detail_student_seq</td>
+			</tr>
+			<tr>
+				<td>course_start_date</td>
+				<td style = "color:blue;">subject_seq fk</td>
+				<td>subject_start_date</td>
+				<td style = "color:blue;">detail_teacher_seq fk</td>
+				<td>teacher_name</td>
+				<td>ID</td>
+				<td>student_name</td>
+			</tr>
+			<tr>
+				<td>course_end_date</td>
+				<td></td>
+				<td>subject_end_date</td>
+				<td></td>
+				<td>teacher_tel</td>
+				<td>SSN</td>
+				<td>student_tel</td>
+			</tr>
+			<tr>
+				<td style = "color:blue;">classroom_seq</td>
+				<td></td>
+				<td style = "color:blue;">basic_subject_seq</td>
+				<td style = "background-color:#888;"></td>
+				<td style = "color:blue;">basic_info_seq</td>
+				<td>TYPE</td>
+				<td>student_regdate</td>
+			</tr>
+			<tr>
+				<td style = "color:blue;">basic_course_seq</td>
+				<td></td>
+				<td style = "color:blue;">basic_book_seq</td>
 				<td></td>
 				<td></td>
 				<td></td>
+				<td style = "color:blue;">basic_info_seq</td>
+			</tr>
+		</table>
+		<span>Personal Task - Views</span>
+		<table id="tbl2" style = "margin:20px auto;margin-bottom:50px;">
+			<tr>
+				<th>VW_EVERY_SOURCE</th>
+				<th>VW_SUBJECT_GRADE</th>
+				<th>VW_CURR_PAST_STUDENTS</th>
+				<th>VW_REVIEW</th>
+			</tr>
+			<tr>
+				<td>course_seq</td>
+				<td>subject_seq</td>
+				<td>basic_info_seq</td>
+				<td>student_enrollment_seq</td>
+			</tr>
+			<tr>
+				<td>basic_course_name</td>
+				<td>basic_subject_name</td>
+				<td>student_name</td>
+				<td>basic_course_name</td>
+			</tr>
+			<tr>
+				<td>course_start_date</td>
+				<td>basic_book_name</td>
+				<td>SSN</td>
+				<td>course_review</td>
+			</tr>
+			<tr>
+				<td>course_end_date</td>
+				<td>classroom_name</td>
+				<td>basic_course_name</td>
 				<td></td>
-				<td></td>
-				<td></td>
+			</tr>
+			<tr>
+				<td>수강인원(function)</td>
+				<td>teacher_name</td>
+				<td>course_start_date</td>
 				<td></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>basic_course_name</td>
+				<td>course_end_date</td>
 				<td></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>course_start_date</td>
+				<td>classroom_date</td>
 				<td></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>course_end_date</td>
 				<td></td>
 				<td></td>
 			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table></p>
+		</table>
+		<hr>
+		<hr>
+		
+		<span>Example - Procedure</span>
+		<div style = "text-align:center;">
+			<span>전체 출결 조회</span>
+			<img src = "images/proc1.PNG" style = "display:block; margin:10px auto;"> 
+			<span>개인 출결 조회</span>
+			<img src = "images/proc2.PNG" style = "display:block; margin:0px auto;"> 
+		</div>
+			<input type = "button" class = "btn" value = "맨 위로" style = "float:right;">
+		</div>
 		<h1>Results</h1>
+		<div id = "div33">
+			
+			<span>Home Screen</span>
+			<img src="images/res1.PNG" alt="" />
+			<span>Manager</span>
+			<img src="images/res2.PNG" alt="" />
+			<span>Grade and Exam date registration</span>
+			<img src="images/res3.PNG" alt="" />
+			<span>Attendance of Each Course</span>
+			<img src="images/res4.PNG" alt="" />
+			<span>Attendance Status</span>
+			<img src="images/res5.PNG" alt="" />
+			<span>Personal Attendance</span>
+			<img src="images/res6.PNG" alt="" />
+			<span>Attendance Modification</span>
+			<img src="images/res7.PNG" alt="" />
+		
+			<input type = "button" class = "btn" value = "맨 위로" style = "float:right;">
+		</div>
 		
 	</div>
-	
+	</div>
 </body>
 </html>
