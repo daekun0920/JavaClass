@@ -322,4 +322,10 @@
 
 3월 29, 2018 22:30:45.34 NEW SESSION
 3월 29, 2018 22:30:45.34 [4748:2744:0329/223045.343:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+<<<<<<< HEAD
+3월 29, 2018 22:50:26.72 [11204:6516:0329/225026.729:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+3월 30, 2018 01:57:32.76 [11204:8:0330/015732.765:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+3월 31, 2018 01:30:53.90 [11204:8:0331/013053.907:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+=======
 >>>>>>> e8e3746076a0fa2465637d336ba790363cf91814
+>>>>>>> e9970223d3fb66bf4d5f5dad6f03a24468a2cef5
