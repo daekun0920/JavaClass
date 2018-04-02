@@ -1,25 +1,8 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
-<<<<<<< HEAD
 >>>>>>>=e9970223d3fb66bf4d5f5dad6f03a24468a2cef5
 CONTENT_ASSIST_BACKGROUND_COLOR=48,54,59
 CONTENT_ASSIST_FOREGROUND_COLOR=235,237,239
-=======
-<<<<<<< HEAD
->>>>>>>=e8e3746076a0fa2465637d336ba790363cf91814
-=======
-<<<<<<< HEAD
->>>>>>>=0ed29d5f117814f6c764003bfcdc8c3c8a43a8f9
-=======
->>>>>>>=6f2b5a00ac5a00b48ec506c813e04a7fcdcb3e6f
-<<<<<<< HEAD
-=======
-CONTENT_ASSIST_BACKGROUND_COLOR=48,54,59
-CONTENT_ASSIST_FOREGROUND_COLOR=235,237,239
->>>>>>> e8e3746076a0fa2465637d336ba790363cf91814
->>>>>>> e9970223d3fb66bf4d5f5dad6f03a24468a2cef5
->>>>>>> 4e00452ab9d4af269b51936b9dcda69bfdeb7953
->>>>>>> 9e318d83f668a02a99396d142335c4e85f6fe99d
 content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"/>
 content_assist_parameters_background=48,54,59
 content_assist_parameters_foreground=235,237,239
@@ -47,20 +30,7 @@ org.eclipse.wst.jsdt.ui.formatterprofiles.version=11
 org.eclipse.wst.jsdt.ui.javadoclocations.migrated=true
 org.eclipse.wst.jsdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 org.eclipse.wst.jsdt.ui.text.templates_migrated=true
-<<<<<<< HEAD
 overriddenByCSS=,CONTENT_ASSIST_BACKGROUND_COLOR,CONTENT_ASSIST_FOREGROUND_COLOR,content_assist_parameters_background,content_assist_parameters_foreground,content_assist_proposals_background,content_assist_proposals_foreground,java_bracket,java_comment_task_tag,java_default,java_doc_default,java_doc_keyword,java_doc_link,java_doc_tag,java_keyword,java_keyword_return,java_multi_line_comment,java_operator,java_single_line_comment,java_string,semanticHighlighting.localVariable.bold,semanticHighlighting.localVariable.color,semanticHighlighting.localVariable.enabled,semanticHighlighting.localVariable.italic,semanticHighlighting.localVariable.strikethrough,semanticHighlighting.localVariable.underline,semanticHighlighting.localVariableDeclaration.bold,semanticHighlighting.localVariableDeclaration.color,semanticHighlighting.localVariableDeclaration.enabled,semanticHighlighting.localVariableDeclaration.italic,semanticHighlighting.localVariableDeclaration.strikethrough,semanticHighlighting.localVariableDeclaration.underline,semanticHighlighting.methodDeclarationName.bold,semanticHighlighting.methodDeclarationName.color,semanticHighlighting.methodDeclarationName.enabled,semanticHighlighting.methodDeclarationName.italic,semanticHighlighting.methodDeclarationName.strikethrough,semanticHighlighting.methodDeclarationName.underline,tagName,
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-overriddenByCSS=,CONTENT_ASSIST_BACKGROUND_COLOR,CONTENT_ASSIST_FOREGROUND_COLOR,content_assist_parameters_background,content_assist_parameters_foreground,content_assist_proposals_background,content_assist_proposals_foreground,java_bracket,java_comment_task_tag,java_default,java_doc_default,java_doc_keyword,java_doc_link,java_doc_tag,java_keyword,java_keyword_return,java_multi_line_comment,java_operator,java_single_line_comment,java_string,semanticHighlighting.localVariable.bold,semanticHighlighting.localVariable.color,semanticHighlighting.localVariable.enabled,semanticHighlighting.localVariable.italic,semanticHighlighting.localVariable.strikethrough,semanticHighlighting.localVariable.underline,semanticHighlighting.localVariableDeclaration.bold,semanticHighlighting.localVariableDeclaration.color,semanticHighlighting.localVariableDeclaration.enabled,semanticHighlighting.localVariableDeclaration.italic,semanticHighlighting.localVariableDeclaration.strikethrough,semanticHighlighting.localVariableDeclaration.underline,semanticHighlighting.methodDeclarationName.bold,semanticHighlighting.methodDeclarationName.color,semanticHighlighting.methodDeclarationName.enabled,semanticHighlighting.methodDeclarationName.italic,semanticHighlighting.methodDeclarationName.strikethrough,semanticHighlighting.methodDeclarationName.underline,tagName,
->>>>>>> e8e3746076a0fa2465637d336ba790363cf91814
->>>>>>> e9970223d3fb66bf4d5f5dad6f03a24468a2cef5
->>>>>>> 4e00452ab9d4af269b51936b9dcda69bfdeb7953
->>>>>>> 9e318d83f668a02a99396d142335c4e85f6fe99d
 proposalOrderMigrated=true
 semanticHighlighting.localVariable.bold=false
 semanticHighlighting.localVariable.color=121,171,255
