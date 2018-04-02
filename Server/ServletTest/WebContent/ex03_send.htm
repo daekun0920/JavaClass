@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--ex03_send.htm-->
+	
+	<h1>데이터 전달하기</h1>
+	<!--
+	
+	클라이언트 페이지의 절대 경로 '/'
+	- http://localhost:8090/
+	
+	ServletTest(프로젝트명)
+	- Context Path
+	
+	-->
+	<form method = "get" action = "/ServletTest/ex03.do">
+		<div>
+			<label>아이디</label>
+			<input type = "text" name = "id" id = "id">
+		</div>
+		<div>
+			<label>나이</label>
+			<input type = "text" name = "age" id = "age">
+		</div>
+		<div>
+			<input type = "submit" name = "submit" value = "전송하기">
+		</div>
+	</form>
+	
+</body>
+</html>
