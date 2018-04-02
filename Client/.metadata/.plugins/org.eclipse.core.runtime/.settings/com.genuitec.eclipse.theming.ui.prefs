@@ -1,14 +1,38 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
+<<<<<<< HEAD
 >>>>>>>=e9970223d3fb66bf4d5f5dad6f03a24468a2cef5
+=======
+>>>>>>>=e8e3746076a0fa2465637d336ba790363cf91814
+>>>>>>> 9e318d83f668a02a99396d142335c4e85f6fe99d
 applyBackground=false
 approved.defs.file.last.changed.time=1512058756000
 configurationInstallLocation=/C\:/Users/sist00-14/Desktop/gyun/eclipse/
 eclipse.preferences.version=1
 iconcolormode=primary
 includeThemingInOomph=false
+<<<<<<< HEAD
 last.download.attempt.time=1522328915305
 lastConfiguration=1522427742875
+=======
+<<<<<<< HEAD
+last.download.attempt.time=1522627398199
+lastConfiguration=1522627332060
+=======
+<<<<<<< HEAD
+last.download.attempt.time=1522427547063
+lastConfiguration=1522427516902
+=======
+<<<<<<< HEAD
+last.download.attempt.time=1522374473894
+lastConfiguration=1522374436035
+=======
+last.download.attempt.time=1522328915305
+lastConfiguration=1522330112661
+>>>>>>> e8e3746076a0fa2465637d336ba790363cf91814
+>>>>>>> e9970223d3fb66bf4d5f5dad6f03a24468a2cef5
+>>>>>>> 4e00452ab9d4af269b51936b9dcda69bfdeb7953
+>>>>>>> 9e318d83f668a02a99396d142335c4e85f6fe99d
 newinstall=false
 showWelcomeDialog=false
 workbench.theme=Dark Gray

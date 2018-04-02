@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+		 version="3.1">
+		 
+		 <!-- 가상 주소 = 서블릿 클래스 : 가상 URL 매핑 -->
+		<!-- 
+		
+		http://localhost:8090/ServletTest/ex01.do 
+		
+		가상 주소 매핑
+		1. 반드시 '/' 로 시작한다.
+			- '/' 의미 : http://localhost:8090/ServletTest/
+			- 내부적으로 '/' : WebContent 폴더
+		
+		-->
+		<servlet>
+			<servlet-name>Ex01</servlet-name>
+			<servlet-class>com.test.servlet.Ex01</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>Ex01</servlet-name>
+			<url-pattern>/ex01.do</url-pattern>
+		</servlet-mapping>
+		
+		
+		
+		
+		<servlet>
+			<servlet-name>Ex02</servlet-name>
+			<servlet-class>com.test.servlet.Ex02</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>Ex02</servlet-name>
+			<url-pattern>/ex02.do</url-pattern>
+		</servlet-mapping>
+		
+		
+		
+		
+		<servlet>
+			<servlet-name>Ex03</servlet-name>
+			<servlet-class>com.test.servlet.Ex03_Receive</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>Ex03</servlet-name>
+			<url-pattern>/ex03.do</url-pattern>
+		</servlet-mapping>
+		
+</web-app>
