@@ -334,3 +334,14 @@
 3월 31, 2018 12:30:43.85 [8552:10740:0331/123043.841:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
 3월 31, 2018 15:33:19.73 [8552:2620:0331/153319.730:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
 4월 02, 2018 16:24:22.78 [8552:2620:0402/162422.781:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+
+4월 02, 2018 16:54:01.77 NEW SESSION
+4월 02, 2018 16:54:01.77 [2516:532:0402/165401.770:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+4월 02, 2018 16:58:22.51 [2516:15104:0402/165822.518:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 02, 2018 16:58:22.55 [2516:15104:0402/165822.551:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 02, 2018 16:58:24.63 [2516:15104:0402/165824.630:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 02, 2018 16:58:24.91 [2516:15104:0402/165824.914:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 02, 2018 17:11:58.84 [2516:15104:0402/171158.844:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 02, 2018 17:11:58.87 [2516:15104:0402/171158.878:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 02, 2018 17:11:59.10 [2516:15104:0402/171159.104:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 02, 2018 17:11:59.37 [2516:15104:0402/171159.379:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED

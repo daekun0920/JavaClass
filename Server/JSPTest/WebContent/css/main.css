@@ -1,0 +1,25 @@
+	#menu {
+		padding-bottom:15px;
+		border-bottom:1px solid black;	
+	} 
+	
+	#menu ul {
+		list-style:none;
+		padding:0;
+	}
+	
+	#menu ul li {
+		float:left;
+		width:19%;
+		text-align:center;
+	}
+	
+	footer {
+		text-align:center;
+		margin:30px 0;
+	}
+	
+	section {
+		min-height:500px; /* 자신보다 내용물이 작으면 이 크기 유지, 내용물이 커지면(오버플로우) 크기도 커짐 */
+		padding:20px;
+	}

@@ -30,7 +30,7 @@ public class Ex03_Receive extends HttpServlet {
 		writer.println("</body>");
 		writer.println("</html>");
 		
-		
+		writer.close();
 		
 	}
 	
