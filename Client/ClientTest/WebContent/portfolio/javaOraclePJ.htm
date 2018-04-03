@@ -4,254 +4,230 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	#a1 h1 {
-		
-		outline:none;
-		font-variant:small-caps;
-		color:black;
-		border:2px solid white;
-		border-radius:4px;
-	}
-	#div33 {
-		text-align:center;
-	}
-	
-	#div33 img, #div33 span {
-		display:block;
-		margin:0px auto;
-		margin-bottom:50px;
-		font-size:2em;
-	}
-	
-	#div00 span {
-		font-variant:small-caps;
-		color:black;
-		font-size:2em;
-		line-height:2em;
-		display:inline-block;
-		margin:20px;
-	}
-	
-	p {
-		line-height:1;
-	}
-	
-	body {
-		background-color:black;
-	}
-	
-	#a1 p {
-		color:black;
-	}
-	
-	#tbl1, #tbl2 {
-		border:2px solid black;
-		width:600px;
-		height:300px;
-		margin:0px auto;
-		border-radius:4px;
-		border-collapse:collapse;
-		
-	}
-	
-	#tbl1 tr th, #tbl1 tr td, #tbl2 tr th, #tbl2 tr td {
-		border:2px solid black;
-		padding:10px 15px;	
-		text-align:center;
-	}
-	
-	#tbl1 tr:first-child, #tbl2 tr:first-child {
-	
-		background-color:#EEE;
-	}
-	
-	#title {
-		text-align:left;
-		font-variant:small-caps;
-		font-size:3em;		
-		margin-left:5px;
-	}
-	
-	#tbl1 tr:hover, #tbl2 tr:hover {
-		background-color:#EEE;
-	}
-	
-	.btn {
-		outline:none;
-	}
+#a1 h1 {
+	outline: none;
+	font-variant: small-caps;
+	color: black;
+	border: 2px solid white;
+	border-radius: 4px;
+}
+
+#div33 {
+	text-align: center;
+}
+
+#div33 img, #div33 span {
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 50px;
+	font-size: 2em;
+}
+
+#div00 span {
+	font-variant: small-caps;
+	color: black;
+	font-size: 2em;
+	line-height: 2em;
+	display: inline-block;
+	margin: 20px;
+}
+
+p {
+	line-height: 1;
+}
+
+body {
+	background-color: black;
+}
+
+#a1 p {
+	color: black;
+}
+
+#tbl1, #tbl2 {
+	border: 2px solid black;
+	width: 600px;
+	height: 300px;
+	margin: 0px auto;
+	border-radius: 4px;
+	border-collapse: collapse;
+}
+
+#tbl1 tr th, #tbl1 tr td, #tbl2 tr th, #tbl2 tr td {
+	border: 2px solid black;
+	padding: 10px 15px;
+	text-align: center;
+}
+
+#tbl1 tr:first-child, #tbl2 tr:first-child {
+	background-color: #EEE;
+}
+
+#title {
+	text-align: left;
+	font-variant: small-caps;
+	font-size: 3em;
+	margin-left: 5px;
+}
+
+#tbl1 tr:hover, #tbl2 tr:hover {
+	background-color: #EEE;
+}
+
+.btn {
+	outline: none;
+}
+
+body {
+	padding: 40px;
+}
+
+ul {
+	list-style: none;
+}
 </style>
-<link rel = "stylesheet" href = "assets/css/jquery-ui.css">
-<script src = "assets/js/jquery-1.12.4.js"></script>
-<script src = "assets/js/jquery-ui.js"></script>
+<link rel="stylesheet" href="assets/css/jquery-ui.css">
+<script src="assets/js/jquery-1.12.4.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
 
 <script>
+	$(document).ready(function() {
 
-$(document).ready(function() {
+		$("#a1").accordion({
+			collapsible : true,
+			heightStyle : "content", /* 완전 중요 */
+		});
 
-	$("#a1").accordion({
-		collapsible:true,
-		heightStyle: "content" /* 완전 중요 */
-	});
-	
-	var td = document.getElementsByTagName("td");
-	
-	for (var i = 0; i < td.length; i++) {
-		if (td[i].innerText == "") {
-			td[i].innerText = "//";
-			td[i].style.backgroundColor = "#888888";
+		var td = document.getElementsByTagName("td");
+
+		for (var i = 0; i < td.length; i++) {
+			if (td[i].innerText == "") {
+				td[i].innerText = "//";
+				td[i].style.backgroundColor = "#888888";
+			}
+
 		}
-		
-	}
-	$(":button").button(); 
-	
-	$(":button").click(function() {
-		$("html, body").animate({
-			scrollTop:0
-		},500);
-	});
-	
-	
-});
+		$(":button").button();
 
+		$(":button").click(function() {
+			$("html, body").animate({
+				scrollTop : 0
+			}, 500);
+		});
+
+	});
 </script>
 </head>
 <body>
-	<div id = "total111">
 
-	<h1 id = "title" style = "color:white;">Java & Oracle DB Project</h1>
-	
-	<div id = "a1" style = "background-color:#EEE;border-radius:4px;">
+	<h1 id="title" style="color: white;">Java & Oracle DB Project</h1>
+
+	<div id="a1" style="background-color: #EEE; border-radius: 4px;">
 		<h1>Topic</h1>
-		<div style = "text-align:center;">
-			<div style = "font-size:3em;margin-bottom:50px;">- Project SsangYong</div>
+		<div style="text-align: center;">
+			<div style="font-size: 3em; margin-bottom: 50px;">- Project SsangYong</div>
 			<p>쌍용교육센터를 모델로 한 교육 센터 운영 및 관리 프로그램</p>
-			<p>Total Lead Time : 2 Weeks
+			<p>Total Lead Time : 2 Weeks (4 hours per day / Total 40 hours)
 			<p>Used Languages : Java, SQL(PL/SQL)</p>
 			<p>Used Tools : Eclipse, Oracle Developer, Datagrip, eXERD</p>
-			<p>Development Environment : Windows 10</p> 
+			<p>Development Environment : Windows 10</p>
 		</div>
 		<h1>Requirements</h1>
-		
-		<pre style = "font-family:D2coding">
-		<div style = "text-align:center;">
-		<div style = "font-size:3em;">Personal Requirements</div>
-<div style = "font-size:2em;">- Intro</div>
-프로젝트에서 개인적으로 맡은 부분들이며 한 과정은 각 10개의 과목들로 구성 되어 있습니다.
+		<!--<pre style="font-family: D2coding"> -->
+		<div style="text-align: center;">
+			<div style="font-size: 3em;">Personal Requirements</div>
+			<div style="font-size: 2em;">- Intro</div>
+			<div style="margin: 20px auto; width: 700px;">
+				프로젝트에서 개인적으로 맡은 부분들이며 한 과정은 각 10개의 과목들로 구성 되어 있습니다. 각 과목은 시험과 그에 따른
+				성적 정보를 담고 있으며 출결 또한 각 과정별로 기록 됩니다. 크게 <span style="color: red;">시험
+				관리</span>, <span style="color: red;">성적 조회</span>, 
+				<span style="color: red;">출결 조회 및 수정</span>를 맡았고 대부분 게시판 페이징 알고리즘으로 조회와
+				선택을 더욱 쉽고 간편하게 하였습니다.
+			</div>
+			<img src="images/tech_rep1.PNG" style="margin-bottom: 50px;">
+			<div style="margin-bottom: 50px;">
+				<b>1. 시험관리</b>
+				<ul>
+					<li>- 모든 개설 과정 정보를 출력 할 경우 등록된 개설 과정 정보를 목록 형식으로 조회할수 있습니다.</li>
+					<li>- 이 부분에서는 게시판 페이징을 사용하여 좀 더 편하게 조회가 가능하게 하였습니다.</li>
+					<li>- 특정 개설 과정의 정보를 조회하는 경우 위 출력된 전체 개설 과정 정보 목록에서 한 과정을 번호로
+						  선택하여 해당 과정에 대한 더 자세한 정보를 볼 수 있습니다.</li>
+					<li>- 특정 개설 과정 정보 조회 시 해당 과정의 과목 정보와 과목 별 성적 등록 여부, 시험 날짜 등록
+						여부를 한눈에 확인 할 수 있습니다.</li>
+				</ul>
+			</div>
 
-각 과목은 시험과 그에 따른 성적 정보를 담고 있으며 출결 또한 각 과정별로 기록 됩니다.
+			<img src="images/tech_rep2.PNG" style="margin-bottom: 50px;">
+			<div style="margin-bottom: 50px;">
+				<b>2. 성적 조회</b>
+				<ul style="list-style: none;">
+					<li>- 성적 조회시 과목별, 개인별 중 선택하여 맞춰 조회 할 수 있습니다.</li>
+					<li>- 해당 개설 과목을 수강한 모든 교육생들의 성적 정보를 출력할 수 있습니다.</li>
+					<li>- 중도포기 학생은 제외하고 출력합니다.</li>
+					<li>- 교육생 개인별 출력 시 전체 교육생 정보를 출력하여 해당 교육생 정보를 출력합니다.</li>
+				</ul>
+			</div>
 
-크게 <span style = "color:red;">시험 관리</span>, <span style = "color:red;">성적 조회</span>, <span style = "color:red;">출결 조회 및 수정</span>, <span style = "color:red;">수강평 관리</span>를 맡았고 
+			<img src="images/tech_rep3.PNG" style="margin-bottom: 50px;">
 
-대부분 게시판 페이징 알고리즘으로 조회와 선택을 더욱 쉽고 간편하게 하였습니다.
-</div>
-<img src = "images/ERD_1-1.PNG" style = "float:left;">
-
-<b>1. 시험관리 및 성적 조회</b>
-
-- 모든 개설 과정 정보를 출력 할 경우 등록된 개설 과정 정보를 목록 형식으로 조회할수 있습니다.
-  이 부분에서는 게시판 페이징을 사용하여 좀 더 편하게 조회가 가능하게 하였습니다.
-
-- 특정 개설 과정의 정보를 조회하는 경우 위 출력된 전체 개설 과정 정보 목록에서 
-  한 과정을 번호로 선택하여 해당 과정에 대한 더 자세한 정보를 볼 수 있습니다.
-
-- 특정 개설 과정 정보 조회 시 해당 과정의 과목 정보와 과목 별 성적 등록 여부,
-  시험 날짜 등록 여부를 한눈에 확인 할 수 있습니다.
-
-<b>2. 성적 조회</b> 
-
-- 성적 조회시 과목별, 개인별 중 선택하여 맞춰 조회 할 수 있습니다.
-
-- 해당 개설 과목을 수강한 모든 교육생들의 성적 정보를 출력할 수 있습니다.
-
-- 중도포기 학생은 제외하고 출력합니다.
-
-- 교육생 개인별 출력 시 전체 교육생 정보를 출력하여 해당 교육생 정보를 출력합니다.
-
-
-
-
-
-
-
-<img src = "images/ERD_1-2.PNG" style = "float:left;width:664px;height:504px">
-
-
-
-
-<b>3. 출결 조회 및 수정</b> 
-
-- 해당 과정을 수강하는 모든 교육생의 출결 조회를 할 수 있습니다.
-
-- 외출, 병가는 관리자 권한으로만 지정할 수 있습니다.
-
-- 위에서 특정 학생의 번호를 입력하여 해당 학생의 출결 현황을 조회 할 수 있다.
-
-- 정상, 지각, 조퇴를 제외한 외출과 병가는 학생 번호와 날짜를 선택 받아 관리자 권한으로만 지정할 수 있습니다..
-
-
-
-
-
-
-
-
-
-
-
-<img src = "images/ERD_1-3.PNG" style = "float:left;width:664px;">
-
-
-
-
-<b>4. 수강평 조회 및 삭제</b>
-
-- 관리자는 교육생이 작성한 수강평을 조회할 수 있습니다.
-
-- 관리자는 해당 수강평을 조회함과 동시에 삭제를 할 수 있습니다.
-
-							                                                                  <input type = "button" class = "btn" value = "맨 위로">
-		</pre>
-		<h1>Modeling</h1>
-		<p> 
-				<span style = "font-size:3em;text-align:center;display:block;">- ERD</span>
-				<span style = "font-size:1.2em;text-align:center;margin:30px auto;display:block;">삭제와 수정을 더욱 수월하게 하기 위하여 중간에 다리 역할을 하는 키 테이블을 만들었습니다.(민트색 테이블)</span>
-			
-				<img src = "images/ERD.PNG" style = "display:block;">
-			
-				<input type = "button" class = "btn" value = "맨 위로" style = "float:right;">
-		</p>
-		
-		<h1>Results</h1>
-		<div id = "div33">
-			
-			<span>Home Screen</span>
-			<div style = "text-align:center;margin-bottom:20px;">관리자로 로그인 했을때의 첫 화면입니다.</div>
-			<img src="images/res1.PNG" alt="" />
-		
-			<span>Manager</span>
-			<div style = "text-align:center;margin-bottom:20px;">관리자의 성적 관리 메뉴 입니다.</div>
-			<img src="images/res2.PNG" alt="" />
-			<span>Grade and Exam date registration</span>
-			<div style = "text-align:center;margin-bottom:20px;">성적과 시험날짜 등록여부 조회 기능 입니다. 여기서 게시판 페이징 알고리즘을 사용하여 사용자 편의를 더욱 높였습니다.</div>
-			<img src="images/res3.PNG" alt="" />
-			<span>Attendance of Each Course</span>
-			<div style = "text-align:center;margin-bottom:20px;">과정별 출석 조회 기능 입니다. 여기서도 게시판 페이징 알고리즘을 사용하였습니다. <br>그리고 거기에 한 발 더 나아가 지각, 조퇴, 정상 등원을 자동으로 구분하는 알고리즘을 추가하였습니다.</div>
-			<img src="images/res4.PNG" alt="" />		
-			<span>Attendance Status</span>
-			<div style = "text-align:center;margin-bottom:20px;">출석 현황 기능 입니다. 상태를 조회할 수 있으며 자동 출결 구분 기능이 사용되었습니다.</div>
-			<img src="images/res5.PNG" alt="" />
-			<span>Personal Attendance</span>
-			<div style = "text-align:center;margin-bottom:20px;">개인별 출결 현황 조회 입니다. 관리자 권한으로 병가, 외출등 특수한 상황에 수정할 수 있게 수정 기능을 추가하였습니다.</div>
-			<img src="images/res6.PNG" alt="" />
-			<span>Attendance Modification</span>
-			<div style = "text-align:center;margin-bottom:20px;">특수한 상황에 수정할 수 있는 수정 기능입니다.</div>
-
-			<img src="images/res7.PNG" alt="" />
-		
-			<input type = "button" class = "btn" value = "맨 위로" style = "float:right;">
+			<div>
+				<b>3. 출결 조회 및 수정 </b>
+				<ul>
+					<li>- 해당 과정을 수강하는 모든 교육생의 출결 조회를 할 수 있습니다.</li>
+					<li>- 외출, 병가는 관리자 권한으로만 지정할 수 있습니다.</li>
+					<li>- 위에서 특정 학생의 번호를 입력하여 해당 학생의 출결 현황을 조회 할 수 있다.</li>
+					<li>- 정상, 지각, 조퇴를 제외한 외출과 병가는 학생 번호와 날짜를 선택 받아 관리자 권한으로만 지정할 수
+						있습니다.</li>
+				</ul>
+			</div>
+			<input type="button" class="btn" value="맨 위로" style="float: right;">
 		</div>
-		
+		<!-- </pre> -->
+		<h1>Modeling</h1>
+		<p>
+			<span style="font-size: 3em; text-align: center; display: block;">-
+				ERD</span><img src="images/ERD.PNG"
+				style="display: block; width: 100%; height: 100%;"> <input
+				type="button" class="btn" value="맨 위로" style="float: right;">
+		</p>
+
+		<h1>Results</h1>
+		<div id="div33">
+
+			<span>Home Screen</span>
+			<div style="text-align: center; margin-bottom: 20px;">관리자로 로그인
+				했을때의 첫 화면입니다.</div>
+			<img src="images/res1.PNG" alt="" /> <span>Manager</span>
+			<div style="text-align: center; margin-bottom: 20px;">관리자의 성적
+				관리 메뉴 입니다.</div>
+			<img src="images/res2.PNG" alt="" /> <span>Grade and Exam
+				date registration</span>
+			<div style="text-align: center; margin-bottom: 20px;">성적과 시험날짜
+				등록여부 조회 기능 입니다. 여기서 게시판 페이징 알고리즘을 사용하여 사용자 편의를 더욱 높였습니다.</div>
+			<img src="images/res3.PNG" alt="" /> <span>Attendance of Each
+				Course</span>
+			<div style="text-align: center; margin-bottom: 20px;">
+				과정별 출석 조회 기능 입니다. 여기서도 게시판 페이징 알고리즘을 사용하였습니다. <br>그리고 거기에 한 발 더
+				나아가 지각, 조퇴, 정상 등원을 자동으로 구분하는 알고리즘을 추가하였습니다.
+			</div>
+			<img src="images/res4.PNG" alt="" /> <span>Attendance Status</span>
+			<div style="text-align: center; margin-bottom: 20px;">출석 현황 기능
+				입니다. 상태를 조회할 수 있으며 자동 출결 구분 기능이 사용되었습니다.</div>
+			<img src="images/res5.PNG" alt="" /> <span>Personal
+				Attendance</span>
+			<div style="text-align: center; margin-bottom: 20px;">개인별 출결 현황
+				조회 입니다. 관리자 권한으로 병가, 외출등 특수한 상황에 수정할 수 있게 수정 기능을 추가하였습니다.</div>
+			<img src="images/res6.PNG" alt="" /> <span>Attendance
+				Modification</span>
+			<div style="text-align: center; margin-bottom: 20px;">특수한 상황에
+				수정할 수 있는 수정 기능입니다.</div>
+
+			<img src="images/res7.PNG" alt="" /> <input type="button"
+				class="btn" value="맨 위로" style="float: right;">
+		</div>
+
 	</div>
-	</div>
+
+
 </body>
 </html>
