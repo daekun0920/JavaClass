@@ -48,4 +48,23 @@
 			<url-pattern>/ex03.do</url-pattern>
 		</servlet-mapping>
 		
+			
+		<servlet>
+			<servlet-name>Ex04_Send</servlet-name>
+			<servlet-class>com.test.servlet.Ex04_Send</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>Ex04_Send</servlet-name>
+			<url-pattern>/ex04_send.do</url-pattern>
+		</servlet-mapping>
+		
+			
+		<servlet>
+			<servlet-name>Ex04_Receive</servlet-name>
+			<servlet-class>com.test.servlet.Ex04_Receive</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>Ex04_Receive</servlet-name>
+			<url-pattern>/ex04_receive.do</url-pattern>
+		</servlet-mapping>
 </web-app>
