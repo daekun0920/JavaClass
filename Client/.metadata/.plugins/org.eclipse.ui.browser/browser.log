@@ -345,3 +345,9 @@
 4월 02, 2018 17:11:58.87 [2516:15104:0402/171158.878:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
 4월 02, 2018 17:11:59.10 [2516:15104:0402/171159.104:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
 4월 02, 2018 17:11:59.37 [2516:15104:0402/171159.379:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+
+4월 03, 2018 17:27:10.27 NEW SESSION
+4월 03, 2018 17:27:10.27 [4512:1576:0403/172710.260:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+4월 03, 2018 17:31:53.38 [11052:736:0403/173153.386:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+4월 03, 2018 18:45:44.75 [11052:6228:0403/184544.756:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+4월 03, 2018 19:07:19.36 [11052:8204:0403/190719.365:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101

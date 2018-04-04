@@ -32,18 +32,33 @@
 					window.open("javaOraclePJ.htm", "child", "width=1875,height=950");
 				});	
 				
+				$("#imgPJ3").click(function() {
+					event.preventDefault();
+					
+					alert("Comming soon!");
+				});
 				
+				$("#linkPJ2").click(function() {
+					event.preventDefault();
 				
+					alert("Comming soon!");
+				});	
 			});  
 		 
 		</script>
+		<style>
+			html, body {
+				margin:0;
+				padding:0;
+			}
+		</style>
 	</head>
 	
 	<body class = "modal-open">
 
 		<!-- Nav -->
 			<nav id="nav">
-				<ul class="container">
+				<ul class="container" style = "width:100%;">
 					<li><a href="#top">Top</a></li>
 					<li><a href="#work">Work</a></li>
 					<li><a href="#portfolio">Portfolio</a></li>
@@ -113,25 +128,27 @@ d
 				<article id="portfolio">
 					<header>
 						<h2>Here’s some stuff I made recently.</h2>
-						<p>Have a look!</p>
+						<p>Click to see more!</p>
 					</header>
 					<div class="container">
-						<div class="row">
-							<div class="4u 12u(mobile)" style = "margin:0px auto;float:none;">
+						<div class="row" style = "position:relative; left:12em; width:100%;">
+							<div class="4u 12u(mobile)" style = "">
 								<article class="box style2">
-									<a href="#" class="image featured"><img src="images/Java-9-600x304.png" id = "imgPJ2" style = "width:379px;height:266px;margin-left:2px;" alt=""/></a>
-									<h3><a id = "linkPJ1" href="#">Java + Oracle DB Project</a></h3>
-									<p>자바 + 오라클 DB 콘솔 프로젝트</p>
+									<a href="#" class="image featured"><img src="images/Java-9-600x304.png" id = "imgPJ2" style = "width:99%;height:268px;margin-left:2px;" alt=""/></a>
+									<h3><a id = "linkPJ1" href="#">JDBC Project</a></h3>
+									<p>Java + Oracle DB</p>
 								</article>
 							</div>
 						
-						<!-- 	<div class="4u 12u(mobile)">
-								<article class="box style2">
-									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-									<h3><a href="#">Veroeros primis</a></h3>
-									<p>Ornare nulla proin odio consequat.</p>
+						<div class="4u 12u(mobile)" style = "height:432px;">
+								<article class="box style2" style = "height:100%;">
+									<a href="#" class="image featured"><img src="images/web_pj.png" id = "imgPJ3" style = "height:268px;" alt="" /></a>
+									<h3><a id = "linkPJ2" href="#">Web Project</a></h3>
+									<p>Servlet + JSP</p>
 								</article>
 							</div>
+						</div>
+						<!-- 
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
 									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
@@ -162,7 +179,7 @@ d
 									<p>Ornare nulla proin odio consequat.</p>
 								</article>
 							</div> -->
-						</div>
+						
 					</div>
 					<footer>
 						<p>If you've been moved by my resume, Contact me!</p>
@@ -170,7 +187,7 @@ d
 					</footer>
 				</article>
 			</div>
-
+ -->
 		<!-- Contact -->
 			<div class="wrapper style4">
 				<article id="contact" class="container 75%">
@@ -218,13 +235,16 @@ d
 								<hr />
 								<h3>Find me on ...</h3>
 								<ul class="social">
-								<!-- 	<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<!--
+									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 									<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 									<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li> -->
-									<li><a href="https://plus.google.com/u/0/104222733690708257875" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-									<li><a href="https://github.com/daekun0920" class="icon fa-github"><span class="label">Github</span></a></li>
+									<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li> 
+									-->
+									<li><a href="http://plus.google.com/u/0/104222733690708257875" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+									<li><a href="http://github.com/daekun0920" class="icon fa-github"><span class="label">Github</span></a></li>
+									<li><a href="http://soundcloud.com/dale-mcwood" class="icon fa-soundcloud"><span class = "label">Soundcloud</span></a></li>
 									<!--
 									<li><a href="#" class="icon fa-rss"><span>RSS</span></a></li>
 									<li><a href="#" class="icon fa-instagram"><span>Instagram</span></a></li>
