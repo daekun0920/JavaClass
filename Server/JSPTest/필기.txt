@@ -139,7 +139,85 @@ JSP 스크립트 요소
 		- ex04_scriptlet.jsp
 		- 스크립틀릿내에서 선언한 모든 변수는 doGet()/doPost() 메소드의 지역 변수이다.
 	
+
+JSP 내장 객체, Implicit Object
+	- 개발자가 직접 객체를 생성하지 않더라도 미리 예약된 표현을 통해 제공 되는 객체들..
+	- 서블릿에서도 JSP 내장객체를 사용할 수 있다. 단, 서블릿에서는 직접 생성해서 사용해야 한다.
+	  (자바에서는 객체를 제공하는 예약어가 존재 X)
+	- request, response, session, pageContext, out // 필수
+	- application, config, page, exception // 추가
+	- 위와 동일한 단어의 변수를 생성할 수 없다.
+	- ex07_request_form.jsp
+	- ex07_request_process.jsp
+	- ex08_request_form.jsp
+	- ex08_request_process.jsp
 	
+	a. request 
+		- 클라이언트 -> (모든 행동) -> 서버
+		- javax.servlet.http.HttpServletRequest 클래스
+		- HTTP 요청과 관련 행동 : 전송된 데이터 관리(***), HTTP 헤더 정보 관리 등...
+		1. 요청 파라미터 가져오기(************************************)
+			- 클라이언트가 서버로 보낸 데이터 수신
+			- ex07_request_form.jsp
+			- ex07_request_process.jsp
+			- ex08_request_form.jsp
+			- ex08_request_process.jsp
+			- ex12_request_form.jsp
+			- ex12_request_process.jsp
+			
+		2. HTTP 요청 헤더 정보 가져오기(가끔)
+			- ex09_request_headers.jsp
+		
+		3. 세션 처리(*******************************)
+			- 나중에
+			
+		4. 쿠키 처리(애매...함)
+			- 나중에
+			
+		5. URL 처리(가끔)
+			- 나중에
+			
+		6. 인코딩 처리(반드시, 횟수X)
+			- 나중에
+			
+		7. 데이터 입출력(*************************)
+			- setAttribute();
+			
+			- getAttribute();
+			
+			
+	b. response
+		- 서버 -> (모든 행동) -> 클라이언트
+		- javax.servlet.http.HttpServletResponse 클래스
+		- HTTP 응답과 관련 행동 : 인코딩 정보, MIME, HTML 페이지 작성 등..
 	
+		a. 응답 컨텐츠 작성
+			- PrintWriter(서블릿), JspWriter(JSP) : HTML 생성업무 담당 객체 <- response로 만든다.
+			- HTML 페이지 작성
+		
+		b. 페이지 이동하기
+			- ex10_response_one.jsp
+			- ex10_response_two.jsp
+			
+		c. 쿠키 처리
+			- request 반대 행동
+			- request : 쿠키값 읽기
+			- response : 쿠키값 쓰기
+		
+		d. 인코딩 처리
+			- 나중에
+
+
+페이지 요청 방식 구분하는 방법
+- 브라우저가 서버에게 페이지를 요구하면.. 반드시 아래 둘중의 한가지 방법으로 요청이 발생
+- ex11_method_request.jsp
+- ex11_method_response.jsp
+
+1. POST
+2. GET
+
+
+
+
 	
 		
