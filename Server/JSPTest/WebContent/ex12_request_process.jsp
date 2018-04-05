@@ -55,6 +55,24 @@ String[] hobbys = request.getParameterValues("hobbys");
 
 String rbgender = request.getParameter("rbgender");
 
+
+//셀렉트 박스
+//- 선택된 option의 value가 전송
+//- value가 없는 option 이 선택되면 PCDATA를 전송 // 비권장
+String sel1 = request.getParameter("sel1");
+
+String[] sel2 = request.getParameterValues("sel2");// 복수의 컨트롤 !!
+
+//히든 태그
+String id = request.getParameter("id");
+
+//HTML
+String birthday = request.getParameter("birthday");
+
+String minprice = request.getParameter("minprice");
+String maxprice = request.getParameter("maxprice");
+
+
 %>    
     
 
@@ -120,6 +138,25 @@ String rbgender = request.getParameter("rbgender");
 		<div class = "panel-heading">라디오 버튼 : </div>
 		<div class = "panel-body"><%= rbgender %></div> 
 	</div>
-	
+	<div class="panel panel-primayr">
+      <div class="panel-heading">셀렉트 박스</div>
+      <div class="panel-body"><%= sel1 %> </div>
+   </div>
+   <div class="panel panel-primayr">
+      <div class="panel-heading">셀렉트 박스</div>
+      <div class="panel-body"><%= Arrays.toString(sel2) %> </div>
+   </div>
+   <div class="panel panel-primayr">
+      <div class="panel-heading">히든 태그</div>
+      <div class="panel-body"><%= id %> </div>
+   </div>
+   <div class="panel panel-primayr">
+      <div class="panel-heading">HTML5</div>
+      <div class="panel-body"><%= birthday %> </div>
+   </div>
+   <div class="panel panel-primayr">
+      <div class="panel-heading">자바스크립트 라이브러리</div>
+      <div class="panel-body"><%= minprice %> <%= maxprice %> </div>
+	</div>
 </body>
 </html>

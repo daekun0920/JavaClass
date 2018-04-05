@@ -218,6 +218,54 @@ JSP 내장 객체, Implicit Object
 
 
 
-
-	
+	c. pageContext 객체 
+		- 한 페이지가 요청 ~ 응답까지 과정에 관련된 행동을 하는 객체
+		- request와 유사
 		
+		1. 데이터 입출력
+			- setAttribute(), getAttribute()
+			
+		2. 페이지 이동
+			- forward()
+			- ex13_pagecontext_one.jsp
+			- ex13_pagecontext_two.jsp
+			
+			
+		
+	d. application 객체
+		- 웹 애플리케이션을 운용하는 서버에 관련된 정보를 관리
+		
+		1. 데이터 관리
+			- setAttribute, getAttribute()
+		
+		2. 서버 환경 정보
+			- ex14_application.jsp
+			
+	e. out 객체	
+		- 응답 페이지 작성하는 객체
+		- ex15_out.jsp
+
+
+내장 객체의 데이터 입출력 기능(********************)
+	- pageContext, request, session
+	- 객체 자신 내부에 데이터를 관리하는 기능 내장(맵 계열)
+		- setter : void setAttribute(String key, Object value)
+		- getter : Object getAttribute(String key)
+	- *** 위의 4가지 객체는 각각 생명 주기가 다르다.(수명)
+	- 내장 객체의 유효 범위(생명 주기)를 영역(Scope)라고 한다.(Servlet/JSP)
+	
+	- ex16_scope_one.jsp
+	- ex16_scope_two.jsp
+	- ex16_scope_three.jsp
+	
+	f. session 객체
+	- 사용자의 첫 요청때 서버 메모리에 생성 ~ 마지막 요청 후 만료 시간이 지나면 소멸
+    -										~ 만료 시간 이내에 재접속 발생하면 만료 시간이 다시 갱신
+	- 접속한 유저마다 각자의 세션 객체가 생성(개인꺼 - 다른 유저의 세션 접근 불가능)
+	- ex17_session.jsp
+	
+	
+	
+	
+	
+	
