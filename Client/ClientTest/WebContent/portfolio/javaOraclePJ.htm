@@ -96,6 +96,12 @@ ul {
 		$("#a1").accordion({
 			collapsible : true,
 			heightStyle : "content", /* 완전 중요 */
+			active:false,
+			icons:{
+				"header":"ui-icon-zoomin",
+				"activeHeader":"ui-icon-zoomout"
+			}
+			
 		});
 
 		var td = document.getElementsByTagName("td");
@@ -186,7 +192,7 @@ ul {
 		<h1>Modeling</h1>
 		<div style = "text-align:center;">
 			<span style="font-size: 3em; text-align: center; display: block;">- ERD</span>
-				<img src="images/ERD.PNG" style="display: block; width: 60%; height: 60%; margin:50px auto;">
+				<img src="images/ERD.PNG" style="display: block;width:1150px;height:550px;margin:50px auto;">
 				<hr style = "display:block; height:2px; margin:50px;">
 						<img src="images/ERD_1-1.PNG" style=" width: 30%; height: 30%; margin:30px;">
 						

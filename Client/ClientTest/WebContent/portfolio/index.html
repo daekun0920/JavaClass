@@ -75,7 +75,7 @@ d
 						</div>
 						<div class="8u 12u(mobile)">
 							<header>
-								<h1>Hello World! 저는 <strong>한대건</strong> 입니다.</h1>
+								<h1 style = "line-height:1em;">Hello World! 저는 <strong>한대건</strong> 입니다.</h1>
 							</header>
 							<p>저의 <strong>Miniportfolio</strong> 에 오신것을 환영합니다.</p>
 							<a href="#work" class="button big scrolly">what am i good at?</a>
@@ -128,27 +128,28 @@ d
 				<article id="portfolio">
 					<header>
 						<h2>Here’s some stuff I made recently.</h2>
-						<p>Click to see more!</p>
+						<p>Click these boxes to see more!</p>
 					</header>
 					<div class="container">
-						<div class="row" style = "position:relative; left:12em; width:100%;">
-							<div class="4u 12u(mobile)" style = "">
-								<article class="box style2">
-									<a href="#" class="image featured"><img src="images/Java-9-600x304.png" id = "imgPJ2" style = "width:99%;height:268px;margin-left:2px;" alt=""/></a>
-									<h3><a id = "linkPJ1" href="#">JDBC Project</a></h3>
-									<p>Java + Oracle DB</p>
-								</article>
+						
+						<div class="row">
+								<div class="4u 12u(mobile)">
+									<article class="box style2" style = "text-align:center;">
+										<a href="#" class="image featured" style = "height:268px;"><img src="images/Java-9-600x304.png" id = "imgPJ2" style = "width:99%;height:100%;margin-left:2px;" alt=""/></a>
+										<h3><a id = "linkPJ1" href="#">JDBC Project</a></h3>
+										<p>Java + Oracle DB</p>
+									</article>
+								</div>
+							
+							<div class="4u 12u(mobile)">
+									<article class="box style2">
+										<a href="#" class="image featured" style = "height:268px;"><img src="images/web_pj.png" id = "imgPJ3" style = "height:100%;" alt="" /></a>
+										<h3><a id = "linkPJ2" href="#">Web Project</a></h3>
+										<p>Servlet + JSP</p>
+									</article>
 							</div>
 						
-						<div class="4u 12u(mobile)" style = "height:432px;">
-								<article class="box style2" style = "height:100%;">
-									<a href="#" class="image featured"><img src="images/web_pj.png" id = "imgPJ3" style = "height:268px;" alt="" /></a>
-									<h3><a id = "linkPJ2" href="#">Web Project</a></h3>
-									<p>Servlet + JSP</p>
-								</article>
-							</div>
-						</div>
-						<!-- 
+						<!--
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
 									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
@@ -179,7 +180,7 @@ d
 									<p>Ornare nulla proin odio consequat.</p>
 								</article>
 							</div> -->
-						
+						</div>
 					</div>
 					<footer>
 						<p>If you've been moved by my resume, Contact me!</p>
@@ -198,7 +199,7 @@ d
 					<div>
 						<div class="row">
 							<div class="12u">
-								<form method="post" action="#">
+								<form method="post" action="sendEmail.jsp">
 									<div>
 										<div class="row">
 											<div class="6u 12u(mobile)">

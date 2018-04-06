@@ -351,3 +351,30 @@
 4월 03, 2018 17:31:53.38 [11052:736:0403/173153.386:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
 4월 03, 2018 18:45:44.75 [11052:6228:0403/184544.756:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
 4월 03, 2018 19:07:19.36 [11052:8204:0403/190719.365:ERROR:ssl_client_socket_impl.cc(1147)] handshake failed; returned -1, SSL error code 1, net_error -101
+
+4월 06, 2018 17:08:18.75 NEW SESSION
+4월 06, 2018 17:08:18.75 [6172:9708:0406/170818.727:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+4월 06, 2018 17:08:20.63 [6172:9196:0406/170820.630:ERROR:backend_impl.cc(1055)] Critical error found -8
+4월 06, 2018 17:08:20.63 [6172:9196:0406/170820.630:ERROR:entry_impl.cc(1037)] No file for a0018e7f
+4월 06, 2018 17:08:21.25 [6172:9196:0406/170821.258:ERROR:backend_impl.cc(1055)] Critical error found -8
+4월 06, 2018 17:08:22.17 [6172:9196:0406/170822.178:ERROR:backend_impl.cc(1055)] Critical error found -8
+4월 06, 2018 17:08:22.21 [6172:9724:0406/170822.211:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+4월 06, 2018 17:08:23.21 [6172:9724:0406/170823.216:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+4월 06, 2018 17:08:23.22 [6172:9724:0406/170823.216:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+4월 06, 2018 17:22:48.85 [6172:9724:0406/172248.858:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+4월 06, 2018 17:41:40.99 [6172:9724:0406/174140.989:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:41:41.02 [6172:9724:0406/174141.022:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:41:41.11 [6172:9724:0406/174141.118:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:41:41.15 [6172:9724:0406/174141.152:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:41:41.18 [6172:9724:0406/174141.188:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:41:41.28 [6172:9724:0406/174141.283:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:41:41.52 [6172:9724:0406/174141.528:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:51:26.66 [6172:9724:0406/175126.668:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:51:26.70 [6172:9724:0406/175126.705:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:51:26.89 [6172:9724:0406/175126.896:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:51:27.19 [6172:9724:0406/175127.199:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:52:05.72 [6172:9196:0406/175205.722:ERROR:backend_impl.cc(1055)] Critical error found -8
+4월 06, 2018 17:57:08.27 [6172:9724:0406/175708.275:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:57:08.31 [6172:9724:0406/175708.316:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:57:08.44 [6172:9724:0406/175708.442:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+4월 06, 2018 17:57:08.71 [6172:9724:0406/175708.714:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
