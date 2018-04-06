@@ -9784,15 +9784,49 @@ org.eclipse.recommenders.utils.Logs$LogTraceException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+<<<<<<< HEAD
+!SESSION 2018-04-03 20:57:06.702 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_161
+=======
 >>>>>>> 44010ba1015f75350d7fd1fec9ebd7d56ac6af63
 !SESSION 2018-04-04 15:39:13.479 -----------------------------------------------
 eclipse.buildId=4.7.2.M20171130-0510
 java.version=1.8.0_151
+>>>>>>> a354dc08ed71f0f9f5a7cdba3effdd8d5d62ec7c
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
+<<<<<<< HEAD
+!ENTRY org.eclipse.egit.ui 2 0 2018-04-03 20:57:24.473
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\HAN'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-03 20:57:49.248
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-04-03 20:57:49.255
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+!SESSION 2018-04-03 22:35:54.383 -----------------------------------------------
+eclipse.buildId=4.7.2.M20171130-0510
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -data C:/workspace/JavaClass/Client -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-04-03 22:36:06.969
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\HAN'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+=======
 !ENTRY com.genuitec.eclipse.startup 4 0 2018-04-04 15:39:17.879
 !MESSAGE Unexpected exception
 !STACK 0
@@ -10748,6 +10782,7 @@ java.net.SocketTimeoutException: Read timed out
 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-04-04 16:27:55.362
 !MESSAGE No repository found at http://www.apache.org/dist/geronimo/eclipse/updates/.
+<<<<<<< HEAD
 !SESSION 2018-04-06 13:34:43.756 -----------------------------------------------
 eclipse.buildId=4.7.2.M20171130-0510
 java.version=1.8.0_151
@@ -10910,3 +10945,6 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-04-06 17:57:05.472
 !MESSAGE No repository found at http://www.apache.org/dist/geronimo/eclipse/updates/.
+=======
+>>>>>>> a354dc08ed71f0f9f5a7cdba3effdd8d5d62ec7c
+>>>>>>> 5e05d58c7e04fb2c404a152bc734db86f4584e3d

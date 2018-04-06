@@ -1,24 +1,17 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CollectionTest {
 	public static void main(String[] args) {
+		ArrayList<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c", "d"));
 		
-		LinkedList<String> list = new LinkedList<>();
-		
-		list.add("hello");
-		list.add("heo");
-		list.add("llo");
-		list.add("lo");
-		list.add("hello");
-		
-		System.out.println("list : " + list);
-		
-		//list.poll();
-		
-		System.out.println("list1 : " + list);
-		
-		for (int i = 0;i < list.size(); i++) {
-			System.out.println(list.get(i).equals(list.get(0)));
+		for (String s : list) {
+			
+			if (s.equals("a")) {
+				list.remove(s);
+				break;
+			}
+			
 		}
 	}
 }

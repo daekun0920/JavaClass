@@ -7,8 +7,18 @@ configurationInstallLocation=/C\:/Users/sist00-14/Desktop/gyun/eclipse/
 eclipse.preferences.version=1
 iconcolormode=primary
 includeThemingInOomph=false
+<<<<<<< HEAD
 last.download.attempt.time=1522989331057
 lastConfiguration=1523001872393
+=======
+<<<<<<< HEAD
+last.download.attempt.time=1522762565938
+lastConfiguration=1522762556819
+=======
+last.download.attempt.time=1522826431681
+lastConfiguration=1522823975444
+>>>>>>> a354dc08ed71f0f9f5a7cdba3effdd8d5d62ec7c
+>>>>>>> 5e05d58c7e04fb2c404a152bc734db86f4584e3d
 newinstall=false
 showWelcomeDialog=false
 workbench.theme=Dark Gray
