@@ -19,7 +19,16 @@
 		<script src = "assets/js/jquery-1.12.4.js"></script>
 		<script>
 			$(document).ready(function() {
-				
+				$(".box.style2").css("transition", "all 1s");
+				$(".box.style2").hover(function() {
+					
+					$(this).css("top", "-25px");
+					
+				}, function() {
+					
+					$(this).css("top", "0px");
+					
+				});
 				$("#imgPJ2").click(function() {
 					event.preventDefault();
 				
@@ -50,6 +59,11 @@
 			html, body {
 				margin:0;
 				padding:0;
+			}
+			
+			.box.style2 {
+				transition:all 1s;
+				position:relative;
 			}
 		</style>
 	</head>
