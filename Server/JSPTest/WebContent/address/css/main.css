@@ -1,0 +1,38 @@
+/* WebContent > address > css > main.css */
+/* 사이트 모든 페이지에 적용할 공통 서식 */
+
+body, p, div, span, li, th, td, input, textarea, option, dd, a{
+	font-family:D2coding;
+	font-size:14px;
+	color:#444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:D2coding;
+	color:#444;
+} 
+
+#main {
+	
+	width:800px;
+	margin:0px auto;
+	
+}
+
+#header {
+	
+	padding-left:25px;
+	
+}
+
+#section {
+	
+	min-height:500px; /* 최소 높이(컨텐츠 존재여부 상관없이) */
+	
+}
+
+#footer {
+	
+	text-align:center;
+	
+}

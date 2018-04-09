@@ -364,8 +364,80 @@ include 액션
 쿠키 제어
 	- ex27_cookie.jsp
 	- ex27_cookie_2.jsp
+	
+	
+파일 업로드
+	- 클라이언트측 자원 -> 서버측 전송
+	- 파일 업로드 라이브러리 사용
+		- cos.jar : http://servlets.com > com.oreilly.servlet > cos-26Dec2008.zip
+	- ex28_upload_form.jsp //전송
+	- ex28_upload_process.jsp //수신 + 결과 메시지
+	- WebContent > files 폴더 생성 : 업로드한 폴더를 저장해놓을 폴더
+
+	- ex29_upload_form.jsp
+	- ex28_upload_process.jsp
+파일 다운로드
+	- 서버측 자원 -> 클라이언트측 전송
 
 
+정리 > 기본 CRUD 작업
+1. 사이트 레이아웃 -> include 사용 (지시자 or 액션태그)
+2. JDBC 연동(DAO, DTO 사용안함)
+3. 모델 1 작업
 
+주소록
+1. 주소록 쓰기
+2. 주소록 읽기
+3. 주소록 수정하기
+4. 주소록 삭제하기
 
+데이터
+- 테이블 1개
+- 번호, 이름, 주소, 나이, 성별, 연락처
+
+작업 공간
+- WebContent > address 폴더
+
+파일(폴더) 생성
+1. address > css 폴더 생성
+	a. main.css 파일 생성
+
+2. address > js 폴더 생성
+	
+3. address > inc 폴더 생성
+	a. header.jsp
+	b. footer.jsp
+	c. asset.jsp
+	
+4. address > images 폴더 생성
+	a. gender_m.png 복사
+	b. gender_f.png 복사
+
+5. WebContent > WEB-INF > lib
+	a. objec14.jar 복사
+	b. standard.jar 복사
+	
+6. 작업 파일
+	a. add.jsp -> addok.jsp
+	b. list.jsp
+	c. edit.jsp -> editok.jsp
+	d. delok.jsp
+	
+	
+7. 패키지 생성 
+	a. com.test.jsp.address
+	
+---------------------------------------------------
+
+[진행 순서]
+1. DB 작업
+	- 테이블 생성
+	
+2. 레이아웃 + 공통 모듈 생성하기
+	- 레이아웃 : 모든 페이지들이 가지는 공통된 페이지 뼈대
+	- 공통 모듈 : 조각 페이지로 만들 내용들(반복해서 재사용되는 파트)
+	a. address > template.jsp
+	
+	
+	
 	
