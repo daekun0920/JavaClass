@@ -438,6 +438,23 @@ include 액션
 	- 공통 모듈 : 조각 페이지로 만들 내용들(반복해서 재사용되는 파트)
 	a. address > template.jsp
 	
+
+
+
+JSP 페이지 만드는 방법
+
+1. Model 1
+	= View + Controller -> 한 페이지내에서 작성
+	= 페이지 상단(업무 코드) + 페이지 하단(출력(HTML) 코드)
+	
+2. Model 2
+	= 비즈니스 코드 담당 + DB 코드 담당 + 출력 코드 담당 : 담당별로 분리
+	= MVC
+	
+3. Spring MVC
+	
+
+	
 	
 	
 	

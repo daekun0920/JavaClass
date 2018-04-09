@@ -9,7 +9,8 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/workspace/mail-1.4.7.jar"/>
-	<classpathentry kind="lib" path="C:/workspace/simple-java-mail-5.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Class/JavaClass/Client/ClientTest/WebContent/WEB-INF/lib/mail-1.4.7.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Class/JavaClass/Client/ClientTest/WebContent/WEB-INF/lib/simple-java-mail-5.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/Class/JavaClass/Client/ClientTest/WebContent/WEB-INF/lib/jaf-1_1_1.zip"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
