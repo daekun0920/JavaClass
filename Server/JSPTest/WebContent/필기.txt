@@ -1,4 +1,4 @@
-
+s
 JSP, Java Server Pages
 	- 서블릿의 일종, 외형이 HTML
 	- 알바생(종류가 다른)
