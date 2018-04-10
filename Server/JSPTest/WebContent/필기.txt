@@ -452,9 +452,61 @@ JSP 페이지 만드는 방법
 	= MVC
 	
 3. Spring MVC
-	
 
+
+인증, Authentication
+- 현재 고객이 해당 사이트의 구성원인지를 확인하는 작업
+- 로그인/로그아웃
+- 인증 과정을 거친 사용자를 인증 과정을 거치지 않는 사용자와 구분하기 위해서 표시를 하는 작업
+- 쿠키 인증, 세션 인증
+- 인증 티켓 발급(표시)
+
+허가, Authorization
+- 어떤 업무에 대해서 현재 고객이 권한이 있는지 확인(판단)을 하는 작업
+- 회원 전용 게시판 -> 회원만 글쓰기 가능
+
+com.test.jsp.auth 패키지 생성
+
+WebContent > auth 폴더 생성
+
+WebContent > auth > index.jsp // 초기 페이지
+WebContent > auth > login.jsp // 로그인 페이지
+WebContent > auth > logout.jsp // 로그아웃 페이지
+WebContent > auth > member 폴더 생성
+WebContent > auth > member > member.jsp // 회원 전용 페이지
+WebContent > auth > admin 폴더 생성
+WebContent > auth > admin > admin.jsp // 관리 전용 페이지
+--------------------------------------------------------------------------------------
+
+코드관리게시판 + 인증 + 파일업로드 + 부트스트랩
+
+com.test.jsp.code 패키지 생성
+	- DBUTil.java 복사
+WebContent > code 폴더 생성
+
+
+1. DB 작업
 	
+2. 리소스 폴더 생성
+	- code > css
+	- code > js 
+	- code > inc
+	- code > files
+	
+3. 파일 생성
+	- code > css > main.css
+	- code > inc > header.jsp
+	- code > inc > footer.jsp
+	- code > inc > asset.jsp
+	- code > index.jsp
+	- code > list.jsp
+	- code > add.jsp
+	- code > addok.jsp
+
+
+
+
+
 	
 	
 	

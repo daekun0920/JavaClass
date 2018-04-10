@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Miniport by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		
+		
+		
+		<script src = "assets/js/jquery-1.12.4.js"></script>
+		<script>
+			$(document).ready(function() {
+				$(".box.style2").css("transition", "all 1s");
+				$(".box.style2").hover(function() {
+					
+					$(this).css("top", "-25px");
+					
+				}, function() {
+					
+					$(this).css("top", "0px");
+					
+				});
+				$("#imgPJ2").click(function() {
+					event.preventDefault();
+				
+					window.open("javaOraclePJ.htm", "child", "width=1875,height=950,screenX=0,screenY=0");
+				});				
+				
+				$("#linkPJ1").click(function() {
+					event.preventDefault();
+				
+					window.open("javaOraclePJ.htm", "child", "width=1875,height=950");
+				});	
+				
+				$("#imgPJ3").click(function() {
+					event.preventDefault();
+					
+					alert("Comming soon!");
+				});
+				
+				$("#linkPJ2").click(function() {
+					event.preventDefault();
+				
+					alert("Comming soon!");
+				});	
+			});  
+		 
+		</script>
+		<style>
+			html, body {
+				margin:0;
+				padding:0;
+			}
+			
+			.box.style2 {
+				transition:all 1s;
+				position:relative;
+			}
+		</style>
+	</head>
+	
+	<body class = "modal-open">
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container" style = "width:100%;">
+					<li><a href="#top">Top</a></li>
+					<li><a href="#work">Work</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+d
+		<!-- Home -->
+			<div class="wrapper style1 first">
+				<article class="container" id="top">
+					<div class="row">
+						<div class="4u 12u(mobile)">
+							<span class="image fit"><img src="images/received_10207045664754210.png" alt="" /></span>
+						</div>
+						<div class="8u 12u(mobile)">
+							<header>
+								<h1 style = "line-height:1em;">Hello World! 저는 <strong>한대건</strong> 입니다.</h1>
+							</header>
+							<p>저의 <strong>Miniportfolio</strong> 에 오신것을 환영합니다.</p>
+							<a href="#work" class="button big scrolly">what am i good at?</a>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		<!-- Work -->
+			<div class="wrapper style2">
+				<article id="work">
+					<header>
+						<h2>Here's all the stuff I'm good at.</h2>
+						<p></p>
+					</header>
+					<div class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								<section class="box style1">
+									<span class="icon featured fa-code"></span>
+									<h3>프로그래밍</h3>
+									<p>코딩하기를 좋아하는 프로그래밍 마니아 입니다. 주말엔 항상 노트북과 책을 들고 근처 카페에서 아이디어를 생각하며 코딩을 하는걸 취미로 삼고 있습니다.</p>
+								</section>
+							</div>
+							<div class="4u 12u(mobile)">
+								<section class="box style1">
+									<span class="icon featured fa-music"></span>
+									<h3>음악</h3>
+									<p>저는 또한 음악가 입니다. 악기를 연주하고 곡을 쓰고 합주하기를 좋아합니다. 작곡과 코딩간에는 창조라는 공통 분모가 있어서 우연같지는 않습니다.</p>
+								</section>
+							</div>
+							<div class="4u 12u(mobile)">
+								<section class="box style1">
+									<span class="icon featured fa-beer"></span>
+									<h3>  &nbsp맥주</h3>
+									<p>저는 애주가가 아닙니다. 하지만 맥주는 다릅니다. 한때는 양조를 배우려고도 하였습니다. 지금도 다른 술보단 맥주를 선호하는 편입니다.</p>
+								</section>
+							</div>
+						</div>
+					</div>
+					<footer>
+						<p>would you like to see my recent work?</p>
+						<a href="#portfolio" class="button big scrolly">See some of my recent work</a>
+					</footer>
+				</article>
+			</div>
+
+		<!-- Portfolio -->
+			<div class="wrapper style3">
+				<article id="portfolio">
+					<header>
+						<h2>Here’s some stuff I made recently.</h2>
+						<p>Click these boxes to see more!</p>
+					</header>
+					<div class="container">
+						
+						<div class="row">
+								<div class="4u 12u(mobile)">
+									<article class="box style2" style = "text-align:center;">
+										<a href="#" class="image featured" style = "height:268px;"><img src="images/Java-9-600x304.png" id = "imgPJ2" style = "width:99%;height:100%;margin-left:2px;" alt=""/></a>
+										<h3><a id = "linkPJ1" href="#">JDBC Project</a></h3>
+										<p>Java + Oracle DB</p>
+									</article>
+								</div>
+							
+							<div class="4u 12u(mobile)">
+									<article class="box style2">
+										<a href="#" class="image featured" style = "height:268px;"><img src="images/web_pj.png" id = "imgPJ3" style = "height:100%;" alt="" /></a>
+										<h3><a id = "linkPJ2" href="#">Web Project</a></h3>
+										<p>Servlet + JSP</p>
+									</article>
+							</div>
+						
+						<!--
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+									<h3><a href="#">Lorem ipsum</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+						</div>
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+									<h3><a href="#">Tempus dolore</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+									<h3><a href="#">Feugiat aliquam</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+									<h3><a href="#">Sed amet ornare</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div> -->
+						</div>
+					</div>
+					<footer>
+						<p>If you've been moved by my resume, Contact me!</p>
+						<a href="#contact" class="button big scrolly">Get in touch with me</a>
+					</footer>
+				</article>
+			</div>
+ -->
+		<!-- Contact -->
+			<div class="wrapper style4">
+				<article id="contact" class="container 75%">
+					<header>
+						<h2>Have me make stuff for you.</h2>
+						<p>i'm available 24/7!</p>
+					</header>
+					<div>
+						<div class="row">
+							<div class="12u">
+								<form method="post" action="sendEmail.jsp">
+									<div>
+										<div class="row">
+											<div class="6u 12u(mobile)">
+												<input type="text" name="name" id="name" placeholder="Name" />
+											</div>
+											<div class="6u 12u(mobile)">
+												<input type="text" name="email" id="email" placeholder="Email" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<input type="text" name="subject" id="subject" placeholder="Subject" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<textarea name="message" id="message" placeholder="Message"></textarea>
+											</div>
+										</div>
+										<div class="row 200%">
+											<div class="12u">
+												<ul class="actions">
+													<li><input type="submit" value="Send Message" /></li>
+													<li><input type="reset" value="Clear Form" class="alt" /></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<hr />
+								<h3>Find me on ...</h3>
+								<ul class="social">
+									<!--
+									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li> 
+									-->
+									<li><a href="http://plus.google.com/u/0/104222733690708257875" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+									<li><a href="http://github.com/daekun0920" class="icon fa-github"><span class="label">Github</span></a></li>
+									<li><a href="http://soundcloud.com/dale-mcwood" class="icon fa-soundcloud"><span class = "label">Soundcloud</span></a></li>
+									<!--
+									<li><a href="#" class="icon fa-rss"><span>RSS</span></a></li>
+									<li><a href="#" class="icon fa-instagram"><span>Instagram</span></a></li>
+									<li><a href="#" class="icon fa-foursquare"><span>Foursquare</span></a></li>
+									<li><a href="#" class="icon fa-skype"><span>Skype</span></a></li>
+									<li><a href="#" class="icon fa-soundcloud"><span>Soundcloud</span></a></li>
+									<li><a href="#" class="icon fa-youtube"><span>YouTube</span></a></li>
+									<li><a href="#" class="icon fa-blogger"><span>Blogger</span></a></li>
+									<li><a href="#" class="icon fa-flickr"><span>Flickr</span></a></li>
+									<li><a href="#" class="icon fa-vimeo"><span>Vimeo</span></a></li>
+									-->
+								</ul>
+								<hr />
+							</div>
+						</div>
+					</div>
+					<footer>
+						<ul id="copyright">
+							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+				</article>
+			</div>
+
+		<!-- Scripts -->
+			<!-- <script src="assets/js/jquery.min.js"></script> -->
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/skel-viewport.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+		
+			
+			
+		<script src = "assets/js/jquery-ui.js"></script>
+
+	</body>
+</html>

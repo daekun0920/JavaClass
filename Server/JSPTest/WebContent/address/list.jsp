@@ -77,7 +77,9 @@ rs = stat.executeQuery(sql);
 
 	//삭제하기 버튼을 눌렀을때
 	function del(seq) {
-		location.href = "delok.jsp?seq=" + seq;
+		if (confirm("ㄹㅇ 삭제하시겠습니까?")) {
+			location.href = "delok.jsp?seq=" + seq;
+		}
 	}
 	
 </script>
@@ -118,8 +120,8 @@ rs = stat.executeQuery(sql);
 			<tr>
 				<td rowspan ="4"><img src = "images/gender_<%= rs.getString("gender") %>.png"></td>
 				<td><%= rs.getString("name") %>
-					<span class = "btnspan" onclick = "edit(<%= rs.getString("seq") %>);">[del]</span>
-					<span class = "btnspan" onclick = "del(<%= rs.getString("seq") %>);">[edit]</span>
+					<span class = "btnspan" onclick = "del(<%= rs.getString("seq") %>);">[del]</span>
+					<span class = "btnspan" onclick = "edit(<%= rs.getString("seq") %>);">[edit]</span>
 				</td>
 				
 			</tr>
