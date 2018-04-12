@@ -1,0 +1,80 @@
+MVCTest > 필기.txt
+
+1. Servlet
+	- *.java = 자바 코드 + HTML 코드 
+	- 자바 코드 쉽다.
+	- HTML 코드 어렵다.
+	
+2. JSP
+	- *.jsp = 자바코드 + HTML 코드
+	- HTML 코드 쉽다.
+	- 자바 코드 불편
+
+
+3. Servlet + JSP
+	- *.java + *.jsp
+	- MVC 모델
+
+주소록 MVC 버전 + DAO(DTO)
+
+1. 쓰기
+2. 읽기
+
+파일 생성 
+1. com.test.mvc.address 패키지 생성
+	- List.java
+	- Add.java
+	- AddOk.java
+	- AddressDAO.java
+	- AddressDTO.java
+
+2. WebContent > address 폴더 생성
+	- list.jsp
+	- add.jsp
+	- addok.jsp
+	
+3. web.xml
+	- 각 서블릿들 가상 주소 미리 맵핑
+	- List > "/address/list.do"
+	- Add > "/address/add.do"
+	- AddOk > "/address/addok.do"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
