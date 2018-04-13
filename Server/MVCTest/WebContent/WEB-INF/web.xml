@@ -50,6 +50,70 @@
 	</servlet-mapping>
 	
 	
+	<!-- 사이트(인증 + 게시판) -->
+	<!-- 
+	url
+	1. /index.do : 초기페이지
+	2. /auth/xxx.do : 인증 관련
+	3. /board/xxx.doc : 게시판 관련
+	
+	
+	-->
+	
+	<servlet>
+		<servlet-name>Semi.Template</servlet-name>
+		<servlet-class>com.test.mvc.Template</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Semi.Template</servlet-name>
+		<url-pattern>/template.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Semi.Index</servlet-name>
+		<servlet-class>com.test.mvc.Index</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Semi.Index</servlet-name>
+		<url-pattern>/index.do</url-pattern>
+	</servlet-mapping>
+	
+		
+	<servlet>
+		<servlet-name>Semi.Auth.Index</servlet-name>
+		<servlet-class>com.test.mvc.auth.Index</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Semi.Auth.Index</servlet-name>
+		<url-pattern>/auth/index.do</url-pattern>
+	</servlet-mapping>
+		
+		
+	<servlet>
+		<servlet-name>Semi.Auth.Login</servlet-name>
+		<servlet-class>com.test.mvc.auth.Login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Semi.Auth.Login</servlet-name>
+		<url-pattern>/auth/login.do</url-pattern>
+	</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>Semi.Auth.Logout</servlet-name>
+		<servlet-class>com.test.mvc.auth.Logout</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Semi.Auth.Logout</servlet-name>
+		<url-pattern>/auth/logout.do</url-pattern>
+	</servlet-mapping>
+		
+	
+	
+	
+	
+	
+	
+	
 </web-app>
 
 

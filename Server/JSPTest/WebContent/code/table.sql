@@ -1,52 +1,55 @@
--- WebContent > code > table.sql
+--WebContent > code > table.sql
 
--- íšŒì› í…Œì´ë¸” + ì½”ë“œ(ê²Œì‹œë¬¼) í…Œì´ë¸”
+-- È¸¿ø Å×ÀÌºí + ÄÚµå(°Ô½Ã¹°) Å×ÀÌºí
 
-DROP TABLE tblCategory;
-
-CREATE table tblMember (
-    id VARCHAR2(30) primary key,
-    pw varchar2(30) not null,
-    name varchar2(30) not null,
-    lv number(1) not null check(lv between 1 and 3)
-    
+create table tblMember (
+    id varchar2(30) primary key,        --¾ÆÀÌµğ
+    pw varchar2(30) not null, --¾ÏÈ£
+    name varchar2(30) not null, --ÀÌ¸§
+    lv number(1) not null check(lv between 1 and 3) --µî±Ş(1 : ÀÏ¹İ, 2 : °ü¸®ÀÚ, 3 : ÃÖ°í °ü¸®ÀÚ)
 );
 
-
-
-CREATE TABLE tblCategory (
-
-    seq NUMBER PRIMARY KEY,
-    name VARCHAR2(100) NOT NULL
-
+create table tblCode (
+    seq number primary key, --°Ô½Ã¹° ¹øÈ£
+    subject varchar2(500) not null, --°Ô½Ã¹°Á¦¸ñ
+    content varchar2(2000) not null, --ÄÚµå ¼³¸í
+    code varchar2(2000) not null, --ÇÁ·Î±×·¡¹Ö ÄÚµå
+    category  number not null REFERENCES tblcategory(seq), --Ä«Å×°í¸®
+    regdate date default sysdate not null, --ÀÛ¼º½Ã°£
+    id varchar2(30) not null REFERENCES tblMember(id), --ÀÛ¼ºÀÚ(FK)
+    filename varchar2(100) null, --Ã·ºÎÆÄÀÏ¸í
+    orgfilename varchar2(100) null --Ã·ºÎÆÄÀÏ¸í
 );
 
-INSERT INTO tblCategory VALUES (1, 'Java');
-INSERT INTO tblCategory VALUES (2, 'Oracle');
-INSERT INTO tblCategory VALUES (3, 'HTML');
-INSERT INTO tblCategory VALUES (4, 'CSS');
-INSERT INTO tblCategory VALUES (5, 'JavaScript');
+select * from tblCode;
 
+create SEQUENCE code_seq;
 
-DROP TABLE tblCode;
+drop table tblcategory;
+drop table tblCode;
 
-CREATE SEQUENCE code_seq;
-
-CREATE TABLE tblCode (
-
-    seq NUMBER PRIMARY KEY, -- ê²Œì‹œë¬¼ ë²ˆí˜¸
-    subject VARCHAR2(500) NOT NULL, -- ê²Œì‹œë¬¼ ì œëª©
-    content VARCHAR2(2000) NOT NULL, -- ì½”ë“œ ì„¤ëª…
-    code VARCHAR2(2000) NOT NULL, -- í”„ë¡œê·¸ë˜ë° ì½”ë“œ
-    category NUMBER NOT NULL REFERENCES tblCategory(seq), -- ì¹´í…Œê³ ë¦¬
-    regdate DATE DEFAULT sysdate NOT NULL, -- ì‘ì„±ì‹œê°„
-    id VARCHAR2(30) NOT NULL REFERENCES tblMember(id), -- ì‘ì„±ì(FK)
-    filename varchar2(100) null,   -- ì²¨ë¶€íŒŒì¼ëª…
-    orgfilename varchar2(100) null -- ì²¨ë¶€íŒŒì¼ëª…
+create table tblcategory (
+    seq number primary key, 
+    name varchar2(100) not null
 );
 
-
+insert into tblcategory values ( 1, 'Java');
+insert into tblcategory values ( 2, 'Oracle');
+insert into tblcategory values ( 3, 'HTML');
+insert into tblcategory values ( 4, 'CSS');
+insert into tblcategory values ( 5, 'JavaScript');
 
 commit;
-SELECT * FROM tblCode;
 
+--
+
+
+SELECT c.seq, c.subject, c.content, c.code, c.category, c.regdate, c.id, c.filename, c.orgfilename, m.name, t.name as cname FROM tblcode C
+    INNER JOIN tblmember M 
+        ON M.ID = C.ID
+            INNER JOIN tblcategory T
+                ON T.seq = C.CATEGORY
+                  order by seq desc;
+            
+SELECT C.seq, C.subject, C.CONTENT, C.code, C.CATEGORY, C.regdate, C.ID, C.filename, C.orgfilename, M.NAME FROM tblcode C
+INNER JOIN tblmember M  ON M.ID = c.id order by seq desc;
