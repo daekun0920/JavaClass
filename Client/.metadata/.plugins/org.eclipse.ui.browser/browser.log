@@ -394,3 +394,16 @@
 4월 09, 2018 13:52:26.90 [516:11688:0409/135226.906:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
 4월 09, 2018 13:52:27.11 [516:11688:0409/135227.113:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
 4월 09, 2018 13:52:27.40 [516:11688:0409/135227.406:ERROR:upload_data_presenter.cc(73)] NOT IMPLEMENTED
+
+4월 13, 2018 16:30:01.85 NEW SESSION
+4월 13, 2018 16:30:01.85 [9448:1656:0413/163001.831:ERROR:backend_impl.cc(1055)] Critical error found -8
+4월 13, 2018 16:30:01.97 [9448:3736:0413/163001.846:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+4월 13, 2018 16:30:04.82 [9448:1656:0413/163004.825:ERROR:backend_impl.cc(1055)] Critical error found -8
+4월 13, 2018 16:30:04.83 [9448:1656:0413/163004.825:ERROR:entry_impl.cc(1037)] No file for a00176e3
+4월 13, 2018 16:30:04.91 [9448:1656:0413/163004.913:ERROR:entry_impl.cc(962)] Failed to save user data
+4월 13, 2018 16:30:04.91 [9448:1656:0413/163004.913:ERROR:entry_impl.cc(962)] Failed to save user data
+4월 13, 2018 16:30:06.58 [9448:1656:0413/163006.565:ERROR:backend_impl.cc(1055)] Critical error found -8
+4월 13, 2018 16:30:06.68 [9448:3364:0413/163006.684:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+4월 13, 2018 16:30:06.69 [9448:3364:0413/163006.684:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
+4월 13, 2018 16:40:00.32 
+4월 13, 2018 16:40:00.33 KLIB_SelfTest return : KLR_OK
