@@ -23,7 +23,7 @@
 	
 	<h2 class = "page-header">시작 페이지~</h2>
 	
-		Welcome!
+		<div>Welcome!</div>
 		
 	</div>
 </body>

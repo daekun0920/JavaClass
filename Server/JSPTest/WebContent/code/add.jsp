@@ -60,7 +60,7 @@ rs = stat.executeQuery(sql);
                   <td>
                      <select name="category" id="category" class="form-control" ><!-- placeholder 안먹음 -->
                         <% while (rs.next()) {%>
-                        <option value="<%= rs.getString("seq") %>"><%= rs.getString("name") %></option>
+                     	   <option value="<%= rs.getString("seq") %>"><%= rs.getString("name") %></option>
                         <% } %>
                      </select>
                   </td>

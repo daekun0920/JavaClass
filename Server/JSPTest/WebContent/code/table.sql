@@ -1,24 +1,24 @@
 --WebContent > code > table.sql
 
--- È¸¿ø Å×ÀÌºí + ÄÚµå(°Ô½Ã¹°) Å×ÀÌºí
+-- È¸ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ + ï¿½Úµï¿½(ï¿½Ô½Ã¹ï¿½) ï¿½ï¿½ï¿½Ìºï¿½
 
 create table tblMember (
-    id varchar2(30) primary key,        --¾ÆÀÌµð
-    pw varchar2(30) not null, --¾ÏÈ£
-    name varchar2(30) not null, --ÀÌ¸§
-    lv number(1) not null check(lv between 1 and 3) --µî±Þ(1 : ÀÏ¹Ý, 2 : °ü¸®ÀÚ, 3 : ÃÖ°í °ü¸®ÀÚ)
+    id varchar2(30) primary key,        --ï¿½ï¿½ï¿½Ìµï¿½
+    pw varchar2(30) not null, --ï¿½ï¿½È£
+    name varchar2(30) not null, --ï¿½Ì¸ï¿½
+    lv number(1) not null check(lv between 1 and 3) --ï¿½ï¿½ï¿½(1 : ï¿½Ï¹ï¿½, 2 : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 3 : ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 );
 
 create table tblCode (
-    seq number primary key, --°Ô½Ã¹° ¹øÈ£
-    subject varchar2(500) not null, --°Ô½Ã¹°Á¦¸ñ
-    content varchar2(2000) not null, --ÄÚµå ¼³¸í
-    code varchar2(2000) not null, --ÇÁ·Î±×·¡¹Ö ÄÚµå
-    category  number not null REFERENCES tblcategory(seq), --Ä«Å×°í¸®
-    regdate date default sysdate not null, --ÀÛ¼º½Ã°£
-    id varchar2(30) not null REFERENCES tblMember(id), --ÀÛ¼ºÀÚ(FK)
-    filename varchar2(100) null, --Ã·ºÎÆÄÀÏ¸í
-    orgfilename varchar2(100) null --Ã·ºÎÆÄÀÏ¸í
+    seq number primary key, --ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½È£
+    subject varchar2(500) not null, --ï¿½Ô½Ã¹ï¿½ï¿½ï¿½ï¿½ï¿½
+    content varchar2(2000) not null, --ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
+    code varchar2(2000) not null, --ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½Úµï¿½
+    category  number not null REFERENCES tblcategory(seq), --Ä«ï¿½×°ï¿½
+    regdate date default sysdate not null, --ï¿½Û¼ï¿½ï¿½Ã°ï¿½
+    id varchar2(30) not null REFERENCES tblMember(id), --ï¿½Û¼ï¿½ï¿½ï¿½(FK)
+    filename varchar2(100) null, --Ã·ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½
+    orgfilename varchar2(100) null --Ã·ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½
 );
 
 select * from tblCode;
@@ -38,7 +38,7 @@ insert into tblcategory values ( 2, 'Oracle');
 insert into tblcategory values ( 3, 'HTML');
 insert into tblcategory values ( 4, 'CSS');
 insert into tblcategory values ( 5, 'JavaScript');
-
+DELETE FROM tblBoard WHERE seq = 33;
 commit;
 
 --
