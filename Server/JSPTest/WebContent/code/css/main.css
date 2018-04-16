@@ -1,80 +1,61 @@
-/* main.css */
+/*main.css*/
+html,body{height:100%;}
 
-html, body {
-	
-	height:100%;
-	
+body, div, span, p, li, pre, input, textarea, a, h1, h2, h3, h4, h5, h6{
+	font-family: 빙그레체;
 }
-
-body, div, span, p, li, pre, input, textarea, a, h1, h2, h3, h4, h5, h6 {
-	
-	font-family:D2coding;
-	
-}
-
 
 #main {
-	
-	width:800px;
+	width: 800px;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+	margin: 0px auto;
+	box-shadow: 0px 0px 2px #aaa;
 	min-height:100%;
-	border-left:1px solid #999;
-	border-right:1px solid #999;
-	margin:0px auto;
-	box-shadow:0px 0px 2px;
-	
 }
 
-#header {
+#header{
 	border-bottom:1px solid #999;
-	
 }
-
-#header > ul {
+#header>ul{
 	list-style-type:none;
 	padding:0px;
 	margin:0px;
 }
-
-#header > ul > li {
-	/*display:inline-block;*/
+#header>ul>li{
+	/* display:inline-block; */
 	float:left;
 	width:25%;
 	padding:15px 0px;
 	margin:0px;
 	text-align:center;
-	
 }
 
-#header > ul > li:nth-child(even) {
-	background:#eee;
-}
+#header>ul>li:nth-child(even){background:#eee;}
+#header>ul>li:nth-child(odd){background:#ddd;}
 
-#header > ul > li:nth-child(odd) {
-	background:#ddd;
-}
-
-#header > ul::after {
-	content: " ";
+#header > ul> li:after{
+	content:"";
 	display:block;
 	clear:both;
 }
 
-#container {
+#container{
 	min-height:800px;
-	padding:0px 20px;
 }
 
-#footer {
-	
+#footer{
 	text-align:center;
-	padding:20px 0px 50px 0px;
-	border-top:1px solid #999;
-	
+	padding: 20px 0px 100px 0px;
 }
-
-#btns {
+#btns{
 	margin-left:8px;
 	margin-bottom:40px;
 }
+
+
+
+
+
 
 

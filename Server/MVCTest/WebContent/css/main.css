@@ -1,0 +1,45 @@
+body, h1, h2, h3, h4, h5, h6, div, span, p, li, input, textarea, a {
+	
+	font-family:D2coding;
+	color:#444;
+	
+}
+
+.container > h2.page-header {
+	
+	width:1000px;
+	margin:40px auto;	
+}
+
+.container > table, container > form > table ,container > div {
+	
+	width:900px;
+	margin:20px auto;
+	
+}
+
+#btns {
+	
+	margin-top:35px;
+	margin-bottom:100px;
+	text-align:center;
+}
+
+.short {
+	width:25%;
+}
+
+.middle {
+	width:50%;
+}
+
+input, textarea, select {
+	
+	outline:none important;
+	resize:none;
+	
+}
+
+a:hover {
+	text-decoration:none;
+}

@@ -1,52 +1,55 @@
--- WebContent > code > table.sql
+--WebContent > code > table.sql
 
--- 회원 테이블 + 코드(게시물) 테이블
+-- ȸ�� ���̺� + �ڵ�(�Խù�) ���̺�
 
-DROP TABLE tblCategory;
-
-CREATE table tblMember (
-    id VARCHAR2(30) primary key,
-    pw varchar2(30) not null,
-    name varchar2(30) not null,
-    lv number(1) not null check(lv between 1 and 3)
-    
+create table tblMember (
+    id varchar2(30) primary key,        --���̵�
+    pw varchar2(30) not null, --��ȣ
+    name varchar2(30) not null, --�̸�
+    lv number(1) not null check(lv between 1 and 3) --���(1 : �Ϲ�, 2 : ������, 3 : �ְ� ������)
 );
 
-
-
-CREATE TABLE tblCategory (
-
-    seq NUMBER PRIMARY KEY,
-    name VARCHAR2(100) NOT NULL
-
+create table tblCode (
+    seq number primary key, --�Խù� ��ȣ
+    subject varchar2(500) not null, --�Խù�����
+    content varchar2(2000) not null, --�ڵ� ����
+    code varchar2(2000) not null, --���α׷��� �ڵ�
+    category  number not null REFERENCES tblcategory(seq), --ī�װ�
+    regdate date default sysdate not null, --�ۼ��ð�
+    id varchar2(30) not null REFERENCES tblMember(id), --�ۼ���(FK)
+    filename varchar2(100) null, --÷�����ϸ�
+    orgfilename varchar2(100) null --÷�����ϸ�
 );
 
-INSERT INTO tblCategory VALUES (1, 'Java');
-INSERT INTO tblCategory VALUES (2, 'Oracle');
-INSERT INTO tblCategory VALUES (3, 'HTML');
-INSERT INTO tblCategory VALUES (4, 'CSS');
-INSERT INTO tblCategory VALUES (5, 'JavaScript');
+select * from tblCode;
 
+create SEQUENCE code_seq;
 
-DROP TABLE tblCode;
+drop table tblcategory;
+drop table tblCode;
 
-CREATE SEQUENCE code_seq;
-
-CREATE TABLE tblCode (
-
-    seq NUMBER PRIMARY KEY, -- 게시물 번호
-    subject VARCHAR2(500) NOT NULL, -- 게시물 제목
-    content VARCHAR2(2000) NOT NULL, -- 코드 설명
-    code VARCHAR2(2000) NOT NULL, -- 프로그래밍 코드
-    category NUMBER NOT NULL REFERENCES tblCategory(seq), -- 카테고리
-    regdate DATE DEFAULT sysdate NOT NULL, -- 작성시간
-    id VARCHAR2(30) NOT NULL REFERENCES tblMember(id), -- 작성자(FK)
-    filename varchar2(100) null,   -- 첨부파일명
-    orgfilename varchar2(100) null -- 첨부파일명
+create table tblcategory (
+    seq number primary key, 
+    name varchar2(100) not null
 );
 
-
-
+insert into tblcategory values ( 1, 'Java');
+insert into tblcategory values ( 2, 'Oracle');
+insert into tblcategory values ( 3, 'HTML');
+insert into tblcategory values ( 4, 'CSS');
+insert into tblcategory values ( 5, 'JavaScript');
+DELETE FROM tblBoard WHERE seq = 33;
 commit;
-SELECT * FROM tblCode;
 
+--
+
+
+SELECT c.seq, c.subject, c.content, c.code, c.category, c.regdate, c.id, c.filename, c.orgfilename, m.name, t.name as cname FROM tblcode C
+    INNER JOIN tblmember M 
+        ON M.ID = C.ID
+            INNER JOIN tblcategory T
+                ON T.seq = C.CATEGORY
+                  order by seq desc;
+            
+SELECT C.seq, C.subject, C.CONTENT, C.code, C.CATEGORY, C.regdate, C.ID, C.filename, C.orgfilename, M.NAME FROM tblcode C
+INNER JOIN tblmember M  ON M.ID = c.id order by seq desc;

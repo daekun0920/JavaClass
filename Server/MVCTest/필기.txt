@@ -1,0 +1,183 @@
+MVCTest > 필기.txt
+
+1. Servlet
+	- *.java = 자바 코드 + HTML 코드 
+	- 자바 코드 쉽다.
+	- HTML 코드 어렵다.
+	
+2. JSP
+	- *.jsp = 자바코드 + HTML 코드
+	- HTML 코드 쉽다.
+	- 자바 코드 불편
+
+
+3. Servlet + JSP
+	- *.java + *.jsp
+	- MVC 모델
+
+주소록 MVC 버전 + DAO(DTO)
+
+1. 쓰기
+2. 읽기
+
+파일 생성 
+1. com.test.mvc.address 패키지 생성
+	- List.java
+	- Add.java
+	- AddOk.java
+	- AddressDAO.java
+	- AddressDTO.java
+
+2. WebContent > address 폴더 생성
+	- list.jsp
+	- add.jsp
+	- addok.jsp
+	
+3. web.xml
+	- 각 서블릿들 가상 주소 미리 맵핑
+	- List > "/address/list.do"
+	- Add > "/address/add.do"
+	- AddOk > "/address/addok.do"
+
+--------------------------------------------------------------------------
+
+게시판 만들기
+
+0. 회원 기반
+1. 글쓰기
+2. 목록(시작 페이지)
+3. 글 상세보기
+4. 글 수정하기
+5. 글 삭제하기
+6. 글 검색하기
+7. 페이징
+8. 댓글
+9. 답변쓰기
+10. 첨부파일
+11. 좋아요 / 싫어요
+12. URL 복사
+13. 동영상 삽입
+14. 공지사항
+15. 관리자(비밀글)
+16. 해시태그
+
+----------------------------
+
+사용
+
+1. 레이아웃 (include)
+2. 부트스트랩
+3. MVC 패턴(Servlet + JSP)
+
+-----------------------------
+
+DB 작업
+
+1. 회원 테이블
+2. 게시판 테이블(원글 + 답변글)
+3. 댓글 테이블
+4. 첨부 파일 테이블
+
+------------------------------
+
+프로젝트 밑 준비
+
+1. 폴더 생성
+	- com.test.mvc.board 패키지 생성
+	- WebContent > Board 폴더 생성(게시판 최상위 폴더)
+		- WebContent > Board > inc 폴더 생성(Board 내의 페이지들만 공통으로 사용)
+	
+	- WebContent > autu 폴더 생성(인증 최상위 폴더)
+		- WebContent > auth > inc 폴더 생성(Auth 내의 페이지들만 공통으로 사용)
+	
+	- WebContent > inc 폴더 (board와 auto의 공통파일)
+	- WebContent > images 폴더 생성(공용)
+	- WebContent > css 폴더 생성
+	- WebContent > js 폴더 생성
+
+2. 파일 생성
+	- WebContent
+		a. index.jsp(사이트 시작페이지)
+	- WebContent > auth
+		a. index.jsp (인증 - 로그인 / 로그아웃)
+	
+	- WebContent > board
+		a. list.jsp(목록)
+		b. add.jsp
+		c. addok.jsp
+		d. view.jsp(상세보기)
+		e. edit.jsp
+		f. editok.jsp
+		g. delok.jsp
+	- WebContent > inc
+		a. header.jsp
+	- WebContent > auth > inc
+		a. header.jsp
+	- WebContent > board > inc
+		a. header.jsp
+	- WebContent > css
+		a. main.css
+	-  WebContent > css
+		a. board.css
+	-jQuery + Bootstrap 설치
+
+
+3. 파일 생성(패키지)
+	- com.test.mvc
+		a. index.java
+	- com.test.mvc.auth
+		a. index.java
+	- com.test.mvc.sql
+		a. DBUtil.java
+	- com.test.mvc.board
+		a. List.java
+		b. Add.java
+		c. AddOk.java
+		d. View.java
+		e. Edit.java
+		f. EditOk.java
+		g. DelOk.java
+		h. BoardDAO.java
+		i. BoardDTO.java
+		
+4. 템플릿
+	- com.test.mvc
+		a. Template.java
+	- WebContent
+		a. template.jsp
+		
+		
+5. web.xml
+	- 가상 주소 매핑
+	
+-------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
