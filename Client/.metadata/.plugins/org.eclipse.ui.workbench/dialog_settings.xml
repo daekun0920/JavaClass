@@ -11,14 +11,18 @@
 		<item value="350" key="dialogWidth"/>
 		<list key="textEntries">
 			<item value="1"/>
+			<item value="1"/>
 		</list>
 		<list key="orderedElements">
+			<item value="org.eclipse.jdt.ui.preferences.CompliancePreferencePage"/>
 			<item value="org.eclipse.ui.console.ConsoleView"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.ui.preferences"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
 		<list key="textArray">
+			<item value="compile"/>
 			<item value="console"/>
 		</list>
 	</section>

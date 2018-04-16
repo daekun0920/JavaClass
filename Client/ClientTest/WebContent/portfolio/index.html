@@ -19,6 +19,8 @@
 		<script src = "assets/js/jquery-1.12.4.js"></script>
 		<script>
 			$(document).ready(function() {
+			//	location.href = "http://mugle.org:8080";
+				console.log(location.port);
 				$(".box.style2").css("transition", "all 1s");
 				$(".box.style2").hover(function() {
 					
@@ -213,7 +215,7 @@ d
 					<div>
 						<div class="row">
 							<div class="12u">
-								<form method="post" action="sendEmail.jsp">
+								<form method="post" action="http://mugle.org:8080/sendEmail.jsp">
 									<div>
 										<div class="row">
 											<div class="6u 12u(mobile)">

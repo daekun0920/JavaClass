@@ -72,13 +72,13 @@ try{
     msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // 내용
     Transport.send(msg); // 전송  
  	out.println("<script>alert('전송이 완료되었습니다.');</script>");
-	out.println("<script>location.href = 'index.html';</script>");
+	out.println("<script>location.href = 'http://mugle.org';</script>");
 	
     //response.sendRedirect("index.html");
     
 } catch(Exception e){
 	out.println("<script>alert('전송에 실패하였습니다.');</script>");
-	out.println("<script>location.href = 'index.html';</script>");
+	out.println("<script>location.href = 'http://mugle.org';</script>");
 	
 	//response.sendRedirect("index.html");
     
