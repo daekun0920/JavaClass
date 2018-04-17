@@ -45,11 +45,27 @@
 		font-size:.5em;
 	}
 	
+	#search {
+		text-align:center;
+	}
+	
+	#search #word {
+		width:300px;
+	}
 	
 	
 </style>
 <script>
-	
+	$(function() {
+
+		// 검색중이라면.. 컨트롤들을 이전 상태와 동일하게 유지
+		<c:if test = "${map.isSearch == true}">
+			$("#column").val("${map.column}");
+			$("#word").val("${map.word}");
+		</c:if>
+
+		
+	});
 </script>
 </head>
 <body>
@@ -59,7 +75,45 @@
 		<jsp:include page="/inc/header.jsp"></jsp:include>
 		
 		
-		<h2 class = "page-header">게시판 <small>목록보기</small></h2>
+		<h2 class = "page-header">
+		
+		게시판 
+		
+		<c:if test = "${map.isSearch == 'false' }">
+		<small>목록보기</small>
+		</c:if>
+		
+		<c:if test = "${map.isSearch == 'true' }">
+		<small>검색하기</small>
+		</c:if>
+		
+		</h2>
+		
+		<c:if test = "${map.isSearch == 'true'}">
+		
+		<div id = "message" style = "text-align:center; color:#444; font-size:13px;">'${map.column}'에서 '${map.word}'(으)로 검색된 결과 '${map.totalcount}' 건 입니다.</div>
+		
+		</c:if>
+		
+		
+		<div class = "form-inline" style = "text-align:right;">
+			
+			
+			<form method = "get" action = "/mvc/board/list.do">
+			
+			
+				페이지 : <input type = "number" name = "page" id = "page" class = "form-control" value = "${map.page}" min = "1" max = "${map.totalpage}">
+				<input type = "submit" value = "이동하기" class = "btn btn-default" required>
+				
+				<c:if test="${map.isSearch == true}">
+					<input type = "hidden" name = "column" value = "${map.column}">
+					<input type = "hidden" name = "word" value = "${map.word}">
+				</c:if>
+			
+			</form>
+			
+			
+		</div>
 		
 		<table id = "tbl1" class = "table table-striped">
 			<tr>
@@ -70,21 +124,50 @@
 				<th>읽음</th>
 			</tr>
 			
-			<c:forEach items = "${list}" var = "dto">
-			<tr>
-				<td>${dto.seq}</td>
-				<td>
-					<a href = "/mvc/board/view.do?seq=${dto.seq}">${dto.subject}</a>
-					<c:if test="${dto.gap < 60}">
-						<span class = "label label-danger">new</span>
-					</c:if>
-				</td>
-				<td>${dto.name}</td>
-				<td>${dto.regdate}</td>
-				<td>${dto.readcount}</td>
-			</tr>
-			</c:forEach>
+			<c:if test = "${list.size() == 0}">
+				<tr>
+					<td colspan="5">게시물이 존재하지 않습니다.</td>
+				</tr>
+			</c:if>
+			
+				<c:forEach items = "${list}" var = "dto">
+				<tr>
+					<td>${dto.seq}</td>
+					<td>
+						
+						<c:if test = "${map.isSearch == false}">
+						<a href = "/mvc/board/view.do?seq=${dto.seq}">${dto.subject}</a>
+						</c:if>
+						
+						<c:if test = "${map.isSearch == true}">
+						<a href = "/mvc/board/view.do?seq=${dto.seq}&column=${map.column}&word=${map.word}">${dto.subject}</a>
+						</c:if>
+						
+						<c:if test="${dto.gap < 60}">
+							<span class = "label label-danger">new</span>
+						</c:if>
+					</td>
+					<td>${dto.name}</td>
+					<td>${dto.regdate}</td>
+					<td>${dto.readcount}</td>
+				</tr>
+				</c:forEach>
+			
+			
+			
 		</table>
+			
+			<div id = "search">
+				<form class = "form-inline" action="/mvc/board/list.do" method = "get"> <!-- form 태그를 get으로 넘겨야하는 경우중 한가지 -->
+						<select name = "column" id = "column" class = "form-control" style = "width:100px;">
+							<option value = "subject">제목</option>
+							<option value = "content">내용</option>
+							<option value = "name">이름</option>
+						</select>
+						<input type = "text" name = "word" id = "word" class = "form-control">
+						<input type = "submit" value = "검색하기" class = "btn btn-default">
+				</form>
+			</div>
 			
 			<div id = "btns">
 				<input type = "button" value = "목록보기" class = "btn btn-default"

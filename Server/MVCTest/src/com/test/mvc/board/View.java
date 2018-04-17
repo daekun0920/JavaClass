@@ -33,6 +33,8 @@ public class View extends HttpServlet {
 		
 		// 1. 
 		String seq = req.getParameter("seq");
+		String column = req.getParameter("column");
+		String word = req.getParameter("word");
 		
 		// 2. 
 		BoardDAO dao = new BoardDAO();
@@ -46,7 +48,7 @@ public class View extends HttpServlet {
 			session.setAttribute("read", "y");
 		}
 		
-		// 2.4 존재하지 않는 게시물일 경우 예외 처리
+		// 2.4 존재하지 않는 게시물일 경우 예외 처리(북마크)
 		
 		if (dto == null || dto.getSubject() == null) {
 			resp.setCharacterEncoding("UTF-8");
@@ -91,8 +93,17 @@ public class View extends HttpServlet {
 											   .replace("</script", "&lt;/script")
 											   .replace("</style", "&lt;/style"));
 				
+		// d. 내용 검색 > 키워드 표시
+		if (column != null && column.equals("content")) {
+		    content = content.replace(word, "<span style = 'background-color:yellow;'>" + word + "</span>");
+			dto.setContent(content);
+		}
+		
 		// 3.
 		req.setAttribute("dto", dto);
+		req.setAttribute("column", column);
+		req.setAttribute("word", word);
+		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/board/view.jsp");
 		dispatcher.forward(req, resp);

@@ -3,6 +3,7 @@ package com.test.mvc.board;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,6 +22,69 @@ public class List extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		process(req, resp);
+
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		process(req, resp);
+
+	}
+	
+	private void process(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+	
+		// 페이징 사전 작업
+		
+		int nowPage = 0;					// 현재 페이지 번호				
+		int pageSize = 5;                   // 한페이지에서 보여줄 게시물 수
+		int totalPage = 0;                  // 총 페이지 수
+		int start = 0;                      // 쿼리의 조건절 rnum >= start
+		int end = 0;						// rnum <= end
+		int totalCount = 0;
+		
+		int n = 0;
+		int loop = 0;
+		int blockSize = 10;
+		
+		// list.do -> list.do?page=1
+		// list.do?page=3
+		String page = req.getParameter("page");
+		
+		if (page == null) nowPage = 1;
+		else nowPage = Integer.parseInt(page);
+		
+		// nowPage : 현재 보고싶은 페이지
+		// 1. > WHERE rnum >= 1 ~ 5 >=rnum
+		// 2. > 6 ~ 10
+		
+		start = ((nowPage - 1) * pageSize) + 1;
+		end = start + pageSize - 1;
+		
+		HashMap<String, String> map = new HashMap<>();
+		map.put("start", start + "");
+		map.put("end", end + "");
+		
+		
+		
+		
+		
+		// 그냥 목록 보기
+		// - list.do
+		// 검색 결과 목록 보기
+		// - list.do + column + word
+	
+		
+		boolean isSearch = false;
+		String column = req.getParameter("column");
+		String word = req.getParameter("word");
+		
+		if (column != null && word != null) {
+			isSearch = true;
+		}
+		
+		
 		// 비회원 접근 금지 
 		Check check = new Check();
 		check.isauth(req, resp);
@@ -34,7 +98,27 @@ public class List extends HttpServlet {
 		
 		// 1.
 		BoardDAO dao = new BoardDAO();
-		ArrayList<BoardDTO> list = dao.list();
+		
+		
+		// 임시 상자
+		map.put("isSearch", isSearch + "");
+		map.put("column", column);
+		map.put("word", word);
+		
+		
+		// 총 페이지 수 계산하기
+		totalCount = dao.getTotalCount(map); // 총 게시물 수 
+		
+		totalPage = (int)Math.ceil((double)totalCount / pageSize); // ceil 로 무조건 올림
+		
+		
+		
+		map.put("totalpage", totalPage + "");
+		map.put("totalcount", totalCount + "");
+		map.put("page", page);
+		
+		System.out.println(map.get("totalcount"));
+		ArrayList<BoardDTO> list = dao.list(map); // isSearch, column, word
 		
 		// 1.5 데이터 가공
 		for (BoardDTO dto : list) {
@@ -72,7 +156,15 @@ public class List extends HttpServlet {
 										   .replace("</script", "&lt;/script")
 										   .replace("</style", "&lt;/style"));
 			
-			
+			// d. 제목을 검색 > 검색어를 색깔로 표시
+			if (isSearch && column.equals("subject")) {
+				
+				
+				// before) 게시판 테스트 입니다.
+				//  after) 게시판 <span style = "background-color:yellow;">테스트</span> 입니다.
+				dto.setSubject(dto.getSubject().replace(word, "<span style = 'background-color:yellow;'>" + word + "</span>"));
+				
+			}
 		}
 		
 		
@@ -80,10 +172,14 @@ public class List extends HttpServlet {
 		// 2. 
 		req.setAttribute("list", list);
 		
+		// 검색 중이라면..
+		req.setAttribute("map", map);
+		
+		
+		
 		// resp.sendRedirect 와 dispatcher.forward는 같이 못쓴다.
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/board/list.jsp");
 		dispatcher.forward(req, resp);
-
 	}
 
 }

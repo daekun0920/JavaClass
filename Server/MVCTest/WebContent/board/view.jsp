@@ -52,7 +52,7 @@
 			</tr>
 			<tr>
 				<th>이름</th>
-				<td>${dto.name}()</td>
+				<td>${dto.name}(${dto.id })</td>
 			</tr>
 			<tr>
 				<th>제목</th>
@@ -72,10 +72,30 @@
 			</tr>
 		</table>
 		<div id = "btns">
-				<input type = "button" value = "뒤로가기" class = "btn btn-default"
-					onclick = "location.href='href=/mvc/board/list.do';"> 
-			
-				<input type = "submit" value = "글쓰기" class = "btn btn-primary"> 	
+				
+				<c:if test = "${empty word}"> <!-- empty : 비거나 값이 없을때 -->
+					<input type = "button" value = "뒤로가기" class = "btn btn-default"
+							onclick = "location.href='/mvc/board/list.do';"> 
+				</c:if>
+				
+				<c:if test = "${!empty word }">
+					<input type = "button" value = "뒤로가기" class = "btn btn-default"
+							onclick = "location.href='/mvc/board/list.do?column=${column}&word=${word}';"> 
+				</c:if>
+						
+				<c:if test = "${dto.id == auth}">
+					<input type = "button" value = "수정하기" class = "btn btn-primary"
+						onclick = "location.href='/mvc/board/edit.do?seq=${dto.seq}';"> 
+					<input type = "button" value = "삭제하기" class = "btn btn-primary"
+						onclick = "location.href='/mvc/board/delok.do?seq=${dto.seq}';">
+				</c:if>
+				
+				<c:if test = "${dto.id != auth}"> 
+					<input type = "button" value = "수정하기" class = "btn btn-primary"
+						onclick = "alert('권한이 없습니다.');"> 
+					<input type = "button" value = "삭제하기" class = "btn btn-primary"
+						onclick = "alert('권한이 없습니다.');"> 	
+				</c:if>
 		</div>
 	
 			
