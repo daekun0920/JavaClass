@@ -24,18 +24,32 @@ SELECT * FROM tblBoard;
 
 
 
+-- 댓글 테이블
+CREATE TABLE tblComment (
+    seq NUMBER PRIMARY KEY, -- 댓글번호(PK)
+    id VARCHAR2(30) NOT NULL REFERENCES tblMember(id), -- 글쓴이
+    content VARCHAR2(1000) NOT NULL, -- 댓글 내용
+    regdate DATE DEFAULT SYSDATE NOT NULL, -- 글쓴 시각
+    pseq NUMBER NOT NULL REFERENCES tblBoard(seq) -- 부모글(FK)
+    
+);
+
+CREATE SEQUENCE comment_seq;
+
+SELECT * FROM tblComment;
 
 
 
 
 
 
+SELECT c.*, (SELECT name FROM tblMember WHERE id = c.id) as name FROM tblComment c WHERE pseq = 32 ORDER BY seq DESC;
 
 
 
 
 
-
+SELECT seq, subject, id, (SELECT name FROM tblMember WHERE id = b.id) as name, regdate, readcount, content, (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount, round((sysdate - regdate) * 24 * 60) as gap FROM tblBoard b;
 
 
 

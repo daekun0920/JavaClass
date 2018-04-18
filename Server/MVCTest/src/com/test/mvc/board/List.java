@@ -38,7 +38,7 @@ public class List extends HttpServlet {
 		// 페이징 사전 작업
 		
 		int nowPage = 0;					// 현재 페이지 번호				
-		int pageSize = 5;                   // 한페이지에서 보여줄 게시물 수
+		int pageSize = 15;                   // 한페이지에서 보여줄 게시물 수
 		int totalPage = 0;                  // 총 페이지 수
 		int start = 0;                      // 쿼리의 조건절 rnum >= start
 		int end = 0;						// rnum <= end
@@ -115,7 +115,7 @@ public class List extends HttpServlet {
 		
 		map.put("totalpage", totalPage + "");
 		map.put("totalcount", totalCount + "");
-		map.put("page", page);
+		map.put("page", nowPage + "");
 		
 		System.out.println(map.get("totalcount"));
 		ArrayList<BoardDTO> list = dao.list(map); // isSearch, column, word
@@ -156,6 +156,8 @@ public class List extends HttpServlet {
 										   .replace("</script", "&lt;/script")
 										   .replace("</style", "&lt;/style"));
 			
+			// dao.getCcount(dto.getSeq());
+			
 			// d. 제목을 검색 > 검색어를 색깔로 표시
 			if (isSearch && column.equals("subject")) {
 				
@@ -167,15 +169,98 @@ public class List extends HttpServlet {
 			}
 		}
 		
+		// JSP에 보낼 페이지바 태그들 작성
+		/*
+			<nav id = "pagebar">
+				  <ul class="pagination">
+				   
+				   
+				  
+				  
+			</nav> 
+		*/
 		
+		String pagebar = "<nav id = \"pagebar\">   <ul class=\"pagination\">";
+		
+		/*	
+		  
+	   for (int i = 1; i <= totalPage; i++) {
+			if (i == nowPage) {
+				pagebar += String.format(" <a href = '#' onclick = 'event.preventDefault();'><b>%d</b></a>", i, i);
+			} else {
+				pagebar += String.format(" <a href = '/mvc/board/list.do?page=%d'>%d</a>", i, i);
+			}
+		}
+		
+		*/
+		
+		loop = 1; // 회전수 조절: 루프 변수
+		// n = 1; // 페이지 번호 변수
+		n = ((nowPage - 1) / blockSize) * blockSize + 1;
+		
+		
+		
+		// 이전 10페이지
+		if (n == 1) {
+			pagebar  += String.format(" <li class = 'disabled'>\r\n" + 
+					"      <a aria-label=\"Previous\" onclick = 'event.preventDefault();'>\r\n" + 
+					"        <span aria-hidden=\"true\">&laquo;</span>\r\n" + 
+					"      </a>\r\n" + 
+					"    </li>");
+		} else {
+			//System.out.println(n);
+			//pagebar += String.format("<a href = '/mvc/board/list.do?page=%d'>[이전 %d페이지]</a>", n - 1, blockSize);
+			pagebar += String.format(" <li>\r\n" + 
+					"				      <a href='/mvc/board/list.do?page=%d' aria-label=\"Previous\">\r\n" + 
+					"				        <span aria-hidden=\"true\">&laquo;</span>\r\n" + 
+					"				      </a>\r\n" + 
+					"				    </li>", n - 1);
+		}
+		
+		
+		// 10 페이지 단위로 페이지 링크 만들기
+		while (!(loop > blockSize || n > totalPage)) {
+			
+			if (n == nowPage) {
+				pagebar += String.format(" <li class = 'active'><a>%d</a></li>", n);
+			} else {
+				pagebar += String.format("  <li><a href='/mvc/board/list.do?page=%d'>%d</a></li>", n, n);
+				
+			}
+			
+			loop++;
+			n++;
+		}
+		
+		
+		
+		// 다음 10페이지
+		if (n > totalPage) {
+			//pagebar += String.format("<a>[다음 %d페이지]</a>", blockSize);
+			pagebar += String.format("<li class = 'disabled'>\r\n" + 
+					"      <a aria-label=\"Next\" onclick = 'event.preventDefault();'>\r\n" + 
+					"        <span aria-hidden=\"true\">&raquo;</span>\r\n" + 
+					"      </a>\r\n" + 
+					"    </li>");
+		} else {
+			//pagebar += String.format("<a href = '/mvc/board/list.do?page=%d'>[다음 %d페이지]</a>", n, blockSize);
+			pagebar += String.format("  <li>\r\n" + 
+					"				      <a href='/mvc/board/list.do?page=%d' aria-label=\"Next\">\r\n" + 
+					"				        <span aria-hidden=\"true\">&raquo;</span>\r\n" + 
+					"				      </a>\r\n" + 
+					"				    </li>\r\n" + 
+					"				  </ul>", n);
+		}
+		
+		pagebar += "</nav> ";
 		
 		// 2. 
 		req.setAttribute("list", list);
 		
 		// 검색 중이라면..
 		req.setAttribute("map", map);
-		
-		
+
+		req.setAttribute("pagebar", pagebar);
 		
 		// resp.sendRedirect 와 dispatcher.forward는 같이 못쓴다.
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/board/list.jsp");

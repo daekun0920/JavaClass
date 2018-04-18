@@ -66,8 +66,9 @@ public class BoardDAO {
 			// Oracle : rownum
 			// MS-SQL : top
 			String sql = String.format("SELECT * FROM (SELECT a.*, rownum as rnum FROM "
-									 + "(SELECT seq, subject, id, (SELECT name FROM tblMember WHERE id = b.id) as name, regdate, readcount, content, round((sysdate - regdate) * 24 * 60) as gap "
-									 + "FROM tblBoard b %s ORDER BY seq DESC) a) WHERE rnum >= %s AND rnum <= %s ORDER BY seq DESC",
+									 + "(SELECT seq, subject, id, (SELECT name FROM tblMember WHERE id = b.id) as name, regdate, readcount, content,"
+									 + " (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount, round((sysdate - regdate) * 24 * 60) as gap FROM tblBoard b"
+									 + " %s ORDER BY seq DESC) a) WHERE rnum >= %s AND rnum <= %s ORDER BY seq DESC",
 										where, map.get("start"), map.get("end"));
 			
 			stat = conn.prepareStatement(sql);
@@ -88,7 +89,8 @@ public class BoardDAO {
 				dto.setRegdate(rs.getString("regdate"));
 				dto.setReadcount(rs.getInt("readcount"));
 				dto.setGap(rs.getInt("gap"));
-			
+				dto.setCcount(rs.getInt("ccount"));
+				
 				list.add(dto);
 			}
 			
@@ -227,6 +229,131 @@ public class BoardDAO {
 		} catch (Exception e) {
 			System.out.println("getTotalCount" + "" + e.toString());
 		}
+		
+		return 0;
+	}
+	
+	//  AddComment 서블릿이 dto를 줄테니 댓글 써달라고 요청
+	public int addcomment(CommentDTO dto) {
+		try {
+			
+			String sql = "INSERT INTO tblComment (seq, id, content, regdate, pseq) VALUES (comment_seq.nextval, ?, ?, DEFAULT, ?)";
+			
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, dto.getId());
+			stat.setString(2, dto.getContent());
+			stat.setString(3, dto.getPseq());
+			
+			
+			
+			return stat.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+	
+	// View 서블릿이 댓글 목록 달라고 요청
+	public ArrayList<CommentDTO> clist(String pseq) {
+		try {
+			
+			String sql = "SELECT c.*, (SELECT name FROM tblMember WHERE id = c.id) as name FROM tblComment c WHERE pseq = ? ORDER BY seq ASC";
+			
+			stat = conn.prepareStatement(sql);
+			stat.setString(1, pseq);
+			System.out.println(sql);
+			ResultSet rs = stat.executeQuery();
+			
+			ArrayList<CommentDTO> list = new ArrayList<CommentDTO>();
+			
+			while (rs.next()) {
+				
+				// 레코드 1개 -> DTO 1개
+				CommentDTO dto = new CommentDTO();
+				
+				dto.setSeq(rs.getString("seq"));
+				dto.setId(rs.getString("id"));
+				dto.setContent(rs.getString("content"));
+				dto.setRegdate(rs.getString("regdate"));
+				dto.setPseq(rs.getString("pseq"));
+				dto.setName(rs.getString("name"));
+				
+				list.add(dto);
+				
+			}
+			
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return null;
+	}
+	
+	// DelComment 서블릿이 댓글번호 줄테니 삭제 요청
+	public int delcomment(String seq) {
+		try {
+			
+			String sql = "DELETE FROM tblComment WHERE seq = ?";
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, seq);
+			
+			return stat.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return 0;
+	}
+
+	// DelComment 서블릿이 댓글 번호를 줄테니 작성자 ID를 반환
+	public String getCommentId(String seq) {
+		try {
+			
+			String sql = "SELECT id FROM tblComment WHERE seq = ?";
+			
+			stat = conn.prepareStatement(sql);
+			stat.setString(1, seq);
+			
+			ResultSet rs = stat.executeQuery();
+			
+			if (rs.next()) {
+				return rs.getString("id");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	//EditComment 서블릿이 dto를 줄테니 댓글을 수정해달라고 요청
+	public int editcomment(CommentDTO dto) {
+		try {
+			
+			String sql = "UPDATE tblComment SET content = ? WHERE seq = ?";
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, dto.getContent());
+			stat.setString(2, dto.getSeq());
+			
+			return stat.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		
 		return 0;
 	}

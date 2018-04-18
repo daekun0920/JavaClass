@@ -1,6 +1,7 @@
 package com.test.mvc.board;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,6 +34,7 @@ public class View extends HttpServlet {
 		
 		// 1. 
 		String seq = req.getParameter("seq");
+		
 		String column = req.getParameter("column");
 		String word = req.getParameter("word");
 		
@@ -99,11 +101,16 @@ public class View extends HttpServlet {
 			dto.setContent(content);
 		}
 		
+		// 댓글 목록 가져오기
+		ArrayList<CommentDTO> clist = dao.clist(seq);
+		
+		
 		// 3.
 		req.setAttribute("dto", dto);
 		req.setAttribute("column", column);
 		req.setAttribute("word", word);
 		
+		req.setAttribute("clist", clist);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/board/view.jsp");
 		dispatcher.forward(req, resp);

@@ -31,9 +31,64 @@
 		
 		vertical-align:middle;
 	}
+	
+	#cform {
+		width:700px;
+		margin:0px auto;
+		margin-top:20px;
+		
+	}
+	
+	#cform #ccontent {
+		width:600px;
+		height:100px;
+	}
+	
+	#cform input {
+		height:100px;
+	}
+	
+	#tbl2 {
+		width:700px;
+		margin:0px auto;
+		margin-top:20px;
+	}
+	
+	#tbl2 td:nth-child(1) {
+		width: 500px;
+	}
+	
+	#tbl2 td:nth-child(2) {
+		width: 200px;
+		border-left:1px dashed #ddd;
+		text-align:center;
+	}
+	
+	#tbl2 td:nth-child(2) div:last-child {
+		cursor:pointer;		
+
+	}
+	
 </style>
 <script>
-	
+	function cdel(seq, pseq) {
+
+		location.href = "/mvc/board/delcomment.do?seq=" + seq + "&pseq=" + pseq;
+
+	}
+
+	function edit(seq) {
+
+		// <span>
+		var comment = $(event.srcElement).parent().parent().parent().children().eq(0).text().trim();
+
+		//alert(comment);
+		$("#ccontent").val(comment);
+		$("#btn1").val("수정하기");
+		$("#cform").prop("action", "/mvc/board/editcomment.do");
+		$("#seq").val(seq); // 수정할 댓글 seq
+		
+	}
 </script>
 </head>
 <body>
@@ -96,6 +151,40 @@
 					<input type = "button" value = "삭제하기" class = "btn btn-primary"
 						onclick = "alert('권한이 없습니다.');"> 	
 				</c:if>
+				
+				
+				
+				<!-- 댓글 -->
+				<form class = "form-inline" id = "cform" method = "post" action="/mvc/board/addcomment.do">
+					<textarea name = "ccontent" id = "ccontent" required class = "form-control"></textarea>
+					<input type = "submit" value = "댓글 쓰기" class = "btn btn-primary" id = "btn1">
+					<input type = "hidden" name = "pseq" value = "${dto.seq}">
+					<input type = "hidden" name = "seq" id = "seq">
+				</form>
+				
+				<!-- <div>댓글목록</div> -->
+				
+				<table id = "tbl2" class = "table table-striped">
+					<c:forEach items = "${clist}" var = "cdto">
+					<tr>
+						<td style = "vertical-align:middle;">
+							${cdto.content}
+						</td>
+						<td>
+							<div>${cdto.name}</div>
+							<div>${cdto.regdate}</div>
+							<c:if test = "${cdto.id == auth}">
+								<div>
+									<span class = "glyphicon glyphicon-refresh" onclick = "edit(${cdto.seq}, ${dto.seq});"></span>
+									<span class = "glyphicon glyphicon-trash" onclick = "cdel(${cdto.seq});"></span>
+								</div>
+							</c:if>
+						</td>
+					</tr>
+					</c:forEach>
+				</table>
+				
+				
 		</div>
 	
 			

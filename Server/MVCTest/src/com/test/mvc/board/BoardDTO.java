@@ -10,6 +10,14 @@ public class BoardDTO {
 	private int readcount;
 	private String tag;
 	private String name;
+	private int ccount;
+	
+	public int getCcount() {
+		return ccount;
+	}
+	public void setCcount(int ccount) {
+		this.ccount = ccount;
+	}
 	private int gap;
 	
 	public int getGap() {

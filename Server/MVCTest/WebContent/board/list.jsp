@@ -53,7 +53,9 @@
 		width:300px;
 	}
 	
-	
+	#pagebar {
+		text-align:center;
+	}
 </style>
 <script>
 	$(function() {
@@ -96,8 +98,9 @@
 		</c:if>
 		
 		
-		<div class = "form-inline" style = "text-align:right;">
+		<%-- <div class = "form-inline" style = "text-align:right;">
 			
+			<input type = "range" style = "width:900px;margin:0px auto;" min = "1" max = "${map.totalpage}" value = "${map.page}" onchange = "location.href='list.do?page=' + this.value">
 			
 			<form method = "get" action = "/mvc/board/list.do">
 			
@@ -109,11 +112,11 @@
 					<input type = "hidden" name = "column" value = "${map.column}">
 					<input type = "hidden" name = "word" value = "${map.word}">
 				</c:if>
-			
+
 			</form>
 			
 			
-		</div>
+		</div> --%>
 		
 		<table id = "tbl1" class = "table table-striped">
 			<tr>
@@ -143,6 +146,12 @@
 						<a href = "/mvc/board/view.do?seq=${dto.seq}&column=${map.column}&word=${map.word}">${dto.subject}</a>
 						</c:if>
 						
+						<!-- 댓글 수 표시 -->
+						<c:if test = "${dto.ccount != 0}">
+							<span style = "font-family:D2coding;font-size:7px;" class = "badge">${dto.ccount}</span>
+						</c:if>
+						
+						<!-- 새로운 글  -->
 						<c:if test="${dto.gap < 60}">
 							<span class = "label label-danger">new</span>
 						</c:if>
@@ -156,6 +165,8 @@
 			
 			
 		</table>
+			
+			${pagebar}
 			
 			<div id = "search">
 				<form class = "form-inline" action="/mvc/board/list.do" method = "get"> <!-- form 태그를 get으로 넘겨야하는 경우중 한가지 -->
