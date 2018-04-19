@@ -26,7 +26,7 @@ public class BoardDAO {
 		
 		try {
 			
-			String sql = "INSERT INTO tblBoard(seq, subject, content, id, regdate, readcount, tag) VALUES (board_seq.nextval, ?, ?, ?, DEFAULT, DEFAULT, ?)";
+			String sql = "INSERT INTO tblBoard(seq, subject, content, id, regdate, readcount, tag, thread, depth, filename, orgfilename) VALUES (board_seq.nextval, ?, ?, ?, DEFAULT, DEFAULT, ?, ?, ?, ?, ?)";
 			
 			
 			stat = conn.prepareStatement(sql);
@@ -35,6 +35,10 @@ public class BoardDAO {
 			stat.setString(2, dto.getContent());
 			stat.setString(3, dto.getId());
 			stat.setString(4, dto.getTag());
+			stat.setInt(5, dto.getThread());
+			stat.setInt(6, dto.getDepth());
+			stat.setString(7, dto.getFilename());
+			stat.setString(8, dto.getOrgfilename());
 			
 			
 			
@@ -67,8 +71,8 @@ public class BoardDAO {
 			// MS-SQL : top
 			String sql = String.format("SELECT * FROM (SELECT a.*, rownum as rnum FROM "
 									 + "(SELECT seq, subject, id, (SELECT name FROM tblMember WHERE id = b.id) as name, regdate, readcount, content,"
-									 + " (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount, round((sysdate - regdate) * 24 * 60) as gap FROM tblBoard b"
-									 + " %s ORDER BY seq DESC) a) WHERE rnum >= %s AND rnum <= %s ORDER BY seq DESC",
+									 + " (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount, round((sysdate - regdate) * 24 * 60) as gap, depth, filename, orgfilename FROM tblBoard b"
+									 + " %s ORDER BY thread DESC) a) WHERE rnum >= %s AND rnum <= %s",
 										where, map.get("start"), map.get("end"));
 			
 			stat = conn.prepareStatement(sql);
@@ -82,6 +86,7 @@ public class BoardDAO {
 				// 레코드 1개 -> DTO 1개
 				BoardDTO dto = new BoardDTO();
 				
+				
 				dto.setSeq(rs.getString("seq"));
 				dto.setSubject(rs.getString("subject"));
 				dto.setId(rs.getString("id"));
@@ -90,6 +95,10 @@ public class BoardDAO {
 				dto.setReadcount(rs.getInt("readcount"));
 				dto.setGap(rs.getInt("gap"));
 				dto.setCcount(rs.getInt("ccount"));
+				dto.setDepth(rs.getInt("depth"));
+				dto.setFilename(rs.getString("filename"));
+				dto.setOrgfilename(rs.getString("orgfilename"));
+				
 				
 				list.add(dto);
 			}
@@ -128,8 +137,11 @@ public class BoardDAO {
 				 dto.setRegdate(rs.getString("regdate"));
 				 dto.setReadcount(rs.getInt("readcount"));
 				 dto.setTag(rs.getString("tag"));
-				 
-				 
+				 dto.setThread(rs.getInt("thread"));
+				 dto.setDepth(rs.getInt("depth"));
+				 dto.setFilename(rs.getString("filename"));
+				 dto.setOrgfilename(rs.getString("orgfilename"));
+				 dto.setDownloadcount(rs.getString("downloadcount"));
 			 }
 			 
 			 return dto;
@@ -163,7 +175,7 @@ public class BoardDAO {
 	public int edit(BoardDTO dto) {
 		try {
 			
-			String sql = "UPDATE tblBoard SET subject = ?, content = ?, tag = ? WHERE seq = ?";
+			String sql = "UPDATE tblBoard SET subject = ?, content = ?, tag = ?, filename = ?, orgfilename = ? WHERE seq = ?";
 			
 			
 			stat = conn.prepareStatement(sql);
@@ -171,8 +183,9 @@ public class BoardDAO {
 			stat.setString(1, dto.getSubject());
 			stat.setString(2, dto.getContent());
 			stat.setString(3, dto.getTag());
-			stat.setString(4, dto.getSeq());
-			
+			stat.setString(4, dto.getFilename());
+			stat.setString(5, dto.getOrgfilename());
+			stat.setString(6, dto.getSeq());
 			
 			
 			
@@ -356,6 +369,84 @@ public class BoardDAO {
 		
 		
 		return 0;
+	}
+	
+	// AddOk 서블릿이 가장 큰 thread값 주세욧..
+	public int getThread() {
+		try {
+			
+			String sql = "SELECT nvl(max(thread), 0) + 1000 FROM tblBoard"; // nvl : null 값 처리
+			
+			stat = conn.prepareStatement(sql);
+			
+			ResultSet rs = stat.executeQuery();
+			
+			if (rs.next()) {
+				return rs.getInt(1);
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;	
+		
+		
+		
+	}
+
+	// AddOk 서블릿이 부모 thread와 이전 thread 줄테니 그 사이 -1 업데이트...
+	public void updateThread(int pthread, int prevThread) {
+		try {
+			
+			String sql = "UPDATE tblBoard SET thread = thread - 1 WHERE thread > ? AND thread < ?"; // BETWEEN 은 포함이라 비교연산자 사용
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setInt(1, prevThread);
+			stat.setInt(2, pthread);
+
+			stat.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void updateDownloadCount(String seq) {
+			try {
+				
+				String sql = "UPDATE tblBoard SET downloadcount = downloadcount + 1 WHERE seq = ?";
+				
+				stat = conn.prepareStatement(sql);
+				
+				stat.setString(1, seq);
+				
+				stat.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		
+	}
+	
+	// EditOk 서블릿이 건내준 글의 파일명을 없애달라고..
+	public void updateFileName(String seq) {
+		try {
+			
+			String sql = "UPDATE tblBoard SET filename = null, orgfilename = null WHERE seq = ?";
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, seq);
+			
+			stat.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 }

@@ -44,7 +44,7 @@
 	
 	<h2 class = "page-header">게시판 <small>글쓰기</small></h2>
 	
-	<form method = "post" action = "/mvc/board/addok.do">
+	<form method = "post" action = "/mvc/board/addok.do" enctype = "multipart/form-data">
 		<table id = "tbl1" class = "table table-striped">
 			<tr>
 				<th>제목</th>
@@ -63,6 +63,10 @@
 					</select>
 				</td>
 			</tr>
+			<tr>
+				<th>파일</th>
+				<td><input type = "file" class = "form-control middle" name = "attach"></td>
+			</tr>
 		</table>
 		
 		<div id = "btns">
@@ -71,6 +75,11 @@
 			
 				<input type = "submit" value = "글쓰기" class = "btn btn-primary"> 	
 		</div>
+		
+		<input type = "hidden" name = "mode" value = "${mode}">
+		<input type = "hidden" name = "thread" value = "${thread}">
+		<input type = "hidden" name = "depth" value = "${depth}">
+		
 		
 	</form>
 	</div>

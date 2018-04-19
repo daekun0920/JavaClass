@@ -125,6 +125,22 @@
 				<th>읽음</th>
 				<td>${dto.readcount}</td>
 			</tr>
+			
+		
+			<tr>
+				<th>파일</th>
+				<td>
+				<c:if test = "${!empty dto.orgfilename}">
+				<a href = "/mvc/board/download.do?filename=${dto.filename}&orgfilename=${dto.orgfilename}&seq=${dto.seq}">
+					${dto.orgfilename}
+				</a> 
+				(download : ${dto.downloadcount})
+				</c:if>
+				<c:if test = "${empty dto.orgfilename}">
+				첨부파일이 없습니다.
+				</c:if>
+				</td>
+			</tr>
 		</table>
 		<div id = "btns">
 				
@@ -143,6 +159,7 @@
 						onclick = "location.href='/mvc/board/edit.do?seq=${dto.seq}';"> 
 					<input type = "button" value = "삭제하기" class = "btn btn-primary"
 						onclick = "location.href='/mvc/board/delok.do?seq=${dto.seq}';">
+				
 				</c:if>
 				
 				<c:if test = "${dto.id != auth}"> 
@@ -150,8 +167,10 @@
 						onclick = "alert('권한이 없습니다.');"> 
 					<input type = "button" value = "삭제하기" class = "btn btn-primary"
 						onclick = "alert('권한이 없습니다.');"> 	
-				</c:if>
 				
+				</c:if>
+				<input type = "button" value = "답글달기" class = "btn btn-primary"
+					onclick = "location.href='/mvc/board/add.do?mode=reply&thread=${dto.thread}&depth=${dto.depth}';">
 				
 				
 				<!-- 댓글 -->
@@ -175,8 +194,8 @@
 							<div>${cdto.regdate}</div>
 							<c:if test = "${cdto.id == auth}">
 								<div>
-									<span class = "glyphicon glyphicon-refresh" onclick = "edit(${cdto.seq}, ${dto.seq});"></span>
-									<span class = "glyphicon glyphicon-trash" onclick = "cdel(${cdto.seq});"></span>
+									<span class = "glyphicon glyphicon-edit" onclick = "edit(${cdto.seq});"></span>
+									<span class = "glyphicon glyphicon-trash" onclick = "cdel(${cdto.seq}, ${dto.seq});"></span>
 								</div>
 							</c:if>
 						</td>

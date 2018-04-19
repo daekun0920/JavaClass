@@ -135,9 +135,17 @@
 			
 				<c:forEach items = "${list}" var = "dto">
 				<tr>
-					<td>${dto.seq}</td>
+					<td>
+						<c:if test = "${dto.depth == 0}">
+						${dto.seq}
+						</c:if>
+					</td>
 					<td>
 						
+						<c:if test = "${dto.depth > 0 }">
+						<span class = "btn btn-primary" style = "margin-left:${dto.depth * 20}px; font-size:8px; padding:3px;">ㄴ[re]</span>
+						</c:if>
+												
 						<c:if test = "${map.isSearch == false}">
 						<a href = "/mvc/board/view.do?seq=${dto.seq}">${dto.subject}</a>
 						</c:if>
@@ -145,6 +153,12 @@
 						<c:if test = "${map.isSearch == true}">
 						<a href = "/mvc/board/view.do?seq=${dto.seq}&column=${map.column}&word=${map.word}">${dto.subject}</a>
 						</c:if>
+						
+						<!-- 첨부 파일 여부 표시 -->
+						<c:if test = "${!empty dto.orgfilename}">
+						<span style = "font-size:11px;" class = "glyphicon glyphicon-floppy-disk" title = "${dto.orgfilename}"></span>
+						</c:if>
+						
 						
 						<!-- 댓글 수 표시 -->
 						<c:if test = "${dto.ccount != 0}">
@@ -185,7 +199,7 @@
 					onclick = "location.href = '/mvc/board/list.do';"> 
 			
 				<input type = "button" value = "글쓰기" class = "btn btn-primary"
-					onclick = "location.href = '/mvc/board/add.do';"> 
+					onclick = "location.href = '/mvc/board/add.do?mode=new';"> 
 			</div>
 		
 		
