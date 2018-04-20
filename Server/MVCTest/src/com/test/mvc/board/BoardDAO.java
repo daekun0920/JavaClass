@@ -26,7 +26,7 @@ public class BoardDAO {
 		
 		try {
 			
-			String sql = "INSERT INTO tblBoard(seq, subject, content, id, regdate, readcount, tag) VALUES (board_seq.nextval, ?, ?, ?, DEFAULT, DEFAULT, ?)";
+			String sql = "INSERT INTO tblBoard(seq, subject, content, id, regdate, readcount, tag, thread, depth, filename, orgfilename, notice) VALUES (board_seq.nextval, ?, ?, ?, DEFAULT, DEFAULT, ?, ?, ?, ?, ?, ?)";
 			
 			
 			stat = conn.prepareStatement(sql);
@@ -35,7 +35,11 @@ public class BoardDAO {
 			stat.setString(2, dto.getContent());
 			stat.setString(3, dto.getId());
 			stat.setString(4, dto.getTag());
-			
+			stat.setInt(5, dto.getThread());
+			stat.setInt(6, dto.getDepth());
+			stat.setString(7, dto.getFilename());
+			stat.setString(8, dto.getOrgfilename());
+			stat.setString(9, dto.getNotice());
 			
 			
 			
@@ -52,11 +56,25 @@ public class BoardDAO {
 	public ArrayList<BoardDTO> list(HashMap<String, String> map) {
 		
 		try {
-			
 			String where = "";
+			String ee = "";
+			String tt = "";
+			String eee = "";
+			String inner = "";
 			
+		
 			if (map.get("isSearch").equals("true")) {
-				where = String.format("WHERE %s like '%%%s%%'", map.get("column"), map.get("word"));
+				where = String.format("AND %s like '%%%s%%'", map.get("column"), map.get("word"));
+				if (map.get("column").equals("hashtag")) {
+					where = String.format("AND %s like '%%%s%%'", "tt.tag", map.get("word"));
+					
+					ee = "ee.";
+					tt = ", tt.tag";
+					eee = "ee";
+					inner = "INNER JOIN tblHashTag tt ON tt.BSEQ = ee.seq";
+					
+				}
+				
 			}
 			
 			//System.out.println(where);
@@ -65,12 +83,24 @@ public class BoardDAO {
 			// My-SQL : limit
 			// Oracle : rownum
 			// MS-SQL : top
-			String sql = String.format("SELECT * FROM (SELECT a.*, rownum as rnum FROM "
-									 + "(SELECT seq, subject, id, (SELECT name FROM tblMember WHERE id = b.id) as name, regdate, readcount, content,"
-									 + " (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount, round((sysdate - regdate) * 24 * 60) as gap FROM tblBoard b"
-									 + " %s ORDER BY seq DESC) a) WHERE rnum >= %s AND rnum <= %s ORDER BY seq DESC",
-										where, map.get("start"), map.get("end"));
+			String sql = String.format("SELECT %s*%s FROM " + 
+					"(SELECT s.*, (SELECT name FROM tblMember m WHERE m.id = s.id) as name," + 
+					"            (SELECT count(*) FROM tblComment c WHERE s.SEQ = c.PSEQ) as ccount," + 
+					"            round((sysdate - regdate) * 24 * 60) as gap," + 
+					"            rownum as rnam " + 
+					"                FROM tblBoard s WHERE notice = 1 " + 
+					" UNION" + 
+					" SELECT * FROM (SELECT b.*, (SELECT name FROM tblMember ms WHERE ms.id = b.id) as name," + 
+					"                      (SELECT count(*) FROM tblComment cc WHERE b.SEQ = cc.PSEQ) as ccount," + 
+					"                      round((sysdate - regdate) * 24 * 60) as gap," + 
+					"                      rownum as rnum " + 
+					"                        FROM tblBoard b " + 
+					"                            WHERE notice = 0) WHERE rnum >= %s AND rnum <= %s" + 
+					") %s  %s %s " + 
+					" ORDER BY notice DESC, thread DESC",
+										ee, tt, map.get("start"), map.get("end"), eee, where, inner);
 			
+			System.out.println(sql);
 			stat = conn.prepareStatement(sql);
 			
 			ResultSet rs = stat.executeQuery();
@@ -82,6 +112,7 @@ public class BoardDAO {
 				// 레코드 1개 -> DTO 1개
 				BoardDTO dto = new BoardDTO();
 				
+				
 				dto.setSeq(rs.getString("seq"));
 				dto.setSubject(rs.getString("subject"));
 				dto.setId(rs.getString("id"));
@@ -90,6 +121,10 @@ public class BoardDAO {
 				dto.setReadcount(rs.getInt("readcount"));
 				dto.setGap(rs.getInt("gap"));
 				dto.setCcount(rs.getInt("ccount"));
+				dto.setDepth(rs.getInt("depth"));
+				dto.setFilename(rs.getString("filename"));
+				dto.setOrgfilename(rs.getString("orgfilename"));
+				dto.setNotice(rs.getString("notice"));
 				
 				list.add(dto);
 			}
@@ -128,8 +163,12 @@ public class BoardDAO {
 				 dto.setRegdate(rs.getString("regdate"));
 				 dto.setReadcount(rs.getInt("readcount"));
 				 dto.setTag(rs.getString("tag"));
-				 
-				 
+				 dto.setThread(rs.getInt("thread"));
+				 dto.setDepth(rs.getInt("depth"));
+				 dto.setFilename(rs.getString("filename"));
+				 dto.setOrgfilename(rs.getString("orgfilename"));
+				 dto.setDownloadcount(rs.getString("downloadcount"));
+				 dto.setNotice(rs.getString("notice"));
 			 }
 			 
 			 return dto;
@@ -163,7 +202,7 @@ public class BoardDAO {
 	public int edit(BoardDTO dto) {
 		try {
 			
-			String sql = "UPDATE tblBoard SET subject = ?, content = ?, tag = ? WHERE seq = ?";
+			String sql = "UPDATE tblBoard SET subject = ?, content = ?, tag = ?, filename = ?, orgfilename = ? WHERE seq = ?";
 			
 			
 			stat = conn.prepareStatement(sql);
@@ -171,8 +210,9 @@ public class BoardDAO {
 			stat.setString(1, dto.getSubject());
 			stat.setString(2, dto.getContent());
 			stat.setString(3, dto.getTag());
-			stat.setString(4, dto.getSeq());
-			
+			stat.setString(4, dto.getFilename());
+			stat.setString(5, dto.getOrgfilename());
+			stat.setString(6, dto.getSeq());
 			
 			
 			
@@ -213,11 +253,21 @@ public class BoardDAO {
 					sql = "SELECT count(*) FROM tblBoard WHERE name = " + map.get("word");
 				}
 				System.out.println(map.get("column") + " " + map.get("word"));
+				
 				where = String.format(" WHERE %s like '%%%s%%'", map.get("column"), map.get("word"));
+				if (map.get("column").equals("hashtag")) {
+					sql = "SELECT count(*) as cnt FROM tblHashTag tt INNER JOIN tblBoard b ON tt.bseq = b.seq";
+					where = String.format(" WHERE %s like '%%%s%%'", "tt.tag", map.get("word"));
+				}
+			
 				sql = sql + where;
+				
+				sql = sql + " AND notice = '0'";
+				
+			} else {
+				sql = sql + " WHERE notice = '0'";
 			}
 			
-			System.out.println(sql);
 			stat = conn.prepareStatement(sql);
 			ResultSet rs = stat.executeQuery();
 			if (rs.next()) {
@@ -357,5 +407,301 @@ public class BoardDAO {
 		
 		return 0;
 	}
+	
+	// AddOk 서블릿이 가장 큰 thread값 주세욧..
+	public int getThread() {
+		try {
+			
+			String sql = "SELECT nvl(max(thread), 0) + 1000 FROM tblBoard"; // nvl : null 값 처리
+			
+			stat = conn.prepareStatement(sql);
+			
+			ResultSet rs = stat.executeQuery();
+			
+			if (rs.next()) {
+				return rs.getInt(1);
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;	
+		
+		
+		
+	}
+
+	// AddOk 서블릿이 부모 thread와 이전 thread 줄테니 그 사이 -1 업데이트...
+	public void updateThread(int pthread, int prevThread) {
+		try {
+			
+			String sql = "UPDATE tblBoard SET thread = thread - 1 WHERE thread > ? AND thread < ?"; // BETWEEN 은 포함이라 비교연산자 사용
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setInt(1, prevThread);
+			stat.setInt(2, pthread);
+
+			stat.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void updateDownloadCount(String seq) {
+			try {
+				
+				String sql = "UPDATE tblBoard SET downloadcount = downloadcount + 1 WHERE seq = ?";
+				
+				stat = conn.prepareStatement(sql);
+				
+				stat.setString(1, seq);
+				
+				stat.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		
+	}
+	
+	// EditOk 서블릿이 건내준 글의 파일명을 없애달라고..
+	public void updateFileName(String seq) {
+		try {
+			
+			String sql = "UPDATE tblBoard SET filename = null, orgfilename = null WHERE seq = ?";
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, seq);
+			
+			stat.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+	// Good 서블릿이 좋아요/싫어요 버튼 눌러주세요.
+	public int addGood(GoodDTO dto) {
+		try {
+			
+			String sql = "INSERT INTO tblGood (seq, state, id, bseq) VALUES (good_seq.nextval, ?, ?, ?)";
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, dto.getState());
+			stat.setString(2, dto.getId());
+			stat.setString(3, dto.getBseq());
+			
+			
+			return stat.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		return 0;
+	}
+
+	// View 서블릿이 좋아요/싫어요 총 카운트 달라고 요청
+	public GoodResultDTO getGoodResult(String seq) {
+		
+		try {
+			
+			String sql = "SELECT" + 
+					"(SELECT count(*) FROM tblGood WHERE bseq = ? AND state = 'g') as good," + 
+					"(SELECT count(*) FROM tblGood WHERE bseq = ? AND state = 'b') as bad " + 
+					"FROM dual";
+			stat = conn.prepareStatement(sql);
+			stat.setString(1, seq);
+			stat.setString(2, seq);
+			
+			
+			ResultSet rs = stat.executeQuery();
+			
+			if (rs.next()) {
+				GoodResultDTO dto = new GoodResultDTO();
+				
+				dto.setGood(rs.getInt("good"));
+				dto.setBad(rs.getInt("bad"));
+				
+				return dto;
+				
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return null;
+	}
+	
+	// Good 서블릿이 현재 good 상태를 확인하고자 요청
+	public GoodDTO checkGood(GoodDTO dto) {
+		
+		try {
+		
+			String sql = "SELECT * FROM tblGood WHERE bseq = ? AND id = ?";
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, dto.getBseq());
+			stat.setString(2, dto.getId());
+			
+			ResultSet rs = stat.executeQuery();
+			
+			if (rs.next()) {
+				GoodDTO gdto = new GoodDTO();
+				gdto.setSeq(rs.getString("seq"));
+				gdto.setState(rs.getString("state"));
+				gdto.setId(rs.getString("id"));
+				gdto.setBseq(rs.getString("bseq"));
+				
+				return gdto;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	// Good 서블릿이 good 상태 바꿔달라고 요청
+	public int editGood(GoodDTO dto) {
+		try {
+			
+			String sql = "UPDATE tblGood SET state = ? WHERE id = ? AND bseq = ?";
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, dto.getState());
+			stat.setString(2, dto.getId());
+			stat.setString(3, dto.getBseq());
+			
+			
+			return stat.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	public void delgood(String seq) {
+		try {
+			
+			String sql = "DELETE FROM tblGood WHERE seq = ?";
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, seq);
+			
+			
+			stat.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
+	}
+
+	public void addHashTag(String t, String seq) {
+		try {
+			
+			String sql = "INSERT INTO tblHashTag (seq, tag, bseq) VALUES (hashtag_seq.nextval, ?, ?)"; 
+				
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, t);
+			stat.setString(2, seq);
+			
+			stat.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	// AddOk 서블릿이 방금 쓴글의 번호를 달라고 요청
+	public String getSeq() {
+		try {
+			
+			String sql = "SELECT max(seq) FROM tblBoard"; // nvl : null 값 처리
+			
+			stat = conn.prepareStatement(sql);
+			
+			ResultSet rs = stat.executeQuery();
+			
+			if (rs.next()) {
+				return rs.getString(1);
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	public ArrayList<String> listHashTag(String seq) {
+		try {
+			
+			String sql = "SELECT tag FROM tblHashTag WHERE bseq = ?";
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, seq);
+			
+			ResultSet rs = stat.executeQuery();
+			
+			
+			ArrayList<String> tlist = new ArrayList<>();
+			while (rs.next()) {
+				
+				
+				tlist.add(rs.getString(1));
+				
+			}
+			
+			return tlist;
+		} catch (Exception e) {
+		}
+		return null;
+	}
+
+	public void delTags(String seq) {
+		try {
+			
+			String sql = "DELETE FROM tblHashTag WHERE bseq = ?";
+			
+			stat = conn.prepareStatement(sql);
+			
+			stat.setString(1, seq);
+			
+			stat.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
 
 }

@@ -42,7 +42,7 @@ public class DelComment extends HttpServlet {
 		
 		req.setAttribute("result", result);
 		req.setAttribute("pseq", pseq);
-		
+	
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/board/delcomment.jsp");
 		dispatcher.forward(req, resp);
 

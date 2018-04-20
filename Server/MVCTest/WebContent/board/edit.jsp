@@ -38,6 +38,32 @@
 	$("#content").val("${dto.content}"); // 내용이 여러줄이거나 쌍따옴표가 들어있거나 하면 다 들어가지 않는다.(자바스크립트는 문자열에 엔터 지원 안함)
 	
 	--%>
+
+	function delfile() {
+		// 첨부파일 삭제하겠습니다.
+		// $(event.srcElement).hide();
+		if ($(event.srcElement).css("opacity") == 1) {
+		
+			$(event.srcElement).css({
+				"opacity":".5",
+				"text-decoration":"line-through"
+			});
+			
+			$("#delfile").val("y");
+			
+		} else {
+			
+			$(event.srcElement).css({
+				"opacity":"1",
+				"text-decoration":"none"
+			});
+			
+			$("#delfile").val("n");
+			
+		}
+		
+	}
+	
 </script>
 </head>
 <body>
@@ -49,7 +75,7 @@
 	
 	<h2 class = "page-header">게시판 <small>수정하기</small></h2>
 	
-	<form method = "post" action = "/mvc/board/editok.do">
+	<form method = "post" action = "/mvc/board/editok.do" enctype = "multipart/form-data">
 		<table id = "tbl1" class = "table table-striped">
 			<tr>
 				<th>제목</th>
@@ -68,6 +94,13 @@
 					</select>
 				</td>
 			</tr>
+			<tr>
+				<th>파일</th>
+				<td class = "form-inline">
+					<input type = "file" class = "form-control middle" name = "attach">
+					<code style = "cursor:pointer;" title="파일을 삭제합니다." onclick = "delfile();">${dto.orgfilename} &times;</code>
+				</td>
+			</tr>
 		</table>
 		
 		<div id = "btns">
@@ -78,6 +111,10 @@
 		</div>
 		
 		<input type = "hidden" name = "seq" value = "${dto.seq}">
+		<input type = "hidden" name = "delfile" id = "delfile" value = "n">
+		
+		
+		
 	</form>
 	</div>
 </body>

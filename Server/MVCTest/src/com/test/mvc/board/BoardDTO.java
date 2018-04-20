@@ -7,11 +7,53 @@ public class BoardDTO {
 	private String content;
 	private String id;
 	private String regdate;
-	private int readcount;
 	private String tag;
 	private String name;
+	private String filename;
+	private String orgfilename;
+	private String downloadcount;
+	private String notice;
 	private int ccount;
+	private int thread;
+	private int depth;
+	private int readcount;
 	
+	public String getNotice() {
+		return notice;
+	}
+	public void setNotice(String notice) {
+		this.notice = notice;
+	}
+	public String getDownloadcount() {
+		return downloadcount;
+	}
+	public void setDownloadcount(String downloadcount) {
+		this.downloadcount = downloadcount;
+	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public String getOrgfilename() {
+		return orgfilename;
+	}
+	public void setOrgfilename(String orgfilename) {
+		this.orgfilename = orgfilename;
+	}
+	public int getThread() {
+		return thread;
+	}
+	public void setThread(int thread) {
+		this.thread = thread;
+	}
+	public int getDepth() {
+		return depth;
+	}
+	public void setDepth(int depth) {
+		this.depth = depth;
+	}
 	public int getCcount() {
 		return ccount;
 	}
