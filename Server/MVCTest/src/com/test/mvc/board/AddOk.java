@@ -1,6 +1,7 @@
 package com.test.mvc.board;
 
 import java.io.IOException;
+import java.util.HashSet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -74,6 +75,12 @@ public class AddOk extends HttpServlet {
 			
 			// System.out.println(filename); // null 
 			
+			// 공지글
+			// - 체크박스 선택 O : value or "on"
+			// - 체크박스 선택 X : null
+			String notice = multi.getParameter("notice") != null ? "1" : "0"; // "on" or null
+			
+			
 			// 2.
 			BoardDTO dto = new BoardDTO();
 			
@@ -81,7 +88,7 @@ public class AddOk extends HttpServlet {
 			dto.setContent(content);
 			dto.setTag(tag);
 			dto.setId((String)req.getSession().getAttribute("auth"));
-			
+			dto.setNotice(notice);
 			
 			// 첨부파일명 추가
 			
@@ -133,6 +140,36 @@ public class AddOk extends HttpServlet {
 			// 3. 
 	
 			int result = dao.add(dto);
+			
+			
+			String seq = dao.getSeq();
+			
+			// 3.5 
+			// 수업예제, 자바, 예제
+			String hashtag = multi.getParameter("hashtag");
+			hashtag = hashtag.replace(" ", "");
+			
+			// 수업예제, 자바, 예제
+			String[] temp = hashtag.split(",");
+			HashSet<String> set = new HashSet<String>(); // 중복값 자동 배제
+			
+			for (String t : temp) {
+				
+				// System.out.println(t);
+				
+				set.add(t);
+				
+			}
+			
+			//Iterator<String> iter = set.iterator();
+			
+			for (String t : set) {
+				// System.out.println(t);
+				
+				// DB작업 
+				dao.addHashTag(t, seq);
+				
+			}
 			
 			// 4. 
 			req.setAttribute("result", result);

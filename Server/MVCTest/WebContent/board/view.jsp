@@ -69,8 +69,60 @@
 
 	}
 	
+	#good {
+		text-align:center;
+		margin:0px;
+		padding-bottom:0;
+		margin:20px;
+		
+	}
+	
+	#btngood, #btnbad {
+		font-size:30px;
+		margin:20px;
+		
+		cursor:pointer;
+	}
+	
+	#good > div {
+		display:inline-block;
+		margin-top:200px;
+	}
+	
+	#labelgood, #labelbad {
+		color:#999;
+		font-weight:bold;
+		font-size:18px;
+		margin:0px;
+	}
+	
+	#good .good #btngood {
+		color:cornflowerblue;
+	}
+	
+	#good .bad #btnbad {
+		color:#DC354D;
+	}
+	
 </style>
 <script>
+	$(function() {
+
+		$("#btngood").click(function() {
+
+			location.href = "/mvc/board/good.do?state=g&seq=${dto.seq}";
+			
+		});
+
+		$("#btnbad").click(function() {
+
+			location.href = "/mvc/board/good.do?state=b&seq=${dto.seq}";
+		
+		});
+
+	});
+
+
 	function cdel(seq, pseq) {
 
 		location.href = "/mvc/board/delcomment.do?seq=" + seq + "&pseq=" + pseq;
@@ -87,6 +139,16 @@
 		$("#btn1").val("수정하기");
 		$("#cform").prop("action", "/mvc/board/editcomment.do");
 		$("#seq").val(seq); // 수정할 댓글 seq
+		
+	}
+
+	function search() {
+
+		// #태그 클릭
+		var tag = $(event.srcElement).text();
+		// alert(tag);
+
+		location.href = "/mvc/board/list.do?column=hashtag&word=" + tag;
 		
 	}
 </script>
@@ -115,7 +177,20 @@
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td id = "content">${dto.content}</td>
+				<td id = "content">
+					${dto.content}
+					<div id = "good">
+						<div class = "<c:if test = '${gdto.good > 0}'>good</c:if>">
+							<span class = "glyphicon glyphicon-thumbs-up" id = "btngood"></span>
+							<div id = "labelgood">${gdto.good}</div>
+						</div>
+						<div class = "<c:if test = '${gdto.bad > 0}'>bad</c:if>">
+							<span class = "glyphicon glyphicon-thumbs-down" id = "btnbad"></span>
+							<div id = "labelbad">${gdto.bad}</div>
+						</div>
+					</div>
+				</td>
+				
 			</tr>
 			<tr>
 				<th>날짜</th>
@@ -140,6 +215,19 @@
 				첨부파일이 없습니다.
 				</c:if>
 				</td>
+			</tr>
+			
+			<tr>
+			<th>해시태그</th>
+			
+			<td>
+				<c:forEach items = "${tlist}" var = "tag">
+				<span class = "btn btn-warning" style = "padding:3px;font-size:13px;" onclick = "search();">
+				${tag}			
+				</span>
+				</c:forEach>
+			</td>
+			
 			</tr>
 		</table>
 		<div id = "btns">
@@ -169,9 +257,11 @@
 						onclick = "alert('권한이 없습니다.');"> 	
 				
 				</c:if>
+				
+				<c:if test = "${dto.notice == 0}">
 				<input type = "button" value = "답글달기" class = "btn btn-primary"
 					onclick = "location.href='/mvc/board/add.do?mode=reply&thread=${dto.thread}&depth=${dto.depth}';">
-				
+				</c:if>
 				
 				<!-- 댓글 -->
 				<form class = "form-inline" id = "cform" method = "post" action="/mvc/board/addcomment.do">

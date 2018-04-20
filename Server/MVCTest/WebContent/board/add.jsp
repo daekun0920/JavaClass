@@ -46,6 +46,12 @@
 	
 	<form method = "post" action = "/mvc/board/addok.do" enctype = "multipart/form-data">
 		<table id = "tbl1" class = "table table-striped">
+			<c:if test = "${lv > 1 && mode == 'new'}">		
+			<tr>
+				<th>공지</th>
+				<td><input type = "checkbox" name = "notice" id = "notice">	<label style = "font-weight:normal;">공지글입니다.</label></td>
+			</tr>
+			</c:if>
 			<tr>
 				<th>제목</th>
 				<td><input type = "text" name = "subject" id = "subject" class = "form-control" required></td>
@@ -66,6 +72,10 @@
 			<tr>
 				<th>파일</th>
 				<td><input type = "file" class = "form-control middle" name = "attach"></td>
+			</tr>
+			<tr>
+				<th>해시태그</th>
+				<td><input type = "text" class = "form-control" name = "hashtag" id = "hashtag"></td>
 			</tr>
 		</table>
 		

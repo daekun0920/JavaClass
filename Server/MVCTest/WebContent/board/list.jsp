@@ -136,8 +136,11 @@
 				<c:forEach items = "${list}" var = "dto">
 				<tr>
 					<td>
-						<c:if test = "${dto.depth == 0}">
+						<c:if test = "${dto.depth == 0 && dto.notice == 0}">
 						${dto.seq}
+						</c:if>
+						<c:if test = "${dto.notice == 1}">
+						<span class = "btn btn-primary">공지</span>
 						</c:if>
 					</td>
 					<td>

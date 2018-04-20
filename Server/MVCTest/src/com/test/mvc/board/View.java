@@ -101,9 +101,36 @@ public class View extends HttpServlet {
 			dto.setContent(content);
 		}
 		
+		// e. 첨부 파일이 이미지 -> 본문에 추가 
+		String filename = dto.getFilename();
+		
+		if (filename != null) {
+			if (filename.toLowerCase().endsWith(".jpg") || 
+				filename.toLowerCase().endsWith(".jpeg") ||
+				filename.toLowerCase().endsWith(".gif") ||
+				filename.toLowerCase().endsWith(".png")) {
+				
+				// 첨부파일 O + 이미지
+				dto.setContent("<img src = '/mvc/board/files/" + filename + "' style = 'display:block;margin:20px 0px;'>" + dto.getContent());
+				
+				
+				
+			}
+		} 
+		
+		
 		// 댓글 목록 가져오기
 		ArrayList<CommentDTO> clist = dao.clist(seq);
 		
+		
+		// 좋아요 / 싫어요 
+		// - good : count
+		// - bad : count
+		GoodResultDTO gdto = dao.getGoodResult(seq);
+		
+		
+		// 해시태그 가져오기
+		ArrayList<String> tlist = dao.listHashTag(seq);
 		
 		// 3.
 		req.setAttribute("dto", dto);
@@ -112,6 +139,8 @@ public class View extends HttpServlet {
 		
 		req.setAttribute("clist", clist);
 		
+		req.setAttribute("gdto", gdto);
+		req.setAttribute("tlist", tlist);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/board/view.jsp");
 		dispatcher.forward(req, resp);
 

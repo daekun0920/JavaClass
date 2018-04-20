@@ -65,11 +65,28 @@ public class EditOk extends HttpServlet {
 		BoardDTO temp = dao.get(seq);
 		String filename = "";
 		String orgfilename = "";
+		String ftemp = multi.getFilesystemName("attach");
 		
-		if (delfile.equals("y")) {
+		/*
+		
+		1. 기존 첨부파일명 클릭 > 파일 삭제
+		2. 기존 첨부파일명 방치 + 새로운 파일 선택 > 파일 교체
+		3. 기존 첨부파일명 방치 + 새로우 파일 선택 X > 기존 파일 유지
+		
+		
+		[파일 컨트롤]	[파일명]
+		X		X	-> 기존 파일 유지		//O
+		X		O	-> 기존 파일 삭제		//O
+		O		X	-> 기존 파일 삭제 + 새파일 추가	//X
+		O		O	-> 기존 파일 삭제 + 새파일 추가	//X
+		
+		*/
+		
+		if (delfile.equals("y") && ftemp == null) {
 			
 			File file = new File(path + "\\" + temp.getFilename());
 			file.delete();
+			// 다운로드 카운트를 0으로 초기화 update
 			
 			//dao.updateFileName(seq);
 			
@@ -77,13 +94,23 @@ public class EditOk extends HttpServlet {
 			orgfilename = "";
 			
 			
-		} else {
+		} else if (delfile.equals("n") && ftemp == null) {
 			
 			filename = temp.getFilename();
 			orgfilename = temp.getOrgfilename();
 			
-		}
-		
+		} else if (ftemp != null) { // 새 첨부파일이 존재 하기만 하면
+			// 다운로드 카운트를 0으로 초기화 update
+			
+			// 기존 파일 삭제
+			File file = new File(path + "\\" + temp.getFilename());
+			file.delete();
+			
+			// 새파일 등록
+			filename = multi.getFilesystemName("attach");
+			orgfilename = multi.getOriginalFileName("attach");
+			
+		} 
 
 		// 첨부 파일명 얻기
 		// String filename = multi.getFilesystemName("attach"); // 물리명
