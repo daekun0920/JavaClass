@@ -97,34 +97,27 @@ SELECT * FROM tblBoard;
 SELECT c.*, (SELECT name FROM tblMember WHERE id = c.id) as name FROM tblComment c WHERE pseq = 32 ORDER BY seq DESC;
 
 
-SELECT * FROM (SELECT seq,
-                       subject,
-                       content,
-                       id,
-                       regdate,
-                       readcount,
-                       tag,
-                       thread,
-                       depth,
-                       filename,
-                       orgfilename,
-                       downloadcount,
-                       notice,
-                       secret,
-                       movie,
+SELECT * FROM (SELECT b*
                        (SELECT name FROM tblMember ms WHERE ms.id = b.id) as name,
                        (SELECT count(*) FROM tblComment cc WHERE b.SEQ = cc.PSEQ) as ccount,
                        round((sysdate - regdate) * 24 * 60) as gap,
                        rownum as rnum 
                        FROM tblBoard b
                        WHERE notice = 0
-                      ) WHERE rnum <= 15 AND rnum >= 1  ORDER BY thread DESC;
+                       ORDER BY thread DESC) WHERE rnum <= 15 AND rnum >= 1 ;
 
 
 SELECT seq, subject, id, (SELECT name FROM tblMember WHERE id = b.id) as name, regdate, readcount, content, (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount, round((sysdate - regdate) * 24 * 60) as gap FROM tblBoard b;
 
 
-
+SELECT * FROM 
+    (SELECT se.*,
+            rownum as rnum,
+            (SELECT name FROM tblMember ms WHERE ms.id = se.id) as name,
+            (SELECT count(*) FROM tblComment cc WHERE se.SEQ = cc.PSEQ) as ccount,
+            round((sysdate - regdate) * 24 * 60) as gap
+            FROM 
+            (SELECT * FROM tblBoard WHERE notice = 0 order by thread DESC) se) WHERE rnum >= 16 AND rnum <= 20;
 -- 좋아요 싫어요
 
 CREATE SEQUENCE good_seq;
@@ -147,7 +140,7 @@ FROM dual;
 
 SELECT * FROM tblBoard
 ORDER BY notice DESC, thread DESC;
-
+SELECT * FROM tblBoard WHERE notice = 0 ORDER BY seq ASC;
 
 SELECT * FROM
 (

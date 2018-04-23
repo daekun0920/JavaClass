@@ -18,7 +18,7 @@ public class Template extends HttpServlet {
 		// "/" -> WebContent
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/template.jsp");
 		dispatcher.forward(req, resp);
-
+		
 	}
 	
 	
