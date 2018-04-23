@@ -80,6 +80,13 @@ public class AddOk extends HttpServlet {
 			// - 체크박스 선택 X : null
 			String notice = multi.getParameter("notice") != null ? "1" : "0"; // "on" or null
 			
+			// 비밀글
+			String secret = multi.getParameter("secret") != null ? "1" : "0";
+			
+			// 동영상
+			String movie = multi.getParameter("movie");
+			
+			
 			
 			// 2.
 			BoardDTO dto = new BoardDTO();
@@ -89,7 +96,8 @@ public class AddOk extends HttpServlet {
 			dto.setTag(tag);
 			dto.setId((String)req.getSession().getAttribute("auth"));
 			dto.setNotice(notice);
-			
+			dto.setSecret(secret);
+			dto.setMovie(movie);
 			// 첨부파일명 추가
 			
 			dto.setFilename(filename);

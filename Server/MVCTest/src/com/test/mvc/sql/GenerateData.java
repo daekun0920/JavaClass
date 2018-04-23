@@ -27,6 +27,7 @@ public class GenerateData {
 			
 			Random rnd = new Random();
 			
+		
 			for (int i = 0; i < 500; i++) {
 				
 				stat.setString(1, subject[rnd.nextInt(subject.length)]);

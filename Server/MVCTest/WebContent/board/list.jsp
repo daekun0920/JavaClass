@@ -148,7 +148,11 @@
 						<c:if test = "${dto.depth > 0 }">
 						<span class = "btn btn-primary" style = "margin-left:${dto.depth * 20}px; font-size:8px; padding:3px;">ㄴ[re]</span>
 						</c:if>
-												
+						
+						<c:if test = "${dto.secret == 1}">
+						<span class = "glyphicon glyphicon-lock"></span>
+						</c:if>
+						
 						<c:if test = "${map.isSearch == false}">
 						<a href = "/mvc/board/view.do?seq=${dto.seq}">${dto.subject}</a>
 						</c:if>

@@ -26,7 +26,7 @@ public class BoardDAO {
 		
 		try {
 			
-			String sql = "INSERT INTO tblBoard(seq, subject, content, id, regdate, readcount, tag, thread, depth, filename, orgfilename, notice) VALUES (board_seq.nextval, ?, ?, ?, DEFAULT, DEFAULT, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO tblBoard(seq, subject, content, id, regdate, readcount, tag, thread, depth, filename, orgfilename, notice, secret, movie) VALUES (board_seq.nextval, ?, ?, ?, DEFAULT, DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?)";
 			
 			
 			stat = conn.prepareStatement(sql);
@@ -40,7 +40,8 @@ public class BoardDAO {
 			stat.setString(7, dto.getFilename());
 			stat.setString(8, dto.getOrgfilename());
 			stat.setString(9, dto.getNotice());
-			
+			stat.setString(10, dto.getSecret());
+			stat.setString(11, dto.getMovie());
 			
 			
 			return stat.executeUpdate();
@@ -66,12 +67,9 @@ public class BoardDAO {
 			if (map.get("isSearch").equals("true")) {
 				where = String.format("AND %s like '%%%s%%'", map.get("column"), map.get("word"));
 				if (map.get("column").equals("hashtag")) {
-					where = String.format("AND %s like '%%%s%%'", "tt.tag", map.get("word"));
+			
 					
-					ee = "ee.";
-					tt = ", tt.tag";
-					eee = "ee";
-					inner = "INNER JOIN tblHashTag tt ON tt.BSEQ = ee.seq";
+					
 					
 				}
 				
@@ -83,24 +81,17 @@ public class BoardDAO {
 			// My-SQL : limit
 			// Oracle : rownum
 			// MS-SQL : top
-			String sql = String.format("SELECT %s*%s FROM " + 
-					"(SELECT s.*, (SELECT name FROM tblMember m WHERE m.id = s.id) as name," + 
-					"            (SELECT count(*) FROM tblComment c WHERE s.SEQ = c.PSEQ) as ccount," + 
-					"            round((sysdate - regdate) * 24 * 60) as gap," + 
-					"            rownum as rnam " + 
-					"                FROM tblBoard s WHERE notice = 1 " + 
-					" UNION" + 
-					" SELECT * FROM (SELECT b.*, (SELECT name FROM tblMember ms WHERE ms.id = b.id) as name," + 
-					"                      (SELECT count(*) FROM tblComment cc WHERE b.SEQ = cc.PSEQ) as ccount," + 
-					"                      round((sysdate - regdate) * 24 * 60) as gap," + 
-					"                      rownum as rnum " + 
-					"                        FROM tblBoard b " + 
-					"                            WHERE notice = 0) WHERE rnum >= %s AND rnum <= %s" + 
-					") %s  %s %s " + 
-					" ORDER BY notice DESC, thread DESC",
-										ee, tt, map.get("start"), map.get("end"), eee, where, inner);
+			String sql = "SELECT seq,"
+						+ " subject,"
+						+ " id,"
+						+ " (SELECT name FROM tblMember ms WHERE ms.id = b.id) as name,"
+						+ " regdate,"
+						+ " readcount, filename, orgfilename, depth, notice, secret, movie, "
+						+ " round((sysdate - regdate) * 24 * 60) as gap,"
+						+ " (SELECT count(*) FROM tblComment cc WHERE b.SEQ = cc.PSEQ) as ccount "
+						+ "FROM tblBoard b WHERE notice = 1 ORDER BY seq DESC" + where;
 			
-			System.out.println(sql);
+			
 			stat = conn.prepareStatement(sql);
 			
 			ResultSet rs = stat.executeQuery();
@@ -125,10 +116,52 @@ public class BoardDAO {
 				dto.setFilename(rs.getString("filename"));
 				dto.setOrgfilename(rs.getString("orgfilename"));
 				dto.setNotice(rs.getString("notice"));
+				dto.setSecret(rs.getString("secret"));
+				dto.setMovie(rs.getString("movie"));
 				
 				list.add(dto);
 			}
 			
+			sql = "SELECT * FROM " + 
+					"    (SELECT se.*," + 
+					"            rownum as rnum," + 
+					"            (SELECT name FROM tblMember ms WHERE ms.id = se.id) as name," + 
+					"            (SELECT count(*) FROM tblComment cc WHERE se.SEQ = cc.PSEQ) as ccount," + 
+					"            round((sysdate - regdate) * 24 * 60) as gap" + 
+					"            FROM " + 
+					"            (SELECT * FROM tblBoard WHERE notice = 0 order by thread DESC) se) WHERE rnum >= ? AND rnum <= ?" + where;
+					
+				stat = conn.prepareStatement(sql);
+				
+				stat.setString(1, map.get("start"));
+				stat.setString(2, map.get("end"));
+				
+				
+				rs = stat.executeQuery();
+				
+				while (rs.next()) {
+					// 레코드 1개 -> DTO 1개
+					BoardDTO dto = new BoardDTO();
+					
+					
+					dto.setSeq(rs.getString("seq"));
+					dto.setSubject(rs.getString("subject"));
+					dto.setId(rs.getString("id"));
+					dto.setName(rs.getString("name"));
+					dto.setRegdate(rs.getString("regdate"));
+					dto.setReadcount(rs.getInt("readcount"));
+					dto.setGap(rs.getInt("gap"));
+					dto.setCcount(rs.getInt("ccount"));
+					dto.setDepth(rs.getInt("depth"));
+					dto.setFilename(rs.getString("filename"));
+					dto.setOrgfilename(rs.getString("orgfilename"));
+					dto.setNotice(rs.getString("notice"));
+					dto.setSecret(rs.getString("secret"));
+					dto.setMovie(rs.getString("movie"));
+					
+					list.add(dto);
+				}
+				
 			return list;
 			
 		} catch (Exception e) {
@@ -169,6 +202,8 @@ public class BoardDAO {
 				 dto.setOrgfilename(rs.getString("orgfilename"));
 				 dto.setDownloadcount(rs.getString("downloadcount"));
 				 dto.setNotice(rs.getString("notice"));
+				 dto.setSecret(rs.getString("secret"));
+				 dto.setMovie(rs.getString("movie"));
 			 }
 			 
 			 return dto;
@@ -308,10 +343,10 @@ public class BoardDAO {
 	}
 	
 	// View 서블릿이 댓글 목록 달라고 요청
-	public ArrayList<CommentDTO> clist(String pseq) {
+	public ArrayList<CommentDTO> clist(String pseq, String sort) {
 		try {
 			
-			String sql = "SELECT c.*, (SELECT name FROM tblMember WHERE id = c.id) as name FROM tblComment c WHERE pseq = ? ORDER BY seq ASC";
+				String sql = "SELECT c.*, (SELECT name FROM tblMember WHERE id = c.id) as name FROM tblComment c WHERE pseq = ? ORDER BY seq " + sort;
 			
 			stat = conn.prepareStatement(sql);
 			stat.setString(1, pseq);

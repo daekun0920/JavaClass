@@ -38,15 +38,15 @@ public class List extends HttpServlet {
 		// 페이징 사전 작업
 		
 		int nowPage = 0;					// 현재 페이지 번호				
-		int pageSize = 15;                   // 한페이지에서 보여줄 게시물 수
+		int pageSize = 15;                  // 한페이지에서 보여줄 게시물 수
 		int totalPage = 0;                  // 총 페이지 수
 		int start = 0;                      // 쿼리의 조건절 rnum >= start
 		int end = 0;						// rnum <= end
 		int totalCount = 0;
 		
-		int n = 0;
+		int n = 0;							
 		int loop = 0;
-		int blockSize = 10;
+		int blockSize = 10;					// 밑에 페이지단
 		
 		// list.do -> list.do?page=1
 		// list.do?page=3
@@ -167,6 +167,12 @@ public class List extends HttpServlet {
 				dto.setSubject(dto.getSubject().replace(word, "<span style = 'background-color:yellow;'>" + word + "</span>"));
 				
 			}
+			// f. 비밀글 제목 바꾸기
+			if (dto.getSecret().equals("1")) {
+				dto.setSubject("비밀글 입니다.");
+			}
+
+			
 		}
 		
 		// JSP에 보낼 페이지바 태그들 작성
@@ -196,10 +202,8 @@ public class List extends HttpServlet {
 		
 		loop = 1; // 회전수 조절: 루프 변수
 		// n = 1; // 페이지 번호 변수
-		n = ((nowPage - 1) / blockSize) * blockSize + 1;
-		
-		
-		
+		n = ((nowPage - 1) / blockSize) * blockSize + 1; //
+
 		// 이전 10페이지
 		if (n == 1) {
 			pagebar  += String.format(" <li class = 'disabled'>\r\n" + 
@@ -266,5 +270,6 @@ public class List extends HttpServlet {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/board/list.jsp");
 		dispatcher.forward(req, resp);
 	}
-
+	
+		
 }
