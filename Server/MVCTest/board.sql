@@ -30,6 +30,41 @@ CREATE TABLE tblBoard (
     filename VARCHAR2(100) NULL, -- 첨부 파일(물리명)
     orgfilename VARCHAR2(100) NULL, -- 첨부 파일명(원본명),
     downloadcount NUMBER default 0 NULL,
+    notice VARCHAR2(1) NOT NULL check (notice in ('1', '0')), -- 공지(1), 일반(0)
+    secret VARCHAR2(1) NOT NULL check (secret in ('1', '0')), -- 비밀글(1), 일반(0)
+    movie VARCHAR2(100) null
+);
+
+CREATE TABLE tblBoard (
+    seq NUMBER PRIMARY KEY, -- 시퀀스
+    subject VARCHAR2(500) NOT NULL, -- 글 제목
+    content VARCHAR2(2000) NOT NULL, -- 글내용
+    id VARCHAR2(30) not null REFERENCES tblMember(id), -- 작성자
+    regdate DATE DEFAULT sysdate NOT NULL, -- 글쓴시각
+    readcount NUMBER DEFAULT 0 NOT NULL, -- 조회수
+    tag VARCHAR2(1) NOT NULL CHECK(tag in('y', 'n')),-- 글 내용에 태그 허용
+    thread NUMBER NOT NULL, -- 답변형(정렬)
+    depth NUMBER NOT NULL, -- 답변형(들여쓰기)
+    filename VARCHAR2(100) NULL, -- 첨부 파일(물리명)
+    orgfilename VARCHAR2(100) NULL, -- 첨부 파일명(원본명),
+    downloadcount NUMBER default 0 NULL,
+    notice VARCHAR2(1) NOT NULL check (notice in ('1', '0')), -- 공지(1), 일반(0)
+    secret VARCHAR2(1) NOT NULL check (secret in ('1', '0')) -- 비밀글(1), 일반(0)
+);
+
+CREATE TABLE tblBoard (
+    seq NUMBER PRIMARY KEY, -- 시퀀스
+    subject VARCHAR2(500) NOT NULL, -- 글 제목
+    content VARCHAR2(2000) NOT NULL, -- 글내용
+    id VARCHAR2(30) not null REFERENCES tblMember(id), -- 작성자
+    regdate DATE DEFAULT sysdate NOT NULL, -- 글쓴시각
+    readcount NUMBER DEFAULT 0 NOT NULL, -- 조회수
+    tag VARCHAR2(1) NOT NULL CHECK(tag in('y', 'n')),-- 글 내용에 태그 허용
+    thread NUMBER NOT NULL, -- 답변형(정렬)
+    depth NUMBER NOT NULL, -- 답변형(들여쓰기)
+    filename VARCHAR2(100) NULL, -- 첨부 파일(물리명)
+    orgfilename VARCHAR2(100) NULL, -- 첨부 파일명(원본명),
+    downloadcount NUMBER default 0 NULL,
     notice VARCHAR2(1) NOT NULL check (notice in ('1', '0')) -- 공지(1), 일반(0)
 );
 
@@ -77,13 +112,27 @@ SELECT * FROM tblBoard;
 SELECT c.*, (SELECT name FROM tblMember WHERE id = c.id) as name FROM tblComment c WHERE pseq = 32 ORDER BY seq DESC;
 
 
-
+SELECT * FROM (SELECT b*
+                       (SELECT name FROM tblMember ms WHERE ms.id = b.id) as name,
+                       (SELECT count(*) FROM tblComment cc WHERE b.SEQ = cc.PSEQ) as ccount,
+                       round((sysdate - regdate) * 24 * 60) as gap,
+                       rownum as rnum 
+                       FROM tblBoard b
+                       WHERE notice = 0
+                       ORDER BY thread DESC) WHERE rnum <= 15 AND rnum >= 1 ;
 
 
 SELECT seq, subject, id, (SELECT name FROM tblMember WHERE id = b.id) as name, regdate, readcount, content, (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount, round((sysdate - regdate) * 24 * 60) as gap FROM tblBoard b;
 
 
-
+SELECT * FROM 
+    (SELECT se.*,
+            rownum as rnum,
+            (SELECT name FROM tblMember ms WHERE ms.id = se.id) as name,
+            (SELECT count(*) FROM tblComment cc WHERE se.SEQ = cc.PSEQ) as ccount,
+            round((sysdate - regdate) * 24 * 60) as gap
+            FROM 
+            (SELECT * FROM tblBoard WHERE notice = 0 order by thread DESC) se) WHERE rnum >= 16 AND rnum <= 20;
 -- 좋아요 싫어요
 
 CREATE SEQUENCE good_seq;
@@ -106,6 +155,7 @@ FROM dual;
 
 SELECT * FROM tblBoard
 ORDER BY notice DESC, thread DESC;
+<<<<<<< HEAD
 
 SELECT * FROM (SELECT seq,
         subject,
@@ -119,6 +169,9 @@ SELECT * FROM (SELECT seq,
         rownum as rnum,
         notice
         FROM tblBoard b) WHERE rnum >= 1 AND rnum <= 10;
+=======
+SELECT * FROM tblBoard WHERE notice = 0 ORDER BY seq ASC;
+>>>>>>> 6ad7c63e06dcd879f676eeb9dd9c3ade13dc61ac
 
 SELECT * FROM
 (
@@ -128,10 +181,22 @@ SELECT s.*,  (SELECT name FROM tblMember WHERE id = s.id) as name,
              rownum as rnum
                 FROM tblBoard s WHERE notice = 1
 UNION
+<<<<<<< HEAD
 SELECT seq, subject, id, (SELECT name FROM tblMember WHERE id = b.id) as name, regdate, readcount, content, (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount, round((sysdate - regdate) * 24 * 60) as gap FROM tblBoard b) WHERE rnum >= 1 AND rnum <= 100 ORDER BY NOTICE DESC, THREAD DESC;
 
 SELECT * FROM tblBoard;
 
+=======
+SELECT se.*, rownum as rnum FROM (SELECT b.*, (SELECT name FROM tblMember WHERE id = b.id) as name,
+                      (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount,
+                      round((sysdate - regdate) * 24 * 60) as gap,
+                      rownum as rnum 
+                        FROM tblBoard b 
+                            WHERE notice = 0 ORDER BY SEQ DESC) se
+) WHERE rnum >= 1 AND rnum <= 100 ORDER BY NOTICE DESC, THREAD DESC;
+
+SELECT * FROM tblBoard;
+>>>>>>> 6ad7c63e06dcd879f676eeb9dd9c3ade13dc61ac
 
 -- 해시태그 테이블
 
@@ -147,7 +212,7 @@ SELECT * FROM tblHashTag;
 CREATE SEQUENCE hashtag_seq;
 DELETE FROM tblHashTag WHERE bseq = 653;
 commit;
-
+DROP TABLE tblHashTag;
 
 
 SELECT * FROM (SELECT s.*, (SELECT name FROM tblMember m WHERE m.id = s.id) as name,

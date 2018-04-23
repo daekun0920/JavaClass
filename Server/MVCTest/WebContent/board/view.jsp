@@ -104,6 +104,33 @@
 		color:#DC354D;
 	}
 	
+	/* 이렇게도 사용 가능 */
+	#div1 {
+	
+		position:relative;
+		left:0px;
+		top:0px;
+	
+	}
+	
+	#btnSort {
+		
+		position:absolute;
+		top:0px;
+		right:150px;
+		border:1px solid;
+		background-color:#F9F9F9;
+		padding:7px;
+		cursor:pointer;
+	}
+	
+	#url {
+		width:1px;
+		height:1px;
+		border:0;
+		padding:0;
+		margin:0;
+	}
 </style>
 <script>
 	$(function() {
@@ -120,6 +147,17 @@
 		
 		});
 
+		$("#btnSort").click(function() {
+			
+			location.href = "/mvc/board/view.do?seq=${dto.seq}&sort=${sort}#tbl2";
+
+			
+			
+						
+		});
+
+		// $("#url").hide(); 
+		
 	});
 
 
@@ -150,6 +188,16 @@
 
 		location.href = "/board/list.do?column=hashtag&word=" + tag;
 		
+	}
+
+	function copy() {
+
+		// Ctrl + C
+		$("#url").val(location.href);
+		$("#url").select();
+		
+		document.execCommand("copy"); /* 카피를 해준다 */
+
 	}
 </script>
 </head>
@@ -263,6 +311,11 @@
 					onclick = "location.href='/board/add.do?mode=reply&thread=${dto.thread}&depth=${dto.depth}';">
 				</c:if>
 				
+				<input type = "button" value = "공유하기" class = "btn btn-warning"
+					onclick = "copy();">
+				<input type = "text" id = "url">
+				
+				
 				<!-- 댓글 -->
 				<form class = "form-inline" id = "cform" method = "post" action="/board/addcomment.do">
 					<textarea name = "ccontent" id = "ccontent" required class = "form-control"></textarea>
@@ -271,28 +324,44 @@
 					<input type = "hidden" name = "seq" id = "seq">
 				</form>
 				
+		
+				
 				<!-- <div>댓글목록</div> -->
-				
-				<table id = "tbl2" class = "table table-striped">
-					<c:forEach items = "${clist}" var = "cdto">
-					<tr>
-						<td style = "vertical-align:middle;">
-							${cdto.content}
-						</td>
-						<td>
-							<div>${cdto.name}</div>
-							<div>${cdto.regdate}</div>
-							<c:if test = "${cdto.id == auth}">
-								<div>
-									<span class = "glyphicon glyphicon-edit" onclick = "edit(${cdto.seq});"></span>
-									<span class = "glyphicon glyphicon-trash" onclick = "cdel(${cdto.seq}, ${dto.seq});"></span>
-								</div>
-							</c:if>
-						</td>
-					</tr>
-					</c:forEach>
-				</table>
-				
+				<div id = "div1">
+					<table id = "tbl2" class = "table table-striped">
+						<c:forEach items = "${clist}" var = "cdto">
+						<tr>
+							<td style = "vertical-align:middle;">
+								${cdto.content}
+							</td>
+							<td>
+								<div>${cdto.name}</div>
+								<div>${cdto.regdate}</div>
+								<c:if test = "${cdto.id == auth}">
+									<div>
+										<span class = "glyphicon glyphicon-edit" onclick = "edit(${cdto.seq});"></span>
+										<span class = "glyphicon glyphicon-trash" onclick = "cdel(${cdto.seq}, ${dto.seq});"></span>
+									</div>
+								</c:if>
+							</td>
+						</tr>
+						</c:forEach>
+					</table> <!-- 댓글 리스트 테이블 -->
+					
+					<!-- 댓글 정렬 버튼 -->
+					<c:if test = "${clist.size() > 0 && sort == 'desc'}">
+					
+					<span class = "glyphicon glyphicon-sort-by-attributes-alt" id = "btnSort"></span>
+					
+					</c:if>
+					
+					<c:if test = "${clist.size() > 0 && sort == 'asc'}">
+					
+					<span class = "glyphicon glyphicon-sort-by-attributes" id = "btnSort"></span>
+					
+					</c:if>
+					
+				</div>
 				
 		</div>
 	
