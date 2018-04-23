@@ -145,7 +145,7 @@ public class View extends HttpServlet {
 		String movie = dto.getMovie();
 		
 		if (movie != null) {
-			dto.setContent(String.format("<iframe width='1000' height='800' src='https://www.youtube.com/embed/%s' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", movie) + dto.getContent());
+			dto.setContent(String.format("<iframe width='700' height='400' src='https://www.youtube.com/embed/%s' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>", movie) + dto.getContent());
 		}
 		
 		
