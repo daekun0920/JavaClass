@@ -1,6 +1,20 @@
 -- MVCTest > board.sql
 
 DROP TABLE tblBoard;
+CREATE TABLE tblMember (
+    id VARCHAR2(30) NOT NULL PRIMARY KEY,
+    pw VARCHAR2(30) NOT NULL,
+    name VARCHAR2(30) NOT NULL,
+    lv NUMBER NOT NULL   
+)
+commit;
+INSERT INTO tblBoard VALUES (82, 'hi', 'hi', 'admin', sysdate, DEFAULT, 'n', 4000, 0, null, null, DEFAULT, 0);
+DELETE FROM tblBoard WHERE seq = 82;
+SELECT * FROM tblMember;
+INSERT INTO tblMember VALUES ('hong', 1111, '홍길동', 1);
+INSERT INTO tblMember VALUES ('test', 1111, '테스트', 1);
+INSERT INTO tblMember VALUES ('hong', 1111, '홍길동', 1);
+INSERT INTO tblMember VALUES ('admin', 1111, '관리자', 3);
 
 -- 2. 게시판 테이블(원글)
 CREATE TABLE tblBoard (
@@ -31,13 +45,14 @@ CREATE TABLE tblBoard (
     depth NUMBER NOT NULL -- 답변형(들여쓰기)
         
 );
+DROP TABLE tblBoard;
 CREATE SEQUENCE board_seq;
 
 INSERT INTO tblBoard (seq, subject, content, id, regdate, readcount, tag)
     VALUES (board_seq.nextval, '게시판 첫글입니다.', '내용입니다.', 'hong', default, default, 'y');
 
 SELECT * FROM tblBoard;
-
+SELECT nvl(max(thread), 0) + 1000 FROM tblBoard
 
 
 DROP TABLE tblComment;
@@ -92,6 +107,18 @@ FROM dual;
 SELECT * FROM tblBoard
 ORDER BY notice DESC, thread DESC;
 
+SELECT * FROM (SELECT seq,
+        subject,
+        id,
+        (SELECT name FROM tblMember WHERE id = b.id) as name,
+        regdate,
+        readcount,
+        content,
+        (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount,
+        round((sysdate - regdate) * 24 * 60) as gap,
+        rownum as rnum,
+        notice
+        FROM tblBoard b) WHERE rnum >= 1 AND rnum <= 10;
 
 SELECT * FROM
 (
@@ -101,15 +128,10 @@ SELECT s.*,  (SELECT name FROM tblMember WHERE id = s.id) as name,
              rownum as rnum
                 FROM tblBoard s WHERE notice = 1
 UNION
-SELECT se.*, rownum as rnum FROM (SELECT b.*, (SELECT name FROM tblMember WHERE id = b.id) as name,
-                      (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount,
-                      round((sysdate - regdate) * 24 * 60) as gap,
-                      rownum as rnum 
-                        FROM tblBoard b 
-                            WHERE notice = 0 ORDER BY SEQ DESC) se
-) WHERE rnum >= 1 AND rnum <= 100 ORDER BY NOTICE DESC, THREAD DESC;
+SELECT seq, subject, id, (SELECT name FROM tblMember WHERE id = b.id) as name, regdate, readcount, content, (SELECT count(*) FROM tblComment WHERE b.SEQ = PSEQ) as ccount, round((sysdate - regdate) * 24 * 60) as gap FROM tblBoard b) WHERE rnum >= 1 AND rnum <= 100 ORDER BY NOTICE DESC, THREAD DESC;
 
-SELECT seq, rownum FROM tblBoard;
+SELECT * FROM tblBoard;
+
 
 -- 해시태그 테이블
 

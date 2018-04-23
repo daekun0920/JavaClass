@@ -110,13 +110,13 @@
 
 		$("#btngood").click(function() {
 
-			location.href = "/mvc/board/good.do?state=g&seq=${dto.seq}";
+			location.href = "/board/good.do?state=g&seq=${dto.seq}";
 			
 		});
 
 		$("#btnbad").click(function() {
 
-			location.href = "/mvc/board/good.do?state=b&seq=${dto.seq}";
+			location.href = "/board/good.do?state=b&seq=${dto.seq}";
 		
 		});
 
@@ -125,7 +125,7 @@
 
 	function cdel(seq, pseq) {
 
-		location.href = "/mvc/board/delcomment.do?seq=" + seq + "&pseq=" + pseq;
+		location.href = "/board/delcomment.do?seq=" + seq + "&pseq=" + pseq;
 
 	}
 
@@ -137,7 +137,7 @@
 		//alert(comment);
 		$("#ccontent").val(comment);
 		$("#btn1").val("수정하기");
-		$("#cform").prop("action", "/mvc/board/editcomment.do");
+		$("#cform").prop("action", "/board/editcomment.do");
 		$("#seq").val(seq); // 수정할 댓글 seq
 		
 	}
@@ -148,7 +148,7 @@
 		var tag = $(event.srcElement).text();
 		// alert(tag);
 
-		location.href = "/mvc/board/list.do?column=hashtag&word=" + tag;
+		location.href = "/board/list.do?column=hashtag&word=" + tag;
 		
 	}
 </script>
@@ -206,7 +206,7 @@
 				<th>파일</th>
 				<td>
 				<c:if test = "${!empty dto.orgfilename}">
-				<a href = "/mvc/board/download.do?filename=${dto.filename}&orgfilename=${dto.orgfilename}&seq=${dto.seq}">
+				<a href = "/board/download.do?filename=${dto.filename}&orgfilename=${dto.orgfilename}&seq=${dto.seq}">
 					${dto.orgfilename}
 				</a> 
 				(download : ${dto.downloadcount})
@@ -234,19 +234,19 @@
 				
 				<c:if test = "${empty word}"> <!-- empty : 비거나 값이 없을때 -->
 					<input type = "button" value = "뒤로가기" class = "btn btn-default"
-							onclick = "location.href='/mvc/board/list.do';"> 
+							onclick = "location.href='/board/list.do';"> 
 				</c:if>
 				
 				<c:if test = "${!empty word }">
 					<input type = "button" value = "뒤로가기" class = "btn btn-default"
-							onclick = "location.href='/mvc/board/list.do?column=${column}&word=${word}';"> 
+							onclick = "location.href='/board/list.do?column=${column}&word=${word}';"> 
 				</c:if>
 						
 				<c:if test = "${dto.id == auth}">
 					<input type = "button" value = "수정하기" class = "btn btn-primary"
-						onclick = "location.href='/mvc/board/edit.do?seq=${dto.seq}';"> 
+						onclick = "location.href='/board/edit.do?seq=${dto.seq}';"> 
 					<input type = "button" value = "삭제하기" class = "btn btn-primary"
-						onclick = "location.href='/mvc/board/delok.do?seq=${dto.seq}';">
+						onclick = "location.href='/board/delok.do?seq=${dto.seq}';">
 				
 				</c:if>
 				
@@ -260,11 +260,11 @@
 				
 				<c:if test = "${dto.notice == 0}">
 				<input type = "button" value = "답글달기" class = "btn btn-primary"
-					onclick = "location.href='/mvc/board/add.do?mode=reply&thread=${dto.thread}&depth=${dto.depth}';">
+					onclick = "location.href='/board/add.do?mode=reply&thread=${dto.thread}&depth=${dto.depth}';">
 				</c:if>
 				
 				<!-- 댓글 -->
-				<form class = "form-inline" id = "cform" method = "post" action="/mvc/board/addcomment.do">
+				<form class = "form-inline" id = "cform" method = "post" action="/board/addcomment.do">
 					<textarea name = "ccontent" id = "ccontent" required class = "form-control"></textarea>
 					<input type = "submit" value = "댓글 쓰기" class = "btn btn-primary" id = "btn1">
 					<input type = "hidden" name = "pseq" value = "${dto.seq}">

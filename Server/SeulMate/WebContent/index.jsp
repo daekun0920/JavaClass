@@ -28,12 +28,16 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main_2.css">
 <!--===============================================================================================-->
-
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+		<script src="js/bootstrap.js"></script>
+	
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <style>
 	
 	
@@ -47,10 +51,11 @@
 		background-attachment:fixed;
 		background-repeat: no-repeat;
 		padding-bottom:100px;
+		
 	}
 	#hd1 {
 		width:100%;
-		height:20px;
+		height:70px;
 		border-bottom:1px solid black;
 		padding:0;
 		display:inline-block;
@@ -73,14 +78,17 @@
 	}
 	
 	#logo1 {
-		font-size:3em;
-		color:white;
+		font-size:17em;
+		color:black;
 		text-align:center;
 		margin-top:80px;
-		text-shadow: 0px 1px 0px rgba(255, 255, 255, .75);
+		text-shadow: 2px 1px 5px #FFF;
+		font-family:Bad Script;
 
-
- 
+ 	position:relative;
+		top:-30px;
+		opacity:0;
+		transition:all 2s;
 		
 	}
 	
@@ -110,11 +118,50 @@
 		opacity:0;
 		transition:all 2s;
 	}
+	
+	#btn-group {
+		text-align:center;
+		
+		
+	}
+	
+	#btn-group button {
+		width:200px;
+		height:100px;
+		font-family:Bad Script;
+		margin:30px;
+		background-color:transparent;
+		color:black;
+		font-size:2em;
+		border-radius:20px;
+		padding:0;
+		border:0;
+		outline:0;
+	}
+	
+	button:focus {
+	
+		outline:none;
+		
+	}
+	#btn-group button div {
+		width:100%;
+		height:100%;
+		opacity:0.2;
+		background-color:#444;
+		border-radius:20px;
+	}
+	
+	#btn-group button span {
+		position:relative;
+		top:-70px;
+		
+	}
 </style>
 <script>
 	$(document).ready(
 		function() {
-				$(".limiter").css("top", "0px").css("opacity", "1");
+				$("#logo1").css("top", "0px").css("opacity", "1");
 		}
 	);
 </script>
@@ -124,9 +171,17 @@
 	<!-- <div id = "hd1">
 	</div> -->
 	
-	<div id = "logo1"></div>
 	
-	<div class="limiter">
+	<div id = "logo1">SeúlMate</div>
+	
+	<div id = "btn-group">
+		<button type = "button" class = "btn btn-default"><div></div><span>Home</span></button>
+		<button type = "button" class = "btn btn-default"><div></div><span>Info</span></button>
+		<button type = "button" class = "btn btn-default"><div></div><span>Photo</span></button>
+		<button type = "button" class = "btn btn-default"><div></div><span>Contact</span></button>
+	</div>
+	
+	<!-- <div class="limiter">
 		<div class="container-login100" style = "background-color:transparent;">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" method = "get" action = "">
@@ -134,7 +189,7 @@
 						Bienvenido a SeúlMate!
 					</span>
 					<span class="login100-form-title p-b-48">
-						<!-- <i class="zmdi zmdi-font"></i> -->
+						<i class="zmdi zmdi-font"></i>
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
@@ -175,7 +230,7 @@
 	
 
 	<div id="dropDownSelect1"></div>
-	
+	 -->
 	
 
 	
@@ -184,8 +239,7 @@
 <!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->

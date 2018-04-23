@@ -65,7 +65,7 @@
     <servlet-name>Semi.Auth.Index</servlet-name>
     <url-pattern>/auth/index.do</url-pattern>
   </servlet-mapping>
-  <servlet>
+ <!--  <servlet>
     <servlet-name>Semi.Auth.Login</servlet-name>
     <servlet-class>com.test.mvc.auth.Login</servlet-class>
   </servlet>
@@ -73,6 +73,7 @@
     <servlet-name>Semi.Auth.Login</servlet-name>
     <url-pattern>/auth/login.do</url-pattern>
   </servlet-mapping>
+  -->
   <servlet>
     <servlet-name>Semi.Auth.Logout</servlet-name>
     <servlet-class>com.test.mvc.auth.Logout</servlet-class>

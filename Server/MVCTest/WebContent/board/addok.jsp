@@ -12,12 +12,12 @@
 <style>
 </style>
 <script>
-
+	
 	<c:if test="${result == 1}">
-	location.href="/mvc/board/list.do";
+	location.href="/board/list.do";
 	</c:if>
 
-	<c:if test="${result != 1}">
+	<c:if test = "${result == 0}">
 	alert("글쓰기를 실패했습니다");
 	history.back();
 	</c:if>

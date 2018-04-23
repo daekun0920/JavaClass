@@ -150,11 +150,11 @@
 						</c:if>
 												
 						<c:if test = "${map.isSearch == false}">
-						<a href = "/mvc/board/view.do?seq=${dto.seq}">${dto.subject}</a>
+						<a href = "/board/view.do?seq=${dto.seq}">${dto.subject}</a>
 						</c:if>
 						
 						<c:if test = "${map.isSearch == true}">
-						<a href = "/mvc/board/view.do?seq=${dto.seq}&column=${map.column}&word=${map.word}">${dto.subject}</a>
+						<a href = "/board/view.do?seq=${dto.seq}&column=${map.column}&word=${map.word}">${dto.subject}</a>
 						</c:if>
 						
 						<!-- 첨부 파일 여부 표시 -->
@@ -186,7 +186,7 @@
 			${pagebar}
 			
 			<div id = "search">
-				<form class = "form-inline" action="/mvc/board/list.do" method = "get"> <!-- form 태그를 get으로 넘겨야하는 경우중 한가지 -->
+				<form class = "form-inline" action="/board/list.do" method = "get"> <!-- form 태그를 get으로 넘겨야하는 경우중 한가지 -->
 						<select name = "column" id = "column" class = "form-control" style = "width:100px;">
 							<option value = "subject">제목</option>
 							<option value = "content">내용</option>
@@ -199,10 +199,10 @@
 			
 			<div id = "btns">
 				<input type = "button" value = "목록보기" class = "btn btn-default"
-					onclick = "location.href = '/mvc/board/list.do';"> 
+					onclick = "location.href = '/board/list.do';"> 
 			
 				<input type = "button" value = "글쓰기" class = "btn btn-primary"
-					onclick = "location.href = '/mvc/board/add.do?mode=new';"> 
+					onclick = "location.href = '/board/add.do?mode=new';"> 
 			</div>
 		
 		
