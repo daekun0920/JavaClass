@@ -14,7 +14,7 @@ public class GenerateData {
 		
 		try {
 			
-			String sql = "INSERT INTO tblBoard VALUES (board_seq.nextval, ?, '내용입니다잉', ?, DEFAULT, DEFAULT, 'n')";
+			String sql = "INSERT INTO tblBoard (seq, subject, content, id, regdate, readcount, tag, thread, depth, notice, secret) VALUES (board_seq.nextval, ?, '내용입니다잉', ?, DEFAULT, DEFAULT, 'n', ?, 0, 0, 0)";
 			
 			stat = conn.prepareStatement(sql);
 			
@@ -28,10 +28,11 @@ public class GenerateData {
 			Random rnd = new Random();
 			
 		
-			for (int i = 0; i < 500; i++) {
+			for (int i = 0; i < 100; i++) {
 				
 				stat.setString(1, subject[rnd.nextInt(subject.length)]);
 				stat.setString(2, id[rnd.nextInt(id.length)]);
+				stat.setInt(3, (i + 1) * 1000);
 				
 				stat.executeUpdate();
 				System.out.printf("%d insert.. \n", i);

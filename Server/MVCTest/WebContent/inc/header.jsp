@@ -8,11 +8,16 @@
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse">
+				
+				<!-- 기본페이지 : index.do(X) -> index.jsp(O) -->
 					<ul class="nav navbar-nav">
 						<li id = "menu1"><a href="/mvc/auth/index.do">회원</a></li>
 					</ul>
 					<ul class="nav navbar-nav">
 						<li id = "menu2"><a href="/mvc/board/list.do">게시판</a></li>
+					</ul>
+					<ul class="nav navbar-nav">
+						<li id = "menu3"><a href="/mvc/admin/index.do">관리자</a></li>
 					</ul>
 					<ul class = "nav navbar-nav navbar-right">
 						<li><a href = "#" style = "cursor:default;">${auth}</a></li>
@@ -35,7 +40,12 @@
 				// 게시판 메뉴 선택
 				$("#menu2").addClass("active");
 				
+			} else if (url.indexOf("/mvc/admin/") > -1) {
+				// 게시판 메뉴 선택
+				$("#menu3").addClass("active");
+				
 			}
+			
 			
 		</script>
 	

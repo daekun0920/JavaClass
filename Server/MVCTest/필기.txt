@@ -180,7 +180,21 @@ CK 에디터
 
 
 
+=================================================================
+location.href = 'http://google.com';
+location.href = 'http://google.com/';
 
+location.href = '/mvc';
+location.href = '/mvc/';
+
+웹서버는 요청 URL이 '/' 로 끝나지 않으면 자동으로 '/'를 붙인다.
+http://localhost/mvc -> http://localhost/mvc/
+
+이 경우는 해당 안됨
+http://localhost/mvc/index.do -> http://localhost/mvc/index.do
+
+URL의 마지막에 확장자가 발견이 안되면 웹 서버는 마지막 요청 자원이 폴더인지? 파일인지? 구분 못함 
+-> 확장자가 발견이 안되면 폴더라고 생각하고 마지막에 '/' 를 붙인다.
 
 
 
