@@ -75,7 +75,7 @@
 	
 	<h2 class = "page-header">게시판 <small>수정하기</small></h2>
 	
-	<form method = "post" action = "/mvc/board/editok.do" enctype = "multipart/form-data">
+	<form method = "post" action = "/board/editok.do" enctype = "multipart/form-data">
 		<table id = "tbl1" class = "table table-striped">
 			<tr>
 				<th>제목</th>

@@ -3,7 +3,7 @@
 	<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="/mvc/index.do"><span class = "glyphicon glyphicon-fire"></span> MVC Project</a>
+					<a class="navbar-brand" href="/index.do"><span class = "glyphicon glyphicon-fire"></span> MVC Project</a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -11,10 +11,10 @@
 				
 				<!-- 기본페이지 : index.do(X) -> index.jsp(O) -->
 					<ul class="nav navbar-nav">
-						<li id = "menu1"><a href="/mvc/auth/index.do">회원</a></li>
+						<li id = "menu1"><a href="/auth/index.do">회원</a></li>
 					</ul>
 					<ul class="nav navbar-nav">
-						<li id = "menu2"><a href="/mvc/board/list.do">게시판</a></li>
+						<li id = "menu2"><a href="/board/list.do">게시판</a></li>
 					</ul>
 					<ul class="nav navbar-nav">
 						<li id = "menu3"><a href="/mvc/admin/index.do">관리자</a></li>

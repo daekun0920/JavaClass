@@ -2,13 +2,14 @@ package com.test.mvc.auth;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@WebServlet("/auth/login.do")
 public class Login extends HttpServlet {
 
 	@Override
@@ -31,7 +32,8 @@ public class Login extends HttpServlet {
 			String id = req.getParameter("id");
 			String lv = req.getParameter("lv");
 			
-			
+			System.out.println(id);
+			System.out.println(lv);
 			
 			// 인증 티켓
 			session.setAttribute("auth", id);
@@ -42,12 +44,12 @@ public class Login extends HttpServlet {
 			
 			// 서블릿 -> 서블릿
 			// : "/mvc" 로 시작
-			resp.sendRedirect("/mvc/auth/index.do");
+			resp.sendRedirect("/auth/index.do");
 		} else { // 로그아웃 일때
 			session.removeAttribute("auth");
 			session.removeAttribute("lv");
 			
-			resp.sendRedirect("/mvc/auth/index.do");
+			resp.sendRedirect("/auth/index.do");
 		}
 		
 	}

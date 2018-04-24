@@ -13,5 +13,10 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/HAN/Downloads/apache-tomcat-9.0.6-windows-x64.zip"/>
+	<classpathentry kind="lib" path="C:/workspace/JavaClass/Server/MVCTest/WebContent/WEB-INF/lib/cos.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/JavaClass/Server/MVCTest/WebContent/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/JavaClass/Server/MVCTest/WebContent/WEB-INF/lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/JavaClass/Server/MVCTest/WebContent/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

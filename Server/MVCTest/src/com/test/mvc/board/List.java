@@ -224,7 +224,7 @@ public class List extends HttpServlet {
 		
 		// 10 페이지 단위로 페이지 링크 만들기
 		while (!(loop > blockSize || n > totalPage)) {
-			
+			System.out.println(1);
 			if (n == nowPage) {
 				pagebar += String.format(" <li class = 'active'><a>%d</a></li>", n);
 			} else {

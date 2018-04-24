@@ -185,6 +185,8 @@ public class AddOk extends HttpServlet {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+		System.out.println(92929);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/board/addok.jsp");
 		dispatcher.forward(req, resp);
 		

@@ -15,7 +15,7 @@ public class Check {
 		
 		if (session.getAttribute("auth") == null) {
 			//resp.sendRedirect("/mvc/index.do");
-			resp.getWriter().println("<script>location.href='/mvc';</script>");
+			resp.getWriter().println("<script>location.href='/index.do';</script>");
 			resp.getWriter().close();
 		}
 		
