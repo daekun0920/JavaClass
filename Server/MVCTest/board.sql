@@ -1,6 +1,10 @@
 -- MVCTest > board.sql
 
 DROP TABLE tblBoard;
+<<<<<<< HEAD
+DELETE FROM tblBoard;
+commit;
+=======
 CREATE TABLE tblMember (
     id VARCHAR2(30) NOT NULL PRIMARY KEY,
     pw VARCHAR2(30) NOT NULL,
@@ -16,6 +20,7 @@ INSERT INTO tblMember VALUES ('test', 1111, '테스트', 1);
 INSERT INTO tblMember VALUES ('hong', 1111, '홍길동', 1);
 INSERT INTO tblMember VALUES ('admin', 1111, '관리자', 3);
 
+>>>>>>> 2de0a50129ca2d7dad7ae266cc8ca756c03d677a
 -- 2. 게시판 테이블(원글)
 CREATE TABLE tblBoard (
     seq NUMBER PRIMARY KEY, -- 시퀀스
@@ -104,6 +109,30 @@ CREATE TABLE tblComment (
 CREATE SEQUENCE comment_seq;
 
 SELECT * FROM tblComment;
+
+-- 전체 회원수 
+SELECT count(*) FROM tblMember;
+
+
+-- 전체 게시물 수
+SELECT count(*) FROM tblBoard;
+
+
+-- 전체 댓글수 
+SELECT count(*) FROM tblComment;
+
+
+-- 미디어 수(첨부 이미지, 첨부 동영상)
+SELECT count(filename) + count(movie) FROM tblBoard;
+
+-- 회원별 게시물 카운트
+--SELECT cnt FROM (SELECT count(*) as cnt, (SELECT name FROM tblMember WHERE id = b.id) as name FROM tblBoard b
+--    GROUP BY id) ORDER BY name ASC;
+
+SELECT count(*) FROM tblMember m LEFT OUTER JOIN tblBoard b ON m.id = b.id GROUP BY m.name ORDER BY m.name;
+    
+-- 회원별 댓글 카운트
+SELECT count(b.seq) FROM tblMember m LEFT OUTER JOIN tblComment b ON m.id = b.id GROUP BY m.name ORDER BY m.name;
 
 
 
