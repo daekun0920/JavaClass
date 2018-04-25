@@ -14,7 +14,7 @@
 <script>
 
 	<c:if test="${result == 1}">
-	location.href="/board/view.do?seq=${pseq}#cform"; /* cform -> 앵커 역할 */
+	location.href="/mvc/board/view.do?seq=${pseq}#cform"; /* cform -> 앵커 역할 */
 	</c:if>
 
 	<c:if test="${result != 1}">

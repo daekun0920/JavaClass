@@ -44,12 +44,12 @@ public class Login extends HttpServlet {
 			
 			// 서블릿 -> 서블릿
 			// : "/mvc" 로 시작
-			resp.sendRedirect("/auth/index.do");
+			resp.sendRedirect("/mvc/auth/index.do");
 		} else { // 로그아웃 일때
 			session.removeAttribute("auth");
 			session.removeAttribute("lv");
 			
-			resp.sendRedirect("/auth/index.do");
+			resp.sendRedirect("/mvc/auth/index.do");
 		}
 		
 	}

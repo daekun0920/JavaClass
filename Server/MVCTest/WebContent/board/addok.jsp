@@ -14,7 +14,7 @@
 <script>
 	
 	<c:if test="${result == 1}">
-	location.href="/board/list.do";
+	location.href="/mvc/board/list.do";
 	</c:if>
 
 	<c:if test = "${result == 0}">

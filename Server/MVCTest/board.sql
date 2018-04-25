@@ -155,7 +155,7 @@ FROM dual;
 
 SELECT * FROM tblBoard
 ORDER BY notice DESC, thread DESC;
-<<<<<<< HEAD
+
 
 SELECT * FROM (SELECT seq,
         subject,
@@ -169,9 +169,9 @@ SELECT * FROM (SELECT seq,
         rownum as rnum,
         notice
         FROM tblBoard b) WHERE rnum >= 1 AND rnum <= 10;
-=======
+
 SELECT * FROM tblBoard WHERE notice = 0 ORDER BY seq ASC;
->>>>>>> 6ad7c63e06dcd879f676eeb9dd9c3ade13dc61ac
+
 
 SELECT * FROM
 (

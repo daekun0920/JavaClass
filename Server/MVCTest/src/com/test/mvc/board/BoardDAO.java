@@ -69,10 +69,7 @@ public class BoardDAO {
 			
 					
 					
-<<<<<<< HEAD
-				
-=======
->>>>>>> 6ad7c63e06dcd879f676eeb9dd9c3ade13dc61ac
+
 					
 				}
 				
@@ -84,15 +81,14 @@ public class BoardDAO {
 			// My-SQL : limit
 			// Oracle : rownum
 			// MS-SQL : top
-<<<<<<< HEAD
+/*
 			String sql = "SELECT seq, subject, id,  (SELECT name FROM tblMember WHERE id = s.id) as name," + 
 					"            (SELECT count(*) FROM tblComment WHERE s.SEQ = PSEQ) as ccount, " + 
 					"            round((sysdate - regdate) * 24 * 60) as gap, regdate, readcount, depth, filename, orgfilename, notice, " + 
 					"             rownum as rnum" + 
 					"                FROM tblBoard s WHERE s.notice = '1' ORDER BY rnum DESC";
-		
-			System.out.println(sql);
-=======
+		*/
+
 			String sql = "SELECT seq,"
 						+ " subject,"
 						+ " id,"
@@ -103,8 +99,7 @@ public class BoardDAO {
 						+ " (SELECT count(*) FROM tblComment cc WHERE b.SEQ = cc.PSEQ) as ccount "
 						+ "FROM tblBoard b WHERE notice = 1 ORDER BY seq DESC" + where;
 			
-			
->>>>>>> 6ad7c63e06dcd879f676eeb9dd9c3ade13dc61ac
+
 			stat = conn.prepareStatement(sql);
 			
 			ResultSet rs = stat.executeQuery();
@@ -134,7 +129,7 @@ public class BoardDAO {
 				
 				list.add(dto);
 			}
-			sql = String.format("SELECT * FROM (SELECT seq," + 
+			/*sql = String.format("SELECT * FROM (SELECT seq," + 
 					"        subject, " + 
 					"        id, " + 
 					"        (SELECT name FROM tblMember WHERE id = b.id) as name, " + 
@@ -146,9 +141,9 @@ public class BoardDAO {
 					"        rownum as rnum, " +
 					"        notice, depth, filename, orgfilename" +
 					"        FROM tblBoard b ORDER BY seq DESC) WHERE (rnum >= %s AND rnum <= %s) AND (notice = '0') " + 
-					where, map.get("start"), map.get("end"));
+					where, map.get("start"), map.get("end"));*/
 		
-			stat = conn.prepareStatement(sql);
+			/*stat = conn.prepareStatement(sql);
 			
 			rs = stat.executeQuery();
 			
@@ -172,11 +167,9 @@ public class BoardDAO {
 				list.add(dto);
 				
 			}
-			
-<<<<<<< HEAD
+
 			stat.close();
-			conn.close();
-=======
+			conn.close();*/
 			sql = "SELECT * FROM " + 
 					"    (SELECT se.*," + 
 					"            rownum as rnum," + 
@@ -217,7 +210,6 @@ public class BoardDAO {
 					list.add(dto);
 				}
 				
->>>>>>> 6ad7c63e06dcd879f676eeb9dd9c3ade13dc61ac
 			return list;
 			
 		} catch (Exception e) {

@@ -15,7 +15,7 @@
 
 	<c:if test="${result == 1}">
 	alert("삭제를 완료 하였습니다.");
-	location.href="/board/list.do";
+	location.href="/mvc/board/list.do";
 	</c:if>
 
 	<c:if test="${result == 0}">

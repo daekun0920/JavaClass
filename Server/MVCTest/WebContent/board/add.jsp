@@ -81,7 +81,7 @@
 	
 	<h2 class = "page-header">게시판 <small>글쓰기</small></h2>
 	
-	<form method = "post" action = "/board/addok.do" enctype = "multipart/form-data">
+	<form method = "post" action = "/mvc/board/addok.do" enctype = "multipart/form-data">
 		<table id = "tbl1" class = "table table-striped">
 			<c:if test = "${lv > 1 && mode == 'new'}">		
 			<tr>

@@ -1,0 +1,68 @@
+/* WebContent > css > main.css */
+
+@import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(https://fonts.googleapis.com/css?family=Black+And+White+Picture|Cute+Font|Do+Hyeon|Gugi|Hi+Melody|Sunflower:300);
+
+
+body, h1, h2, h3, h4, h5, h6, div, span, p, li, input, textarea, a {
+	font-family: '빙그레체', cursive;
+	color: #444;
+	/* font-size: 1.8rem; */
+}
+
+body {
+	overflow-y: scroll;	
+}
+
+a:hover {
+	text-decoration: none;	
+}
+
+.container > h2.page-header {
+	width: 900px;
+	margin: 40px auto;
+}
+
+.container > table, .container > form > table, .container > div, .container > form > div {
+	width: 900px;
+	margin: 20px auto;
+}
+
+#btns {
+	margin-top: 35px;	
+	margin-bottom: 100px;
+	text-align: center;
+}
+
+.short {
+	width: 25%;
+}
+
+.middle {
+	width: 50%;
+}
+
+input, textarea, select {
+	outline: none !important;
+	resize: none;
+}
+
+.mybadge {
+	font-size: 8px;
+	text-shadow: -1px -1px 1px #aaa;
+	background-color: #ccc;
+	border-radius: 50%;
+	padding: 2px 5px;
+	color: white;		
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,7 @@
 <script>
 
 	<c:if test="${result == 1}">
-	location.href="/board/view.do?seq=${seq}";
+	location.href="/mvc/board/view.do?seq=${seq}";
 	</c:if>
 
 	<c:if test="${result == 0}">

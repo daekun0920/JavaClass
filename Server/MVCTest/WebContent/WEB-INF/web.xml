@@ -57,14 +57,14 @@
     <servlet-name>Semi.Index</servlet-name>
     <url-pattern>/index.do</url-pattern>
   </servlet-mapping>
-  <servlet>
+<!--   <servlet>
     <servlet-name>Semi.Auth.Index</servlet-name>
     <servlet-class>com.test.mvc.auth.Index</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Semi.Auth.Index</servlet-name>
     <url-pattern>/auth/index.do</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
  <!--  <servlet>
     <servlet-name>Semi.Auth.Login</servlet-name>
     <servlet-class>com.test.mvc.auth.Login</servlet-class>
