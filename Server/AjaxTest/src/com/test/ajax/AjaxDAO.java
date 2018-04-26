@@ -3,6 +3,7 @@ package com.test.ajax;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class AjaxDAO {
 	
@@ -74,6 +75,38 @@ public class AjaxDAO {
 		}
 		
 		return 0;
+	}
+
+
+	public ArrayList<InsaDTO> list(String buseo) {
+		try {
+			String sql = "select num, name, jikwi, tel from tblinsa where buseo = ?";
+			
+			stat = conn.prepareStatement(sql);
+			stat.setString(1, buseo);
+			
+			ResultSet rs = stat.executeQuery();
+			ArrayList<InsaDTO> list = new ArrayList<InsaDTO>();
+			
+			while (rs.next()) {
+				InsaDTO dto = new InsaDTO();
+				dto.setNum(rs.getString("num"));
+				dto.setName(rs.getString("name"));
+				dto.setJikwi(rs.getString("jikwi"));
+				dto.setTel(rs.getString("tel"));
+				
+				list.add(dto);
+				
+			}
+			
+			return list;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return null;
 	}
 
 	

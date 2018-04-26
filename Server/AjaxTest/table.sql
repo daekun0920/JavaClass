@@ -1,20 +1,20 @@
 -- Class > Server > AjaxTest > table.sql
 
--- ¼³¹® Á¶»ç
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 create table tblResearch (
 	seq number primary key,					--PK
-	question varchar2(300) not null,		--Áú¹®
-	answer1 varchar2(300) not null,		--Ç×¸ñ1
-	answer2 varchar2(300) not null,		--Ç×¸ñ2
-	answer3 varchar2(300) not null,		--Ç×¸ñ3
-	answer4 varchar2(300) not null,		--Ç×¸ñ4
-	cnt1 number default 0 not null,		--¼±ÅÃ1
-	cnt2 number default 0 not null,		--¼±ÅÃ2
-	cnt3 number default 0 not null,		--¼±ÅÃ3
-	cnt4 number default 0 not null		--¼±ÅÃ4
+	question varchar2(300) not null,		--ï¿½ï¿½ï¿½ï¿½
+	answer1 varchar2(300) not null,		--ï¿½×¸ï¿½1
+	answer2 varchar2(300) not null,		--ï¿½×¸ï¿½2
+	answer3 varchar2(300) not null,		--ï¿½×¸ï¿½3
+	answer4 varchar2(300) not null,		--ï¿½×¸ï¿½4
+	cnt1 number default 0 not null,		--ï¿½ï¿½ï¿½ï¿½1
+	cnt2 number default 0 not null,		--ï¿½ï¿½ï¿½ï¿½2
+	cnt3 number default 0 not null,		--ï¿½ï¿½ï¿½ï¿½3
+	cnt4 number default 0 not null		--ï¿½ï¿½ï¿½ï¿½4
 );
 
-insert into tblResearch values (1, '»ç¿ë°¡´ÉÇÑ ÇÁ·Î±×·¡¹Ö ¾ğ¾î´Â?'
+insert into tblResearch values (1, 'ìŒìš©êµìœ¡ì„¼í„°'
 							, 'JAVA', 'SQL', 'HTML', 'JavaScript'
 							, default, default, default, default);
 
@@ -29,6 +29,7 @@ update tblResearch set
 	cnt4 = 8
 		where seq = 1;
 
+SELECT * FROM tblinsa;
 
 
 
