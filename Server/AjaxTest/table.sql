@@ -31,6 +31,19 @@ update tblResearch set
 
 SELECT * FROM tblinsa;
 
+SELECT * FROM tblBoard;
+
+
+
+CREATE OR REPLACE VIEW vwBoard 
+AS
+    SELECT * FROM 
+        (SELECT a.*, rownum as rnum FROM 
+                                (SELECT seq, subject, id, to_char(regdate, 'yy-mm-dd') as regdate, readcount FROM tblBoard
+                                    ORDER BY seq DESC) 
+        a);
+    
+DROP VIEW vwBoard;
 
 
 

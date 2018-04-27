@@ -109,6 +109,132 @@ public class AjaxDAO {
 		return null;
 	}
 
+
+	public String getName() {
+		try {
+
+			String sql = "select name from tblMember where rownum = 1";
+			
+			stat = conn.prepareStatement(sql);
+			
+			ResultSet rs = stat.executeQuery();
+			
+			if (rs.next()) {
+				return rs.getString("name");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+		
+		return null;
+	}
+
+
+	public MemberDTO getMember(String id) {
+		try {
+
+			String sql = "select * from tblMember where id = ?";
+			
+			stat = conn.prepareStatement(sql);
+			stat.setString(1, id);
+			
+			ResultSet rs = stat.executeQuery();
+			MemberDTO dto = new MemberDTO();
+			
+			if (rs.next()) {
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setPw(rs.getString("pw"));
+				dto.setLv(rs.getString("lv"));
+			}
+			
+			return dto;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+		return null;
+	}
+
+
+	public ArrayList<MemberDTO> listMember() {
+		 try {
+
+				String sql = "select * from tblMember";
+				
+				stat = conn.prepareStatement(sql);
+				
+				ResultSet rs = stat.executeQuery();
+				
+				ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+				
+				while (rs.next()) {
+					MemberDTO dto = new MemberDTO();
+					
+					dto.setId(rs.getString("id"));
+					dto.setName(rs.getString("name"));
+					dto.setPw(rs.getString("pw"));
+					dto.setLv(rs.getString("lv"));
+					
+					list.add(dto);
+				}
+				
+				return list;
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+
+	public ArrayList<BoardDTO> listBoard(String page) {
+		 try {
+
+				String sql = "select * from vwBoard where rnum >= ? AND rnum <= ?";
+				int start = Integer.parseInt(page) * 10 - 9;
+				int end = Integer.parseInt(page) * 10;
+				
+				
+				stat = conn.prepareStatement(sql);
+				
+				stat.setInt(1, start);
+				stat.setInt(2, end);
+				
+				
+				ResultSet rs = stat.executeQuery();
+				
+				ArrayList<BoardDTO> list = new ArrayList<>();
+				
+				
+		
+				
+				while (rs.next()) {
+					BoardDTO dto = new BoardDTO();
+					
+					dto.setId(rs.getString("id"));
+					dto.setSeq(rs.getString("seq"));
+					dto.setRegdate(rs.getString("regdate"));
+					dto.setSubject(rs.getString("subject"));
+					dto.setReadcount(rs.getString("readcount"));
+					dto.setRnum(rs.getString("rnum"));
+					
+					list.add(dto);
+				}
+				
+				
+				return list;
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
 	
 }
 
