@@ -47,3 +47,13 @@ DROP VIEW vwBoard;
 
 
 
+
+-- 고양이 위치값 테이블
+CREATE TABLE tblPosition (
+    seq NUMBER PRIMARY KEY, -- PK
+    id VARCHAR2(100) NOT NULL, -- 태그 ID (cat1)
+    x NUMBER NOT NULL,
+    y NUMBER NOT NULL
+);
+
+CREATE SEQUENCE position_seq;

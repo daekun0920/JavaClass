@@ -3,6 +3,7 @@ package com.test.ajax;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class AjaxDAO {
@@ -234,7 +235,180 @@ public class AjaxDAO {
 		
 		return null;
 	}
+	
+public ArrayList<DepartmentDTO> listDepartment() {
+		
+		try {
+			
+			String sql = "select * from departments d WHERE (SELECT count(*) FROM employees WHERE department_id = d.department_id) > 0";
+						
+			stat = conn.prepareStatement(sql);
+									
+			ResultSet rs = stat.executeQuery();
+			ArrayList<DepartmentDTO> list = new ArrayList<DepartmentDTO>();
+			
+			while (rs.next()) {
+				DepartmentDTO dto = new DepartmentDTO();
+				
+				dto.setId(rs.getString("department_id"));
+				dto.setName(rs.getString("department_name"));
+				
+				list.add(dto);
+			}
+			
+			return list;
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 
+
+public ArrayList<ChartDTO> listChart(String id) {
+	try {
+		
+		String sql = "SELECT count(*), ceil(salary / 1000) * 1000 FROM employees WHERE department_id = ? GROUP BY ceil(salary / 1000) ORDER BY ceil(salary / 1000) ASC";
+					
+		stat = conn.prepareStatement(sql);
+		stat.setString(1, id);
+		
+		ResultSet rs = stat.executeQuery();
+		ArrayList<ChartDTO> list = new ArrayList<ChartDTO>();
+		
+		while (rs.next()) {
+			ChartDTO dto = new ChartDTO();
+			
+			dto.setCnt(rs.getInt(1));
+			dto.setSalary(rs.getInt(2));
+			
+			
+			list.add(dto);
+		}
+		
+		return list;
+		
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	
+	return null;
+	
+	
+}
+
+
+public boolean check(String id) {
+	try {
+		String sql = "SELECT count(*) FROM tblPosition WHERE id = ?";
+		
+		stat = conn.prepareStatement(sql);
+		stat.setString(1, id);
+		
+		ResultSet rs = stat.executeQuery();
+		
+		
+		if (rs.next()) {
+			
+			if (rs.getInt(1) == 1) {
+				
+				
+				return true;
+			} else {
+				return false;
+			}
+			
+			
+		}
+		
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	
+	return false;
+}
+
+
+public int updatePosition(CatDTO dto) {
+	try {
+		String sql = "UPDATE tblPosition SET x = ?, y = ? WHERE id = ?";
+		
+		stat = conn.prepareStatement(sql);
+		stat.setString(1, dto.getLeft());
+		stat.setString(2, dto.getTop());
+		stat.setString(3, dto.getId());
+		
+		
+		return stat.executeUpdate();
+			
+	} catch (Exception e) {
+		e.printStackTrace();
+	}	
+	return 0;
+}
+
+
+public int insertPosition(CatDTO dto) {
+	try {
+		String sql = "INSERT INTO tblPosition VALUES (position_seq.nextval, ?, ?, ?)";
+		
+		stat = conn.prepareStatement(sql);
+		stat.setString(1, dto.getId());
+		stat.setString(2, dto.getLeft());
+		stat.setString(3, dto.getTop());
+		
+		
+		
+		return stat.executeUpdate();
+			
+	} catch (Exception e) {
+		e.printStackTrace();
+	}	
+	return 0;
+
+}
+
+
+public ArrayList<CatDTO> listCat() {
+	try {
+		
+		String sql = "SELECT * FROM tblPosition";
+					
+		stat = conn.prepareStatement(sql);
+	
+		
+		ResultSet rs = stat.executeQuery();
+		ArrayList<CatDTO> list = new ArrayList<CatDTO>();
+		
+		while (rs.next()) {
+			CatDTO dto = new CatDTO();
+			
+			dto.setId(rs.getString("id"));
+			dto.setLeft(rs.getString("x"));
+			dto.setTop(rs.getString("y"));
+			
+			
+			list.add(dto);
+		}
+		
+		return list;
+		
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	
+	return null;
+}
+
+
+public void close() throws SQLException {
+	conn.close();
+}
 	
 }
 
