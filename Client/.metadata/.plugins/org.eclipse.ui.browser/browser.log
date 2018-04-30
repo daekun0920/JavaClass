@@ -407,3 +407,8 @@
 4월 13, 2018 16:30:06.69 [9448:3364:0413/163006.684:ERROR:shader_disk_cache.cc(238)] Failed to create shader cache entry: -2
 4월 13, 2018 16:40:00.32 
 4월 13, 2018 16:40:00.33 KLIB_SelfTest return : KLR_OK
+
+4월 28, 2018 17:24:40.43 NEW SESSION
+4월 28, 2018 17:24:40.43 [1532:6228:0428/172440.437:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+4월 28, 2018 17:25:33.71 [5916:13104:0428/172533.719:ERROR:in_progress_cache_impl.cc(93)] Could not read download entries from file because there was a read failure.
+4월 28, 2018 17:28:18.34 Unable to read VR Path Registry from C:\Users\HAN\AppData\Local\openvr\openvrpaths.vrpath
