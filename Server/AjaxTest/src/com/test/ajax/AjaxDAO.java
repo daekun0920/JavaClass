@@ -409,6 +409,35 @@ public ArrayList<CatDTO> listCat() {
 public void close() throws SQLException {
 	conn.close();
 }
+
+
+public ArrayList<String> query(String query) {
+	try {
+		
+		String sql = "SELECT * FROM tblWord WHERE word like ? || '%'"; // 상수안에 ? 넣으면 안됨
+					
+		stat = conn.prepareStatement(sql);
+		stat.setString(1, query);
+		
+		ResultSet rs = stat.executeQuery();
+		ArrayList<String> list = new ArrayList<String>();
+		
+		while (rs.next()) {
+			
+			
+			list.add(rs.getString("word"));
+		}
+		
+		return list;
+		
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	
+	
+	return null;
+}
 	
 }
 

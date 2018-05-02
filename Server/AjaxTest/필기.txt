@@ -82,5 +82,15 @@ ex13.jsp
 Ex13Data.java
 
 
+Open API
+	- 웹을 통해서 특정 URL을 요청하면 그에 따른 데이터를 돌려주는 패턴 
+
+1. 패키지 생성
+	- com.test.api
+	- com.test.api > Ex01.java
+	
+2. 뷰 폴더 생성
+	- WebContent > WEB-INF > view > api
+	- WebContent > WEB-INF > view > api > ex01.jsp
 
 

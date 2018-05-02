@@ -1,0 +1,116 @@
+	
+	div, span, nav, p, li, textarea, input, td, h1, h2, h3, h4, h5, h6, a {
+	
+		font-family:빙그레체;
+	
+	}
+
+	html, body {
+		
+		padding:0;
+		margin:0;
+		background-color:#EEE;
+	}
+	
+
+	#header {
+		width:1200px;
+		height:70px;
+		background-color:black;	
+		padding-top:7px;
+		position:relative;
+		margin: 0px auto;
+		padding-bottom:7px;
+	}
+	
+	#logo {
+		position:absoulte;
+		width:100px;
+		height:55px;
+		margin-left:20px;
+		text-align:inherit;
+	}
+	#nav1 {
+		position:relative;
+		top:-50px;
+		margin-top:10px;
+	
+	}
+	.mainmenu {
+		
+		color:white;
+		vertical-align:middle;
+		margin-left:130px;
+	}
+	
+	
+	#nav1 {
+		margin-left:50px;
+	
+	}
+	
+	#submenu {
+		width:1200px;
+		background-color:#CCC;
+		height:40px;
+		margin:0px auto;
+		padding:0;
+		display:none;
+		padding-top:4px;
+		z-index:-1;
+	}
+	#invisible {
+		width:1200px;
+		background-color:transparent;
+		height:40px;
+		margin:0px auto;
+		padding:0;
+		
+		padding-top:4px;
+		
+	
+	}
+	
+	.column {
+		vertical-align:middle;
+		margin-left:80px;
+		cursor:default;
+		font-weight: normal;
+		color:black;
+		font-family:빙그레체;
+		text-decoration: none;
+		
+	
+	}
+	#submenu a:hover {
+		color:cornflowerblue;
+		
+	
+	}
+	
+	#artist_menu, #goods_menu, #comp_menu, #aud_menu, #concert_menu {
+		padding-top:7px;
+		text-align:center;
+		height:100%;
+		
+		
+		display:none;
+	}
+	
+	#artist_menu a, #goods_menu a, #comp_menu a, #aud_menu a, #concert_menu a {
+		vertical-align:middle;
+		margin-left:80px;
+		cursor:pointer;
+		font-weight: normal;
+		color:black;
+		font-family:빙그레체;
+		text-decoration: none;
+	}
+	
+	.mainmenu:hover {
+		color:cornflowerblue;
+		cursor:default;
+	
+	}
+	
+	
