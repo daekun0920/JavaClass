@@ -12,7 +12,10 @@
 	
 	}
 	
-
+	#submenu a:hover {
+		color:cornflowerblue;
+	
+	}
 	#header {
 		width:1200px;
 		height:70px;
@@ -34,7 +37,7 @@
 		position:relative;
 		top:-50px;
 		margin-top:10px;
-	
+		
 	}
 	.mainmenu {
 		
@@ -71,7 +74,10 @@
 		color:black;
 		font-family:빙그레체;
 		text-decoration: none;
+		background-color:none;
 	}
+	
+
 	
 	.mainmenu:hover {
 		color:cornflowerblue;
