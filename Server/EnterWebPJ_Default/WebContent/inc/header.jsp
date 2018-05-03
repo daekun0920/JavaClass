@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 		<div id = "header">
-			<img src = "images/logo_w.png" id = "logo">
+			<img src = "/enter/images/logo_w.png" id = "logo">
 			<nav id = "nav1">
 					<span class = "mainmenu" id = "">경영 지원</span>
 					<span class = "column column-white"> | </span>
@@ -17,7 +17,7 @@
 		<div id = "parent">
 			<div id = "submenu">
 				<nav id = "manage_menu" class = "sub">
-					<a>스케쥴 관리</a>
+					<a href = "/enter/management/schedulesearch.do">스케쥴 관리</a>
 					<span class = "column"> | </span>
 					<a>섭외 관리</a>
 					<span class = "column"> | </span>
