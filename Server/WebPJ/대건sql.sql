@@ -28,3 +28,20 @@ ELSIF p_type = 3 THEN
 END IF;
 
 END;
+
+
+-- 연예인 검색(목록 불러오기)
+
+CREATE OR REPLACE VIEW vw_search_stars
+AS
+SELECT * FROM tbl_member m 
+    INNER JOIN tbl_star s ON m.member_seq = s.member_seq 
+        INNER JOIN tbl_artist a ON s.star_seq = a.star_seq;
+
+CREATE OR REPLACE VIEW vw_search_group
+AS
+SELECT * FROM tbl_group g 
+    INNER JOIN tbl_artist a  ON g.group_seq = a.group_seq;
+
+
+    
