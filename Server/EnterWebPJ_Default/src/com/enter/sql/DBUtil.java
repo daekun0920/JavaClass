@@ -21,6 +21,7 @@ public class DBUtil {
 			
 			
 			conn = DriverManager.getConnection(url,id,pw); // DB접속
+			
 			return conn;
 			
 		} catch (Exception e) {

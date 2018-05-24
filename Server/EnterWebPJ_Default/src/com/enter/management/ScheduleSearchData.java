@@ -16,12 +16,16 @@ import com.enter.management.model.ArtistDTO;
 import com.enter.management.model.ManagementDAO;
 
 
-@WebServlet("/management/ScheduleSearchData.do")
+@WebServlet("/management/schedulesearchdata.do")
 public class ScheduleSearchData extends HttpServlet {
 
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Check check = new Check();
+		check.authcheck("staff", req, resp);
+		
+		
 		String keyword = req.getParameter("keyword");
 		String type = req.getParameter("type");
 		

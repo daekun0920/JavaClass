@@ -19,9 +19,9 @@
 				<nav id = "manage_menu" class = "sub">
 					<a href = "/enter/management/schedulesearch.do">스케쥴 관리</a>
 					<span class = "column"> | </span>
-					<a>섭외 관리</a>
+					<a href = "/enter/management/hiresearch.do">섭외 관리</a>
 					<span class = "column"> | </span>
-					<a>스텝 매칭 관리</a>
+					<a href = "/enter/management/matchingsearch.do">스텝 매칭 관리</a>
 				</nav>
 				<nav id = "new_menu" class = "sub">
 					<a>연습생 관리</a>

@@ -46,8 +46,7 @@ public class BoardDAO {
 			System.out.println(8017);
 			
 			int result = stat.executeUpdate();
-			stat.close();
-			conn.close();
+			
 			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -97,7 +96,7 @@ public class BoardDAO {
 						+ " readcount, filename, orgfilename, depth, notice, secret, movie, "
 						+ " round((sysdate - regdate) * 24 * 60) as gap,"
 						+ " (SELECT count(*) FROM tblComment cc WHERE b.SEQ = cc.PSEQ) as ccount "
-						+ "FROM tblBoard b WHERE notice = 1 ORDER BY seq DESC" + where;
+						+ "FROM tblBoard b WHERE notice = 1 " + where +  " ORDER BY seq DESC";
 			
 
 			stat = conn.prepareStatement(sql);
@@ -329,7 +328,7 @@ public class BoardDAO {
 	// List 서블릿이 게시물의 총 갯수를 반환해달라고 요청
 	public int getTotalCount(HashMap<String, String> map) {
 		try {
-			String sql = "SELECT count(*) as cnt FROM tblBoard";
+			String sql = "SELECT count(*) as cnt FROM tblBoard ";
 			String where = "";
 			if (map.get("isSearch").equals("true")) {
 				if (map.get("column").equals("name")) {
@@ -354,7 +353,8 @@ public class BoardDAO {
 			stat = conn.prepareStatement(sql);
 			ResultSet rs = stat.executeQuery();
 			if (rs.next()) {
-				System.out.println(rs.getInt("cnt"));
+				System.out.println(conn == null);
+				//System.out.println(rs.getInt("cnt"));
 				return rs.getInt("cnt");
 				
 			}

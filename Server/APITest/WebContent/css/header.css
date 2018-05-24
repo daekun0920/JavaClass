@@ -1,0 +1,178 @@
+	
+	html, body, div, span, nav, p, li, textarea, input, td, th, h1, h2, h3, h4, h5, h6, a {
+	
+		font-family:빙그레체;
+	
+	}
+
+	html, body {
+		
+		padding:0;
+		margin:0;
+		background-color:#EEE;
+	}
+	
+/* header */
+	#header {
+		width:1200px;
+		height:70px;
+		background-color:black;	
+		padding-top:7px;
+		position:relative;
+		margin: 0px auto;
+		padding-bottom:7px;
+	}
+	
+	#logo {
+		position:absoulte;
+		width:100px;
+		height:55px;
+		margin-left:40px;
+		text-align:inherit;
+	}
+
+
+	.mainmenu {
+		
+		color:white;
+		vertical-align:middle;
+		margin:0px 2%;
+		display: inline-block;
+		
+		
+	}
+	
+	#nav1 {
+		position:relative;
+		top:-50px;
+		margin-top:10px;
+		margin-left:15%;
+		text-align: center;
+		width: 1020px;
+	
+	}
+
+	
+	#submenu {
+		width:1200px;
+		background-color:#CCC;
+		height:40px;
+		margin:0px auto;
+		padding:0;
+		display:none;
+		padding-top:4px;
+		z-index:-1;
+		
+	}
+	
+	#submenu a:hover {
+		color:cornflowerblue;
+		
+	
+	}
+	
+	
+	#invisible {
+		width:1200px;
+		background-color:transparent;
+		height:40px;
+		margin:0px auto;
+		padding:0;
+		
+		padding-top:4px;
+		
+	
+	}
+	
+	.column {
+		vertical-align:middle;
+		margin: 0px 40px;
+		cursor:default;
+		font-weight: normal;
+		color:black;
+		font-family:빙그레체;
+		text-decoration: none;
+		text-align: center;
+		
+	
+	}
+	
+	.column-white {
+		color: white;
+	}
+	
+	
+	
+	.sub {
+		padding-top:7px;
+		text-align:center;
+		height:100%;
+		
+		
+		display:none;
+	
+	}
+			
+	.sub a {
+		vertical-align:middle;
+		margin: 0px 60px;
+		cursor:pointer;
+		font-weight: normal;
+		color:black;
+		font-family:빙그레체;
+		text-decoration: none;
+	
+	}
+		
+	.mainmenu:hover {
+		color:cornflowerblue;
+		cursor:default;
+	
+	}
+	
+	#auth {
+		float: right;
+		margin-right: 10px;
+		text-decoration: none;
+		color: black;
+	}
+	#auth:HOVER {
+		color:cornflowerblue;
+	
+	}
+	#signup {
+		float: right;
+		margin: 0px 10px;
+		text-decoration: none;
+		color: black;
+	}
+	#signup:HOVER {
+		color:cornflowerblue;	
+	}
+	
+	.signbar {
+		float: right; 
+	}
+	
+	
+/* footer */
+	#footer {
+		text-align:center;
+		
+		position:fixed;
+		bottom:-60px;
+		left:1rem;
+		right:1rem;
+		height:70px;
+		padding-top:10px;
+		color:white;
+		width:123rem;
+		margin:0px auto;
+		background-color:black;
+		transition:all 1s;
+	}
+	#footer:hover {
+		bottom:0px;
+	
+	
+	}

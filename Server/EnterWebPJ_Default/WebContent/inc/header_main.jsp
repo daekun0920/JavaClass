@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 		<div id = "header">
-			<img src = "images/logo_w.png" id = "logo">
+			<img src = "/enter/images/logo_w.png" id = "logo">
 			<nav id = "nav1">
 					<span class = "mainmenu" id = "comp_main">COMPANY</span>
 					<span class = "column column-white"> | </span>
@@ -23,9 +23,9 @@
 		<div id = "parent">
 			<div id = "submenu">
 				<nav id = "comp_menu" class = "sub">
-					<a>About JIP</a>
+					<a href = "/enter/company/about.do">About JIP</a>
 					<span class = "column"> | </span>
-					<a>Notice</a>
+					<a href = "/enter/company/notice.do">Notice</a>
 				</nav>
 				<nav id = "artist_menu" class = "sub">
 					<a>Singer</a>

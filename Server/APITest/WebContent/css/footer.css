@@ -1,0 +1,20 @@
+	#footer {
+		text-align:center;
+		
+		position:fixed;
+		bottom:-60px;
+		left:1rem;
+		right:1rem;
+		height:70px;
+		padding-top:10px;
+		color:white;
+		width:123rem;
+		margin:0px auto;
+		background-color:black;
+		transition:all 1s;
+	}
+	#footer:hover {
+		bottom:0px;
+	
+	
+	}

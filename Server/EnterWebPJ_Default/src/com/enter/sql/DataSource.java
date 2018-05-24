@@ -20,7 +20,7 @@ public class DataSource {
 	public DataSource() {
 		// SQL이 적혀있는 파일들을 관리하는 경로들..
 		path = new ArrayList<String>();
-		path.add(".\\com\\test\\management\\model\\sql");
+		path.add(".\\com\\enter\\management\\model\\sql");
 		//path.add(".\\memo\\com\\test\\mvc\\memo\\model\\sql");
 		
 		sql = new HashMap<String, String>();
