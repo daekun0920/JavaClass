@@ -1,0 +1,24 @@
+Maven
+- 필요한 *.jar 자동 수급 역할
+- 인터넷 회선 불량 -> 파일 일부 누락
+
+
+Spring MVC Project(+STS)
+
+1. Java Resources
+	- 이전과 동일
+	- src/main/java : 자바 클래스 폴더
+	- src/main/resources : 리소스 폴더
+	
+2. WebContent ?
+	- src > main > java			: 빌드 전 클래스 파일 폴더
+	- src > main > resources	: 이미지, JS, CSS 등
+	- src > main > webapp 		: WebContent 와 동일
+	
+
+3. webapp
+	- webapp > WEB-INF			: 이전의 폴더와 동일
+	- web.xml
+	- classes					: 빌드된 클래스 파일 폴더
+	- views						: 뷰 페이지 폴더
+	- spring					: 스프링 설정 파일 폴더

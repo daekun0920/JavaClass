@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- config03.xml 02 없음 -->
+
+<!-- config03.xml -->
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- DB -->
 	
-	<!-- 의존 객체 : DB, File -->
-	<bean id = "db" class = "com.test.spring.Ex06_DB"></bean>
-	<bean id = "file" class = "com.test.spring.Ex06_File"></bean>	
+	<bean id="db" class="com.test.spring.Ex06_DB"></bean>
+	<bean id="file" class="com.test.spring.Ex06_File"></bean>
 	
 	<!-- DAO -->
-	<bean id = "dao" class = "com.test.spring.Ex06_DAO"></bean>	
+	<bean id="dao" class="com.test.spring.Ex06_DAO"></bean>
 	
-	<bean id = "dao2" class = "com.test.spring.Ex06_DAO">
-		<property name="data" ref = "file"></property> <!-- 의존 주입 -->
+	<bean id="dao2" class="com.test.spring.Ex06_DAO">
+		<property name="data" ref="db"></property>
 	</bean>
+
 </beans>

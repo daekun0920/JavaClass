@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- memo.xml -->
+
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"	
+	xsi:schemaLocation="	http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	
+	<!-- 주 업무 객체(Memo) -->
+	<bean id="memo" class="com.test.spring.aop.Memo"></bean>
+	
+	<!-- 보조 업무 객체(Logger) -->
+	<bean id="logger" class="com.test.spring.aop.Logger"></bean>
+	
+	<!-- 주 업무 객체 + 보조 업무 객체 : Aspect 설정하기 -->
+	<aop:config>
+	
+		<aop:aspect id="loggerAdvice" ref="logger">
+			
+			<!-- 주업무에 나(보조업무)를 적용할지 지정? : 포인트 컷 설정하기 -->
+			<!-- expression : 주업무의 메소드 참조를 설정하는 곳 : AspectJ 표현식을 사용한다. -->
+			<aop:pointcut expression="execution(public * com.test.spring.aop.Memo.*(..))" id="m1"/>
+			
+			<!-- logger가 가지는 수많은 보조 업무 중에 어떤 보조업무를 주업무인 PointCut 에 적용할지? -->
+			<!-- <aop:around method="around" pointcut-ref="m1"/> -->
+			<!-- <aop:before method="before" pointcut-ref="m1"/> -->
+			
+			
+			<!-- 포인트컷 추가하기 : read만을 지정 -->
+			<aop:pointcut expression="execution(public * com.test.spring.aop.Memo.read(int))" id="m2"/>
+			<!-- <aop:after method="after" pointcut-ref="m2"/> -->
+			
+			<aop:after-throwing method="afterthrowing" pointcut-ref="m2" throwing="e"/>
+			
+			<!-- 포인트컷 추가 : 검색을 위함 -->
+			<aop:pointcut expression="execution(public int com.test.spring.aop.Memo.search(String))" id="m3"/>
+			<aop:after-returning method="afterreturning" pointcut-ref="m3" returning="obj"/>
+			
+			
+		</aop:aspect>
+	
+	</aop:config>
+	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

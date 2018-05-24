@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config03.xml -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 객체 생성 + 의존 관계(의존 주입) -->
+	
+	<!-- new Pen(); -->
+	<bean id="pen" class="com.test.spring.di.Pen"></bean>
+	
+	<!-- new Note(); -->
+	<bean id="note" class="com.test.spring.di.Note">
+		<!-- <constructor-arg ref="pen"></constructor-arg>  -->
+		<property name="pen" ref="pen"></property> <!-- setPen 메서드 호출방법 name에서 가르키는 이름은 set메서드를 말함-->
+	</bean>
+
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config01.xml -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--  
+	
+		스프링을 통해서 보게 되는 업무
+		1. 객체 생성
+		2. 객체 관리
+		3. 객체 소멸
+		4. 객체간의 관계 맺기
+	
+	-->
+	
+	<bean id="data" class="com.test.spring.di.Ex05_Data"></bean>
+
+</beans>

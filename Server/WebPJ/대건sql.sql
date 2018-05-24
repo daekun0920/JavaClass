@@ -7,7 +7,7 @@ SELECT m.member_seq, m.member_id, m.member_name, a.type_seq, a.ARTIST_SEQ FROM t
         INNER JOIN tbl_artist a ON s.star_seq = a.star_seq;
 
 SELECT * FROM tbl_main_notice n INNER JOIN tbl_staff f ON n.staff_seq = f.staff_seq INNER JOIN tbl_member m ON m.member_seq = f.member_seq WHERE n.main_notice_seq = 29;
-commit;
+
 CREATE OR REPLACE VIEW vw_search_group
 AS
 SELECT g.group_seq, g.GROUP_NAME, a.ARTIST_SEQ, a.star_seq FROM tbl_group g 
