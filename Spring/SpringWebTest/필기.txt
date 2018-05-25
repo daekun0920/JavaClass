@@ -22,3 +22,87 @@ Spring MVC Project(+STS)
 	- classes					: 빌드된 클래스 파일 폴더
 	- views						: 뷰 페이지 폴더
 	- spring					: 스프링 설정 파일 폴더
+	
+	
+	
+파일 생성
+
+1. Java Resources > src/main/java > com.test.spring > Ex01.java
+
+2. src > main > webapp > WEB-INF > views > ex01.jsp
+
+
+스프링 MVC 프로젝트 동작 순서 (+ Servlet/JSP MVC 프로젝트 동작 순서 비교)
+
+1. Ex01.java
+	- 컨트롤러 파일
+
+2. ex01.jsp 생성
+	- View 파일
+
+3. web.xml 설정
+	- *.action : 스프링 요청 확장자 지정
+	
+4. root-context.xml
+	- 나중에
+
+5. servlet-context.xml
+	- 여러가지 설정
+	- 컨트롤러 빈을 설정(가상주소 매핑)
+
+6. 아파치 기동, 톰캣 기동
+	- 여러 설정 파일 읽기
+	a. web.xml
+	- 사이트 전반적인 설정(스프링, Servlet/JSP 등등..)
+	- DispatcherServlet 설정 인식
+		a. *.action > 모든 스프링 요청을 하게 될 확장자 필터
+	b. root-context.xml
+		- 사이트 전반적인 설정(스프링에 대한 내용만)
+	c. servlet-context.xml
+		- 요청에 관련된 설정만
+		- 미리 만들어 놓은 컨트롤러의 <bean> 을 인식
+		
+		
+7. url 요청
+	- http://localhost/spring/ex01.action
+
+8. HTTP Request 발생
+	- 서버에게 요청
+	
+9. 아파치 요청 받음
+	a. url 확인
+	b. ex01.action 확인
+	c. 스프링 요청인걸 확인 후 > DispatcherServlet 호출
+
+10. DispatcherServlet 동작
+	a. url 확인
+	b. Context Path 이하의 경로를 취함
+		- http://localhost/spring/ex01.action > /ex01.action
+	c. "/ex01.action" 를 사용해서 servlet-context.xml에 정의된 <bean> 들 중 name값이 일치하는 빈을 찾는다.
+	d. context.getBean("/ex01.action") 호출 + 컨트롤러 객체 생성
+	e. 컨트롤러의 handleRequest 메소드 호출
+	f. 업무 실행
+	g. 뷰 호출
+	h. 응답
+
+11. HTTP Response 발생
+
+12. 브라우저 페이지 로드
+	
+
+
+파일 생성 
+- DI 적용
+
+com.test.spring > Ex03Controller
+com.test.spring > Ex03DAO
+
+views > ex03.jsp
+
+내장 객체
+
+Ex05Controller.java
+ex05.jsp // 폼 페이지
+
+Ex05OkController.java
+ex05ok.jsp // 결과 페이지
