@@ -21,7 +21,7 @@
 	
 	#banner {
 	
-		min-height:500px;
+		min-height:300px;
 		font-size:3em;
 	
 	}
@@ -36,14 +36,24 @@
 	}
 	
 	body {
-	
+		background-repeat:no-repeat;
 		background-image:url("images/seoul.jpg");
 		background-size: 100%;
 		background-attachment: fixed;
 	
 	}
+	
+	.frm {
+		
+		width:400px !important;
+		margin:0px auto;
+		margin-bottom:20px;
+	
+	}
+	
+	
 </style>
-<title>네이버로그인</title>
+<title>네이버 로그인</title>
 
 <link rel="stylesheet" href="css/bootstrap.css">
 <script src="js/jquery-1.12.4.js"></script>
@@ -53,7 +63,7 @@
 <body>
 	<%
 		String clientId = "gH_dcSHGR5xb9dChEsbE";//애플리케이션 클라이언트 아이디값";
-		String redirectURI = URLEncoder.encode("http://localhost:8090/APITest/callback/callback.jsp", "UTF-8");
+		String redirectURI = URLEncoder.encode("http://mugle.org/APITest/callback/callback.jsp", "UTF-8");
 		SecureRandom random = new SecureRandom();
 		String state = new BigInteger(130, random).toString();
 		String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
@@ -64,10 +74,13 @@
 	%>
 	<div id="container">
 		<div id = "banner">
-			Welcome to SeoulMate!
+			Welcome!
 		</div>
+		<h3 style = "color:white;">본 사이트는 AWS(EC2, RDS, Routh53)을 이용하여 만들어 졌습니다.</h3>
 		<a href="<%=apiURL%>"><img height="50"
 			src="http://static.nid.naver.com/oauth/small_g_in.PNG" /></a>
 	</div>
+	
+	
 </body>
 </html>

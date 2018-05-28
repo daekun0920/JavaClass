@@ -1,3 +1,4 @@
+<%@page import="com.test.Check"%>
 <%@page import="org.json.simple.JSONObject"%>
 <%@page import="org.json.simple.parser.JSONParser"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -20,7 +21,8 @@
 </script>
 </head>
 <body>
-	<%
+	<%	
+		
 		String token = (String) request.getSession().getAttribute("access_token");// 네이버 로그인 접근 토큰;
 	
 		String header = "Bearer " + token; // Bearer 다음에 공백 추가

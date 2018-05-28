@@ -9,32 +9,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.test.model.BoardDTO;
 import com.test.model.TestDAO;
 
-@WebServlet("/login.do")
-public class LogIn extends HttpServlet {
+@WebServlet("/view.do")
+public class View extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String id = (String)req.getSession().getAttribute("id");
-		String name = (String)req.getSession().getAttribute("name");
-		System.out.println(id + name + "login!!");
+		Check check = new Check();
+		check.check(req, resp);
+		
+		String seq = req.getParameter("seq");
+		
 		TestDAO dao = new TestDAO();
 		
-		int result = dao.checknpush(id, name);
+		BoardDTO dto = dao.getView(seq);
 		
 		
-		req.getSession().setAttribute("naver_seq", result);
-		
-		
+		req.setAttribute("dto", dto);
+
 		// "/" -> WebContent
-		
-		req.setAttribute("id", id);
-		req.setAttribute("name", name);
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/main.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/view.jsp");
 		dispatcher.forward(req, resp);
 
 	}
 
 }
+
