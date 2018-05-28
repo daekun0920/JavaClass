@@ -1,0 +1,41 @@
+새 프로젝트 생성
+
+1. New >Other >Spring >Spring Legacy Project> Spring MVC Project > finish
+
+2. pom.xml
+	- 필요한 library 다운로드
+	a. 사용자 직접 다운로드 + 참조 : 이전 방식(build path or lib 복사)
+	b. Maven 사용 > pom.xml에 설정되어 있는 항목을 확인 후 자동으로 다운로드 + 참조 : 현재 방식
+	c. ojdbc6.jar + spring_jdbc.jar 참조
+	d. SpringMemo를 Spring JDBC 기반으로 구현하려고..
+	e. http://search.maven.org
+	
+3. web.xml
+	a. 스프링 요청 -> <url-pattern>*.memo</url-pattern)
+	b. POST 요청 인코딩 -> 필터 추가
+	
+
+4. root-context.xml 패스
+
+5. servlet-context.xml
+
+6. Bootstrap
+	a. webapp > resources > 복사
+
+7. SQL
+	a. script.sql 생성
+	
+8. 파일 생성
+	a. com.test.memo > MemoController.java
+	b. com.test.memo > IMemo.java
+	c. com.test.memo > MemoDAO.java
+	d. com.test.memo > MemoDTO.java
+	
+	e. views > memo > index.jsp : 초기페이지 + 목록페이지
+	f. views > memo > add.jsp
+	g. views > memo > addok.jsp
+	h. views > memo > edit.jsp
+	i. views > memo > editok.jsp
+	j. views > memo > delok.jsp
+	k. webapps > resource > css > memo.css
+	l. views > memo > template.jsp
