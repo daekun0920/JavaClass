@@ -1,0 +1,58 @@
+새프로젝트 생성
+
+1. New > Other > Spring > Spring Legacy Project > Spring MVC Project > "SpringMyBatisTest" 프로젝트명 > "com.test.spring" 패키지명
+
+
+응용 프로그램 계층 <-> 데이터 퍼시스턴스 계층  <-> 데이터베이스 계층
+Java							 JDBC								  Oracle
+                                 Spring-JDBC
+                                 MyBatis(iBatis)
+
+
+JDBC 세팅
+1. ojdbc.jar 참조
+
+Spring-JDBC 세팅
+1. 스프링 세팅
+2. ojdbc.jar 참조
+
+MyBatis 세팅(스프링 기반)
+1. 스프링 세팅
+	a. pom.xml
+		- *.jar 참조
+	b. web.xml
+		- 인코딩 필터
+	c. root-context.xml
+		- MyBatis 세팅 = 연결 객체 + MyBatis 설정 객체 + Template 객체
+		- MyBatis 설정 객체 = mapperLocation 생성 + mybatis.xml 생성
+	
+2. MyBatis 관련 jar 참조
+3. MyBatis 세팅(XML 등)
+4. Mapper 파일
+
+
+
+
+파일 생성
+
+1. MyBatisController.java
+1.5 IMyBatisService.java : 인터페이스
+2. MyBatisService.java
+3. MyBatisDAO.java
+4. MyBatisDTO.java
+5. result.jsp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 

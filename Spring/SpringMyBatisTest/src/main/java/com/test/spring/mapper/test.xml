@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- MyBatis가 사용할 모든 SQL을 저장 -->
+<mapper namespace="test">
+	<!-- 
+	<insert id=""></insert>
+	<update id=""></update>
+	<delete id=""></delete>
+	<select id=""></select>
+	-->
+	
+	<update id="m1">update tblMyBatis set num = num + 1</update>
+	
+	<update id="m2" parameterType="Integer">
+		update tblMyBatis set num = num - 1
+			where seq = #{seq}
+	</update>
+	
+	<update id="m3" parameterType="String">
+		update tblMyBatis set txt= #{txt}
+			where seq = 1
+	</update>
+	
+	
+	<!-- mapper 에서 다중 레코드인지 단일 레코드인지 구별할 수 있게 한다. -->
+	<insert id="m4" parameterType="com.test.spring.MyBatisDTO">
+		insert into tblMyBatis (seq, num, txt)
+			values (mybatis_seq.nextval, #{num}, #{txt}) <!-- el과 비슷한 표현으로 #{} 사이의 값을 넘어줌 -->
+	</insert>
+	
+	
+	<insert id="m5" parameterType="java.util.HashMap">
+		insert into tblMyBatis (seq, num, txt)
+			values (mybatis_seq.nextval, #{num}, #{txt})
+	</insert>
+	
+</mapper>
+
+
