@@ -3,7 +3,9 @@ package com.test.spring;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -114,6 +116,40 @@ public class MyBatisDAO {
 		
 	}
 	
+	public int m7() {
+		// TODO Auto-generated method stub
+		
+		// sessionTemplate.selectOne()  - 단일 레코드
+		// sessionTemplate.selectList() - 다중 레코드 
+				
+		return sessionTemplate.selectOne("test.m7");
+	}
+
+	public MyBatisDTO m8() {
+		
+		
+		
+		return sessionTemplate.selectOne("test.m8");
+	}
+
+	public List<String> m9() {
+		// TODO Auto-generated method stub
+		
+		
+		return sessionTemplate.selectList("test.m9");
+	}
+
+	public List<MyBatisDTO> m10() {
+		// TODO Auto-generated method stub
+		
+		return sessionTemplate.selectList("test.m10");
+	}
+
+	public List<MyBatisDTO> m11(String order) {
+		// TODO Auto-generated method stub
+		return sessionTemplate.selectList("text.m11", order);
+		
+	}	
 	
 
 }

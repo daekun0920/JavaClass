@@ -31,10 +31,48 @@
 	</insert>
 	
 	
-	<insert id="m5" parameterType="java.util.HashMap">
+	<insert id="m5" parameterType="map"> <!-- HashMap alias -->
 		insert into tblMyBatis (seq, num, txt)
 			values (mybatis_seq.nextval, #{num}, #{txt})
 	</insert>
+	
+	<select id = "m7" resultType = "Integer">
+		select sum(num) FROM tblMyBatis
+	</select>
+	
+	<select id = "m8" resultType = "mdto">
+		select num * 2 as num, txt from tblMyBatis WHERE num = (SELECT max(num) FROM tblMyBatis) AND rownum = 1
+	</select>
+	
+	<!-- resultType은 레코드 갯수와 상관없이 1개의 레코드의 타입만 가지고 정한다. -->
+	<select id = "m9" resultType = "String">
+		SELECT txt FROM tblMyBatis
+	</select>
+	
+	<select id = "m10" resultType = "mdto">
+		select * from tblMyBatis
+	</select>
+	
+	<select id = "m11" resultType = "mdto" parameterType = "String">
+		<!-- 
+		
+		#{} : 데이터 바인딩 -> 오라클 데이터 전용
+		${} : 구문 바인딩 -> 오브젝트 식별자 전용(테이블명, 컬럼명)
+		
+		-->
+		select * from tblMyBatis 
+		
+		
+		<!-- MyBatis의 동적 쿼리 -->
+		<if test="_parameter.equals('asc')">
+		ORDER BY seq ASC
+		</if>
+		<if test="_parameter.equals('desc')">
+		ORDER BY seq DESC
+		</if>
+		
+		
+	</select>
 	
 </mapper>
 

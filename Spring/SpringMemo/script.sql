@@ -14,6 +14,7 @@ CREATE TABLE tblSpringCategory (
 
 
 );
+SELECT m.*, (SELECT name FROM tblSpringMember WHERE id = m.id) as name, (SELECT name FROM tblSpringCategory WHERE seq = m.category) as categoryName FROM tblSpringMemo m;
 
 CREATE TABLE tblSpringMemo (
 
@@ -28,9 +29,15 @@ CREATE TABLE tblSpringMemo (
 
 );
 
-INSERT INTO tblSpringMember VALUES ('hong', '1111', '홍길동);
-INSERT INTO tblSpringMember VALUES ('aaaa', '1111', '홍길동);
-INSERT INTO tblSpringMember VALUES ('bbbb', '1111', '홍길동);
-INSERT INTO tblSpringMember VALUES ('cccc', '1111', '홍길동);
+SELECT * FROM tblSpringMemo;
 
-INSERT INTO tblSpringCategory VALUES ('hong', '1111', '홍길동);
+commit;
+INSERT INTO tblSpringMember VALUES ('hong', '1111', '홍길동');
+INSERT INTO tblSpringMember VALUES ('dddd', '1111', '홍길동');
+INSERT INTO tblSpringMember VALUES ('bbbb', '1111', '홍길동');
+INSERT INTO tblSpringMember VALUES ('cccc', '1111', '홍길동');
+commit;
+INSERT INTO tblSpringCategory VALUES (1, '할일');
+INSERT INTO tblSpringCategory VALUES (2, '스터');
+INSERT INTO tblSpringCategory VALUES (3, '업무');
+INSERT INTO tblSpringCategory VALUES (4,'서비스');

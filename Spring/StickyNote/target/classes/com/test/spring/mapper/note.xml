@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- MyBatis가 사용할 모든 SQL을 저장 -->
+<mapper namespace="note">
+	
+	<insert id="add" parameterType="ndto">
+		insert into tblNote (seq, memo, color, regdate)
+			values (note_seq.nextval, #{memo}, #{color}, default)
+	</insert>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+새 프로젝트
+- StickyNote
+
+1. pom.xml
+
+2. web.xml
+
+3. root-context.xml
+
+4. servlet-context.xml
+
+5. log4j 설정
+
+
+파일 생성
+
+1. NoteController.java
+2. NoteDAO.java
+3. INote.java : NoteDAO의 인터페이스
+4. NoteDTO.java
+
+5. views > note.jsp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

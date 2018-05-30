@@ -18,8 +18,13 @@
 	<!-- result.jsp -->
 	<h2>결과</h2>
 	
+	<p> sum : ${sum}</p>
 	
+	<p> dto : ${dto} </p>
 	
+	<p> list : ${list } </p>
+	
+		
 </body>
 </html>
 

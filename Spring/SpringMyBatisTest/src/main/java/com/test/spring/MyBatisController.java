@@ -2,6 +2,7 @@ package com.test.spring;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -166,6 +167,61 @@ public class MyBatisController {
 		return "result";
 	}
 	
+	@RequestMapping(value="/m7.action")
+	private String m7(HttpServletRequest req) {
+		int sum = service.m7();
+		
+		req.setAttribute("sum", sum);
+		
+		return "result";
+	}
+	
+	@RequestMapping(value="/m8.action")
+	private String m8(HttpServletRequest req) {
+		
+		// 숫자 가장 큰 행 반환
+		MyBatisDTO sum = service.m8();
+		
+		req.setAttribute("sum", sum);
+		
+		return "result";
+	}
+	
+	@RequestMapping(value="/m9.action")
+	private String m9(HttpServletRequest req) {
+		
+		
+		List<String> list = service.m9();
+		
+		req.setAttribute("list", list);
+		
+		return "result";
+	}
+	
+	@RequestMapping(value="/m10.action")
+	private String m10(HttpServletRequest req) {
+		
+		
+		List<MyBatisDTO> list = service.m10();
+		
+		req.setAttribute("list", list);
+		
+		return "result";
+	}
+	
+	@RequestMapping(value="/m11.action")
+	private String m11(HttpServletRequest req, String order) {
+		
+		// 리스트반환 + 정렬
+		// m11.action?order=asc
+		// m11.action?order=desc
+		
+		List<MyBatisDTO> list = service.m11(order);
+		
+		req.setAttribute("list", list);
+		
+		return "result";
+	}
 	
 }
 

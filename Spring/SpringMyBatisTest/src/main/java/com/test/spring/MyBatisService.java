@@ -2,6 +2,7 @@ package com.test.spring;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,5 +60,38 @@ public class MyBatisService implements IMyBatisService{
 		for(MyBatisDTO dto : list) {
 			dao.m6(dto);
 		}
+	}
+	
+	@Override
+	public int m7() {
+		
+		return dao.m7();
+		
+		
+	}
+
+	@Override
+	public MyBatisDTO m8() {
+
+		return dao.m8();
+	}
+	
+	@Override
+	public List<String> m9() {
+
+		return dao.m9();
+	}
+
+	@Override
+	public List<MyBatisDTO> m10() {
+		// TODO Auto-generated method stub
+		
+		return dao.m10();
+	}
+
+	@Override
+	public List<MyBatisDTO> m11(String order) {
+		// TODO Auto-generated method stub
+		return dao.m11(order);
 	}
 }
