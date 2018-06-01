@@ -1,0 +1,55 @@
+새프로젝트 생성
+
+"SpringWebAOPTest"
+Spring MVC Project
+
+콘솔기반 > AOP
+웹기반 > AOP
+
+
+1. pom.xml
+	- 기존 프로젝트 복사
+	- + AOP jar 추가
+
+2. web.xml
+	- 필터 추가(encoding)
+
+3. root-context.xml
+	- MyBatis 설정
+		a. <bean> x 3개
+		b. com.test.spring.mapper 패키지
+		c. aop.xml 매퍼 파일 생성
+		d. mybatis.xml 환경 설정 파일 생성
+		
+	- log4j 설정
+		a. <bean> x 1개
+		b. src/main/resource > log4j.xml 복사
+
+----------------------------------------- 기본 세팅
+
+4. 파일 생성
+	a. AOPController.java		//컨트롤러
+	b. ICore.java						//인터페이스(AOP 적용하려면 필수 조건)
+	b. Core.java						//주업무 객체(Service, DAO 등..)
+	c. DAO.java							//하위업무 객체
+	d. DTO.java							//모델 객체
+	e. Cross.java						//보조업무 객체(*******)
+	f. aop.jsp								//뷰 페이지
+	
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

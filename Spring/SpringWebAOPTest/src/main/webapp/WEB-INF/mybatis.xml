@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- WEB-INF/mybatis.xml -->
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<!-- <typeAliases>
+		<typeAlias type="com.test.spring.NoteDTO" alias="ndto"/>
+	</typeAliases>	 -->
+	
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

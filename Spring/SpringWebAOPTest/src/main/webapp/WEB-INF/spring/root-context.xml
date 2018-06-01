@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 사이트 전역 설정(스프링 관련) -->
+	<!-- MyBatis 설정 -->
+	
+	<!--  
+	JDBC : Connection
+	Spring-JDBC : DriverManagerDataSource
+	MyBatis : BasicDataSource
+	-->
+	<bean class="org.apache.commons.dbcp.BasicDataSource" id="datasource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+		<property name="username" value="hr"></property>
+		<property name="password" value="java1234"></property>
+	</bean>
+	
+	
+	
+	
+	<!-- log4j 객체 : 데이터베이스 작업 객체의 업무 사이에 끼어들어 현제 작업하는 내용을 로그로 남기는 역할 -->
+	<bean class="net.sf.log4jdbc.Log4jdbcProxyDataSource" id="log4j">
+		<constructor-arg ref="datasource"></constructor-arg>
+		<property name="logFormatter">
+			<bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+				<property name="loggingType" value="MULTI_LINE"></property>
+				<property name="sqlPrefix" value="[SQL] "></property>
+			</bean>
+		</property>
+	</bean>
+	
+	
+	
+	
+	<!--  
+	JDBC : Statement/PreparedStatement/CallableStatement
+	Spring-JDBC : JdbcTemplate
+	MyBatis : SqlSessionFactoryBean
+	-->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sessionfactory">
+		<property name="dataSource"  ref="log4j"></property>
+		<property name="mapperLocations" value="classpath*:com/test/spring/mapper/*.xml"></property>
+		<property name="configLocation" value="/WEB-INF/mybatis.xml"></property>
+	</bean>
+	
+	<!--  
+	JDBC : Statement/PreparedStatement/CallableStatement
+	Spring-JDBC : JdbcTemplate
+	MyBatis : SqlSessionFactoryBean + SqlSessionTemplate
+	-->
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sessionfactory"></constructor-arg>
+	</bean>
+	
+	
+	
+</beans>
