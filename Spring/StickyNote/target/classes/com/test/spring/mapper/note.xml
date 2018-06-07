@@ -10,6 +10,18 @@
 			values (note_seq.nextval, #{memo}, #{color}, default)
 	</insert>
 	
+	<select id="list" resultType="ndto">
+		select * from tblNote order by seq asc
+	</select>
+	
+	<select id="get" resultType="ndto">
+		select * from tblNote where seq = (select max(seq) from tblNote)
+	</select>
+	
+	<delete id="del" parameterType="String">
+		delete from tblNote where seq = #{seq}
+	</delete>
+	
 </mapper>
 
 

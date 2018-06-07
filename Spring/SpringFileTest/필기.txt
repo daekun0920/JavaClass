@@ -1,0 +1,41 @@
+새프로젝트
+ - Spring MVC Project > "SpringFileTest" > "com.test.spring"
+ 
+1. pom.xml
+ 	- jar 추가
+ 	
+2. root-context.xml
+	- <bean> 설정  	
+
+3. 파일 생성
+	- FileController.java
+	
+	a. 단일 파일 업로드
+		- add.jsp
+		- addok.jsp
+		
+	b. 다중 파일 업로드
+		- addmulti.jsp
+		- addmultiok.jsp
+
+4. 첨부 파일 저장 폴더
+	- webapp > resources > files 폴더 생성		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

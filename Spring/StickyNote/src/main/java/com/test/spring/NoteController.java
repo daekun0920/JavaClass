@@ -1,5 +1,9 @@
 package com.test.spring;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,21 +19,34 @@ public class NoteController {
 	
 	//시작 페이지
 	@RequestMapping(method={RequestMethod.GET}, value="/test.note")
-	public String test() {
+	public String test(HttpServletRequest req) {
+		
+		//목록 가져오기
+		List<NoteDTO> list = note.list();		
+		
+		req.setAttribute("list", list);
 		
 		return "note";
 	}
 	
 	
 	@RequestMapping(method={RequestMethod.POST}, value="/add.note")
-	public @ResponseBody int add(NoteDTO dto) {
+	public @ResponseBody NoteDTO add(NoteDTO dto) {
 		
 		//ajax 요청 받아서 -> DB 처리 -> 결과 반환(웹페이지X, Ajax반환)
 		//add.note?memo=aaa&color=2
 		
 		int result = note.add(dto);
-				
-		return result;
+		NoteDTO resultDTO = null;
+	
+		if (result == 1) {
+			//select
+			resultDTO = note.get();
+		} else {
+			//실패 
+		}
+		
+		return resultDTO;
 		
 //		List<NoteDTO> list = new ArrayList<NoteDTO>();
 //		NoteDTO dto1 = new NoteDTO();
@@ -46,6 +63,22 @@ public class NoteController {
 		
 		
 	}
+	
+	
+	
+	
+	
+	
+	@RequestMapping(method={RequestMethod.GET}, value="/del.note")
+	public @ResponseBody int del(HttpServletRequest req, String seq) {
+		
+		//Ajax 요청
+		int result = note.del(seq);
+		
+		return result;
+		
+	}
+	
 	
 }
 
