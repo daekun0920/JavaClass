@@ -1,0 +1,33 @@
+스프링에서 트랜잭션 처리
+
+1. pom.xml
+= MyBatis(JDBC) + log4j + jackson(JSON + Ajax) Tiles + AOP + MVC + Spring FileupLoad
+- Spring Transaction 위해서는 따로 참조할 jar 없음. 기본 내장 기능
+
+2. web.xml
+- 확장자 수정
+- 필터 추가
+
+3. root-context.xml
+- MyBatis 세팅
+	a. mapper 패키지 + 파일 생성
+	b. mybatis.xml 설정 파일 생성
+- log4j 세팅 
+	a. <bean> 생성
+	b. src/main/resources > log4j.xml 수정
+
+4. servlet-context.xml
+	- AOP 어노테이션 설정
+	- 타일즈 설정
+	
+	
+5. 파일 생성
+- TransactionController.java
+- IService.java
+- Service.java
+- DAO.java
+- DTO.java
+
+- del.jsp
+- delok.jsp
+

@@ -17,7 +17,11 @@
 	<!-- AOP Annotation 방식으로 구현 -->
 	<aop:aspectj-autoproxy />
 	
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 4b004dfc3130639bc44287cda8dc95c3d368a1b4
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 

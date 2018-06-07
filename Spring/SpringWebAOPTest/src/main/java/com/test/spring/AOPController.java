@@ -48,7 +48,11 @@ public class AOPController {
 		
 		session.setAttribute("auth", id); //로그인 성공
 		
+<<<<<<< HEAD
 		return "redirect:/index.aop";
+=======
+		return "redirect:/board/list.aop";
+>>>>>>> 4b004dfc3130639bc44287cda8dc95c3d368a1b4
 		
 	}
 	

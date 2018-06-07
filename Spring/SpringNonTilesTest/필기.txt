@@ -1,0 +1,59 @@
+필기
+
+사이트 레이아웃 구성
+
+1. 회원 업무
+2. 관리자 업무
+
+
+파일 생성
+
+1. MainController.java
+
+2. views > member > info.jsp //회원 정보 페이지
+3. views > member > point.jsp //회원 포인트 페이지
+
+4. views > admin > data.jsp //관리자 데이터 페이지
+5. views > admin > chart.jsp //관리자 통계 페이지
+
+6. views > inc > asset.jsp //CSS,JS
+7. views > inc > mainmenu.jsp //주 메뉴 조각 페이지
+8. views > inc > membersubmenu.jsp //회원 서브 메뉴 조각 페이지
+9. views > inc > adminsubmenu.jsp //관리자 서브 메뉴 조각 페이지
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
